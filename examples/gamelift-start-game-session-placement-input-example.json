@@ -1,0 +1,10 @@
+{
+  "PlacementId": "example-PlacementId",
+  "GameSessionQueueName": "MyGameFleet",
+  "GameProperties": "example-GameProperties",
+  "MaximumPlayerSessionCount": 10,
+  "GameSessionName": "MyGameFleet",
+  "PlayerLatencies": "example-PlayerLatencies",
+  "DesiredPlayerSessions": "example-DesiredPlayerSession",
+  "GameSessionData": "example-GameSessionData"
+}

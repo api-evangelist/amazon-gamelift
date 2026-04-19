@@ -1,0 +1,7 @@
+{
+  "GameSessionArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "IpAddress": "10.0.1.100",
+  "DnsName": "MyGameFleet",
+  "Port": 7777,
+  "MatchedPlayerSessions": "example-MatchedPlayerSession"
+}

@@ -1,0 +1,8 @@
+{
+  "Name": "MyGameFleet",
+  "Version": "example-Version",
+  "StorageLocation": "us-east-1",
+  "OperatingSystem": "example-OperatingSystem",
+  "Tags": "example-Tags",
+  "ServerSdkVersion": "example-ServerSdkVersion"
+}

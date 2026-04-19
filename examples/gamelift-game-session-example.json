@@ -1,0 +1,12 @@
+{
+  "GameSessionId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "Name": "MyGameFleet",
+  "FleetId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "FleetArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "CreationTime": "example-CreationTime",
+  "TerminationTime": 10,
+  "CurrentPlayerSessionCount": 10,
+  "MaximumPlayerSessionCount": 10,
+  "Status": "ACTIVE",
+  "StatusReason": "ACTIVE"
+}

@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-player-session-schema.json",
+  "title": "PlayerSession",
+  "description": "<p>Represents a player session. Player sessions are created either for a specific game session, or as part of a game session placement or matchmaking request. A player session can represents a reserved player slot in a game session (when status is <code>RESERVED</code>) or actual player activity in a game session (when status is <code>ACTIVE</code>). A player session object, including player data, is automatically passed to a game session when the player connects to the game session and is validated. After the game session ends, player sessions information is retained for 30 days and then removed.</p> <p> <b>Related actions</b> </p> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets\">All APIs by task</a> </p>",
+  "type": "object",
+  "properties": {
+    "PlayerSessionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerSessionId"
+        },
+        {
+          "description": "A unique identifier for a player session."
+        }
+      ]
+    },
+    "PlayerId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A unique identifier for a player that is associated with this player session."
+        }
+      ]
+    },
+    "GameSessionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A unique identifier for the game session that the player session is connected to."
+        }
+      ]
+    },
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetId"
+        },
+        {
+          "description": "A unique identifier for the fleet that the player's game session is running on."
+        }
+      ]
+    },
+    "FleetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetArn"
+        },
+        {
+          "description": " The Amazon Resource Name (<a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html\">ARN</a>) associated with the GameLift fleet that the player's game session is running on. "
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>\"1469498468.057\"</code>)."
+        }
+      ]
+    },
+    "TerminationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>\"1469498468.057\"</code>)."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerSessionStatus"
+        },
+        {
+          "description": "<p>Current status of the player session.</p> <p>Possible player session statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li> <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li> </ul>"
+        }
+      ]
+    },
+    "IpAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpAddress"
+        },
+        {
+          "description": "The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number."
+        }
+      ]
+    },
+    "DnsName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DnsName"
+        },
+        {
+          "description": "<p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses\">Amazon EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>"
+        }
+      ]
+    },
+    "Port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PortNumber"
+        },
+        {
+          "description": "Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP address and port number."
+        }
+      ]
+    },
+    "PlayerData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerData"
+        },
+        {
+          "description": "Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. "
+        }
+      ]
+    }
+  }
+}

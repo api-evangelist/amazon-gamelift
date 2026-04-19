@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-describe-build-output-schema.json",
+  "title": "DescribeBuildOutput",
+  "description": "DescribeBuildOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Build": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Build"
+        },
+        {
+          "description": "Set of properties describing the requested build."
+        }
+      ]
+    }
+  }
+}

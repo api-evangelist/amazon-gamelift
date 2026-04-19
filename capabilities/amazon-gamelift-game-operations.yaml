@@ -1,0 +1,353 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Amazon GameLift Game Operations
+  description: >-
+    Unified workflow capability for game developers and operations teams managing
+    Amazon GameLift resources. Combines fleet management, game session lifecycle,
+    player matchmaking, and scaling operations into a single workflow-oriented
+    interface for multiplayer game infrastructure.
+  tags:
+    - Amazon GameLift
+    - Gaming
+    - Game Servers
+    - Multiplayer
+    - Matchmaking
+    - AWS
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+      AWS_REGION: AWS_REGION
+
+capability:
+  consumes:
+    - import: amazon-gamelift
+      location: ./shared/amazon-gamelift.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: gamelift-game-ops-api
+      description: Unified REST API for Amazon GameLift game operations management.
+      resources:
+        - path: /v1/fleets
+          name: fleets
+          description: Manage game server fleets
+          operations:
+            - method: GET
+              name: list-fleets
+              description: List all game server fleets
+              call: amazon-gamelift.ListFleets
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-fleet
+              description: Create a new game server fleet
+              call: amazon-gamelift.CreateFleet
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/fleets/{fleetId}
+          name: fleet-detail
+          description: Get or update a specific fleet
+          operations:
+            - method: GET
+              name: describe-fleet
+              description: Get fleet attributes
+              call: amazon-gamelift.DescribeFleetAttributes
+              with:
+                FleetId: "rest.fleetId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: DELETE
+              name: delete-fleet
+              description: Delete a fleet
+              call: amazon-gamelift.DeleteFleet
+              with:
+                FleetId: "rest.fleetId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/game-sessions
+          name: game-sessions
+          description: Manage game sessions
+          operations:
+            - method: POST
+              name: create-game-session
+              description: Start a new game session
+              call: amazon-gamelift.CreateGameSession
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: GET
+              name: search-game-sessions
+              description: Search for active game sessions
+              call: amazon-gamelift.SearchGameSessions
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/game-sessions/placement
+          name: game-session-placement
+          description: Place game sessions using queue optimization
+          operations:
+            - method: POST
+              name: start-placement
+              description: Request optimal game session placement
+              call: amazon-gamelift.StartGameSessionPlacement
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/player-sessions
+          name: player-sessions
+          description: Manage player slots in game sessions
+          operations:
+            - method: POST
+              name: create-player-session
+              description: Reserve a player slot in a game session
+              call: amazon-gamelift.CreatePlayerSession
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/matchmaking
+          name: matchmaking
+          description: Player matchmaking operations
+          operations:
+            - method: POST
+              name: start-matchmaking
+              description: Submit a matchmaking request
+              call: amazon-gamelift.StartMatchmaking
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: GET
+              name: describe-matchmaking
+              description: Get matchmaking ticket status
+              call: amazon-gamelift.DescribeMatchmaking
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/scaling-policies
+          name: scaling-policies
+          description: Fleet auto-scaling policies
+          operations:
+            - method: PUT
+              name: put-scaling-policy
+              description: Create or update a fleet scaling policy
+              call: amazon-gamelift.PutScalingPolicy
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/builds
+          name: builds
+          description: Game server builds
+          operations:
+            - method: GET
+              name: list-builds
+              description: List all game server builds
+              call: amazon-gamelift.ListBuilds
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-build
+              description: Create a new game server build
+              call: amazon-gamelift.CreateBuild
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/aliases
+          name: aliases
+          description: Fleet aliases for traffic routing
+          operations:
+            - method: GET
+              name: list-aliases
+              description: List all fleet aliases
+              call: amazon-gamelift.ListAliases
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-alias
+              description: Create a fleet alias
+              call: amazon-gamelift.CreateAlias
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: gamelift-game-ops-mcp
+      transport: http
+      description: MCP server for AI-assisted Amazon GameLift game infrastructure management.
+      tools:
+        - name: list-fleets
+          description: List all Amazon GameLift game server fleets with their status and configuration
+          hints:
+            readOnly: true
+            openWorld: true
+          call: amazon-gamelift.ListFleets
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-fleet
+          description: Create a new game server fleet with specified configuration
+          hints:
+            readOnly: false
+          call: amazon-gamelift.CreateFleet
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-fleet-attributes
+          description: Get detailed attributes and configuration of a game server fleet
+          hints:
+            readOnly: true
+            idempotent: true
+          call: amazon-gamelift.DescribeFleetAttributes
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-fleet-capacity
+          description: Get current capacity settings and utilization for a fleet
+          hints:
+            readOnly: true
+          call: amazon-gamelift.DescribeFleetCapacity
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: update-fleet-capacity
+          description: Manually adjust fleet capacity settings
+          hints:
+            readOnly: false
+            idempotent: true
+          call: amazon-gamelift.UpdateFleetCapacity
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-game-session
+          description: Start a new game session on a specific fleet
+          hints:
+            readOnly: false
+          call: amazon-gamelift.CreateGameSession
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: search-game-sessions
+          description: Search for active game sessions with available player slots
+          hints:
+            readOnly: true
+          call: amazon-gamelift.SearchGameSessions
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-game-sessions
+          description: Get metadata on specific game sessions
+          hints:
+            readOnly: true
+          call: amazon-gamelift.DescribeGameSessions
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: start-game-session-placement
+          description: Request optimal placement for a new game session across available fleets
+          hints:
+            readOnly: false
+          call: amazon-gamelift.StartGameSessionPlacement
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-player-session
+          description: Reserve a player slot in an existing game session
+          hints:
+            readOnly: false
+          call: amazon-gamelift.CreatePlayerSession
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: start-matchmaking
+          description: Submit a matchmaking request to find other players and start a game
+          hints:
+            readOnly: false
+          call: amazon-gamelift.StartMatchmaking
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-matchmaking
+          description: Get the status of a matchmaking request
+          hints:
+            readOnly: true
+          call: amazon-gamelift.DescribeMatchmaking
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: put-scaling-policy
+          description: Create or update a fleet auto-scaling policy
+          hints:
+            readOnly: false
+            idempotent: true
+          call: amazon-gamelift.PutScalingPolicy
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-scaling-policies
+          description: Get current auto-scaling policies for a fleet
+          hints:
+            readOnly: true
+          call: amazon-gamelift.DescribeScalingPolicies
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-builds
+          description: List all game server builds uploaded to GameLift
+          hints:
+            readOnly: true
+          call: amazon-gamelift.ListBuilds
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-build
+          description: Create a new game server build resource
+          hints:
+            readOnly: false
+          call: amazon-gamelift.CreateBuild
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-aliases
+          description: List all fleet aliases defined in the region
+          hints:
+            readOnly: true
+          call: amazon-gamelift.ListAliases
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-alias
+          description: Create a fleet alias for traffic routing and fleet transitions
+          hints:
+            readOnly: false
+          call: amazon-gamelift.CreateAlias
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-fleet-utilization
+          description: Get active server process, game session, and player statistics for a fleet
+          hints:
+            readOnly: true
+          call: amazon-gamelift.DescribeFleetUtilization
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-fleet-events
+          description: View logged events for a fleet during a specified time period
+          hints:
+            readOnly: true
+          call: amazon-gamelift.DescribeFleetEvents
+          outputParameters:
+            - type: object
+              mapping: "$."

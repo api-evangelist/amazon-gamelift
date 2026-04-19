@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-list-game-server-groups-output-structure.json",
+  "name": "ListGameServerGroupsOutput",
+  "description": "ListGameServerGroupsOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameServerGroups": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerGroups"
+        },
+        {
+          "description": "The game server groups' game server groups."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "Specify the pagination token from a previous request to retrieve the next page of results."
+        }
+      ]
+    }
+  }
+}

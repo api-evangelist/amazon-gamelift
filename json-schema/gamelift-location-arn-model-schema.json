@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-location-arn-model-schema.json",
+  "title": "LocationArnModel",
+  "description": "LocationArnModel schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": "^arn:.*:location\\/custom-\\S+",
+  "minLength": 1,
+  "maxLength": 128
+}

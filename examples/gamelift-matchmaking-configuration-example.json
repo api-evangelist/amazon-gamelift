@@ -1,0 +1,12 @@
+{
+  "Name": "MyGameFleet",
+  "ConfigurationArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "Description": "Example game fleet for multiplayer sessions",
+  "GameSessionQueueArns": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "RequestTimeoutSeconds": "example-RequestTimeoutSecond",
+  "AcceptanceTimeoutSeconds": "example-AcceptanceTimeoutSec",
+  "AcceptanceRequired": "example-AcceptanceRequired",
+  "RuleSetName": "MyGameFleet",
+  "RuleSetArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "NotificationTarget": "example-NotificationTarget"
+}

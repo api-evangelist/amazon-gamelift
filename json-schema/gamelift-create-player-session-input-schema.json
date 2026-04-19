@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-create-player-session-input-schema.json",
+  "title": "CreatePlayerSessionInput",
+  "description": "CreatePlayerSessionInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameSessionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ArnStringModel"
+        },
+        {
+          "description": "A unique identifier for the game session to add a player to."
+        }
+      ]
+    },
+    "PlayerId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A unique identifier for a player. Player IDs are developer-defined."
+        }
+      ]
+    },
+    "PlayerData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerData"
+        },
+        {
+          "description": "Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game."
+        }
+      ]
+    }
+  },
+  "required": [
+    "GameSessionId",
+    "PlayerId"
+  ]
+}

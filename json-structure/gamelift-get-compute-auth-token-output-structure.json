@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-get-compute-auth-token-output-structure.json",
+  "name": "GetComputeAuthTokenOutput",
+  "description": "GetComputeAuthTokenOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the fleet that the compute is registered to."
+        }
+      ]
+    },
+    "FleetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetArn"
+        },
+        {
+          "description": "The Amazon Resource Name (<a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html\">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>."
+        }
+      ]
+    },
+    "ComputeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputeNameOrArn"
+        },
+        {
+          "description": "The name of the compute resource you are requesting the authentication token for."
+        }
+      ]
+    },
+    "ComputeArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputeArn"
+        },
+        {
+          "description": "The Amazon Resource Name (<a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html\">ARN</a>) that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code> "
+        }
+      ]
+    },
+    "AuthToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputeAuthToken"
+        },
+        {
+          "description": "The authentication token that your game server uses to authenticate with Amazon GameLift."
+        }
+      ]
+    },
+    "ExpirationTimestamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The amount of time until the authentication token is no longer valid. To continue using the compute resource for game server hosting, renew the authentication token by using this operation again."
+        }
+      ]
+    }
+  }
+}

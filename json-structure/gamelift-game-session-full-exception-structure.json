@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-game-session-full-exception-structure.json",
+  "name": "GameSessionFullException",
+  "description": "GameSessionFullException schema from Amazon GameLift API"
+}

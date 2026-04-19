@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-launch-template-name-structure.json",
+  "name": "LaunchTemplateName",
+  "description": "LaunchTemplateName schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": "[a-zA-Z0-9\\(\\)\\.\\-/_]+",
+  "minLength": 3,
+  "maxLength": 128
+}

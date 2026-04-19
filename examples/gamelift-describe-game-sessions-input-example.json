@@ -1,0 +1,9 @@
+{
+  "FleetId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "GameSessionId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "AliasId": "example-AliasId",
+  "Location": "us-east-1",
+  "StatusFilter": "ACTIVE",
+  "Limit": "example-Limit",
+  "NextToken": "example-NextToken"
+}

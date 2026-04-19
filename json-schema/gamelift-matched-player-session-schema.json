@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-matched-player-session-schema.json",
+  "title": "MatchedPlayerSession",
+  "description": "<p>Represents a new player session that is created as a result of a successful FlexMatch match. A successful match automatically creates new player sessions for every player ID in the original matchmaking request. </p> <p>When players connect to the match's game session, they must include both player ID and player session ID in order to claim their assigned player slot.</p>",
+  "type": "object",
+  "properties": {
+    "PlayerId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A unique identifier for a player "
+        }
+      ]
+    },
+    "PlayerSessionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerSessionId"
+        },
+        {
+          "description": "A unique identifier for a player session"
+        }
+      ]
+    }
+  }
+}

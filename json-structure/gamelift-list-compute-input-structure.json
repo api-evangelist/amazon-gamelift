@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-list-compute-input-structure.json",
+  "name": "ListComputeInput",
+  "description": "ListComputeInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the fleet the compute resources are registered to."
+        }
+      ]
+    },
+    "Location": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationStringModel"
+        },
+        {
+          "description": "The name of the custom location that the compute resources are assigned to."
+        }
+      ]
+    },
+    "Limit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PositiveInteger"
+        },
+        {
+          "description": "The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value."
+        }
+      ]
+    }
+  },
+  "required": [
+    "FleetId"
+  ]
+}

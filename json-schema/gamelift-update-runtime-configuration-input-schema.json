@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-update-runtime-configuration-input-schema.json",
+  "title": "UpdateRuntimeConfigurationInput",
+  "description": "UpdateRuntimeConfigurationInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value."
+        }
+      ]
+    },
+    "RuntimeConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuntimeConfiguration"
+        },
+        {
+          "description": "Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently."
+        }
+      ]
+    }
+  },
+  "required": [
+    "FleetId",
+    "RuntimeConfiguration"
+  ]
+}

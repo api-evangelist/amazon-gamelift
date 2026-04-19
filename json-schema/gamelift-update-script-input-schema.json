@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-update-script-input-schema.json",
+  "title": "UpdateScriptInput",
+  "description": "UpdateScriptInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "ScriptId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScriptIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the Realtime script to update. You can use either the script ID or ARN value."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A descriptive label that is associated with a script. Script names don't need to be unique."
+        }
+      ]
+    },
+    "Version": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "Version information associated with a build or script. Version strings don't need to be unique."
+        }
+      ]
+    },
+    "StorageLocation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3Location"
+        },
+        {
+          "description": "The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the \"key\"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. "
+        }
+      ]
+    },
+    "ZipFile": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ZipBlob"
+        },
+        {
+          "description": "<p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string \"fileb://\" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "ScriptId"
+  ]
+}

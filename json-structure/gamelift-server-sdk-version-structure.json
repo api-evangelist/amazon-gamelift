@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-server-sdk-version-structure.json",
+  "name": "ServerSdkVersion",
+  "description": "Data type used for server SDK version.",
+  "type": "string",
+  "pattern": "^\\d+\\.\\d+\\.\\d+$",
+  "maxLength": 128
+}

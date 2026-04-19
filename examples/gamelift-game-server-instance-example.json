@@ -1,0 +1,6 @@
+{
+  "GameServerGroupName": "MyGameFleet",
+  "GameServerGroupArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "InstanceId": "example-InstanceId",
+  "InstanceStatus": "ACTIVE"
+}

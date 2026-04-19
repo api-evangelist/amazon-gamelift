@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-instance-status-schema.json",
+  "title": "InstanceStatus",
+  "description": "InstanceStatus schema from Amazon GameLift API",
+  "type": "string",
+  "enum": [
+    "PENDING",
+    "ACTIVE",
+    "TERMINATING"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-port-number-schema.json",
+  "title": "PortNumber",
+  "description": "PortNumber schema from Amazon GameLift API",
+  "type": "integer",
+  "minimum": 1,
+  "maximum": 60000
+}

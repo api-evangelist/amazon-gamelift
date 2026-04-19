@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-create-alias-input-structure.json",
+  "name": "CreateAliasInput",
+  "description": "CreateAliasInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonBlankAndLengthConstraintString"
+        },
+        {
+          "description": "A descriptive label that is associated with an alias. Alias names do not need to be unique."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A human-readable description of the alias."
+        }
+      ]
+    },
+    "RoutingStrategy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RoutingStrategy"
+        },
+        {
+          "description": "The routing configuration, including routing type and fleet target, for the alias. "
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagList"
+        },
+        {
+          "description": "A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "RoutingStrategy"
+  ]
+}

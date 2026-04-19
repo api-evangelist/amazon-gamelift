@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-matchmaking-configuration-status-structure.json",
+  "name": "MatchmakingConfigurationStatus",
+  "description": "MatchmakingConfigurationStatus schema from Amazon GameLift API",
+  "type": "string",
+  "enum": [
+    "CANCELLED",
+    "COMPLETED",
+    "FAILED",
+    "PLACING",
+    "QUEUED",
+    "REQUIRES_ACCEPTANCE",
+    "SEARCHING",
+    "TIMED_OUT"
+  ]
+}

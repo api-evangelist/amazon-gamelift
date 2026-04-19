@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-list-game-servers-input-structure.json",
+  "name": "ListGameServersInput",
+  "description": "ListGameServersInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameServerGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerGroupNameOrArn"
+        },
+        {
+          "description": "An identifier for the game server group to retrieve a list of game servers from. Use either the name or ARN value."
+        }
+      ]
+    },
+    "SortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order."
+        }
+      ]
+    },
+    "Limit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PositiveInteger"
+        },
+        {
+          "description": "The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value."
+        }
+      ]
+    }
+  },
+  "required": [
+    "GameServerGroupName"
+  ]
+}

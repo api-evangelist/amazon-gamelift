@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-update-game-session-input-structure.json",
+  "name": "UpdateGameSessionInput",
+  "description": "UpdateGameSessionInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameSessionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ArnStringModel"
+        },
+        {
+          "description": "A unique identifier for the game session to update. "
+        }
+      ]
+    },
+    "MaximumPlayerSessionCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "The maximum number of players that can be connected simultaneously to the game session."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A descriptive label that is associated with a game session. Session names do not need to be unique."
+        }
+      ]
+    },
+    "PlayerSessionCreationPolicy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerSessionCreationPolicy"
+        },
+        {
+          "description": "A policy that determines whether the game session is accepting new players."
+        }
+      ]
+    },
+    "ProtectionPolicy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProtectionPolicy"
+        },
+        {
+          "description": "<p>Game session protection policy to apply to this game session only.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li> </ul>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "GameSessionId"
+  ]
+}

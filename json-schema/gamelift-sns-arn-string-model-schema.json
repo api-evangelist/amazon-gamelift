@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-sns-arn-string-model-schema.json",
+  "title": "SnsArnStringModel",
+  "description": "SnsArnStringModel schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": "[a-zA-Z0-9:_/-]*(.fifo)?",
+  "minLength": 0,
+  "maxLength": 300
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-describe-game-server-group-input-structure.json",
+  "name": "DescribeGameServerGroupInput",
+  "description": "DescribeGameServerGroupInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameServerGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerGroupNameOrArn"
+        },
+        {
+          "description": "A unique identifier for the game server group. Use either the name or ARN value."
+        }
+      ]
+    }
+  },
+  "required": [
+    "GameServerGroupName"
+  ]
+}

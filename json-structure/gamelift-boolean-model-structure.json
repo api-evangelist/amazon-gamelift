@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-boolean-model-structure.json",
+  "name": "BooleanModel",
+  "description": "BooleanModel schema from Amazon GameLift API",
+  "type": "boolean"
+}

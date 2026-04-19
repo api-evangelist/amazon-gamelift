@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-tag-list-schema.json",
+  "title": "TagList",
+  "description": "TagList schema from Amazon GameLift API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/Tag"
+  },
+  "minItems": 0,
+  "maxItems": 200
+}

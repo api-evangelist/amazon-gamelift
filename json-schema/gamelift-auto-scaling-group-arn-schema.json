@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-auto-scaling-group-arn-schema.json",
+  "title": "AutoScalingGroupArn",
+  "description": "AutoScalingGroupArn schema from Amazon GameLift API",
+  "type": "string",
+  "minLength": 0,
+  "maxLength": 256
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-matchmaking-id-string-model-schema.json",
+  "title": "MatchmakingIdStringModel",
+  "description": "MatchmakingIdStringModel schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": "[a-zA-Z0-9-\\.]*",
+  "maxLength": 128
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-launch-template-specification-structure.json",
+  "name": "LaunchTemplateSpecification",
+  "description": "<p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>An Amazon Elastic Compute Cloud launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group. </p>",
+  "type": "object",
+  "properties": {
+    "LaunchTemplateId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LaunchTemplateId"
+        },
+        {
+          "description": "A unique identifier for an existing Amazon EC2 launch template."
+        }
+      ]
+    },
+    "LaunchTemplateName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LaunchTemplateName"
+        },
+        {
+          "description": "A readable identifier for an existing Amazon EC2 launch template. "
+        }
+      ]
+    },
+    "Version": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LaunchTemplateVersion"
+        },
+        {
+          "description": "The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-resolve-alias-output-schema.json",
+  "title": "ResolveAliasOutput",
+  "description": "ResolveAliasOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetId"
+        },
+        {
+          "description": "The fleet identifier that the alias is pointing to."
+        }
+      ]
+    },
+    "FleetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetArn"
+        },
+        {
+          "description": " The Amazon Resource Name (<a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html\">ARN</a>) associated with the GameLift fleet resource that this alias points to. "
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-invalid-game-session-status-exception-schema.json",
+  "title": "InvalidGameSessionStatusException",
+  "description": "InvalidGameSessionStatusException schema from Amazon GameLift API"
+}

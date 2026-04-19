@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-desired-player-session-schema.json",
+  "title": "DesiredPlayerSession",
+  "description": "Player information for use when creating player sessions using a game session placement request.",
+  "type": "object",
+  "properties": {
+    "PlayerId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A unique identifier for a player to associate with the player session."
+        }
+      ]
+    },
+    "PlayerData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerData"
+        },
+        {
+          "description": "Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game."
+        }
+      ]
+    }
+  }
+}

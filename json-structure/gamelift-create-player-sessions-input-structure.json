@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-create-player-sessions-input-structure.json",
+  "name": "CreatePlayerSessionsInput",
+  "description": "CreatePlayerSessionsInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameSessionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ArnStringModel"
+        },
+        {
+          "description": "A unique identifier for the game session to add players to."
+        }
+      ]
+    },
+    "PlayerIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerIdList"
+        },
+        {
+          "description": "List of unique identifiers for the players to be added."
+        }
+      ]
+    },
+    "PlayerDataMap": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerDataMap"
+        },
+        {
+          "description": "Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "GameSessionId",
+    "PlayerIds"
+  ]
+}

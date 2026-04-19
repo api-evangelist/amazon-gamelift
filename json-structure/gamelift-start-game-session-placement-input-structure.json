@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-start-game-session-placement-input-structure.json",
+  "name": "StartGameSessionPlacementInput",
+  "description": "StartGameSessionPlacementInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "PlacementId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdStringModel"
+        },
+        {
+          "description": "A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused."
+        }
+      ]
+    },
+    "GameSessionQueueName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameSessionQueueNameOrArn"
+        },
+        {
+          "description": "Name of the queue to use to place the new game session. You can use either the queue name or ARN value. "
+        }
+      ]
+    },
+    "GameProperties": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GamePropertyList"
+        },
+        {
+          "description": "A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession\">Start a Game Session</a>)."
+        }
+      ]
+    },
+    "MaximumPlayerSessionCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "The maximum number of players that can be connected simultaneously to the game session."
+        }
+      ]
+    },
+    "GameSessionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A descriptive label that is associated with a game session. Session names do not need to be unique."
+        }
+      ]
+    },
+    "PlayerLatencies": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerLatencyList"
+        },
+        {
+          "description": "A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. "
+        }
+      ]
+    },
+    "DesiredPlayerSessions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DesiredPlayerSessionList"
+        },
+        {
+          "description": "Set of information on each player to create a player session for."
+        }
+      ]
+    },
+    "GameSessionData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LargeGameSessionData"
+        },
+        {
+          "description": "A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession\">Start a Game Session</a>)."
+        }
+      ]
+    }
+  },
+  "required": [
+    "PlacementId",
+    "GameSessionQueueName",
+    "MaximumPlayerSessionCount"
+  ]
+}

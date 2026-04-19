@@ -1,0 +1,6 @@
+{
+  "GameServerGroupName": "MyGameFleet",
+  "SortOrder": "example-SortOrder",
+  "Limit": "example-Limit",
+  "NextToken": "example-NextToken"
+}

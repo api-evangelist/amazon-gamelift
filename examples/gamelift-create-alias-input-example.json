@@ -1,0 +1,6 @@
+{
+  "Name": "MyGameFleet",
+  "Description": "Example game fleet for multiplayer sessions",
+  "RoutingStrategy": "example-RoutingStrategy",
+  "Tags": "example-Tags"
+}

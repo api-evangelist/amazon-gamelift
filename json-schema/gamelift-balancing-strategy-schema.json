@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-balancing-strategy-schema.json",
+  "title": "BalancingStrategy",
+  "description": "BalancingStrategy schema from Amazon GameLift API",
+  "type": "string",
+  "enum": [
+    "SPOT_ONLY",
+    "SPOT_PREFERRED",
+    "ON_DEMAND_ONLY"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "FleetId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "FleetArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "Name": "MyGameFleet",
+  "Status": "ACTIVE",
+  "ScalingAdjustment": "example-ScalingAdjustment",
+  "ScalingAdjustmentType": "example-ScalingAdjustmentTyp",
+  "ComparisonOperator": "example-ComparisonOperator",
+  "Threshold": "example-Threshold",
+  "EvaluationPeriods": "example-EvaluationPeriods",
+  "MetricName": "MyGameFleet"
+}

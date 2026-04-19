@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-placed-player-session-structure.json",
+  "name": "PlacedPlayerSession",
+  "description": "Information about a player session. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a href=\"https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html\">DescribePlayerSessions</a> with the player session ID.",
+  "type": "object",
+  "properties": {
+    "PlayerId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A unique identifier for a player that is associated with this player session."
+        }
+      ]
+    },
+    "PlayerSessionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerSessionId"
+        },
+        {
+          "description": "A unique identifier for a player session."
+        }
+      ]
+    }
+  }
+}

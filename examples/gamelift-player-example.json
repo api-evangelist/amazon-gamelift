@@ -1,0 +1,6 @@
+{
+  "PlayerId": "example-PlayerId",
+  "PlayerAttributes": "example-PlayerAttributes",
+  "Team": "example-Team",
+  "LatencyInMs": "example-LatencyInMs"
+}

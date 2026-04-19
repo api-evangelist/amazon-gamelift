@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-create-alias-output-schema.json",
+  "title": "CreateAliasOutput",
+  "description": "CreateAliasOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Alias": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Alias"
+        },
+        {
+          "description": "The newly created alias resource."
+        }
+      ]
+    }
+  }
+}

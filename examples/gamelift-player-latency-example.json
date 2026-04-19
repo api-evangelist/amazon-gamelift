@@ -1,0 +1,5 @@
+{
+  "PlayerId": "example-PlayerId",
+  "RegionIdentifier": "us-east-1",
+  "LatencyInMilliseconds": "example-LatencyInMillisecond"
+}

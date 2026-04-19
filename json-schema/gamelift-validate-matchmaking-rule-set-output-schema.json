@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-validate-matchmaking-rule-set-output-schema.json",
+  "title": "ValidateMatchmakingRuleSetOutput",
+  "description": "ValidateMatchmakingRuleSetOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Valid": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanModel"
+        },
+        {
+          "description": "A response indicating whether the rule set is valid."
+        }
+      ]
+    }
+  }
+}

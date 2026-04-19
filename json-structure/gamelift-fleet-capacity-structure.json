@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-fleet-capacity-structure.json",
+  "name": "FleetCapacity",
+  "description": "<p>Current resource capacity settings in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region. </p> <p> <b>Related actions</b> </p> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html\">DescribeFleetCapacity</a> | <a href=\"https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html\">DescribeFleetLocationCapacity</a> | <a href=\"https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html\">UpdateFleetCapacity</a> </p>",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetId"
+        },
+        {
+          "description": "A unique identifier for the fleet associated with the location."
+        }
+      ]
+    },
+    "FleetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetArn"
+        },
+        {
+          "description": "The Amazon Resource Name (<a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html\">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>."
+        }
+      ]
+    },
+    "InstanceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EC2InstanceType"
+        },
+        {
+          "description": "The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions."
+        }
+      ]
+    },
+    "InstanceCounts": {
+      "$ref": "#/components/schemas/EC2InstanceCounts"
+    },
+    "Location": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationStringModel"
+        },
+        {
+          "description": "The fleet location for the instance count information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. "
+        }
+      ]
+    }
+  }
+}

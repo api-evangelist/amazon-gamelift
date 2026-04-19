@@ -1,0 +1,9 @@
+{
+  "AliasId": "example-AliasId",
+  "Name": "MyGameFleet",
+  "AliasArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "Description": "Example game fleet for multiplayer sessions",
+  "RoutingStrategy": "example-RoutingStrategy",
+  "CreationTime": "example-CreationTime",
+  "LastUpdatedTime": "example-LastUpdatedTime"
+}

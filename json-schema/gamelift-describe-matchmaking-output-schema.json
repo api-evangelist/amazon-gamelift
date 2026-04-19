@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-describe-matchmaking-output-schema.json",
+  "title": "DescribeMatchmakingOutput",
+  "description": "DescribeMatchmakingOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "TicketList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MatchmakingTicketList"
+        },
+        {
+          "description": "A collection of existing matchmaking ticket objects matching the request."
+        }
+      ]
+    }
+  }
+}

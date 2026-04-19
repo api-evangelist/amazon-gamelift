@@ -1,0 +1,6 @@
+{
+  "FromPort": 7777,
+  "ToPort": 7777,
+  "IpRange": "10.0.1.100",
+  "Protocol": "example-Protocol"
+}

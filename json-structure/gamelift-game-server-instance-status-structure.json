@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-game-server-instance-status-structure.json",
+  "name": "GameServerInstanceStatus",
+  "description": "GameServerInstanceStatus schema from Amazon GameLift API",
+  "type": "string",
+  "enum": [
+    "ACTIVE",
+    "DRAINING",
+    "SPOT_TERMINATING"
+  ]
+}

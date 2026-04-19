@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-describe-vpc-peering-connections-input-schema.json",
+  "title": "DescribeVpcPeeringConnectionsInput",
+  "description": "DescribeVpcPeeringConnectionsInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetId"
+        },
+        {
+          "description": "A unique identifier for the fleet. You can use either the fleet ID or ARN value."
+        }
+      ]
+    }
+  }
+}

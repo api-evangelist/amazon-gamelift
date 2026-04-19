@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-describe-game-session-queues-output-structure.json",
+  "name": "DescribeGameSessionQueuesOutput",
+  "description": "DescribeGameSessionQueuesOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameSessionQueues": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameSessionQueueList"
+        },
+        {
+          "description": "A collection of objects that describe the requested game session queues."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "ServerProcesses": "example-ServerProcesses",
+  "MaxConcurrentGameSessionActivations": 10,
+  "GameSessionActivationTimeoutSeconds": "example-GameSessionActivatio"
+}

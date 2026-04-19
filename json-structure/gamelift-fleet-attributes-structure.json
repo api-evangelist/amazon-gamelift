@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-fleet-attributes-structure.json",
+  "name": "FleetAttributes",
+  "description": "<p>Describes a Amazon GameLift fleet of game hosting resources.</p> <p> <b>Related actions</b> </p>",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetId"
+        },
+        {
+          "description": "A unique identifier for the fleet."
+        }
+      ]
+    },
+    "FleetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetArn"
+        },
+        {
+          "description": "The Amazon Resource Name (<a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html\">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value."
+        }
+      ]
+    },
+    "FleetType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetType"
+        },
+        {
+          "description": "Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot\"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created."
+        }
+      ]
+    },
+    "InstanceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EC2InstanceType"
+        },
+        {
+          "description": "The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A human-readable description of the fleet."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A descriptive label that is associated with a fleet. Fleet names do not need to be unique."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>\"1469498468.057\"</code>)."
+        }
+      ]
+    },
+    "TerminationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>\"1469498468.057\"</code>)."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetStatus"
+        },
+        {
+          "description": "<p>Current status of the fleet. Possible fleet statuses include the following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1. </p> </li> <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p> </li> <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li> <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li> </ul>"
+        }
+      ]
+    },
+    "BuildId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BuildId"
+        },
+        {
+          "description": "A unique identifier for the build resource that is deployed on instances in this fleet."
+        }
+      ]
+    },
+    "BuildArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BuildArn"
+        },
+        {
+          "description": " The Amazon Resource Name (<a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html\">ARN</a>) associated with the Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the resource ID matches the <code>BuildId</code> value."
+        }
+      ]
+    },
+    "ScriptId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScriptId"
+        },
+        {
+          "description": "A unique identifier for the Realtime script resource that is deployed on instances in this fleet."
+        }
+      ]
+    },
+    "ScriptArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScriptArn"
+        },
+        {
+          "description": " The Amazon Resource Name (<a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html\">ARN</a>) associated with the GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the resource ID matches the <code>ScriptId</code> value."
+        }
+      ]
+    },
+    "ServerLaunchPath": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LaunchPathStringModel"
+        },
+        {
+          "description": " <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href=\"https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html\">RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid."
+        }
+      ]
+    },
+    "ServerLaunchParameters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LaunchParametersStringModel"
+        },
+        {
+          "description": " <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter instead continue to be valid."
+        }
+      ]
+    },
+    "LogPaths": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringList"
+        },
+        {
+          "description": " <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process\">Server API Reference</a>. "
+        }
+      ]
+    },
+    "NewGameSessionProtectionPolicy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProtectionPolicy"
+        },
+        {
+          "description": "<p>The type of game session protection to set on all new instances that are started in the fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li> </ul>"
+        }
+      ]
+    },
+    "OperatingSystem": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OperatingSystem"
+        },
+        {
+          "description": "The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet."
+        }
+      ]
+    },
+    "ResourceCreationLimitPolicy": {
+      "$ref": "#/components/schemas/ResourceCreationLimitPolicy"
+    },
+    "MetricGroups": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricGroupList"
+        },
+        {
+          "description": "Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time."
+        }
+      ]
+    },
+    "StoppedActions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetActionList"
+        },
+        {
+          "description": "A list of fleet activity that has been suspended using <a href=\"https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html\">StopFleetActions</a> . This includes fleet auto-scaling."
+        }
+      ]
+    },
+    "InstanceRoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href=\"https://console.aws.amazon.com/iam/\">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html\"> Access external resources from a game server</a>."
+        }
+      ]
+    },
+    "CertificateConfiguration": {
+      "$ref": "#/components/schemas/CertificateConfiguration"
+    },
+    "ComputeType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputeType"
+        },
+        {
+          "description": "The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift."
+        }
+      ]
+    },
+    "AnywhereConfiguration": {
+      "$ref": "#/components/schemas/AnywhereConfiguration"
+    }
+  }
+}

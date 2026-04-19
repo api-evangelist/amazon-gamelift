@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-create-game-session-input-structure.json",
+  "name": "CreateGameSessionInput",
+  "description": "CreateGameSessionInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both."
+        }
+      ]
+    },
+    "AliasId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AliasIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both."
+        }
+      ]
+    },
+    "MaximumPlayerSessionCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "The maximum number of players that can be connected simultaneously to the game session."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A descriptive label that is associated with a game session. Session names do not need to be unique."
+        }
+      ]
+    },
+    "GameProperties": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GamePropertyList"
+        },
+        {
+          "description": "A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession\">Start a Game Session</a>)."
+        }
+      ]
+    },
+    "CreatorId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "<p>A unique identifier for a player or entity creating the game session. </p> <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per <code>CreatorId</code> per second.</p> <p>To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.</p>"
+        }
+      ]
+    },
+    "GameSessionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdStringModel"
+        },
+        {
+          "description": "<p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p> <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>"
+        }
+      ]
+    },
+    "IdempotencyToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdStringModel"
+        },
+        {
+          "description": "Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted."
+        }
+      ]
+    },
+    "GameSessionData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LargeGameSessionData"
+        },
+        {
+          "description": "A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession\">Start a Game Session</a>)."
+        }
+      ]
+    },
+    "Location": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationStringModel"
+        },
+        {
+          "description": "A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "MaximumPlayerSessionCount"
+  ]
+}

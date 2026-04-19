@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-game-session-connection-info-schema.json",
+  "title": "GameSessionConnectionInfo",
+  "description": "Connection information for a new game session that is created in response to a start matchmaking request. Once a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the matchmaking ticket.",
+  "type": "object",
+  "properties": {
+    "GameSessionArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ArnStringModel"
+        },
+        {
+          "description": "A unique identifier for the game session. Use the game session ID."
+        }
+      ]
+    },
+    "IpAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpAddress"
+        },
+        {
+          "description": "The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number."
+        }
+      ]
+    },
+    "DnsName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DnsName"
+        },
+        {
+          "description": "<p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses\">Amazon EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>"
+        }
+      ]
+    },
+    "Port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PositiveInteger"
+        },
+        {
+          "description": "The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number."
+        }
+      ]
+    },
+    "MatchedPlayerSessions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MatchedPlayerSessionList"
+        },
+        {
+          "description": "A collection of player session IDs, one for each player ID that was included in the original matchmaking request. "
+        }
+      ]
+    }
+  }
+}

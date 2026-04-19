@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-out-of-capacity-exception-structure.json",
+  "name": "OutOfCapacityException",
+  "description": "OutOfCapacityException schema from Amazon GameLift API"
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-non-negative-limited-length-double-structure.json",
+  "name": "NonNegativeLimitedLengthDouble",
+  "description": "NonNegativeLimitedLengthDouble schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": "^\\d{1,5}(?:\\.\\d{1,5})?$",
+  "minLength": 1,
+  "maxLength": 11
+}

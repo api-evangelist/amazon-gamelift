@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-start-match-backfill-output-structure.json",
+  "name": "StartMatchBackfillOutput",
+  "description": "StartMatchBackfillOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "MatchmakingTicket": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MatchmakingTicket"
+        },
+        {
+          "description": "Ticket representing the backfill matchmaking request. This object includes the information in the request, ticket status, and match results as generated during the matchmaking process."
+        }
+      ]
+    }
+  }
+}

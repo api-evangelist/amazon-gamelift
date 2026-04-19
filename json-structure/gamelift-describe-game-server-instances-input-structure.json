@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-describe-game-server-instances-input-structure.json",
+  "name": "DescribeGameServerInstancesInput",
+  "description": "DescribeGameServerInstancesInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameServerGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerGroupNameOrArn"
+        },
+        {
+          "description": "A unique identifier for the game server group. Use either the name or ARN value."
+        }
+      ]
+    },
+    "InstanceIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerInstanceIds"
+        },
+        {
+          "description": "The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. "
+        }
+      ]
+    },
+    "Limit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PositiveInteger"
+        },
+        {
+          "description": "The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value."
+        }
+      ]
+    }
+  },
+  "required": [
+    "GameServerGroupName"
+  ]
+}

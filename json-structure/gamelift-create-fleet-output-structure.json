@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-create-fleet-output-structure.json",
+  "name": "CreateFleetOutput",
+  "description": "CreateFleetOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetAttributes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetAttributes"
+        },
+        {
+          "description": "The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. "
+        }
+      ]
+    },
+    "LocationStates": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationStateList"
+        },
+        {
+          "description": "The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, Amazon GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned."
+        }
+      ]
+    }
+  }
+}

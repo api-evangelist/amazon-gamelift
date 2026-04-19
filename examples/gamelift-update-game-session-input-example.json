@@ -1,0 +1,7 @@
+{
+  "GameSessionId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "MaximumPlayerSessionCount": 10,
+  "Name": "MyGameFleet",
+  "PlayerSessionCreationPolicy": "example-PlayerSessionCreatio",
+  "ProtectionPolicy": "example-ProtectionPolicy"
+}

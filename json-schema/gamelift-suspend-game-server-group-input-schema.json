@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-suspend-game-server-group-input-schema.json",
+  "title": "SuspendGameServerGroupInput",
+  "description": "SuspendGameServerGroupInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameServerGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerGroupNameOrArn"
+        },
+        {
+          "description": "A unique identifier for the game server group. Use either the name or ARN value."
+        }
+      ]
+    },
+    "SuspendActions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerGroupActions"
+        },
+        {
+          "description": "The activity to suspend for this game server group."
+        }
+      ]
+    }
+  },
+  "required": [
+    "GameServerGroupName",
+    "SuspendActions"
+  ]
+}

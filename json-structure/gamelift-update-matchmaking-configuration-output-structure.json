@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-update-matchmaking-configuration-output-structure.json",
+  "name": "UpdateMatchmakingConfigurationOutput",
+  "description": "UpdateMatchmakingConfigurationOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Configuration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MatchmakingConfiguration"
+        },
+        {
+          "description": "The updated matchmaking configuration."
+        }
+      ]
+    }
+  }
+}

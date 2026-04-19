@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-describe-fleet-port-settings-output-structure.json",
+  "name": "DescribeFleetPortSettingsOutput",
+  "description": "DescribeFleetPortSettingsOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetId"
+        },
+        {
+          "description": "A unique identifier for the fleet that was requested. "
+        }
+      ]
+    },
+    "FleetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetArn"
+        },
+        {
+          "description": "The Amazon Resource Name (<a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html\">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>."
+        }
+      ]
+    },
+    "InboundPermissions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpPermissionsList"
+        },
+        {
+          "description": "The port settings for the requested fleet ID."
+        }
+      ]
+    },
+    "UpdateStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationUpdateStatus"
+        },
+        {
+          "description": "The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location."
+        }
+      ]
+    },
+    "Location": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationStringModel"
+        },
+        {
+          "description": "The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. "
+        }
+      ]
+    }
+  }
+}

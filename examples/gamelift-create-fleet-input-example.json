@@ -1,0 +1,12 @@
+{
+  "Name": "MyGameFleet",
+  "Description": "Example game fleet for multiplayer sessions",
+  "BuildId": "example-BuildId",
+  "ScriptId": "10.0.1.100",
+  "ServerLaunchPath": "example-ServerLaunchPath",
+  "ServerLaunchParameters": "example-ServerLaunchParamete",
+  "LogPaths": "example-LogPaths",
+  "EC2InstanceType": "example-EC2InstanceType",
+  "EC2InboundPermissions": "example-EC2InboundPermission",
+  "NewGameSessionProtectionPolicy": "example-NewGameSessionProtec"
+}

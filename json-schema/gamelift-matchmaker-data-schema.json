@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-matchmaker-data-schema.json",
+  "title": "MatchmakerData",
+  "description": "MatchmakerData schema from Amazon GameLift API",
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 390000
+}

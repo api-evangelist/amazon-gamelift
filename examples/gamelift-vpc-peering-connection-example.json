@@ -1,0 +1,9 @@
+{
+  "FleetId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "FleetArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "IpV4CidrBlock": "10.0.1.100",
+  "VpcPeeringConnectionId": "example-VpcPeeringConnection",
+  "Status": "ACTIVE",
+  "PeerVpcId": "example-PeerVpcId",
+  "GameLiftVpcId": "example-GameLiftVpcId"
+}

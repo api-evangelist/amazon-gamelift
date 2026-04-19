@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-create-matchmaking-rule-set-output-schema.json",
+  "title": "CreateMatchmakingRuleSetOutput",
+  "description": "CreateMatchmakingRuleSetOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "RuleSet": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MatchmakingRuleSet"
+        },
+        {
+          "description": "The newly created matchmaking rule set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "RuleSet"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-idempotent-parameter-mismatch-exception-structure.json",
+  "name": "IdempotentParameterMismatchException",
+  "description": "IdempotentParameterMismatchException schema from Amazon GameLift API"
+}

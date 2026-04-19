@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-instance-access-schema.json",
+  "title": "InstanceAccess",
+  "description": "Information required to remotely connect to a fleet instance. ",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetId"
+        },
+        {
+          "description": "A unique identifier for the fleet containing the instance being accessed."
+        }
+      ]
+    },
+    "InstanceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceId"
+        },
+        {
+          "description": "A unique identifier for the instance being accessed."
+        }
+      ]
+    },
+    "IpAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpAddress"
+        },
+        {
+          "description": "IP address that is assigned to the instance."
+        }
+      ]
+    },
+    "OperatingSystem": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OperatingSystem"
+        },
+        {
+          "description": "Operating system that is running on the instance."
+        }
+      ]
+    },
+    "Credentials": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceCredentials"
+        },
+        {
+          "description": "Credentials required to access the instance."
+        }
+      ]
+    }
+  }
+}

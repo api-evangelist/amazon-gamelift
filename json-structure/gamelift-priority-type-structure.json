@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-priority-type-structure.json",
+  "name": "PriorityType",
+  "description": "PriorityType schema from Amazon GameLift API",
+  "type": "string",
+  "enum": [
+    "LATENCY",
+    "COST",
+    "DESTINATION",
+    "LOCATION"
+  ]
+}

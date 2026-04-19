@@ -1,0 +1,12 @@
+{
+  "PlacementId": "example-PlacementId",
+  "GameSessionQueueName": "MyGameFleet",
+  "Status": "ACTIVE",
+  "GameProperties": "example-GameProperties",
+  "MaximumPlayerSessionCount": 10,
+  "GameSessionName": "MyGameFleet",
+  "GameSessionId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "GameSessionArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "GameSessionRegion": "us-east-1",
+  "PlayerLatencies": "example-PlayerLatencies"
+}

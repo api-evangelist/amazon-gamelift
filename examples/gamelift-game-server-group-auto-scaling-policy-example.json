@@ -1,0 +1,4 @@
+{
+  "EstimatedInstanceWarmup": "example-EstimatedInstanceWar",
+  "TargetTrackingConfiguration": "example-TargetTrackingConfig"
+}

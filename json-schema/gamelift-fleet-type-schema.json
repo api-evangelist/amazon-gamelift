@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-fleet-type-schema.json",
+  "title": "FleetType",
+  "description": "FleetType schema from Amazon GameLift API",
+  "type": "string",
+  "enum": [
+    "ON_DEMAND",
+    "SPOT"
+  ]
+}

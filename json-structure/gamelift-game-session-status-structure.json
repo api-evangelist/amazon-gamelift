@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-game-session-status-structure.json",
+  "name": "GameSessionStatus",
+  "description": "GameSessionStatus schema from Amazon GameLift API",
+  "type": "string",
+  "enum": [
+    "ACTIVE",
+    "ACTIVATING",
+    "TERMINATED",
+    "TERMINATING",
+    "ERROR"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-matchmaking-rule-set-arn-schema.json",
+  "title": "MatchmakingRuleSetArn",
+  "description": "Data type used for Matchmaking RuleSet ARN.",
+  "type": "string",
+  "pattern": "^arn:.*:matchmakingruleset\\/[a-zA-Z0-9-\\.]*"
+}

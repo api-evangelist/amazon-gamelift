@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-script-list-schema.json",
+  "title": "ScriptList",
+  "description": "ScriptList schema from Amazon GameLift API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/Script"
+  }
+}

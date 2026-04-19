@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-location-attributes-structure.json",
+  "name": "LocationAttributes",
+  "description": "Details about a location in a multi-location fleet.",
+  "type": "object",
+  "properties": {
+    "LocationState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationState"
+        },
+        {
+          "description": "A fleet location and its current life-cycle state."
+        }
+      ]
+    },
+    "StoppedActions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetActionList"
+        },
+        {
+          "description": "A list of fleet actions that have been suspended in the fleet location."
+        }
+      ]
+    },
+    "UpdateStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationUpdateStatus"
+        },
+        {
+          "description": "The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet been completed for the location."
+        }
+      ]
+    }
+  }
+}

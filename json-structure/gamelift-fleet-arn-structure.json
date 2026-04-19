@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-fleet-arn-structure.json",
+  "name": "FleetArn",
+  "description": "FleetArn schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": "^arn:.*:fleet\\/fleet-\\S+"
+}

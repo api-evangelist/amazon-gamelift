@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-invalid-fleet-status-exception-structure.json",
+  "name": "InvalidFleetStatusException",
+  "description": "InvalidFleetStatusException schema from Amazon GameLift API"
+}

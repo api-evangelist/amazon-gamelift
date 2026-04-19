@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-compute-name-or-arn-schema.json",
+  "title": "ComputeNameOrArn",
+  "description": "ComputeNameOrArn schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": "[a-zA-Z0-9\\-]+|^arn:.*:compute\\/[a-zA-Z0-9\\-]+",
+  "maxLength": 1024
+}

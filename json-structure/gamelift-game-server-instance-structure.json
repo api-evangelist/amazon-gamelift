@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-game-server-instance-structure.json",
+  "name": "GameServerInstance",
+  "description": "<p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p> Additional properties, including status, that describe an EC2 instance in a game server group. Instance configurations are set with game server group properties (see <code>DescribeGameServerGroup</code> and with the EC2 launch template that was used when creating the game server group. </p> <p>Retrieve game server instances for a game server group by calling <code>DescribeGameServerInstances</code>. </p>",
+  "type": "object",
+  "properties": {
+    "GameServerGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerGroupName"
+        },
+        {
+          "description": "A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account."
+        }
+      ]
+    },
+    "GameServerGroupArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerGroupArn"
+        },
+        {
+          "description": "A generated unique identifier for the game server group that includes the game server instance. "
+        }
+      ]
+    },
+    "InstanceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerInstanceId"
+        },
+        {
+          "description": "The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>."
+        }
+      ]
+    },
+    "InstanceStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerInstanceStatus"
+        },
+        {
+          "description": "Current status of the game server instance"
+        }
+      ]
+    }
+  }
+}

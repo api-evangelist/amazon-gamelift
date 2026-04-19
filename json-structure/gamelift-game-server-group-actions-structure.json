@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-game-server-group-actions-structure.json",
+  "name": "GameServerGroupActions",
+  "description": "GameServerGroupActions schema from Amazon GameLift API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/GameServerGroupAction"
+  },
+  "minItems": 1,
+  "maxItems": 1
+}

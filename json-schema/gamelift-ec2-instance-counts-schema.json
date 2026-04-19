@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-ec2-instance-counts-schema.json",
+  "title": "EC2InstanceCounts",
+  "description": "Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.",
+  "type": "object",
+  "properties": {
+    "DESIRED": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "Ideal number of active instances. GameLift will always try to maintain the desired number of instances. Capacity is scaled up or down by changing the desired instances. "
+        }
+      ]
+    },
+    "MINIMUM": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "The minimum instance count value allowed."
+        }
+      ]
+    },
+    "MAXIMUM": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "The maximum instance count value allowed."
+        }
+      ]
+    },
+    "PENDING": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "Number of instances that are starting but not yet active."
+        }
+      ]
+    },
+    "ACTIVE": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "Actual number of instances that are ready to host game sessions."
+        }
+      ]
+    },
+    "IDLE": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "Number of active instances that are not currently hosting a game session."
+        }
+      ]
+    },
+    "TERMINATING": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "Number of instances that are no longer active but haven't yet been terminated."
+        }
+      ]
+    }
+  }
+}

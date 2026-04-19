@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-claim-game-server-input-schema.json",
+  "title": "ClaimGameServerInput",
+  "description": "ClaimGameServerInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameServerGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerGroupNameOrArn"
+        },
+        {
+          "description": "A unique identifier for the game server group where the game server is running. If you are not specifying a game server to claim, this value identifies where you want Amazon GameLift FleetIQ to look for an available game server to claim. "
+        }
+      ]
+    },
+    "GameServerId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerId"
+        },
+        {
+          "description": "A custom string that uniquely identifies the game server to claim. If this parameter is left empty, Amazon GameLift FleetIQ searches for an available game server in the specified game server group."
+        }
+      ]
+    },
+    "GameServerData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerData"
+        },
+        {
+          "description": "A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "GameServerGroupName"
+  ]
+}

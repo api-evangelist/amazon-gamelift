@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-player-session-id-structure.json",
+  "name": "PlayerSessionId",
+  "description": "PlayerSessionId schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": "^psess-\\S+"
+}

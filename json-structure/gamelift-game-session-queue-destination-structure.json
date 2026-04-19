@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-game-session-queue-destination-structure.json",
+  "name": "GameSessionQueueDestination",
+  "description": "A fleet or alias designated in a game session queue. Queues fulfill requests for new game sessions by placing a new game session on any of the queue's destinations. ",
+  "type": "object",
+  "properties": {
+    "DestinationArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ArnStringModel"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions."
+        }
+      ]
+    }
+  }
+}

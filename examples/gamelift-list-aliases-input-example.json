@@ -1,0 +1,6 @@
+{
+  "RoutingStrategyType": "example-RoutingStrategyType",
+  "Name": "MyGameFleet",
+  "Limit": "example-Limit",
+  "NextToken": "example-NextToken"
+}

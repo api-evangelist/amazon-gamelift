@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-s3-location-schema.json",
+  "title": "S3Location",
+  "description": "The location in Amazon S3 where build or script files are stored for access by Amazon GameLift.",
+  "type": "object",
+  "properties": {
+    "Bucket": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "<p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note> <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p> </note>"
+        }
+      ]
+    },
+    "Key": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The name of the zip file that contains the build files or script files. "
+        }
+      ]
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The Amazon Resource Name (<a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html\">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket."
+        }
+      ]
+    },
+    "ObjectVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. "
+        }
+      ]
+    }
+  }
+}

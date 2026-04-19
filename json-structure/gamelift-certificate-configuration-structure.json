@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-certificate-configuration-structure.json",
+  "name": "CertificateConfiguration",
+  "description": "Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html\">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. ",
+  "type": "object",
+  "properties": {
+    "CertificateType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CertificateType"
+        },
+        {
+          "description": "<p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p> <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "CertificateType"
+  ]
+}

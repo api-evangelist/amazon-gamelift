@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-create-game-session-queue-output-schema.json",
+  "title": "CreateGameSessionQueueOutput",
+  "description": "CreateGameSessionQueueOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameSessionQueue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameSessionQueue"
+        },
+        {
+          "description": "An object that describes the newly created game session queue."
+        }
+      ]
+    }
+  }
+}

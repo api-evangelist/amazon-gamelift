@@ -1,0 +1,1326 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "gamelift": "https://aws.amazon.com/gamelift/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "MatchmakingTicket": {
+      "@id": "gamelift:MatchmakingTicket",
+      "@type": "xsd:string"
+    },
+    "DeleteMatchmakingRuleSetOutput": "gamelift:DeleteMatchmakingRuleSetOutput",
+    "DescribeVpcPeeringAuthorizationsOutput": "gamelift:DescribeVpcPeeringAuthorizationsOutput",
+    "AcceptMatchOutput": "gamelift:AcceptMatchOutput",
+    "UpdateFleetAttributesOutput": "gamelift:UpdateFleetAttributesOutput",
+    "InstanceDefinition": "gamelift:InstanceDefinition",
+    "DescribeVpcPeeringConnectionsOutput": "gamelift:DescribeVpcPeeringConnectionsOutput",
+    "DeleteMatchmakingRuleSetInput": "gamelift:DeleteMatchmakingRuleSetInput",
+    "DescribeVpcPeeringConnectionsInput": "gamelift:DescribeVpcPeeringConnectionsInput",
+    "UpdateFleetCapacityOutput": "gamelift:UpdateFleetCapacityOutput",
+    "StartGameSessionPlacementOutput": "gamelift:StartGameSessionPlacementOutput",
+    "ListAliasesInput": "gamelift:ListAliasesInput",
+    "DeleteLocationOutput": "gamelift:DeleteLocationOutput",
+    "ListLocationsOutput": "gamelift:ListLocationsOutput",
+    "DescribeFleetLocationUtilizationInput": "gamelift:DescribeFleetLocationUtilizationInput",
+    "GameServerGroupAutoScalingPolicy": "gamelift:GameServerGroupAutoScalingPolicy",
+    "DeleteBuildInput": "gamelift:DeleteBuildInput",
+    "UpdateRuntimeConfigurationOutput": "gamelift:UpdateRuntimeConfigurationOutput",
+    "Build": {
+      "@id": "gamelift:Build",
+      "@type": "xsd:string"
+    },
+    "GameSessionDetail": "gamelift:GameSessionDetail",
+    "ListComputeInput": "gamelift:ListComputeInput",
+    "CreateVpcPeeringAuthorizationOutput": "gamelift:CreateVpcPeeringAuthorizationOutput",
+    "ListGameServersOutput": "gamelift:ListGameServersOutput",
+    "DescribeGameServerGroupOutput": "gamelift:DescribeGameServerGroupOutput",
+    "StartFleetActionsOutput": "gamelift:StartFleetActionsOutput",
+    "DescribeFleetPortSettingsInput": "gamelift:DescribeFleetPortSettingsInput",
+    "DescribeFleetUtilizationOutput": "gamelift:DescribeFleetUtilizationOutput",
+    "DescribeFleetEventsOutput": "gamelift:DescribeFleetEventsOutput",
+    "DescribeBuildInput": "gamelift:DescribeBuildInput",
+    "CreateGameSessionOutput": "gamelift:CreateGameSessionOutput",
+    "CreateAliasInput": "gamelift:CreateAliasInput",
+    "ValidateMatchmakingRuleSetOutput": "gamelift:ValidateMatchmakingRuleSetOutput",
+    "PutScalingPolicyOutput": "gamelift:PutScalingPolicyOutput",
+    "DescribeFleetEventsInput": "gamelift:DescribeFleetEventsInput",
+    "GameSessionConnectionInfo": {
+      "@id": "gamelift:GameSessionConnectionInfo",
+      "@type": "xsd:string"
+    },
+    "CreateGameServerGroupInput": "gamelift:CreateGameServerGroupInput",
+    "ListTagsForResourceRequest": "gamelift:ListTagsForResourceRequest",
+    "DescribeFleetLocationUtilizationOutput": "gamelift:DescribeFleetLocationUtilizationOutput",
+    "GetInstanceAccessInput": "gamelift:GetInstanceAccessInput",
+    "GetComputeAuthTokenInput": "gamelift:GetComputeAuthTokenInput",
+    "DeleteVpcPeeringAuthorizationInput": "gamelift:DeleteVpcPeeringAuthorizationInput",
+    "DescribeGameSessionDetailsInput": "gamelift:DescribeGameSessionDetailsInput",
+    "GetGameSessionLogUrlOutput": "gamelift:GetGameSessionLogUrlOutput",
+    "GameProperty": "gamelift:GameProperty",
+    "VpcPeeringAuthorization": {
+      "@id": "gamelift:VpcPeeringAuthorization",
+      "@type": "xsd:string"
+    },
+    "SuspendGameServerGroupInput": "gamelift:SuspendGameServerGroupInput",
+    "CreatePlayerSessionInput": "gamelift:CreatePlayerSessionInput",
+    "StartGameSessionPlacementInput": "gamelift:StartGameSessionPlacementInput",
+    "UpdateGameServerOutput": "gamelift:UpdateGameServerOutput",
+    "ListLocationsInput": "gamelift:ListLocationsInput",
+    "DescribeGameSessionPlacementInput": "gamelift:DescribeGameSessionPlacementInput",
+    "DescribeGameServerInstancesInput": "gamelift:DescribeGameServerInstancesInput",
+    "CreateFleetLocationsInput": "gamelift:CreateFleetLocationsInput",
+    "GameSessionQueue": {
+      "@id": "gamelift:GameSessionQueue",
+      "@type": "xsd:string"
+    },
+    "DescribeFleetUtilizationInput": "gamelift:DescribeFleetUtilizationInput",
+    "PlayerSession": {
+      "@id": "gamelift:PlayerSession",
+      "@type": "xsd:string"
+    },
+    "DeleteFleetLocationsInput": "gamelift:DeleteFleetLocationsInput",
+    "DeregisterGameServerInput": "gamelift:DeregisterGameServerInput",
+    "DescribeScalingPoliciesInput": "gamelift:DescribeScalingPoliciesInput",
+    "CreateGameSessionQueueOutput": "gamelift:CreateGameSessionQueueOutput",
+    "ResourceCreationLimitPolicy": {
+      "@id": "gamelift:ResourceCreationLimitPolicy",
+      "@type": "xsd:string"
+    },
+    "UntagResourceResponse": "gamelift:UntagResourceResponse",
+    "DeleteFleetLocationsOutput": "gamelift:DeleteFleetLocationsOutput",
+    "UpdateGameSessionQueueOutput": "gamelift:UpdateGameSessionQueueOutput",
+    "DescribeFleetLocationAttributesInput": "gamelift:DescribeFleetLocationAttributesInput",
+    "CreateVpcPeeringAuthorizationInput": "gamelift:CreateVpcPeeringAuthorizationInput",
+    "DescribeMatchmakingOutput": "gamelift:DescribeMatchmakingOutput",
+    "UntagResourceRequest": "gamelift:UntagResourceRequest",
+    "DeleteScriptInput": "gamelift:DeleteScriptInput",
+    "Player": "gamelift:Player",
+    "DescribeGameSessionPlacementOutput": "gamelift:DescribeGameSessionPlacementOutput",
+    "DescribeFleetCapacityOutput": "gamelift:DescribeFleetCapacityOutput",
+    "DescribePlayerSessionsOutput": "gamelift:DescribePlayerSessionsOutput",
+    "DescribeFleetLocationAttributesOutput": "gamelift:DescribeFleetLocationAttributesOutput",
+    "CreateFleetInput": "gamelift:CreateFleetInput",
+    "DescribeFleetLocationCapacityInput": "gamelift:DescribeFleetLocationCapacityInput",
+    "RegisterComputeInput": "gamelift:RegisterComputeInput",
+    "RoutingStrategy": {
+      "@id": "gamelift:RoutingStrategy",
+      "@type": "xsd:string"
+    },
+    "DeleteLocationInput": "gamelift:DeleteLocationInput",
+    "UpdateAliasInput": "gamelift:UpdateAliasInput",
+    "S3Location": "gamelift:S3Location",
+    "UpdateScriptInput": "gamelift:UpdateScriptInput",
+    "ListBuildsOutput": "gamelift:ListBuildsOutput",
+    "RuntimeConfiguration": {
+      "@id": "gamelift:RuntimeConfiguration",
+      "@type": "xsd:string"
+    },
+    "StopMatchmakingOutput": "gamelift:StopMatchmakingOutput",
+    "UpdateFleetPortSettingsInput": "gamelift:UpdateFleetPortSettingsInput",
+    "PlayerDataMap": {
+      "@id": "gamelift:PlayerDataMap",
+      "@type": "xsd:string"
+    },
+    "MatchmakingRuleSet": "gamelift:MatchmakingRuleSet",
+    "DescribeFleetLocationCapacityOutput": "gamelift:DescribeFleetLocationCapacityOutput",
+    "PlayerLatencyPolicy": "gamelift:PlayerLatencyPolicy",
+    "UpdateGameServerInput": "gamelift:UpdateGameServerInput",
+    "DescribeMatchmakingRuleSetsInput": "gamelift:DescribeMatchmakingRuleSetsInput",
+    "CreateFleetLocationsOutput": "gamelift:CreateFleetLocationsOutput",
+    "ListGameServersInput": "gamelift:ListGameServersInput",
+    "SearchGameSessionsInput": "gamelift:SearchGameSessionsInput",
+    "UpdateGameServerGroupOutput": "gamelift:UpdateGameServerGroupOutput",
+    "DescribeScriptInput": "gamelift:DescribeScriptInput",
+    "DescribeRuntimeConfigurationOutput": "gamelift:DescribeRuntimeConfigurationOutput",
+    "PlayerLatency": "gamelift:PlayerLatency",
+    "Compute": {
+      "@id": "gamelift:Compute",
+      "@type": "xsd:string"
+    },
+    "DescribeMatchmakingRuleSetsOutput": "gamelift:DescribeMatchmakingRuleSetsOutput",
+    "DescribeGameSessionsInput": "gamelift:DescribeGameSessionsInput",
+    "MatchmakingConfiguration": "gamelift:MatchmakingConfiguration",
+    "DescribeMatchmakingConfigurationsOutput": "gamelift:DescribeMatchmakingConfigurationsOutput",
+    "ListTagsForResourceResponse": "gamelift:ListTagsForResourceResponse",
+    "PutScalingPolicyInput": "gamelift:PutScalingPolicyInput",
+    "ResumeGameServerGroupOutput": "gamelift:ResumeGameServerGroupOutput",
+    "DeleteGameServerGroupInput": "gamelift:DeleteGameServerGroupInput",
+    "UpdateFleetCapacityInput": "gamelift:UpdateFleetCapacityInput",
+    "SearchGameSessionsOutput": "gamelift:SearchGameSessionsOutput",
+    "EC2InstanceCounts": "gamelift:EC2InstanceCounts",
+    "TargetConfiguration": {
+      "@id": "gamelift:TargetConfiguration",
+      "@type": "xsd:string"
+    },
+    "ClaimGameServerInput": "gamelift:ClaimGameServerInput",
+    "DeleteMatchmakingConfigurationOutput": "gamelift:DeleteMatchmakingConfigurationOutput",
+    "CreateGameServerGroupOutput": "gamelift:CreateGameServerGroupOutput",
+    "StopFleetActionsInput": "gamelift:StopFleetActionsInput",
+    "ValidateMatchmakingRuleSetInput": "gamelift:ValidateMatchmakingRuleSetInput",
+    "LocationAttributes": {
+      "@id": "gamelift:LocationAttributes",
+      "@type": "xsd:string"
+    },
+    "DescribeGameServerOutput": "gamelift:DescribeGameServerOutput",
+    "CreatePlayerSessionsInput": "gamelift:CreatePlayerSessionsInput",
+    "PlayerAttributeStringDoubleMap": "gamelift:PlayerAttributeStringDoubleMap",
+    "GetComputeAccessOutput": "gamelift:GetComputeAccessOutput",
+    "CreateScriptInput": "gamelift:CreateScriptInput",
+    "CreateLocationInput": "gamelift:CreateLocationInput",
+    "FleetUtilization": {
+      "@id": "gamelift:FleetUtilization",
+      "@type": "xsd:string"
+    },
+    "ListAliasesOutput": "gamelift:ListAliasesOutput",
+    "DescribeGameSessionQueuesOutput": "gamelift:DescribeGameSessionQueuesOutput",
+    "DesiredPlayerSession": "gamelift:DesiredPlayerSession",
+    "ListFleetsOutput": "gamelift:ListFleetsOutput",
+    "RequestUploadCredentialsInput": "gamelift:RequestUploadCredentialsInput",
+    "DeregisterComputeInput": "gamelift:DeregisterComputeInput",
+    "Event": "gamelift:Event",
+    "DescribeMatchmakingConfigurationsInput": "gamelift:DescribeMatchmakingConfigurationsInput",
+    "LocationConfiguration": "gamelift:LocationConfiguration",
+    "DeleteGameServerGroupOutput": "gamelift:DeleteGameServerGroupOutput",
+    "DescribeFleetAttributesOutput": "gamelift:DescribeFleetAttributesOutput",
+    "GameServer": {
+      "@id": "gamelift:GameServer",
+      "@type": "xsd:string"
+    },
+    "StopGameSessionPlacementOutput": "gamelift:StopGameSessionPlacementOutput",
+    "AcceptMatchInput": "gamelift:AcceptMatchInput",
+    "VpcPeeringConnectionStatus": "gamelift:VpcPeeringConnectionStatus",
+    "DeleteGameSessionQueueOutput": "gamelift:DeleteGameSessionQueueOutput",
+    "SuspendGameServerGroupOutput": "gamelift:SuspendGameServerGroupOutput",
+    "LocationState": {
+      "@id": "gamelift:LocationState",
+      "@type": "xsd:string"
+    },
+    "TagResourceResponse": "gamelift:TagResourceResponse",
+    "UpdateBuildInput": "gamelift:UpdateBuildInput",
+    "CreateVpcPeeringConnectionInput": "gamelift:CreateVpcPeeringConnectionInput",
+    "UpdateScriptOutput": "gamelift:UpdateScriptOutput",
+    "DeleteVpcPeeringConnectionOutput": "gamelift:DeleteVpcPeeringConnectionOutput",
+    "DescribeComputeInput": "gamelift:DescribeComputeInput",
+    "DescribeComputeOutput": "gamelift:DescribeComputeOutput",
+    "GetComputeAccessInput": "gamelift:GetComputeAccessInput",
+    "ListScriptsOutput": "gamelift:ListScriptsOutput",
+    "DescribeFleetPortSettingsOutput": "gamelift:DescribeFleetPortSettingsOutput",
+    "TagResourceRequest": "gamelift:TagResourceRequest",
+    "GetInstanceAccessOutput": "gamelift:GetInstanceAccessOutput",
+    "UpdateAliasOutput": "gamelift:UpdateAliasOutput",
+    "DescribeGameServerGroupInput": "gamelift:DescribeGameServerGroupInput",
+    "CreateLocationOutput": "gamelift:CreateLocationOutput",
+    "LaunchTemplateSpecification": "gamelift:LaunchTemplateSpecification",
+    "IpPermission": "gamelift:IpPermission",
+    "GameSession": {
+      "@id": "gamelift:GameSession",
+      "@type": "xsd:string"
+    },
+    "CreateMatchmakingConfigurationInput": "gamelift:CreateMatchmakingConfigurationInput",
+    "FleetAttributes": {
+      "@id": "gamelift:FleetAttributes",
+      "@type": "xsd:string"
+    },
+    "FilterConfiguration": {
+      "@id": "gamelift:FilterConfiguration",
+      "@type": "xsd:string"
+    },
+    "StartMatchBackfillInput": "gamelift:StartMatchBackfillInput",
+    "DescribeMatchmakingInput": "gamelift:DescribeMatchmakingInput",
+    "DescribeAliasOutput": "gamelift:DescribeAliasOutput",
+    "GameServerInstance": "gamelift:GameServerInstance",
+    "CreatePlayerSessionOutput": "gamelift:CreatePlayerSessionOutput",
+    "MatchedPlayerSession": "gamelift:MatchedPlayerSession",
+    "UpdateMatchmakingConfigurationOutput": "gamelift:UpdateMatchmakingConfigurationOutput",
+    "CreateMatchmakingRuleSetInput": "gamelift:CreateMatchmakingRuleSetInput",
+    "ClaimGameServerOutput": "gamelift:ClaimGameServerOutput",
+    "GameServerGroup": {
+      "@id": "gamelift:GameServerGroup",
+      "@type": "xsd:string"
+    },
+    "StopFleetActionsOutput": "gamelift:StopFleetActionsOutput",
+    "DescribeScriptOutput": "gamelift:DescribeScriptOutput",
+    "DescribeRuntimeConfigurationInput": "gamelift:DescribeRuntimeConfigurationInput",
+    "CreateMatchmakingRuleSetOutput": "gamelift:CreateMatchmakingRuleSetOutput",
+    "DeleteFleetInput": "gamelift:DeleteFleetInput",
+    "DescribeGameServerInput": "gamelift:DescribeGameServerInput",
+    "InstanceAccess": {
+      "@id": "gamelift:InstanceAccess",
+      "@type": "xsd:string"
+    },
+    "TargetTrackingConfiguration": {
+      "@id": "gamelift:TargetTrackingConfiguration",
+      "@type": "xsd:string"
+    },
+    "RequestUploadCredentialsOutput": "gamelift:RequestUploadCredentialsOutput",
+    "AnywhereConfiguration": {
+      "@id": "gamelift:AnywhereConfiguration",
+      "@type": "xsd:string"
+    },
+    "DescribeGameSessionsOutput": "gamelift:DescribeGameSessionsOutput",
+    "CreateAliasOutput": "gamelift:CreateAliasOutput",
+    "CreateMatchmakingConfigurationOutput": "gamelift:CreateMatchmakingConfigurationOutput",
+    "RegisterGameServerOutput": "gamelift:RegisterGameServerOutput",
+    "DescribeScalingPoliciesOutput": "gamelift:DescribeScalingPoliciesOutput",
+    "ListGameServerGroupsInput": "gamelift:ListGameServerGroupsInput",
+    "UpdateFleetPortSettingsOutput": "gamelift:UpdateFleetPortSettingsOutput",
+    "Script": {
+      "@id": "gamelift:Script",
+      "@type": "xsd:string"
+    },
+    "GameSessionQueueDestination": "gamelift:GameSessionQueueDestination",
+    "LocationModel": "gamelift:LocationModel",
+    "DescribeEC2InstanceLimitsOutput": "gamelift:DescribeEC2InstanceLimitsOutput",
+    "DescribeGameSessionDetailsOutput": "gamelift:DescribeGameSessionDetailsOutput",
+    "EC2InstanceLimit": "gamelift:EC2InstanceLimit",
+    "GameSessionPlacement": {
+      "@id": "gamelift:GameSessionPlacement",
+      "@type": "xsd:string"
+    },
+    "ResolveAliasInput": "gamelift:ResolveAliasInput",
+    "FleetCapacity": {
+      "@id": "gamelift:FleetCapacity",
+      "@type": "xsd:string"
+    },
+    "StartMatchmakingInput": "gamelift:StartMatchmakingInput",
+    "CreateGameSessionQueueInput": "gamelift:CreateGameSessionQueueInput",
+    "UpdateBuildOutput": "gamelift:UpdateBuildOutput",
+    "AwsCredentials": "gamelift:AwsCredentials",
+    "CreateScriptOutput": "gamelift:CreateScriptOutput",
+    "UpdateGameSessionInput": "gamelift:UpdateGameSessionInput",
+    "DescribeAliasInput": "gamelift:DescribeAliasInput",
+    "StartMatchmakingOutput": "gamelift:StartMatchmakingOutput",
+    "DeleteVpcPeeringAuthorizationOutput": "gamelift:DeleteVpcPeeringAuthorizationOutput",
+    "ResolveAliasOutput": "gamelift:ResolveAliasOutput",
+    "ListBuildsInput": "gamelift:ListBuildsInput",
+    "DescribeBuildOutput": "gamelift:DescribeBuildOutput",
+    "LatencyMap": "gamelift:LatencyMap",
+    "GetGameSessionLogUrlInput": "gamelift:GetGameSessionLogUrlInput",
+    "DeleteAliasInput": "gamelift:DeleteAliasInput",
+    "UpdateGameSessionOutput": "gamelift:UpdateGameSessionOutput",
+    "UpdateMatchmakingConfigurationInput": "gamelift:UpdateMatchmakingConfigurationInput",
+    "DescribeFleetAttributesInput": "gamelift:DescribeFleetAttributesInput",
+    "CertificateConfiguration": {
+      "@id": "gamelift:CertificateConfiguration",
+      "@type": "xsd:string"
+    },
+    "DeleteGameSessionQueueInput": "gamelift:DeleteGameSessionQueueInput",
+    "ResumeGameServerGroupInput": "gamelift:ResumeGameServerGroupInput",
+    "VpcPeeringConnection": "gamelift:VpcPeeringConnection",
+    "InstanceCredentials": "gamelift:InstanceCredentials",
+    "ListScriptsInput": "gamelift:ListScriptsInput",
+    "DescribeInstancesOutput": "gamelift:DescribeInstancesOutput",
+    "StopMatchmakingInput": "gamelift:StopMatchmakingInput",
+    "RegisterComputeOutput": "gamelift:RegisterComputeOutput",
+    "DescribeVpcPeeringAuthorizationsInput": "gamelift:DescribeVpcPeeringAuthorizationsInput",
+    "UpdateRuntimeConfigurationInput": "gamelift:UpdateRuntimeConfigurationInput",
+    "ServerProcess": "gamelift:ServerProcess",
+    "StartMatchBackfillOutput": "gamelift:StartMatchBackfillOutput",
+    "CreateVpcPeeringConnectionOutput": "gamelift:CreateVpcPeeringConnectionOutput",
+    "StartFleetActionsInput": "gamelift:StartFleetActionsInput",
+    "ListFleetsInput": "gamelift:ListFleetsInput",
+    "CreateBuildOutput": "gamelift:CreateBuildOutput",
+    "CreateGameSessionInput": "gamelift:CreateGameSessionInput",
+    "DescribeFleetCapacityInput": "gamelift:DescribeFleetCapacityInput",
+    "DeleteVpcPeeringConnectionInput": "gamelift:DeleteVpcPeeringConnectionInput",
+    "DescribeGameSessionQueuesInput": "gamelift:DescribeGameSessionQueuesInput",
+    "PlacedPlayerSession": "gamelift:PlacedPlayerSession",
+    "CreatePlayerSessionsOutput": "gamelift:CreatePlayerSessionsOutput",
+    "UpdateGameServerGroupInput": "gamelift:UpdateGameServerGroupInput",
+    "DescribeGameServerInstancesOutput": "gamelift:DescribeGameServerInstancesOutput",
+    "Instance": "gamelift:Instance",
+    "ListComputeOutput": "gamelift:ListComputeOutput",
+    "DescribeEC2InstanceLimitsInput": "gamelift:DescribeEC2InstanceLimitsInput",
+    "PriorityConfiguration": {
+      "@id": "gamelift:PriorityConfiguration",
+      "@type": "xsd:string"
+    },
+    "ScalingPolicy": "gamelift:ScalingPolicy",
+    "DeregisterComputeOutput": "gamelift:DeregisterComputeOutput",
+    "UpdateGameSessionQueueInput": "gamelift:UpdateGameSessionQueueInput",
+    "UpdateFleetAttributesInput": "gamelift:UpdateFleetAttributesInput",
+    "PlayerAttributeMap": "gamelift:PlayerAttributeMap",
+    "DescribePlayerSessionsInput": "gamelift:DescribePlayerSessionsInput",
+    "StopGameSessionPlacementInput": "gamelift:StopGameSessionPlacementInput",
+    "CreateFleetOutput": "gamelift:CreateFleetOutput",
+    "RegisterGameServerInput": "gamelift:RegisterGameServerInput",
+    "CreateBuildInput": "gamelift:CreateBuildInput",
+    "DescribeInstancesInput": "gamelift:DescribeInstancesInput",
+    "ListGameServerGroupsOutput": "gamelift:ListGameServerGroupsOutput",
+    "DeleteMatchmakingConfigurationInput": "gamelift:DeleteMatchmakingConfigurationInput",
+    "Alias": {
+      "@id": "gamelift:Alias",
+      "@type": "xsd:string"
+    },
+    "GetComputeAuthTokenOutput": "gamelift:GetComputeAuthTokenOutput",
+    "DeleteScalingPolicyInput": "gamelift:DeleteScalingPolicyInput",
+    "TicketId": {
+      "@id": "gamelift:TicketId",
+      "@type": "xsd:string"
+    },
+    "ConfigurationName": {
+      "@id": "gamelift:ConfigurationName",
+      "@type": "xsd:string"
+    },
+    "ConfigurationArn": {
+      "@id": "gamelift:ConfigurationArn",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "gamelift:Status",
+      "@type": "xsd:string"
+    },
+    "StatusReason": {
+      "@id": "gamelift:StatusReason",
+      "@type": "xsd:string"
+    },
+    "StatusMessage": {
+      "@id": "gamelift:StatusMessage",
+      "@type": "xsd:string"
+    },
+    "StartTime": {
+      "@id": "gamelift:StartTime",
+      "@type": "xsd:string"
+    },
+    "EndTime": {
+      "@id": "gamelift:EndTime",
+      "@type": "xsd:string"
+    },
+    "Players": {
+      "@id": "gamelift:Players",
+      "@type": "xsd:string"
+    },
+    "EstimatedWaitTime": {
+      "@id": "gamelift:EstimatedWaitTime",
+      "@type": "xsd:string"
+    },
+    "VpcPeeringAuthorizations": {
+      "@id": "gamelift:VpcPeeringAuthorizations",
+      "@type": "xsd:string"
+    },
+    "FleetId": {
+      "@id": "gamelift:FleetId",
+      "@type": "xsd:string"
+    },
+    "FleetArn": {
+      "@id": "gamelift:FleetArn",
+      "@type": "xsd:string"
+    },
+    "InstanceType": {
+      "@id": "gamelift:InstanceType",
+      "@type": "xsd:string"
+    },
+    "WeightedCapacity": {
+      "@id": "gamelift:WeightedCapacity",
+      "@type": "xsd:string"
+    },
+    "VpcPeeringConnections": {
+      "@id": "gamelift:VpcPeeringConnections",
+      "@type": "xsd:string"
+    },
+    "Name": "schema:name",
+    "Location": {
+      "@id": "gamelift:Location",
+      "@type": "xsd:string"
+    },
+    "RoutingStrategyType": {
+      "@id": "gamelift:RoutingStrategyType",
+      "@type": "xsd:string"
+    },
+    "Limit": {
+      "@id": "gamelift:Limit",
+      "@type": "xsd:string"
+    },
+    "NextToken": {
+      "@id": "gamelift:NextToken",
+      "@type": "xsd:string"
+    },
+    "Locations": {
+      "@id": "gamelift:Locations",
+      "@type": "xsd:string"
+    },
+    "EstimatedInstanceWarmup": {
+      "@id": "gamelift:EstimatedInstanceWarmup",
+      "@type": "xsd:string"
+    },
+    "BuildId": {
+      "@id": "gamelift:BuildId",
+      "@type": "xsd:string"
+    },
+    "BuildArn": {
+      "@id": "gamelift:BuildArn",
+      "@type": "xsd:string"
+    },
+    "Version": "schema:version",
+    "SizeOnDisk": {
+      "@id": "gamelift:SizeOnDisk",
+      "@type": "xsd:string"
+    },
+    "OperatingSystem": {
+      "@id": "gamelift:OperatingSystem",
+      "@type": "xsd:string"
+    },
+    "CreationTime": {
+      "@id": "gamelift:CreationTime",
+      "@type": "xsd:string"
+    },
+    "ServerSdkVersion": {
+      "@id": "gamelift:ServerSdkVersion",
+      "@type": "xsd:string"
+    },
+    "ProtectionPolicy": {
+      "@id": "gamelift:ProtectionPolicy",
+      "@type": "xsd:string"
+    },
+    "GameServers": {
+      "@id": "gamelift:GameServers",
+      "@type": "xsd:string"
+    },
+    "Events": {
+      "@id": "gamelift:Events",
+      "@type": "xsd:string"
+    },
+    "Description": "schema:description",
+    "Tags": {
+      "@id": "gamelift:Tags",
+      "@type": "xsd:string"
+    },
+    "Valid": {
+      "@id": "gamelift:Valid",
+      "@type": "xsd:string"
+    },
+    "GameSessionArn": {
+      "@id": "gamelift:GameSessionArn",
+      "@type": "xsd:string"
+    },
+    "IpAddress": {
+      "@id": "gamelift:IpAddress",
+      "@type": "xsd:string"
+    },
+    "DnsName": {
+      "@id": "gamelift:DnsName",
+      "@type": "xsd:string"
+    },
+    "Port": {
+      "@id": "gamelift:Port",
+      "@type": "xsd:string"
+    },
+    "MatchedPlayerSessions": {
+      "@id": "gamelift:MatchedPlayerSessions",
+      "@type": "xsd:string"
+    },
+    "GameServerGroupName": {
+      "@id": "gamelift:GameServerGroupName",
+      "@type": "xsd:string"
+    },
+    "RoleArn": {
+      "@id": "gamelift:RoleArn",
+      "@type": "xsd:string"
+    },
+    "MinSize": {
+      "@id": "gamelift:MinSize",
+      "@type": "xsd:string"
+    },
+    "MaxSize": {
+      "@id": "gamelift:MaxSize",
+      "@type": "xsd:string"
+    },
+    "LaunchTemplate": {
+      "@id": "gamelift:LaunchTemplate",
+      "@type": "xsd:string"
+    },
+    "InstanceDefinitions": {
+      "@id": "gamelift:InstanceDefinitions",
+      "@type": "xsd:string"
+    },
+    "AutoScalingPolicy": {
+      "@id": "gamelift:AutoScalingPolicy",
+      "@type": "xsd:string"
+    },
+    "BalancingStrategy": {
+      "@id": "gamelift:BalancingStrategy",
+      "@type": "xsd:string"
+    },
+    "GameServerProtectionPolicy": {
+      "@id": "gamelift:GameServerProtectionPolicy",
+      "@type": "xsd:string"
+    },
+    "VpcSubnets": {
+      "@id": "gamelift:VpcSubnets",
+      "@type": "xsd:string"
+    },
+    "ResourceARN": {
+      "@id": "gamelift:ResourceARN",
+      "@type": "xsd:string"
+    },
+    "InstanceId": {
+      "@id": "gamelift:InstanceId",
+      "@type": "xsd:string"
+    },
+    "ComputeName": {
+      "@id": "gamelift:ComputeName",
+      "@type": "xsd:string"
+    },
+    "GameLiftAwsAccountId": {
+      "@id": "gamelift:GameLiftAwsAccountId",
+      "@type": "xsd:string"
+    },
+    "PeerVpcId": {
+      "@id": "gamelift:PeerVpcId",
+      "@type": "xsd:string"
+    },
+    "GameSessionId": {
+      "@id": "gamelift:GameSessionId",
+      "@type": "xsd:string"
+    },
+    "AliasId": {
+      "@id": "gamelift:AliasId",
+      "@type": "xsd:string"
+    },
+    "StatusFilter": {
+      "@id": "gamelift:StatusFilter",
+      "@type": "xsd:string"
+    },
+    "PreSignedUrl": {
+      "@id": "gamelift:PreSignedUrl",
+      "@type": "xsd:string"
+    },
+    "Key": {
+      "@id": "gamelift:Key",
+      "@type": "xsd:string"
+    },
+    "Value": {
+      "@id": "gamelift:Value",
+      "@type": "xsd:string"
+    },
+    "PeerVpcAwsAccountId": {
+      "@id": "gamelift:PeerVpcAwsAccountId",
+      "@type": "xsd:string"
+    },
+    "ExpirationTime": {
+      "@id": "gamelift:ExpirationTime",
+      "@type": "xsd:string"
+    },
+    "SuspendActions": {
+      "@id": "gamelift:SuspendActions",
+      "@type": "xsd:string"
+    },
+    "PlayerId": {
+      "@id": "gamelift:PlayerId",
+      "@type": "xsd:string"
+    },
+    "PlayerData": {
+      "@id": "gamelift:PlayerData",
+      "@type": "xsd:string"
+    },
+    "PlacementId": {
+      "@id": "gamelift:PlacementId",
+      "@type": "xsd:string"
+    },
+    "GameSessionQueueName": {
+      "@id": "gamelift:GameSessionQueueName",
+      "@type": "xsd:string"
+    },
+    "GameProperties": {
+      "@id": "gamelift:GameProperties",
+      "@type": "xsd:string"
+    },
+    "MaximumPlayerSessionCount": {
+      "@id": "gamelift:MaximumPlayerSessionCount",
+      "@type": "xsd:string"
+    },
+    "GameSessionName": {
+      "@id": "gamelift:GameSessionName",
+      "@type": "xsd:string"
+    },
+    "PlayerLatencies": {
+      "@id": "gamelift:PlayerLatencies",
+      "@type": "xsd:string"
+    },
+    "DesiredPlayerSessions": {
+      "@id": "gamelift:DesiredPlayerSessions",
+      "@type": "xsd:string"
+    },
+    "GameSessionData": {
+      "@id": "gamelift:GameSessionData",
+      "@type": "xsd:string"
+    },
+    "Filters": {
+      "@id": "gamelift:Filters",
+      "@type": "xsd:string"
+    },
+    "InstanceIds": {
+      "@id": "gamelift:InstanceIds",
+      "@type": "xsd:string"
+    },
+    "GameSessionQueueArn": {
+      "@id": "gamelift:GameSessionQueueArn",
+      "@type": "xsd:string"
+    },
+    "TimeoutInSeconds": {
+      "@id": "gamelift:TimeoutInSeconds",
+      "@type": "xsd:string"
+    },
+    "PlayerLatencyPolicies": {
+      "@id": "gamelift:PlayerLatencyPolicies",
+      "@type": "xsd:string"
+    },
+    "Destinations": {
+      "@id": "gamelift:Destinations",
+      "@type": "xsd:string"
+    },
+    "CustomEventData": {
+      "@id": "gamelift:CustomEventData",
+      "@type": "xsd:string"
+    },
+    "NotificationTarget": {
+      "@id": "gamelift:NotificationTarget",
+      "@type": "xsd:string"
+    },
+    "FleetIds": {
+      "@id": "gamelift:FleetIds",
+      "@type": "xsd:string"
+    },
+    "PlayerSessionId": {
+      "@id": "gamelift:PlayerSessionId",
+      "@type": "xsd:string"
+    },
+    "TerminationTime": {
+      "@id": "gamelift:TerminationTime",
+      "@type": "xsd:string"
+    },
+    "GameServerId": {
+      "@id": "gamelift:GameServerId",
+      "@type": "xsd:string"
+    },
+    "NewGameSessionsPerCreator": {
+      "@id": "gamelift:NewGameSessionsPerCreator",
+      "@type": "xsd:string"
+    },
+    "PolicyPeriodInMinutes": {
+      "@id": "gamelift:PolicyPeriodInMinutes",
+      "@type": "xsd:string"
+    },
+    "LocationStates": {
+      "@id": "gamelift:LocationStates",
+      "@type": "xsd:string"
+    },
+    "TicketList": {
+      "@id": "gamelift:TicketList",
+      "@type": "xsd:string"
+    },
+    "TagKeys": {
+      "@id": "gamelift:TagKeys",
+      "@type": "xsd:string"
+    },
+    "ScriptId": {
+      "@id": "gamelift:ScriptId",
+      "@type": "xsd:string"
+    },
+    "PlayerAttributes": {
+      "@id": "gamelift:PlayerAttributes",
+      "@type": "xsd:string"
+    },
+    "Team": {
+      "@id": "gamelift:Team",
+      "@type": "xsd:string"
+    },
+    "LatencyInMs": {
+      "@id": "gamelift:LatencyInMs",
+      "@type": "xsd:string"
+    },
+    "PlayerSessions": {
+      "@id": "gamelift:PlayerSessions",
+      "@type": "xsd:string"
+    },
+    "ServerLaunchPath": {
+      "@id": "gamelift:ServerLaunchPath",
+      "@type": "xsd:string"
+    },
+    "ServerLaunchParameters": {
+      "@id": "gamelift:ServerLaunchParameters",
+      "@type": "xsd:string"
+    },
+    "LogPaths": {
+      "@id": "gamelift:LogPaths",
+      "@type": "xsd:string"
+    },
+    "EC2InstanceType": {
+      "@id": "gamelift:EC2InstanceType",
+      "@type": "xsd:string"
+    },
+    "EC2InboundPermissions": {
+      "@id": "gamelift:EC2InboundPermissions",
+      "@type": "xsd:string"
+    },
+    "NewGameSessionProtectionPolicy": {
+      "@id": "gamelift:NewGameSessionProtectionPolicy",
+      "@type": "xsd:string"
+    },
+    "MetricGroups": {
+      "@id": "gamelift:MetricGroups",
+      "@type": "xsd:string"
+    },
+    "FleetType": {
+      "@id": "gamelift:FleetType",
+      "@type": "xsd:string"
+    },
+    "InstanceRoleArn": {
+      "@id": "gamelift:InstanceRoleArn",
+      "@type": "xsd:string"
+    },
+    "ComputeType": {
+      "@id": "gamelift:ComputeType",
+      "@type": "xsd:string"
+    },
+    "CertificatePath": {
+      "@id": "gamelift:CertificatePath",
+      "@type": "xsd:string"
+    },
+    "Type": {
+      "@id": "gamelift:Type",
+      "@type": "xsd:string"
+    },
+    "Message": {
+      "@id": "gamelift:Message",
+      "@type": "xsd:string"
+    },
+    "LocationName": {
+      "@id": "gamelift:LocationName",
+      "@type": "xsd:string"
+    },
+    "Bucket": {
+      "@id": "gamelift:Bucket",
+      "@type": "xsd:string"
+    },
+    "ObjectVersion": {
+      "@id": "gamelift:ObjectVersion",
+      "@type": "xsd:string"
+    },
+    "StorageLocation": {
+      "@id": "gamelift:StorageLocation",
+      "@type": "xsd:string"
+    },
+    "ZipFile": {
+      "@id": "gamelift:ZipFile",
+      "@type": "xsd:string"
+    },
+    "Builds": {
+      "@id": "gamelift:Builds",
+      "@type": "xsd:string"
+    },
+    "ServerProcesses": {
+      "@id": "gamelift:ServerProcesses",
+      "@type": "xsd:string"
+    },
+    "MaxConcurrentGameSessionActivations": {
+      "@id": "gamelift:MaxConcurrentGameSessionActivations",
+      "@type": "xsd:string"
+    },
+    "GameSessionActivationTimeoutSeconds": {
+      "@id": "gamelift:GameSessionActivationTimeoutSeconds",
+      "@type": "xsd:string"
+    },
+    "InboundPermissionAuthorizations": {
+      "@id": "gamelift:InboundPermissionAuthorizations",
+      "@type": "xsd:string"
+    },
+    "InboundPermissionRevocations": {
+      "@id": "gamelift:InboundPermissionRevocations",
+      "@type": "xsd:string"
+    },
+    "RuleSetName": {
+      "@id": "gamelift:RuleSetName",
+      "@type": "xsd:string"
+    },
+    "RuleSetArn": {
+      "@id": "gamelift:RuleSetArn",
+      "@type": "xsd:string"
+    },
+    "RuleSetBody": {
+      "@id": "gamelift:RuleSetBody",
+      "@type": "xsd:string"
+    },
+    "MaximumIndividualPlayerLatencyMilliseconds": {
+      "@id": "gamelift:MaximumIndividualPlayerLatencyMilliseconds",
+      "@type": "xsd:string"
+    },
+    "PolicyDurationSeconds": {
+      "@id": "gamelift:PolicyDurationSeconds",
+      "@type": "xsd:string"
+    },
+    "GameServerData": {
+      "@id": "gamelift:GameServerData",
+      "@type": "xsd:string"
+    },
+    "UtilizationStatus": {
+      "@id": "gamelift:UtilizationStatus",
+      "@type": "xsd:string"
+    },
+    "HealthCheck": {
+      "@id": "gamelift:HealthCheck",
+      "@type": "xsd:string"
+    },
+    "Names": {
+      "@id": "gamelift:Names",
+      "@type": "xsd:string"
+    },
+    "SortOrder": {
+      "@id": "gamelift:SortOrder",
+      "@type": "xsd:string"
+    },
+    "FilterExpression": {
+      "@id": "gamelift:FilterExpression",
+      "@type": "xsd:string"
+    },
+    "SortExpression": {
+      "@id": "gamelift:SortExpression",
+      "@type": "xsd:string"
+    },
+    "RegionIdentifier": {
+      "@id": "gamelift:RegionIdentifier",
+      "@type": "xsd:string"
+    },
+    "LatencyInMilliseconds": {
+      "@id": "gamelift:LatencyInMilliseconds",
+      "@type": "xsd:string"
+    },
+    "ComputeArn": {
+      "@id": "gamelift:ComputeArn",
+      "@type": "xsd:string"
+    },
+    "ComputeStatus": {
+      "@id": "gamelift:ComputeStatus",
+      "@type": "xsd:string"
+    },
+    "GameLiftServiceSdkEndpoint": {
+      "@id": "gamelift:GameLiftServiceSdkEndpoint",
+      "@type": "xsd:string"
+    },
+    "RuleSets": {
+      "@id": "gamelift:RuleSets",
+      "@type": "xsd:string"
+    },
+    "GameSessionQueueArns": {
+      "@id": "gamelift:GameSessionQueueArns",
+      "@type": "xsd:string"
+    },
+    "RequestTimeoutSeconds": {
+      "@id": "gamelift:RequestTimeoutSeconds",
+      "@type": "xsd:string"
+    },
+    "AcceptanceTimeoutSeconds": {
+      "@id": "gamelift:AcceptanceTimeoutSeconds",
+      "@type": "xsd:string"
+    },
+    "AcceptanceRequired": {
+      "@id": "gamelift:AcceptanceRequired",
+      "@type": "xsd:string"
+    },
+    "AdditionalPlayerCount": {
+      "@id": "gamelift:AdditionalPlayerCount",
+      "@type": "xsd:string"
+    },
+    "BackfillMode": {
+      "@id": "gamelift:BackfillMode",
+      "@type": "xsd:string"
+    },
+    "FlexMatchMode": {
+      "@id": "gamelift:FlexMatchMode",
+      "@type": "xsd:string"
+    },
+    "Configurations": {
+      "@id": "gamelift:Configurations",
+      "@type": "xsd:string"
+    },
+    "ScalingAdjustment": {
+      "@id": "gamelift:ScalingAdjustment",
+      "@type": "xsd:string"
+    },
+    "ScalingAdjustmentType": {
+      "@id": "gamelift:ScalingAdjustmentType",
+      "@type": "xsd:string"
+    },
+    "Threshold": {
+      "@id": "gamelift:Threshold",
+      "@type": "xsd:string"
+    },
+    "ComparisonOperator": {
+      "@id": "gamelift:ComparisonOperator",
+      "@type": "xsd:string"
+    },
+    "EvaluationPeriods": {
+      "@id": "gamelift:EvaluationPeriods",
+      "@type": "xsd:string"
+    },
+    "MetricName": {
+      "@id": "gamelift:MetricName",
+      "@type": "xsd:string"
+    },
+    "PolicyType": {
+      "@id": "gamelift:PolicyType",
+      "@type": "xsd:string"
+    },
+    "DeleteOption": {
+      "@id": "gamelift:DeleteOption",
+      "@type": "xsd:string"
+    },
+    "DesiredInstances": {
+      "@id": "gamelift:DesiredInstances",
+      "@type": "xsd:string"
+    },
+    "GameSessions": {
+      "@id": "gamelift:GameSessions",
+      "@type": "xsd:string"
+    },
+    "DESIRED": {
+      "@id": "gamelift:DESIRED",
+      "@type": "xsd:string"
+    },
+    "MINIMUM": {
+      "@id": "gamelift:MINIMUM",
+      "@type": "xsd:string"
+    },
+    "MAXIMUM": {
+      "@id": "gamelift:MAXIMUM",
+      "@type": "xsd:string"
+    },
+    "PENDING": {
+      "@id": "gamelift:PENDING",
+      "@type": "xsd:string"
+    },
+    "ACTIVE": {
+      "@id": "gamelift:ACTIVE",
+      "@type": "xsd:string"
+    },
+    "IDLE": {
+      "@id": "gamelift:IDLE",
+      "@type": "xsd:string"
+    },
+    "TERMINATING": {
+      "@id": "gamelift:TERMINATING",
+      "@type": "xsd:string"
+    },
+    "TargetValue": {
+      "@id": "gamelift:TargetValue",
+      "@type": "xsd:string"
+    },
+    "Actions": {
+      "@id": "gamelift:Actions",
+      "@type": "xsd:string"
+    },
+    "StoppedActions": {
+      "@id": "gamelift:StoppedActions",
+      "@type": "xsd:string"
+    },
+    "UpdateStatus": {
+      "@id": "gamelift:UpdateStatus",
+      "@type": "xsd:string"
+    },
+    "PlayerIds": {
+      "@id": "gamelift:PlayerIds",
+      "@type": "xsd:string"
+    },
+    "Credentials": {
+      "@id": "gamelift:Credentials",
+      "@type": "xsd:string"
+    },
+    "ActiveServerProcessCount": {
+      "@id": "gamelift:ActiveServerProcessCount",
+      "@type": "xsd:string"
+    },
+    "ActiveGameSessionCount": {
+      "@id": "gamelift:ActiveGameSessionCount",
+      "@type": "xsd:string"
+    },
+    "CurrentPlayerSessionCount": {
+      "@id": "gamelift:CurrentPlayerSessionCount",
+      "@type": "xsd:string"
+    },
+    "Aliases": {
+      "@id": "gamelift:Aliases",
+      "@type": "xsd:string"
+    },
+    "GameSessionQueues": {
+      "@id": "gamelift:GameSessionQueues",
+      "@type": "xsd:string"
+    },
+    "EventId": {
+      "@id": "gamelift:EventId",
+      "@type": "xsd:string"
+    },
+    "ResourceId": {
+      "@id": "gamelift:ResourceId",
+      "@type": "xsd:string"
+    },
+    "EventCode": {
+      "@id": "gamelift:EventCode",
+      "@type": "xsd:string"
+    },
+    "EventTime": {
+      "@id": "gamelift:EventTime",
+      "@type": "xsd:string"
+    },
+    "PreSignedLogUrl": {
+      "@id": "gamelift:PreSignedLogUrl",
+      "@type": "xsd:string"
+    },
+    "GameServerGroupArn": {
+      "@id": "gamelift:GameServerGroupArn",
+      "@type": "xsd:string"
+    },
+    "ConnectionInfo": {
+      "@id": "gamelift:ConnectionInfo",
+      "@type": "xsd:string"
+    },
+    "ClaimStatus": {
+      "@id": "gamelift:ClaimStatus",
+      "@type": "xsd:string"
+    },
+    "RegistrationTime": {
+      "@id": "gamelift:RegistrationTime",
+      "@type": "xsd:string"
+    },
+    "LastClaimTime": {
+      "@id": "gamelift:LastClaimTime",
+      "@type": "xsd:string"
+    },
+    "LastHealthCheckTime": {
+      "@id": "gamelift:LastHealthCheckTime",
+      "@type": "xsd:string"
+    },
+    "AcceptanceType": {
+      "@id": "gamelift:AcceptanceType",
+      "@type": "xsd:string"
+    },
+    "Code": {
+      "@id": "gamelift:Code",
+      "@type": "xsd:string"
+    },
+    "Scripts": {
+      "@id": "gamelift:Scripts",
+      "@type": "xsd:string"
+    },
+    "InboundPermissions": {
+      "@id": "gamelift:InboundPermissions",
+      "@type": "xsd:string"
+    },
+    "LaunchTemplateId": {
+      "@id": "gamelift:LaunchTemplateId",
+      "@type": "xsd:string"
+    },
+    "LaunchTemplateName": {
+      "@id": "gamelift:LaunchTemplateName",
+      "@type": "xsd:string"
+    },
+    "FromPort": {
+      "@id": "gamelift:FromPort",
+      "@type": "xsd:string"
+    },
+    "ToPort": {
+      "@id": "gamelift:ToPort",
+      "@type": "xsd:string"
+    },
+    "IpRange": {
+      "@id": "gamelift:IpRange",
+      "@type": "xsd:string"
+    },
+    "Protocol": {
+      "@id": "gamelift:Protocol",
+      "@type": "xsd:string"
+    },
+    "PlayerSessionCreationPolicy": {
+      "@id": "gamelift:PlayerSessionCreationPolicy",
+      "@type": "xsd:string"
+    },
+    "CreatorId": {
+      "@id": "gamelift:CreatorId",
+      "@type": "xsd:string"
+    },
+    "MatchmakerData": {
+      "@id": "gamelift:MatchmakerData",
+      "@type": "xsd:string"
+    },
+    "ScriptArn": {
+      "@id": "gamelift:ScriptArn",
+      "@type": "xsd:string"
+    },
+    "AllowedLocations": {
+      "@id": "gamelift:AllowedLocations",
+      "@type": "xsd:string"
+    },
+    "TicketIds": {
+      "@id": "gamelift:TicketIds",
+      "@type": "xsd:string"
+    },
+    "InstanceStatus": {
+      "@id": "gamelift:InstanceStatus",
+      "@type": "xsd:string"
+    },
+    "Configuration": {
+      "@id": "gamelift:Configuration",
+      "@type": "xsd:string"
+    },
+    "AutoScalingGroupArn": {
+      "@id": "gamelift:AutoScalingGroupArn",
+      "@type": "xsd:string"
+    },
+    "SuspendedActions": {
+      "@id": "gamelift:SuspendedActions",
+      "@type": "xsd:string"
+    },
+    "LastUpdatedTime": {
+      "@id": "gamelift:LastUpdatedTime",
+      "@type": "xsd:string"
+    },
+    "RuleSet": {
+      "@id": "gamelift:RuleSet",
+      "@type": "xsd:string"
+    },
+    "UploadCredentials": {
+      "@id": "gamelift:UploadCredentials",
+      "@type": "xsd:string"
+    },
+    "Cost": {
+      "@id": "gamelift:Cost",
+      "@type": "xsd:string"
+    },
+    "ScalingPolicies": {
+      "@id": "gamelift:ScalingPolicies",
+      "@type": "xsd:string"
+    },
+    "DestinationArn": {
+      "@id": "gamelift:DestinationArn",
+      "@type": "xsd:string"
+    },
+    "LocationArn": {
+      "@id": "gamelift:LocationArn",
+      "@type": "xsd:string"
+    },
+    "EC2InstanceLimits": {
+      "@id": "gamelift:EC2InstanceLimits",
+      "@type": "xsd:string"
+    },
+    "GameSessionDetails": {
+      "@id": "gamelift:GameSessionDetails",
+      "@type": "xsd:string"
+    },
+    "CurrentInstances": {
+      "@id": "gamelift:CurrentInstances",
+      "@type": "xsd:string"
+    },
+    "InstanceLimit": {
+      "@id": "gamelift:InstanceLimit",
+      "@type": "xsd:string"
+    },
+    "GameSessionRegion": {
+      "@id": "gamelift:GameSessionRegion",
+      "@type": "xsd:string"
+    },
+    "PlacedPlayerSessions": {
+      "@id": "gamelift:PlacedPlayerSessions",
+      "@type": "xsd:string"
+    },
+    "InstanceCounts": {
+      "@id": "gamelift:InstanceCounts",
+      "@type": "xsd:string"
+    },
+    "AccessKeyId": {
+      "@id": "gamelift:AccessKeyId",
+      "@type": "xsd:string"
+    },
+    "SecretAccessKey": {
+      "@id": "gamelift:SecretAccessKey",
+      "@type": "xsd:string"
+    },
+    "SessionToken": {
+      "@id": "gamelift:SessionToken",
+      "@type": "xsd:string"
+    },
+    "CertificateType": {
+      "@id": "gamelift:CertificateType",
+      "@type": "xsd:string"
+    },
+    "ResumeActions": {
+      "@id": "gamelift:ResumeActions",
+      "@type": "xsd:string"
+    },
+    "IpV4CidrBlock": {
+      "@id": "gamelift:IpV4CidrBlock",
+      "@type": "xsd:string"
+    },
+    "VpcPeeringConnectionId": {
+      "@id": "gamelift:VpcPeeringConnectionId",
+      "@type": "xsd:string"
+    },
+    "GameLiftVpcId": {
+      "@id": "gamelift:GameLiftVpcId",
+      "@type": "xsd:string"
+    },
+    "UserName": {
+      "@id": "gamelift:UserName",
+      "@type": "xsd:string"
+    },
+    "Secret": {
+      "@id": "gamelift:Secret",
+      "@type": "xsd:string"
+    },
+    "Instances": {
+      "@id": "gamelift:Instances",
+      "@type": "xsd:string"
+    },
+    "LaunchPath": {
+      "@id": "gamelift:LaunchPath",
+      "@type": "xsd:string"
+    },
+    "Parameters": {
+      "@id": "gamelift:Parameters",
+      "@type": "xsd:string"
+    },
+    "ConcurrentExecutions": {
+      "@id": "gamelift:ConcurrentExecutions",
+      "@type": "xsd:string"
+    },
+    "IdempotencyToken": {
+      "@id": "gamelift:IdempotencyToken",
+      "@type": "xsd:string"
+    },
+    "GameServerInstances": {
+      "@id": "gamelift:GameServerInstances",
+      "@type": "xsd:string"
+    },
+    "ComputeList": {
+      "@id": "gamelift:ComputeList",
+      "@type": "xsd:string"
+    },
+    "PriorityOrder": {
+      "@id": "gamelift:PriorityOrder",
+      "@type": "xsd:string"
+    },
+    "LocationOrder": {
+      "@id": "gamelift:LocationOrder",
+      "@type": "xsd:string"
+    },
+    "PlayerSessionStatusFilter": {
+      "@id": "gamelift:PlayerSessionStatusFilter",
+      "@type": "xsd:string"
+    },
+    "GameServerGroups": {
+      "@id": "gamelift:GameServerGroups",
+      "@type": "xsd:string"
+    },
+    "AliasArn": {
+      "@id": "gamelift:AliasArn",
+      "@type": "xsd:string"
+    },
+    "AuthToken": {
+      "@id": "gamelift:AuthToken",
+      "@type": "xsd:string"
+    },
+    "ExpirationTimestamp": {
+      "@id": "gamelift:ExpirationTimestamp",
+      "@type": "xsd:string"
+    }
+  }
+}

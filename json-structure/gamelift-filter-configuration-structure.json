@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-filter-configuration-structure.json",
+  "name": "FilterConfiguration",
+  "description": "A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations.",
+  "type": "object",
+  "properties": {
+    "AllowedLocations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationList"
+        },
+        {
+          "description": " A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. "
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-start-game-session-placement-output-schema.json",
+  "title": "StartGameSessionPlacementOutput",
+  "description": "StartGameSessionPlacementOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameSessionPlacement": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameSessionPlacement"
+        },
+        {
+          "description": "Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. "
+        }
+      ]
+    }
+  }
+}

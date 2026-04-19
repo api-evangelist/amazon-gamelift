@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-compute-structure.json",
+  "name": "Compute",
+  "description": "Resources used to host your game servers. A compute resource can be managed Amazon GameLift Amazon EC2 instances or your own resources.",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetId"
+        },
+        {
+          "description": "A unique identifier for the fleet that the compute is registered to."
+        }
+      ]
+    },
+    "FleetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the fleet that the compute is registered to."
+        }
+      ]
+    },
+    "ComputeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputeName"
+        },
+        {
+          "description": "A descriptive label that is associated with the compute resource registered to your fleet."
+        }
+      ]
+    },
+    "ComputeArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputeArn"
+        },
+        {
+          "description": "The ARN that is assigned to the compute resource and uniquely identifies it. ARNs are unique across locations."
+        }
+      ]
+    },
+    "IpAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpAddress"
+        },
+        {
+          "description": "The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource."
+        }
+      ]
+    },
+    "DnsName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DnsName"
+        },
+        {
+          "description": "The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource."
+        }
+      ]
+    },
+    "ComputeStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputeStatus"
+        },
+        {
+          "description": "Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions."
+        }
+      ]
+    },
+    "Location": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationStringModel"
+        },
+        {
+          "description": "The name of the custom location you added to the fleet that this compute resource resides in."
+        }
+      ]
+    },
+    "CreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>\"1469498468.057\"</code>)."
+        }
+      ]
+    },
+    "OperatingSystem": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OperatingSystem"
+        },
+        {
+          "description": "The type of operating system on your compute resource."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EC2InstanceType"
+        },
+        {
+          "description": "The compute type that the fleet uses. A fleet can use Anywhere compute resources that you own, or use managed Amazon EC2 instances."
+        }
+      ]
+    },
+    "GameLiftServiceSdkEndpoint": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameLiftServiceSdkEndpointOutput"
+        },
+        {
+          "description": "The endpoint connection details of the Amazon GameLift SDK endpoint that your game server connects to."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-alias-list-structure.json",
+  "name": "AliasList",
+  "description": "AliasList schema from Amazon GameLift API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/Alias"
+  }
+}

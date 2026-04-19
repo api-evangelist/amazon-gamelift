@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-create-build-output-structure.json",
+  "name": "CreateBuildOutput",
+  "description": "CreateBuildOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Build": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Build"
+        },
+        {
+          "description": "The newly created build resource, including a unique build IDs and status. "
+        }
+      ]
+    },
+    "UploadCredentials": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AwsCredentials"
+        },
+        {
+          "description": "This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href=\"https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html\">RequestUploadCredentials</a>. "
+        }
+      ]
+    },
+    "StorageLocation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3Location"
+        },
+        {
+          "description": "Amazon S3 location for your game build file, including bucket name and key."
+        }
+      ]
+    }
+  }
+}

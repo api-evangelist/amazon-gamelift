@@ -1,0 +1,12 @@
+{
+  "Name": "MyGameFleet",
+  "FleetId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "ScalingAdjustment": "example-ScalingAdjustment",
+  "ScalingAdjustmentType": "example-ScalingAdjustmentTyp",
+  "Threshold": "example-Threshold",
+  "ComparisonOperator": "example-ComparisonOperator",
+  "EvaluationPeriods": "example-EvaluationPeriods",
+  "MetricName": "MyGameFleet",
+  "PolicyType": "example-PolicyType",
+  "TargetConfiguration": "example-TargetConfiguration"
+}

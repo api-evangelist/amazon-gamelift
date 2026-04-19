@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-update-game-session-queue-input-structure.json",
+  "name": "UpdateGameSessionQueueInput",
+  "description": "UpdateGameSessionQueueInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameSessionQueueNameOrArn"
+        },
+        {
+          "description": "A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. "
+        }
+      ]
+    },
+    "TimeoutInSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status."
+        }
+      ]
+    },
+    "PlayerLatencyPolicies": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerLatencyPolicyList"
+        },
+        {
+          "description": "A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies."
+        }
+      ]
+    },
+    "Destinations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameSessionQueueDestinationList"
+        },
+        {
+          "description": "A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations."
+        }
+      ]
+    },
+    "FilterConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterConfiguration"
+        },
+        {
+          "description": "A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set."
+        }
+      ]
+    },
+    "PriorityConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PriorityConfiguration"
+        },
+        {
+          "description": "Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set."
+        }
+      ]
+    },
+    "CustomEventData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/QueueCustomEventData"
+        },
+        {
+          "description": "Information to be added to all events that are related to this game session queue."
+        }
+      ]
+    },
+    "NotificationTarget": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/QueueSnsArnStringModel"
+        },
+        {
+          "description": "An SNS topic ARN that is set up to receive game session placement notifications. See <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html\"> Setting up notifications for game session placement</a>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

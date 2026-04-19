@@ -1,0 +1,6 @@
+{
+  "GameServerGroupName": "MyGameFleet",
+  "InstanceIds": "example-InstanceIds",
+  "Limit": "example-Limit",
+  "NextToken": "example-NextToken"
+}

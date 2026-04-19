@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-update-script-output-schema.json",
+  "title": "UpdateScriptOutput",
+  "description": "UpdateScriptOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Script": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Script"
+        },
+        {
+          "description": "The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service."
+        }
+      ]
+    }
+  }
+}

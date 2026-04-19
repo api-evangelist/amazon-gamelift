@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-game-server-connection-info-structure.json",
+  "name": "GameServerConnectionInfo",
+  "description": "GameServerConnectionInfo schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": ".*\\S.*",
+  "minLength": 1,
+  "maxLength": 512
+}

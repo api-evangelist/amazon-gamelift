@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-create-player-session-output-structure.json",
+  "name": "CreatePlayerSessionOutput",
+  "description": "CreatePlayerSessionOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "PlayerSession": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlayerSession"
+        },
+        {
+          "description": "Object that describes the newly created player session record."
+        }
+      ]
+    }
+  }
+}

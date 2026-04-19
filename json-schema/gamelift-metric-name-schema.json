@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-metric-name-schema.json",
+  "title": "MetricName",
+  "description": "MetricName schema from Amazon GameLift API",
+  "type": "string",
+  "enum": [
+    "ActivatingGameSessions",
+    "ActiveGameSessions",
+    "ActiveInstances",
+    "AvailableGameSessions",
+    "AvailablePlayerSessions",
+    "CurrentPlayerSessions",
+    "IdleInstances",
+    "PercentAvailableGameSessions",
+    "PercentIdleInstances",
+    "QueueDepth",
+    "WaitTime",
+    "ConcurrentActivatableGameSessions"
+  ]
+}

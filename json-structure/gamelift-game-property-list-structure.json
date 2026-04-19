@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-game-property-list-structure.json",
+  "name": "GamePropertyList",
+  "description": "GamePropertyList schema from Amazon GameLift API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/GameProperty"
+  },
+  "maxItems": 16
+}

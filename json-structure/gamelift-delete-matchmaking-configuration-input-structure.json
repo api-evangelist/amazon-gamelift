@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-delete-matchmaking-configuration-input-structure.json",
+  "name": "DeleteMatchmakingConfigurationInput",
+  "description": "DeleteMatchmakingConfigurationInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MatchmakingConfigurationName"
+        },
+        {
+          "description": "A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

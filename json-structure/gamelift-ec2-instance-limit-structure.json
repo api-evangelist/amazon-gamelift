@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-ec2-instance-limit-structure.json",
+  "name": "EC2InstanceLimit",
+  "description": "The Amazon GameLift service limits for an Amazon EC2 instance type and current utilization. Amazon GameLift allows Amazon Web Services accounts a maximum number of instances, per instance type, per Amazon Web Services Region or location, for use with Amazon GameLift. You can request an limit increase for your account by using the <b>Service limits</b> page in the Amazon GameLift console.",
+  "type": "object",
+  "properties": {
+    "EC2InstanceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EC2InstanceType"
+        },
+        {
+          "description": "The name of an Amazon EC2 instance type. See <a href=\"http://aws.amazon.com/ec2/instance-types/\">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. "
+        }
+      ]
+    },
+    "CurrentInstances": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. "
+        }
+      ]
+    },
+    "InstanceLimit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "The number of instances that is allowed for the specified instance type and location."
+        }
+      ]
+    },
+    "Location": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationStringModel"
+        },
+        {
+          "description": "An Amazon Web Services Region code, such as <code>us-west-2</code>. "
+        }
+      ]
+    }
+  }
+}

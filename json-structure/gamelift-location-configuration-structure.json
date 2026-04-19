@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-location-configuration-structure.json",
+  "name": "LocationConfiguration",
+  "description": "A remote location where a multi-location fleet can deploy game servers for game hosting. ",
+  "type": "object",
+  "properties": {
+    "Location": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationStringModel"
+        },
+        {
+          "description": "An Amazon Web Services Region code, such as <code>us-west-2</code>. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "Location"
+  ]
+}

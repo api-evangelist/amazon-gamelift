@@ -1,0 +1,7 @@
+{
+  "GameLiftAwsAccountId": 10,
+  "PeerVpcAwsAccountId": 10,
+  "PeerVpcId": "example-PeerVpcId",
+  "CreationTime": "example-CreationTime",
+  "ExpirationTime": "example-ExpirationTime"
+}

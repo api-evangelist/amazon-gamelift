@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-alias-id-or-arn-structure.json",
+  "name": "AliasIdOrArn",
+  "description": "AliasIdOrArn schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": "^alias-\\S+|^arn:.*:alias\\/alias-\\S+"
+}

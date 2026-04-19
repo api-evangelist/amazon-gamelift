@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-delete-fleet-locations-input-schema.json",
+  "title": "DeleteFleetLocationsInput",
+  "description": "DeleteFleetLocationsInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value."
+        }
+      ]
+    },
+    "Locations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationList"
+        },
+        {
+          "description": "The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "FleetId",
+    "Locations"
+  ]
+}

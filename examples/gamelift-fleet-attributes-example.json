@@ -1,0 +1,12 @@
+{
+  "FleetId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "FleetArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "FleetType": "example-FleetType",
+  "InstanceType": "example-InstanceType",
+  "Description": "Example game fleet for multiplayer sessions",
+  "Name": "MyGameFleet",
+  "CreationTime": "example-CreationTime",
+  "TerminationTime": 10,
+  "Status": "ACTIVE",
+  "BuildId": "example-BuildId"
+}

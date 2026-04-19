@@ -1,0 +1,11 @@
+{
+  "Name": "MyGameFleet",
+  "TimeoutInSeconds": "example-TimeoutInSeconds",
+  "PlayerLatencyPolicies": "example-PlayerLatencyPolicie",
+  "Destinations": "example-Destinations",
+  "FilterConfiguration": "example-FilterConfiguration",
+  "PriorityConfiguration": "example-PriorityConfiguratio",
+  "CustomEventData": "example-CustomEventData",
+  "NotificationTarget": "example-NotificationTarget",
+  "Tags": "example-Tags"
+}

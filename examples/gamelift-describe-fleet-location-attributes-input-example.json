@@ -1,0 +1,6 @@
+{
+  "FleetId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "Locations": "us-east-1",
+  "Limit": "example-Limit",
+  "NextToken": "example-NextToken"
+}

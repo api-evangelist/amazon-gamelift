@@ -1,0 +1,6 @@
+{
+  "EC2InstanceType": "example-EC2InstanceType",
+  "CurrentInstances": "example-CurrentInstances",
+  "InstanceLimit": "example-InstanceLimit",
+  "Location": "us-east-1"
+}

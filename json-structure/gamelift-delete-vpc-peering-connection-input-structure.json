@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-delete-vpc-peering-connection-input-structure.json",
+  "name": "DeleteVpcPeeringConnectionInput",
+  "description": "DeleteVpcPeeringConnectionInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetId"
+        },
+        {
+          "description": "A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value."
+        }
+      ]
+    },
+    "VpcPeeringConnectionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A unique identifier for a VPC peering connection."
+        }
+      ]
+    }
+  },
+  "required": [
+    "FleetId",
+    "VpcPeeringConnectionId"
+  ]
+}

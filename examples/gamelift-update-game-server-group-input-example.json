@@ -1,0 +1,7 @@
+{
+  "GameServerGroupName": "MyGameFleet",
+  "RoleArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "InstanceDefinitions": "example-InstanceDefinitions",
+  "GameServerProtectionPolicy": "example-GameServerProtection",
+  "BalancingStrategy": "example-BalancingStrategy"
+}

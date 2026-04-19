@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-target-tracking-configuration-structure.json",
+  "name": "TargetTrackingConfiguration",
+  "description": "<p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>Settings for a target-based scaling policy as part of a <a href=\"https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerGroupAutoScalingPolicy.html\">GameServerGroupAutoScalingPolicy</a> . These settings are used to create a target-based policy that tracks the Amazon GameLift FleetIQ metric <code>\"PercentUtilizedGameServers\"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p>",
+  "type": "object",
+  "properties": {
+    "TargetValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonNegativeDouble"
+        },
+        {
+          "description": "Desired value to use with a game server group target-based scaling policy. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "TargetValue"
+  ]
+}

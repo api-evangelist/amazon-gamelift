@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-update-fleet-capacity-input-structure.json",
+  "name": "UpdateFleetCapacityInput",
+  "description": "UpdateFleetCapacityInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value."
+        }
+      ]
+    },
+    "DesiredInstances": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits."
+        }
+      ]
+    },
+    "MinSize": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0."
+        }
+      ]
+    },
+    "MaxSize": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WholeNumber"
+        },
+        {
+          "description": "The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1."
+        }
+      ]
+    },
+    "Location": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationStringModel"
+        },
+        {
+          "description": "The name of a remote location to update fleet capacity settings for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "FleetId"
+  ]
+}

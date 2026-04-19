@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-vpc-peering-connection-status-schema.json",
+  "title": "VpcPeeringConnectionStatus",
+  "description": "Represents status information for a VPC peering connection. Status codes and messages are provided from EC2 (see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html\">VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet event.",
+  "type": "object",
+  "properties": {
+    "Code": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "Code indicating the status of a VPC peering connection."
+        }
+      ]
+    },
+    "Message": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "Additional messaging associated with the connection status. "
+        }
+      ]
+    }
+  }
+}

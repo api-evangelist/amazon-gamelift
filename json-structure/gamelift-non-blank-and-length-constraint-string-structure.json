@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-non-blank-and-length-constraint-string-structure.json",
+  "name": "NonBlankAndLengthConstraintString",
+  "description": "NonBlankAndLengthConstraintString schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": ".*\\S.*",
+  "minLength": 1,
+  "maxLength": 1024
+}

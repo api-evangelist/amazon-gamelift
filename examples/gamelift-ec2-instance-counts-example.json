@@ -1,0 +1,9 @@
+{
+  "DESIRED": "example-DESIRED",
+  "MINIMUM": 10,
+  "MAXIMUM": 10,
+  "PENDING": "example-PENDING",
+  "ACTIVE": "example-ACTIVE",
+  "IDLE": "example-IDLE",
+  "TERMINATING": 10
+}

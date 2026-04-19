@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-describe-game-server-instances-output-schema.json",
+  "title": "DescribeGameServerInstancesOutput",
+  "description": "DescribeGameServerInstancesOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameServerInstances": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerInstances"
+        },
+        {
+          "description": "The collection of requested game server instances."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list."
+        }
+      ]
+    }
+  }
+}

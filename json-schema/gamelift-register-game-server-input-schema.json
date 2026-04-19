@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-register-game-server-input-schema.json",
+  "title": "RegisterGameServerInput",
+  "description": "RegisterGameServerInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameServerGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerGroupNameOrArn"
+        },
+        {
+          "description": "A unique identifier for the game server group where the game server is running."
+        }
+      ]
+    },
+    "GameServerId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerId"
+        },
+        {
+          "description": "A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account."
+        }
+      ]
+    },
+    "InstanceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerInstanceId"
+        },
+        {
+          "description": "The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>."
+        }
+      ]
+    },
+    "ConnectionInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerConnectionInfo"
+        },
+        {
+          "description": "Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information."
+        }
+      ]
+    },
+    "GameServerData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerData"
+        },
+        {
+          "description": "A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "GameServerGroupName",
+    "GameServerId",
+    "InstanceId"
+  ]
+}

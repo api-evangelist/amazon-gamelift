@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-create-fleet-locations-input-structure.json",
+  "name": "CreateFleetLocationsInput",
+  "description": "CreateFleetLocationsInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value."
+        }
+      ]
+    },
+    "Locations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LocationConfigurationList"
+        },
+        {
+          "description": "A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "FleetId",
+    "Locations"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-fleet-capacity-exceeded-exception-schema.json",
+  "title": "FleetCapacityExceededException",
+  "description": "FleetCapacityExceededException schema from Amazon GameLift API"
+}

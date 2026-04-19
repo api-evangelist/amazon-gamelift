@@ -1,0 +1,12 @@
+{
+  "TicketId": "example-TicketId",
+  "ConfigurationName": "MyGameFleet",
+  "ConfigurationArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "Status": "ACTIVE",
+  "StatusReason": "ACTIVE",
+  "StatusMessage": "ACTIVE",
+  "StartTime": "example-StartTime",
+  "EndTime": "example-EndTime",
+  "Players": "example-Players",
+  "GameSessionConnectionInfo": "example-GameSessionConnectio"
+}

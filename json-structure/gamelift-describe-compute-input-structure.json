@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-describe-compute-input-structure.json",
+  "name": "DescribeComputeInput",
+  "description": "DescribeComputeInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the fleet the compute is registered to."
+        }
+      ]
+    },
+    "ComputeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputeNameOrArn"
+        },
+        {
+          "description": "A descriptive label that is associated with the compute resource registered to your fleet."
+        }
+      ]
+    }
+  },
+  "required": [
+    "FleetId",
+    "ComputeName"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-game-server-instance-id-schema.json",
+  "title": "GameServerInstanceId",
+  "description": "GameServerInstanceId schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": "^i-[0-9a-zA-Z]{17}$",
+  "minLength": 19,
+  "maxLength": 19
+}

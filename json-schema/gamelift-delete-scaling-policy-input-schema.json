@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-delete-scaling-policy-input-schema.json",
+  "title": "DeleteScalingPolicyInput",
+  "description": "DeleteScalingPolicyInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique."
+        }
+      ]
+    },
+    "FleetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FleetIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "FleetId"
+  ]
+}

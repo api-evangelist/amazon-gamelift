@@ -1,0 +1,221 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Amazon GameLift
+  description: Unified vocabulary mapping operational and capability dimensions for Amazon GameLift game server hosting APIs
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: amazon-gamelift
+      version: "2015-10-01"
+      baseUrl: https://gamelift.amazonaws.com
+      status: active
+      description: Amazon GameLift dedicated game server hosting API
+
+  resources:
+    - name: fleets
+      description: Computing resources that host game servers
+      api: amazon-gamelift
+      actions: [list, create, describe, update, delete]
+    - name: game-sessions
+      description: Active game sessions running on fleet instances
+      api: amazon-gamelift
+      actions: [create, describe, search, update]
+    - name: player-sessions
+      description: Player slots reserved in game sessions
+      api: amazon-gamelift
+      actions: [create, describe]
+    - name: matchmaking
+      description: FlexMatch matchmaking tickets and configurations
+      api: amazon-gamelift
+      actions: [start, stop, describe, accept]
+    - name: builds
+      description: Game server build packages uploaded to GameLift
+      api: amazon-gamelift
+      actions: [list, create, describe, update, delete]
+    - name: scripts
+      description: Realtime server configuration scripts
+      api: amazon-gamelift
+      actions: [list, create, describe, update, delete]
+    - name: aliases
+      description: Fleet routing aliases for zero-downtime transitions
+      api: amazon-gamelift
+      actions: [list, create, describe, update, delete, resolve]
+    - name: scaling-policies
+      description: Auto-scaling rules controlling fleet capacity
+      api: amazon-gamelift
+      actions: [put, describe, delete]
+    - name: game-server-groups
+      description: FleetIQ game server groups using EC2 Spot Instances
+      api: amazon-gamelift
+      actions: [create, list, describe, update, delete]
+    - name: queues
+      description: Multi-fleet session placement queues
+      api: amazon-gamelift
+      actions: [create, describe, update, delete]
+
+  actions:
+    - name: list
+      httpMethod: POST
+      pattern: read
+    - name: create
+      httpMethod: POST
+      pattern: write
+    - name: describe
+      httpMethod: POST
+      pattern: read
+    - name: update
+      httpMethod: POST
+      pattern: write
+    - name: delete
+      httpMethod: POST
+      pattern: destructive
+    - name: search
+      httpMethod: POST
+      pattern: query
+    - name: start
+      httpMethod: POST
+      pattern: write
+    - name: stop
+      httpMethod: POST
+      pattern: write
+    - name: put
+      httpMethod: POST
+      pattern: write
+
+  authentication:
+    schemes:
+      - type: AWS Signature Version 4
+        description: AWS4-HMAC-SHA256 signing for all API requests
+        parameters: [AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION]
+
+  parameters:
+    identifiers:
+      - FleetId
+      - GameSessionId
+      - PlayerSessionId
+      - BuildId
+      - ScriptId
+      - AliasId
+      - TicketId
+    filters:
+      - StatusFilter
+      - FleetType
+      - Location
+    pagination:
+      - NextToken
+      - Limit
+
+  enums:
+    fleet-status:
+      - NEW
+      - DOWNLOADING
+      - VALIDATING
+      - BUILDING
+      - ACTIVATING
+      - ACTIVE
+      - DELETING
+      - ERROR
+      - TERMINATED
+    game-session-status:
+      - ACTIVE
+      - ACTIVATING
+      - TERMINATED
+      - TERMINATING
+      - ERROR
+    player-session-status:
+      - RESERVED
+      - ACTIVE
+      - COMPLETED
+      - TIMEDOUT
+    matchmaking-status:
+      - QUEUED
+      - SEARCHING
+      - REQUIRES_ACCEPTANCE
+      - PLACING
+      - COMPLETED
+      - FAILED
+      - CANCELLED
+      - TIMED_OUT
+    fleet-type:
+      - ON_DEMAND
+      - SPOT
+
+capability:
+  workflows:
+    - name: Amazon GameLift Game Operations
+      file: capabilities/amazon-gamelift-game-operations.yaml
+      description: Unified workflow for game infrastructure management
+      apis: [amazon-gamelift]
+      tools: 20
+      personas: [Game Developer, DevOps Engineer, Game Operations Team]
+
+  personas:
+    - id: game-developer
+      name: Game Developer
+      description: Develops and tests multiplayer game server integration with GameLift
+      workflows: [Amazon GameLift Game Operations]
+    - id: devops-engineer
+      name: DevOps Engineer
+      description: Manages fleet infrastructure, scaling, and deployment pipelines
+      workflows: [Amazon GameLift Game Operations]
+    - id: game-ops-team
+      name: Game Operations Team
+      description: Monitors live game sessions, manages player capacity, and handles incidents
+      workflows: [Amazon GameLift Game Operations]
+
+  domains:
+    - name: Fleet Management
+      description: Creating, configuring, and scaling game server fleets
+      resources: [fleets, scaling-policies, aliases]
+    - name: Session Management
+      description: Game session and player session lifecycle
+      resources: [game-sessions, player-sessions, queues]
+    - name: Matchmaking
+      description: Player matchmaking and FlexMatch configuration
+      resources: [matchmaking]
+    - name: Build Management
+      description: Game server build and script management
+      resources: [builds, scripts]
+    - name: FleetIQ
+      description: Cost-optimized Spot Instance game hosting
+      resources: [game-server-groups]
+
+  namespaces:
+    - namespace: amazon-gamelift
+      type: consumed
+    - namespace: gamelift-game-ops-api
+      type: rest-exposed
+      port: 8080
+    - namespace: gamelift-game-ops-mcp
+      type: mcp-exposed
+      port: 9090
+
+  binds:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - AWS_REGION
+
+crossReference:
+  - resource: fleets
+    operations: [ListFleets, CreateFleet, DescribeFleetAttributes, UpdateFleetAttributes, DeleteFleet, DescribeFleetCapacity, UpdateFleetCapacity]
+    workflows: [Amazon GameLift Game Operations]
+    personas: [Game Developer, DevOps Engineer]
+  - resource: game-sessions
+    operations: [CreateGameSession, SearchGameSessions, DescribeGameSessions, UpdateGameSession, StartGameSessionPlacement]
+    workflows: [Amazon GameLift Game Operations]
+    personas: [Game Developer, Game Operations Team]
+  - resource: player-sessions
+    operations: [CreatePlayerSession, CreatePlayerSessions, DescribePlayerSessions]
+    workflows: [Amazon GameLift Game Operations]
+    personas: [Game Developer, Game Operations Team]
+  - resource: matchmaking
+    operations: [StartMatchmaking, StopMatchmaking, DescribeMatchmaking, AcceptMatch]
+    workflows: [Amazon GameLift Game Operations]
+    personas: [Game Developer]
+  - resource: scaling-policies
+    operations: [PutScalingPolicy, DescribeScalingPolicies, DeleteScalingPolicy]
+    workflows: [Amazon GameLift Game Operations]
+    personas: [DevOps Engineer]

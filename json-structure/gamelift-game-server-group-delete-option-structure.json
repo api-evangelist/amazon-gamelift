@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-game-server-group-delete-option-structure.json",
+  "name": "GameServerGroupDeleteOption",
+  "description": "GameServerGroupDeleteOption schema from Amazon GameLift API",
+  "type": "string",
+  "enum": [
+    "SAFE_DELETE",
+    "FORCE_DELETE",
+    "RETAIN"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "BuildId": "example-BuildId",
+  "BuildArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "Name": "MyGameFleet",
+  "Version": "example-Version",
+  "Status": "ACTIVE",
+  "SizeOnDisk": "example-SizeOnDisk",
+  "OperatingSystem": "example-OperatingSystem",
+  "CreationTime": "example-CreationTime",
+  "ServerSdkVersion": "example-ServerSdkVersion"
+}

@@ -1,0 +1,4 @@
+{
+  "MaximumIndividualPlayerLatencyMilliseconds": 10,
+  "PolicyDurationSeconds": "example-PolicyDurationSecond"
+}

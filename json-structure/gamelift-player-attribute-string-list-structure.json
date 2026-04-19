@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-player-attribute-string-list-structure.json",
+  "name": "PlayerAttributeStringList",
+  "description": "PlayerAttributeStringList schema from Amazon GameLift API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/PlayerAttributeString"
+  }
+}

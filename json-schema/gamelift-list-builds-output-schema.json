@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-list-builds-output-schema.json",
+  "title": "ListBuildsOutput",
+  "description": "ListBuildsOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Builds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BuildList"
+        },
+        {
+          "description": "A collection of build resources that match the request."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list."
+        }
+      ]
+    }
+  }
+}

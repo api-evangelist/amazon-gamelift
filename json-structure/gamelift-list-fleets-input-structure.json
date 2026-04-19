@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-list-fleets-input-structure.json",
+  "name": "ListFleetsInput",
+  "description": "ListFleetsInput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "BuildId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BuildIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value."
+        }
+      ]
+    },
+    "ScriptId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScriptIdOrArn"
+        },
+        {
+          "description": "A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value."
+        }
+      ]
+    },
+    "Limit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PositiveInteger"
+        },
+        {
+          "description": "The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value."
+        }
+      ]
+    }
+  }
+}

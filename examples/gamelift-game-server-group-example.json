@@ -1,0 +1,12 @@
+{
+  "GameServerGroupName": "MyGameFleet",
+  "GameServerGroupArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "RoleArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "InstanceDefinitions": "example-InstanceDefinitions",
+  "BalancingStrategy": "example-BalancingStrategy",
+  "GameServerProtectionPolicy": "example-GameServerProtection",
+  "AutoScalingGroupArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "Status": "ACTIVE",
+  "StatusReason": "ACTIVE",
+  "SuspendedActions": "example-SuspendedActions"
+}

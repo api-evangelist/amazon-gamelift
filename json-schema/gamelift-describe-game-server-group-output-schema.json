@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-describe-game-server-group-output-schema.json",
+  "title": "DescribeGameServerGroupOutput",
+  "description": "DescribeGameServerGroupOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "GameServerGroup": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GameServerGroup"
+        },
+        {
+          "description": "An object with the property settings for the requested game server group resource. "
+        }
+      ]
+    }
+  }
+}

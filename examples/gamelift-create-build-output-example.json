@@ -1,0 +1,5 @@
+{
+  "Build": "example-Build",
+  "UploadCredentials": "example-UploadCredentials",
+  "StorageLocation": "us-east-1"
+}

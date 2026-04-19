@@ -1,0 +1,12 @@
+{
+  "GameServerGroupName": "MyGameFleet",
+  "GameServerGroupArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "GameServerId": "fleet-1a2b3c4d-5678-90ab-cdef-1234567890ab",
+  "InstanceId": "example-InstanceId",
+  "ConnectionInfo": "example-ConnectionInfo",
+  "GameServerData": "example-GameServerData",
+  "ClaimStatus": "ACTIVE",
+  "UtilizationStatus": "ACTIVE",
+  "RegistrationTime": "example-RegistrationTime",
+  "LastClaimTime": "example-LastClaimTime"
+}

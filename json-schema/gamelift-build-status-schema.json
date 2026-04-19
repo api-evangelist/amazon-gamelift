@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-build-status-schema.json",
+  "title": "BuildStatus",
+  "description": "BuildStatus schema from Amazon GameLift API",
+  "type": "string",
+  "enum": [
+    "INITIALIZED",
+    "READY",
+    "FAILED"
+  ]
+}

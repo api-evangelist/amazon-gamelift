@@ -1,0 +1,12 @@
+{
+  "GameServerGroupName": "MyGameFleet",
+  "RoleArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "MinSize": 10,
+  "MaxSize": 10,
+  "LaunchTemplate": "example-LaunchTemplate",
+  "InstanceDefinitions": "example-InstanceDefinitions",
+  "AutoScalingPolicy": "example-AutoScalingPolicy",
+  "BalancingStrategy": "example-BalancingStrategy",
+  "GameServerProtectionPolicy": "example-GameServerProtection",
+  "VpcSubnets": "example-VpcSubnets"
+}

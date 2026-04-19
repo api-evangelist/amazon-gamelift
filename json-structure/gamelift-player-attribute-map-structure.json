@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-player-attribute-map-structure.json",
+  "name": "PlayerAttributeMap",
+  "description": "PlayerAttributeMap schema from Amazon GameLift API",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/AttributeValue"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-operating-system-schema.json",
+  "title": "OperatingSystem",
+  "description": "OperatingSystem schema from Amazon GameLift API",
+  "type": "string",
+  "enum": [
+    "WINDOWS_2012",
+    "AMAZON_LINUX",
+    "AMAZON_LINUX_2",
+    "WINDOWS_2016"
+  ]
+}

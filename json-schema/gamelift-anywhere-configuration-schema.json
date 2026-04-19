@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-schema/gamelift-anywhere-configuration-schema.json",
+  "title": "AnywhereConfiguration",
+  "description": "Amazon GameLift Anywhere configuration options for your Anywhere fleets.",
+  "type": "object",
+  "properties": {
+    "Cost": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonNegativeLimitedLengthDouble"
+        },
+        {
+          "description": "The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html\">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Cost"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "EventId": "example-EventId",
+  "ResourceId": "example-ResourceId",
+  "EventCode": "example-EventCode",
+  "Message": "example-Message",
+  "EventTime": "example-EventTime",
+  "PreSignedLogUrl": "example-PreSignedLogUrl"
+}

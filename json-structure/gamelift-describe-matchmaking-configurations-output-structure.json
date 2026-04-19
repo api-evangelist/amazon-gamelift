@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-describe-matchmaking-configurations-output-structure.json",
+  "name": "DescribeMatchmakingConfigurationsOutput",
+  "description": "DescribeMatchmakingConfigurationsOutput schema from Amazon GameLift API",
+  "type": "object",
+  "properties": {
+    "Configurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MatchmakingConfigurationList"
+        },
+        {
+          "description": "A collection of requested matchmaking configurations."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonZeroAndMaxString"
+        },
+        {
+          "description": "A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list."
+        }
+      ]
+    }
+  }
+}

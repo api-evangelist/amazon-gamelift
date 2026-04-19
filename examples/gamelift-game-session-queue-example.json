@@ -1,0 +1,11 @@
+{
+  "Name": "MyGameFleet",
+  "GameSessionQueueArn": "arn:aws:gamelift:us-east-1:123456789012:fleet/fleet-1a2b3c4d",
+  "TimeoutInSeconds": "example-TimeoutInSeconds",
+  "PlayerLatencyPolicies": "example-PlayerLatencyPolicie",
+  "Destinations": "example-Destinations",
+  "FilterConfiguration": "example-FilterConfiguration",
+  "PriorityConfiguration": "example-PriorityConfiguratio",
+  "CustomEventData": "example-CustomEventData",
+  "NotificationTarget": "example-NotificationTarget"
+}

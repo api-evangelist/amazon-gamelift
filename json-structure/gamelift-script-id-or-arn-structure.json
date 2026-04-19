@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/json-structure/gamelift-script-id-or-arn-structure.json",
+  "name": "ScriptIdOrArn",
+  "description": "ScriptIdOrArn schema from Amazon GameLift API",
+  "type": "string",
+  "pattern": "^script-\\S+|^arn:.*:script\\/script-\\S+"
+}
