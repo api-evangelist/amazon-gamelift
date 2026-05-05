@@ -1,0 +1,13 @@
+{
+  "repo": "amazon-gamelift",
+  "feeds": [
+    {
+      "source": "https://aws.amazon.com/blogs/gametech/tag/amazon-gamelift/",
+      "feed_url": "https://aws.amazon.com/blogs/gametech/tag/amazon-gamelift/feed/",
+      "saved": 10,
+      "title": "Amazon GameLift \u2013 AWS for Games Blog"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:21:24Z"
+}
