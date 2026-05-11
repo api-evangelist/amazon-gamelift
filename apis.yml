@@ -141,6 +141,17 @@ common:
         description: Store and retrieve game server build files using S3 buckets for fleet deployment.
       - name: AWS CloudFormation
         description: Provision and manage GameLift resources using infrastructure-as-code templates.
+  - type: Integrations
+    url: https://aws.amazon.com/marketplace
+integrations:
+  - name: Agent Mode
+  - name: Sign in
+  - name: Become a Channel Partner
+  - name: Resources
+  - name: Sell in AWS Marketplace
+  - name: 'Why AWS Marketplace?'
+  - name: Get started in AWS Marketplace
+  - name: Manage Your Account
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
