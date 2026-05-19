@@ -1,0 +1,5307 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon GameLift
+  description: 'Amazon GameLift. 104 operations. Lead operation: Amazon GameLift Accept Match. Self-contained Naftiko capability
+    covering one Amazon Gamelift business surface.'
+  tags:
+  - Amazon Gamelift
+  - Amazon GameLift
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_GAMELIFT_API_KEY: AMAZON_GAMELIFT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-gamelift
+    baseUri: http://gamelift.{region}.amazonaws.com
+    description: Amazon GameLift business capability. Self-contained, no shared references.
+    resources:
+    - name: '#X-Amz-Target=GameLift.AcceptMatch'
+      path: /#X-Amz-Target=GameLift.AcceptMatch
+      operations:
+      - name: acceptmatch
+        method: POST
+        description: Amazon GameLift Accept Match
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ClaimGameServer'
+      path: /#X-Amz-Target=GameLift.ClaimGameServer
+      operations:
+      - name: claimgameserver
+        method: POST
+        description: Amazon GameLift Claim Game Server
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateAlias'
+      path: /#X-Amz-Target=GameLift.CreateAlias
+      operations:
+      - name: createalias
+        method: POST
+        description: Amazon GameLift Create Alias
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateBuild'
+      path: /#X-Amz-Target=GameLift.CreateBuild
+      operations:
+      - name: createbuild
+        method: POST
+        description: Amazon GameLift Create Build
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateFleet'
+      path: /#X-Amz-Target=GameLift.CreateFleet
+      operations:
+      - name: createfleet
+        method: POST
+        description: Amazon GameLift Create Fleet
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateFleetLocations'
+      path: /#X-Amz-Target=GameLift.CreateFleetLocations
+      operations:
+      - name: createfleetlocations
+        method: POST
+        description: Amazon GameLift Create Fleet Locations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateGameServerGroup'
+      path: /#X-Amz-Target=GameLift.CreateGameServerGroup
+      operations:
+      - name: creategameservergroup
+        method: POST
+        description: Amazon GameLift Create Game Server Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateGameSession'
+      path: /#X-Amz-Target=GameLift.CreateGameSession
+      operations:
+      - name: creategamesession
+        method: POST
+        description: Amazon GameLift Create Game Session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateGameSessionQueue'
+      path: /#X-Amz-Target=GameLift.CreateGameSessionQueue
+      operations:
+      - name: creategamesessionqueue
+        method: POST
+        description: Amazon GameLift Create Game Session Queue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateLocation'
+      path: /#X-Amz-Target=GameLift.CreateLocation
+      operations:
+      - name: createlocation
+        method: POST
+        description: Amazon GameLift Create Location
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateMatchmakingConfiguration'
+      path: /#X-Amz-Target=GameLift.CreateMatchmakingConfiguration
+      operations:
+      - name: creatematchmakingconfiguration
+        method: POST
+        description: Amazon GameLift Create Matchmaking Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateMatchmakingRuleSet'
+      path: /#X-Amz-Target=GameLift.CreateMatchmakingRuleSet
+      operations:
+      - name: creatematchmakingruleset
+        method: POST
+        description: Amazon GameLift Create Matchmaking Rule Set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreatePlayerSession'
+      path: /#X-Amz-Target=GameLift.CreatePlayerSession
+      operations:
+      - name: createplayersession
+        method: POST
+        description: Amazon GameLift Create Player Session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreatePlayerSessions'
+      path: /#X-Amz-Target=GameLift.CreatePlayerSessions
+      operations:
+      - name: createplayersessions
+        method: POST
+        description: Amazon GameLift Create Player Sessions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateScript'
+      path: /#X-Amz-Target=GameLift.CreateScript
+      operations:
+      - name: createscript
+        method: POST
+        description: Amazon GameLift Create Script
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateVpcPeeringAuthorization'
+      path: /#X-Amz-Target=GameLift.CreateVpcPeeringAuthorization
+      operations:
+      - name: createvpcpeeringauthorization
+        method: POST
+        description: Amazon GameLift Create Vpc Peering Authorization
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.CreateVpcPeeringConnection'
+      path: /#X-Amz-Target=GameLift.CreateVpcPeeringConnection
+      operations:
+      - name: createvpcpeeringconnection
+        method: POST
+        description: Amazon GameLift Create Vpc Peering Connection
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteAlias'
+      path: /#X-Amz-Target=GameLift.DeleteAlias
+      operations:
+      - name: deletealias
+        method: POST
+        description: Amazon GameLift Delete Alias
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteBuild'
+      path: /#X-Amz-Target=GameLift.DeleteBuild
+      operations:
+      - name: deletebuild
+        method: POST
+        description: Amazon GameLift Delete Build
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteFleet'
+      path: /#X-Amz-Target=GameLift.DeleteFleet
+      operations:
+      - name: deletefleet
+        method: POST
+        description: Amazon GameLift Delete Fleet
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteFleetLocations'
+      path: /#X-Amz-Target=GameLift.DeleteFleetLocations
+      operations:
+      - name: deletefleetlocations
+        method: POST
+        description: Amazon GameLift Delete Fleet Locations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteGameServerGroup'
+      path: /#X-Amz-Target=GameLift.DeleteGameServerGroup
+      operations:
+      - name: deletegameservergroup
+        method: POST
+        description: Amazon GameLift Delete Game Server Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteGameSessionQueue'
+      path: /#X-Amz-Target=GameLift.DeleteGameSessionQueue
+      operations:
+      - name: deletegamesessionqueue
+        method: POST
+        description: Amazon GameLift Delete Game Session Queue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteLocation'
+      path: /#X-Amz-Target=GameLift.DeleteLocation
+      operations:
+      - name: deletelocation
+        method: POST
+        description: Amazon GameLift Delete Location
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteMatchmakingConfiguration'
+      path: /#X-Amz-Target=GameLift.DeleteMatchmakingConfiguration
+      operations:
+      - name: deletematchmakingconfiguration
+        method: POST
+        description: Amazon GameLift Delete Matchmaking Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteMatchmakingRuleSet'
+      path: /#X-Amz-Target=GameLift.DeleteMatchmakingRuleSet
+      operations:
+      - name: deletematchmakingruleset
+        method: POST
+        description: Amazon GameLift Delete Matchmaking Rule Set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteScalingPolicy'
+      path: /#X-Amz-Target=GameLift.DeleteScalingPolicy
+      operations:
+      - name: deletescalingpolicy
+        method: POST
+        description: Amazon GameLift Delete Scaling Policy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteScript'
+      path: /#X-Amz-Target=GameLift.DeleteScript
+      operations:
+      - name: deletescript
+        method: POST
+        description: Amazon GameLift Delete Script
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteVpcPeeringAuthorization'
+      path: /#X-Amz-Target=GameLift.DeleteVpcPeeringAuthorization
+      operations:
+      - name: deletevpcpeeringauthorization
+        method: POST
+        description: Amazon GameLift Delete Vpc Peering Authorization
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeleteVpcPeeringConnection'
+      path: /#X-Amz-Target=GameLift.DeleteVpcPeeringConnection
+      operations:
+      - name: deletevpcpeeringconnection
+        method: POST
+        description: Amazon GameLift Delete Vpc Peering Connection
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeregisterCompute'
+      path: /#X-Amz-Target=GameLift.DeregisterCompute
+      operations:
+      - name: deregistercompute
+        method: POST
+        description: Amazon GameLift Deregister Compute
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DeregisterGameServer'
+      path: /#X-Amz-Target=GameLift.DeregisterGameServer
+      operations:
+      - name: deregistergameserver
+        method: POST
+        description: Amazon GameLift Deregister Game Server
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeAlias'
+      path: /#X-Amz-Target=GameLift.DescribeAlias
+      operations:
+      - name: describealias
+        method: POST
+        description: Amazon GameLift Describe Alias
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeBuild'
+      path: /#X-Amz-Target=GameLift.DescribeBuild
+      operations:
+      - name: describebuild
+        method: POST
+        description: Amazon GameLift Describe Build
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeCompute'
+      path: /#X-Amz-Target=GameLift.DescribeCompute
+      operations:
+      - name: describecompute
+        method: POST
+        description: Amazon GameLift Describe Compute
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeEC2InstanceLimits'
+      path: /#X-Amz-Target=GameLift.DescribeEC2InstanceLimits
+      operations:
+      - name: describeec2instancelimits
+        method: POST
+        description: Amazon GameLift Describe E C2 Instance Limits
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeFleetAttributes'
+      path: /#X-Amz-Target=GameLift.DescribeFleetAttributes
+      operations:
+      - name: describefleetattributes
+        method: POST
+        description: Amazon GameLift Describe Fleet Attributes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeFleetCapacity'
+      path: /#X-Amz-Target=GameLift.DescribeFleetCapacity
+      operations:
+      - name: describefleetcapacity
+        method: POST
+        description: Amazon GameLift Describe Fleet Capacity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeFleetEvents'
+      path: /#X-Amz-Target=GameLift.DescribeFleetEvents
+      operations:
+      - name: describefleetevents
+        method: POST
+        description: Amazon GameLift Describe Fleet Events
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeFleetLocationAttributes'
+      path: /#X-Amz-Target=GameLift.DescribeFleetLocationAttributes
+      operations:
+      - name: describefleetlocationattributes
+        method: POST
+        description: Amazon GameLift Describe Fleet Location Attributes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeFleetLocationCapacity'
+      path: /#X-Amz-Target=GameLift.DescribeFleetLocationCapacity
+      operations:
+      - name: describefleetlocationcapacity
+        method: POST
+        description: Amazon GameLift Describe Fleet Location Capacity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeFleetLocationUtilization'
+      path: /#X-Amz-Target=GameLift.DescribeFleetLocationUtilization
+      operations:
+      - name: describefleetlocationutilization
+        method: POST
+        description: Amazon GameLift Describe Fleet Location Utilization
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeFleetPortSettings'
+      path: /#X-Amz-Target=GameLift.DescribeFleetPortSettings
+      operations:
+      - name: describefleetportsettings
+        method: POST
+        description: Amazon GameLift Describe Fleet Port Settings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeFleetUtilization'
+      path: /#X-Amz-Target=GameLift.DescribeFleetUtilization
+      operations:
+      - name: describefleetutilization
+        method: POST
+        description: Amazon GameLift Describe Fleet Utilization
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeGameServer'
+      path: /#X-Amz-Target=GameLift.DescribeGameServer
+      operations:
+      - name: describegameserver
+        method: POST
+        description: Amazon GameLift Describe Game Server
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeGameServerGroup'
+      path: /#X-Amz-Target=GameLift.DescribeGameServerGroup
+      operations:
+      - name: describegameservergroup
+        method: POST
+        description: Amazon GameLift Describe Game Server Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeGameServerInstances'
+      path: /#X-Amz-Target=GameLift.DescribeGameServerInstances
+      operations:
+      - name: describegameserverinstances
+        method: POST
+        description: Amazon GameLift Describe Game Server Instances
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeGameSessionDetails'
+      path: /#X-Amz-Target=GameLift.DescribeGameSessionDetails
+      operations:
+      - name: describegamesessiondetails
+        method: POST
+        description: Amazon GameLift Describe Game Session Details
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeGameSessionPlacement'
+      path: /#X-Amz-Target=GameLift.DescribeGameSessionPlacement
+      operations:
+      - name: describegamesessionplacement
+        method: POST
+        description: Amazon GameLift Describe Game Session Placement
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeGameSessionQueues'
+      path: /#X-Amz-Target=GameLift.DescribeGameSessionQueues
+      operations:
+      - name: describegamesessionqueues
+        method: POST
+        description: Amazon GameLift Describe Game Session Queues
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeGameSessions'
+      path: /#X-Amz-Target=GameLift.DescribeGameSessions
+      operations:
+      - name: describegamesessions
+        method: POST
+        description: Amazon GameLift Describe Game Sessions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeInstances'
+      path: /#X-Amz-Target=GameLift.DescribeInstances
+      operations:
+      - name: describeinstances
+        method: POST
+        description: Amazon GameLift Describe Instances
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeMatchmaking'
+      path: /#X-Amz-Target=GameLift.DescribeMatchmaking
+      operations:
+      - name: describematchmaking
+        method: POST
+        description: Amazon GameLift Describe Matchmaking
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeMatchmakingConfigurations'
+      path: /#X-Amz-Target=GameLift.DescribeMatchmakingConfigurations
+      operations:
+      - name: describematchmakingconfigurations
+        method: POST
+        description: Amazon GameLift Describe Matchmaking Configurations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeMatchmakingRuleSets'
+      path: /#X-Amz-Target=GameLift.DescribeMatchmakingRuleSets
+      operations:
+      - name: describematchmakingrulesets
+        method: POST
+        description: Amazon GameLift Describe Matchmaking Rule Sets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribePlayerSessions'
+      path: /#X-Amz-Target=GameLift.DescribePlayerSessions
+      operations:
+      - name: describeplayersessions
+        method: POST
+        description: Amazon GameLift Describe Player Sessions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeRuntimeConfiguration'
+      path: /#X-Amz-Target=GameLift.DescribeRuntimeConfiguration
+      operations:
+      - name: describeruntimeconfiguration
+        method: POST
+        description: Amazon GameLift Describe Runtime Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeScalingPolicies'
+      path: /#X-Amz-Target=GameLift.DescribeScalingPolicies
+      operations:
+      - name: describescalingpolicies
+        method: POST
+        description: Amazon GameLift Describe Scaling Policies
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeScript'
+      path: /#X-Amz-Target=GameLift.DescribeScript
+      operations:
+      - name: describescript
+        method: POST
+        description: Amazon GameLift Describe Script
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeVpcPeeringAuthorizations'
+      path: /#X-Amz-Target=GameLift.DescribeVpcPeeringAuthorizations
+      operations:
+      - name: describevpcpeeringauthorizations
+        method: POST
+        description: Amazon GameLift Describe Vpc Peering Authorizations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.DescribeVpcPeeringConnections'
+      path: /#X-Amz-Target=GameLift.DescribeVpcPeeringConnections
+      operations:
+      - name: describevpcpeeringconnections
+        method: POST
+        description: Amazon GameLift Describe Vpc Peering Connections
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.GetComputeAccess'
+      path: /#X-Amz-Target=GameLift.GetComputeAccess
+      operations:
+      - name: getcomputeaccess
+        method: POST
+        description: Amazon GameLift Get Compute Access
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.GetComputeAuthToken'
+      path: /#X-Amz-Target=GameLift.GetComputeAuthToken
+      operations:
+      - name: getcomputeauthtoken
+        method: POST
+        description: Amazon GameLift Get Compute Auth Token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.GetGameSessionLogUrl'
+      path: /#X-Amz-Target=GameLift.GetGameSessionLogUrl
+      operations:
+      - name: getgamesessionlogurl
+        method: POST
+        description: Amazon GameLift Get Game Session Log Url
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.GetInstanceAccess'
+      path: /#X-Amz-Target=GameLift.GetInstanceAccess
+      operations:
+      - name: getinstanceaccess
+        method: POST
+        description: Amazon GameLift Get Instance Access
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ListAliases'
+      path: /#X-Amz-Target=GameLift.ListAliases
+      operations:
+      - name: listaliases
+        method: POST
+        description: Amazon GameLift List Aliases
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ListBuilds'
+      path: /#X-Amz-Target=GameLift.ListBuilds
+      operations:
+      - name: listbuilds
+        method: POST
+        description: Amazon GameLift List Builds
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ListCompute'
+      path: /#X-Amz-Target=GameLift.ListCompute
+      operations:
+      - name: listcompute
+        method: POST
+        description: Amazon GameLift List Compute
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ListFleets'
+      path: /#X-Amz-Target=GameLift.ListFleets
+      operations:
+      - name: listfleets
+        method: POST
+        description: Amazon GameLift List Fleets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ListGameServerGroups'
+      path: /#X-Amz-Target=GameLift.ListGameServerGroups
+      operations:
+      - name: listgameservergroups
+        method: POST
+        description: Amazon GameLift List Game Server Groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ListGameServers'
+      path: /#X-Amz-Target=GameLift.ListGameServers
+      operations:
+      - name: listgameservers
+        method: POST
+        description: Amazon GameLift List Game Servers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ListLocations'
+      path: /#X-Amz-Target=GameLift.ListLocations
+      operations:
+      - name: listlocations
+        method: POST
+        description: Amazon GameLift List Locations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ListScripts'
+      path: /#X-Amz-Target=GameLift.ListScripts
+      operations:
+      - name: listscripts
+        method: POST
+        description: Amazon GameLift List Scripts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ListTagsForResource'
+      path: /#X-Amz-Target=GameLift.ListTagsForResource
+      operations:
+      - name: listtagsforresource
+        method: POST
+        description: Amazon GameLift List Tags for Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.PutScalingPolicy'
+      path: /#X-Amz-Target=GameLift.PutScalingPolicy
+      operations:
+      - name: putscalingpolicy
+        method: POST
+        description: Amazon GameLift Put Scaling Policy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.RegisterCompute'
+      path: /#X-Amz-Target=GameLift.RegisterCompute
+      operations:
+      - name: registercompute
+        method: POST
+        description: Amazon GameLift Register Compute
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.RegisterGameServer'
+      path: /#X-Amz-Target=GameLift.RegisterGameServer
+      operations:
+      - name: registergameserver
+        method: POST
+        description: Amazon GameLift Register Game Server
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.RequestUploadCredentials'
+      path: /#X-Amz-Target=GameLift.RequestUploadCredentials
+      operations:
+      - name: requestuploadcredentials
+        method: POST
+        description: Amazon GameLift Request Upload Credentials
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ResolveAlias'
+      path: /#X-Amz-Target=GameLift.ResolveAlias
+      operations:
+      - name: resolvealias
+        method: POST
+        description: Amazon GameLift Resolve Alias
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ResumeGameServerGroup'
+      path: /#X-Amz-Target=GameLift.ResumeGameServerGroup
+      operations:
+      - name: resumegameservergroup
+        method: POST
+        description: Amazon GameLift Resume Game Server Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.SearchGameSessions'
+      path: /#X-Amz-Target=GameLift.SearchGameSessions
+      operations:
+      - name: searchgamesessions
+        method: POST
+        description: Amazon GameLift Search Game Sessions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Limit
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.StartFleetActions'
+      path: /#X-Amz-Target=GameLift.StartFleetActions
+      operations:
+      - name: startfleetactions
+        method: POST
+        description: Amazon GameLift Start Fleet Actions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.StartGameSessionPlacement'
+      path: /#X-Amz-Target=GameLift.StartGameSessionPlacement
+      operations:
+      - name: startgamesessionplacement
+        method: POST
+        description: Amazon GameLift Start Game Session Placement
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.StartMatchBackfill'
+      path: /#X-Amz-Target=GameLift.StartMatchBackfill
+      operations:
+      - name: startmatchbackfill
+        method: POST
+        description: Amazon GameLift Start Match Backfill
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.StartMatchmaking'
+      path: /#X-Amz-Target=GameLift.StartMatchmaking
+      operations:
+      - name: startmatchmaking
+        method: POST
+        description: Amazon GameLift Start Matchmaking
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.StopFleetActions'
+      path: /#X-Amz-Target=GameLift.StopFleetActions
+      operations:
+      - name: stopfleetactions
+        method: POST
+        description: Amazon GameLift Stop Fleet Actions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.StopGameSessionPlacement'
+      path: /#X-Amz-Target=GameLift.StopGameSessionPlacement
+      operations:
+      - name: stopgamesessionplacement
+        method: POST
+        description: Amazon GameLift Stop Game Session Placement
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.StopMatchmaking'
+      path: /#X-Amz-Target=GameLift.StopMatchmaking
+      operations:
+      - name: stopmatchmaking
+        method: POST
+        description: Amazon GameLift Stop Matchmaking
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.SuspendGameServerGroup'
+      path: /#X-Amz-Target=GameLift.SuspendGameServerGroup
+      operations:
+      - name: suspendgameservergroup
+        method: POST
+        description: Amazon GameLift Suspend Game Server Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.TagResource'
+      path: /#X-Amz-Target=GameLift.TagResource
+      operations:
+      - name: tagresource
+        method: POST
+        description: Amazon GameLift Tag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UntagResource'
+      path: /#X-Amz-Target=GameLift.UntagResource
+      operations:
+      - name: untagresource
+        method: POST
+        description: Amazon GameLift Untag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateAlias'
+      path: /#X-Amz-Target=GameLift.UpdateAlias
+      operations:
+      - name: updatealias
+        method: POST
+        description: Amazon GameLift Update Alias
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateBuild'
+      path: /#X-Amz-Target=GameLift.UpdateBuild
+      operations:
+      - name: updatebuild
+        method: POST
+        description: Amazon GameLift Update Build
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateFleetAttributes'
+      path: /#X-Amz-Target=GameLift.UpdateFleetAttributes
+      operations:
+      - name: updatefleetattributes
+        method: POST
+        description: Amazon GameLift Update Fleet Attributes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateFleetCapacity'
+      path: /#X-Amz-Target=GameLift.UpdateFleetCapacity
+      operations:
+      - name: updatefleetcapacity
+        method: POST
+        description: Amazon GameLift Update Fleet Capacity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateFleetPortSettings'
+      path: /#X-Amz-Target=GameLift.UpdateFleetPortSettings
+      operations:
+      - name: updatefleetportsettings
+        method: POST
+        description: Amazon GameLift Update Fleet Port Settings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateGameServer'
+      path: /#X-Amz-Target=GameLift.UpdateGameServer
+      operations:
+      - name: updategameserver
+        method: POST
+        description: Amazon GameLift Update Game Server
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateGameServerGroup'
+      path: /#X-Amz-Target=GameLift.UpdateGameServerGroup
+      operations:
+      - name: updategameservergroup
+        method: POST
+        description: Amazon GameLift Update Game Server Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateGameSession'
+      path: /#X-Amz-Target=GameLift.UpdateGameSession
+      operations:
+      - name: updategamesession
+        method: POST
+        description: Amazon GameLift Update Game Session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateGameSessionQueue'
+      path: /#X-Amz-Target=GameLift.UpdateGameSessionQueue
+      operations:
+      - name: updategamesessionqueue
+        method: POST
+        description: Amazon GameLift Update Game Session Queue
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateMatchmakingConfiguration'
+      path: /#X-Amz-Target=GameLift.UpdateMatchmakingConfiguration
+      operations:
+      - name: updatematchmakingconfiguration
+        method: POST
+        description: Amazon GameLift Update Matchmaking Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateRuntimeConfiguration'
+      path: /#X-Amz-Target=GameLift.UpdateRuntimeConfiguration
+      operations:
+      - name: updateruntimeconfiguration
+        method: POST
+        description: Amazon GameLift Update Runtime Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.UpdateScript'
+      path: /#X-Amz-Target=GameLift.UpdateScript
+      operations:
+      - name: updatescript
+        method: POST
+        description: Amazon GameLift Update Script
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#X-Amz-Target=GameLift.ValidateMatchmakingRuleSet'
+      path: /#X-Amz-Target=GameLift.ValidateMatchmakingRuleSet
+      operations:
+      - name: validatematchmakingruleset
+        method: POST
+        description: Amazon GameLift Validate Matchmaking Rule Set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_GAMELIFT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-gamelift-rest
+    port: 8080
+    description: REST adapter for Amazon GameLift. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/x-amz-target-gamelift-acceptmatch
+      name: x-amz-target-gamelift-acceptmatch
+      description: 'REST surface for #X-Amz-Target=GameLift.AcceptMatch.'
+      operations:
+      - method: POST
+        name: acceptmatch
+        description: Amazon GameLift Accept Match
+        call: amazon-gamelift.acceptmatch
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-claimgameserver
+      name: x-amz-target-gamelift-claimgameserver
+      description: 'REST surface for #X-Amz-Target=GameLift.ClaimGameServer.'
+      operations:
+      - method: POST
+        name: claimgameserver
+        description: Amazon GameLift Claim Game Server
+        call: amazon-gamelift.claimgameserver
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-createalias
+      name: x-amz-target-gamelift-createalias
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateAlias.'
+      operations:
+      - method: POST
+        name: createalias
+        description: Amazon GameLift Create Alias
+        call: amazon-gamelift.createalias
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-createbuild
+      name: x-amz-target-gamelift-createbuild
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateBuild.'
+      operations:
+      - method: POST
+        name: createbuild
+        description: Amazon GameLift Create Build
+        call: amazon-gamelift.createbuild
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-createfleet
+      name: x-amz-target-gamelift-createfleet
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateFleet.'
+      operations:
+      - method: POST
+        name: createfleet
+        description: Amazon GameLift Create Fleet
+        call: amazon-gamelift.createfleet
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-createfleetlocations
+      name: x-amz-target-gamelift-createfleetlocations
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateFleetLocations.'
+      operations:
+      - method: POST
+        name: createfleetlocations
+        description: Amazon GameLift Create Fleet Locations
+        call: amazon-gamelift.createfleetlocations
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-creategameservergroup
+      name: x-amz-target-gamelift-creategameservergroup
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateGameServerGroup.'
+      operations:
+      - method: POST
+        name: creategameservergroup
+        description: Amazon GameLift Create Game Server Group
+        call: amazon-gamelift.creategameservergroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-creategamesession
+      name: x-amz-target-gamelift-creategamesession
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateGameSession.'
+      operations:
+      - method: POST
+        name: creategamesession
+        description: Amazon GameLift Create Game Session
+        call: amazon-gamelift.creategamesession
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-creategamesessionqueue
+      name: x-amz-target-gamelift-creategamesessionqueue
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateGameSessionQueue.'
+      operations:
+      - method: POST
+        name: creategamesessionqueue
+        description: Amazon GameLift Create Game Session Queue
+        call: amazon-gamelift.creategamesessionqueue
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-createlocation
+      name: x-amz-target-gamelift-createlocation
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateLocation.'
+      operations:
+      - method: POST
+        name: createlocation
+        description: Amazon GameLift Create Location
+        call: amazon-gamelift.createlocation
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-creatematchmakingconfiguration
+      name: x-amz-target-gamelift-creatematchmakingconfiguration
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateMatchmakingConfiguration.'
+      operations:
+      - method: POST
+        name: creatematchmakingconfiguration
+        description: Amazon GameLift Create Matchmaking Configuration
+        call: amazon-gamelift.creatematchmakingconfiguration
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-creatematchmakingruleset
+      name: x-amz-target-gamelift-creatematchmakingruleset
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateMatchmakingRuleSet.'
+      operations:
+      - method: POST
+        name: creatematchmakingruleset
+        description: Amazon GameLift Create Matchmaking Rule Set
+        call: amazon-gamelift.creatematchmakingruleset
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-createplayersession
+      name: x-amz-target-gamelift-createplayersession
+      description: 'REST surface for #X-Amz-Target=GameLift.CreatePlayerSession.'
+      operations:
+      - method: POST
+        name: createplayersession
+        description: Amazon GameLift Create Player Session
+        call: amazon-gamelift.createplayersession
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-createplayersessions
+      name: x-amz-target-gamelift-createplayersessions
+      description: 'REST surface for #X-Amz-Target=GameLift.CreatePlayerSessions.'
+      operations:
+      - method: POST
+        name: createplayersessions
+        description: Amazon GameLift Create Player Sessions
+        call: amazon-gamelift.createplayersessions
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-createscript
+      name: x-amz-target-gamelift-createscript
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateScript.'
+      operations:
+      - method: POST
+        name: createscript
+        description: Amazon GameLift Create Script
+        call: amazon-gamelift.createscript
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-createvpcpeeringauthorization
+      name: x-amz-target-gamelift-createvpcpeeringauthorization
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateVpcPeeringAuthorization.'
+      operations:
+      - method: POST
+        name: createvpcpeeringauthorization
+        description: Amazon GameLift Create Vpc Peering Authorization
+        call: amazon-gamelift.createvpcpeeringauthorization
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-createvpcpeeringconnection
+      name: x-amz-target-gamelift-createvpcpeeringconnection
+      description: 'REST surface for #X-Amz-Target=GameLift.CreateVpcPeeringConnection.'
+      operations:
+      - method: POST
+        name: createvpcpeeringconnection
+        description: Amazon GameLift Create Vpc Peering Connection
+        call: amazon-gamelift.createvpcpeeringconnection
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletealias
+      name: x-amz-target-gamelift-deletealias
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteAlias.'
+      operations:
+      - method: POST
+        name: deletealias
+        description: Amazon GameLift Delete Alias
+        call: amazon-gamelift.deletealias
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletebuild
+      name: x-amz-target-gamelift-deletebuild
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteBuild.'
+      operations:
+      - method: POST
+        name: deletebuild
+        description: Amazon GameLift Delete Build
+        call: amazon-gamelift.deletebuild
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletefleet
+      name: x-amz-target-gamelift-deletefleet
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteFleet.'
+      operations:
+      - method: POST
+        name: deletefleet
+        description: Amazon GameLift Delete Fleet
+        call: amazon-gamelift.deletefleet
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletefleetlocations
+      name: x-amz-target-gamelift-deletefleetlocations
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteFleetLocations.'
+      operations:
+      - method: POST
+        name: deletefleetlocations
+        description: Amazon GameLift Delete Fleet Locations
+        call: amazon-gamelift.deletefleetlocations
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletegameservergroup
+      name: x-amz-target-gamelift-deletegameservergroup
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteGameServerGroup.'
+      operations:
+      - method: POST
+        name: deletegameservergroup
+        description: Amazon GameLift Delete Game Server Group
+        call: amazon-gamelift.deletegameservergroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletegamesessionqueue
+      name: x-amz-target-gamelift-deletegamesessionqueue
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteGameSessionQueue.'
+      operations:
+      - method: POST
+        name: deletegamesessionqueue
+        description: Amazon GameLift Delete Game Session Queue
+        call: amazon-gamelift.deletegamesessionqueue
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletelocation
+      name: x-amz-target-gamelift-deletelocation
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteLocation.'
+      operations:
+      - method: POST
+        name: deletelocation
+        description: Amazon GameLift Delete Location
+        call: amazon-gamelift.deletelocation
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletematchmakingconfiguration
+      name: x-amz-target-gamelift-deletematchmakingconfiguration
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteMatchmakingConfiguration.'
+      operations:
+      - method: POST
+        name: deletematchmakingconfiguration
+        description: Amazon GameLift Delete Matchmaking Configuration
+        call: amazon-gamelift.deletematchmakingconfiguration
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletematchmakingruleset
+      name: x-amz-target-gamelift-deletematchmakingruleset
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteMatchmakingRuleSet.'
+      operations:
+      - method: POST
+        name: deletematchmakingruleset
+        description: Amazon GameLift Delete Matchmaking Rule Set
+        call: amazon-gamelift.deletematchmakingruleset
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletescalingpolicy
+      name: x-amz-target-gamelift-deletescalingpolicy
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteScalingPolicy.'
+      operations:
+      - method: POST
+        name: deletescalingpolicy
+        description: Amazon GameLift Delete Scaling Policy
+        call: amazon-gamelift.deletescalingpolicy
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletescript
+      name: x-amz-target-gamelift-deletescript
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteScript.'
+      operations:
+      - method: POST
+        name: deletescript
+        description: Amazon GameLift Delete Script
+        call: amazon-gamelift.deletescript
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletevpcpeeringauthorization
+      name: x-amz-target-gamelift-deletevpcpeeringauthorization
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteVpcPeeringAuthorization.'
+      operations:
+      - method: POST
+        name: deletevpcpeeringauthorization
+        description: Amazon GameLift Delete Vpc Peering Authorization
+        call: amazon-gamelift.deletevpcpeeringauthorization
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deletevpcpeeringconnection
+      name: x-amz-target-gamelift-deletevpcpeeringconnection
+      description: 'REST surface for #X-Amz-Target=GameLift.DeleteVpcPeeringConnection.'
+      operations:
+      - method: POST
+        name: deletevpcpeeringconnection
+        description: Amazon GameLift Delete Vpc Peering Connection
+        call: amazon-gamelift.deletevpcpeeringconnection
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deregistercompute
+      name: x-amz-target-gamelift-deregistercompute
+      description: 'REST surface for #X-Amz-Target=GameLift.DeregisterCompute.'
+      operations:
+      - method: POST
+        name: deregistercompute
+        description: Amazon GameLift Deregister Compute
+        call: amazon-gamelift.deregistercompute
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-deregistergameserver
+      name: x-amz-target-gamelift-deregistergameserver
+      description: 'REST surface for #X-Amz-Target=GameLift.DeregisterGameServer.'
+      operations:
+      - method: POST
+        name: deregistergameserver
+        description: Amazon GameLift Deregister Game Server
+        call: amazon-gamelift.deregistergameserver
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describealias
+      name: x-amz-target-gamelift-describealias
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeAlias.'
+      operations:
+      - method: POST
+        name: describealias
+        description: Amazon GameLift Describe Alias
+        call: amazon-gamelift.describealias
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describebuild
+      name: x-amz-target-gamelift-describebuild
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeBuild.'
+      operations:
+      - method: POST
+        name: describebuild
+        description: Amazon GameLift Describe Build
+        call: amazon-gamelift.describebuild
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describecompute
+      name: x-amz-target-gamelift-describecompute
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeCompute.'
+      operations:
+      - method: POST
+        name: describecompute
+        description: Amazon GameLift Describe Compute
+        call: amazon-gamelift.describecompute
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describeec2instancelimits
+      name: x-amz-target-gamelift-describeec2instancelimits
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeEC2InstanceLimits.'
+      operations:
+      - method: POST
+        name: describeec2instancelimits
+        description: Amazon GameLift Describe E C2 Instance Limits
+        call: amazon-gamelift.describeec2instancelimits
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describefleetattributes
+      name: x-amz-target-gamelift-describefleetattributes
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeFleetAttributes.'
+      operations:
+      - method: POST
+        name: describefleetattributes
+        description: Amazon GameLift Describe Fleet Attributes
+        call: amazon-gamelift.describefleetattributes
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describefleetcapacity
+      name: x-amz-target-gamelift-describefleetcapacity
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeFleetCapacity.'
+      operations:
+      - method: POST
+        name: describefleetcapacity
+        description: Amazon GameLift Describe Fleet Capacity
+        call: amazon-gamelift.describefleetcapacity
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describefleetevents
+      name: x-amz-target-gamelift-describefleetevents
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeFleetEvents.'
+      operations:
+      - method: POST
+        name: describefleetevents
+        description: Amazon GameLift Describe Fleet Events
+        call: amazon-gamelift.describefleetevents
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describefleetlocationattributes
+      name: x-amz-target-gamelift-describefleetlocationattributes
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeFleetLocationAttributes.'
+      operations:
+      - method: POST
+        name: describefleetlocationattributes
+        description: Amazon GameLift Describe Fleet Location Attributes
+        call: amazon-gamelift.describefleetlocationattributes
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describefleetlocationcapacity
+      name: x-amz-target-gamelift-describefleetlocationcapacity
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeFleetLocationCapacity.'
+      operations:
+      - method: POST
+        name: describefleetlocationcapacity
+        description: Amazon GameLift Describe Fleet Location Capacity
+        call: amazon-gamelift.describefleetlocationcapacity
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describefleetlocationutilization
+      name: x-amz-target-gamelift-describefleetlocationutilization
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeFleetLocationUtilization.'
+      operations:
+      - method: POST
+        name: describefleetlocationutilization
+        description: Amazon GameLift Describe Fleet Location Utilization
+        call: amazon-gamelift.describefleetlocationutilization
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describefleetportsettings
+      name: x-amz-target-gamelift-describefleetportsettings
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeFleetPortSettings.'
+      operations:
+      - method: POST
+        name: describefleetportsettings
+        description: Amazon GameLift Describe Fleet Port Settings
+        call: amazon-gamelift.describefleetportsettings
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describefleetutilization
+      name: x-amz-target-gamelift-describefleetutilization
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeFleetUtilization.'
+      operations:
+      - method: POST
+        name: describefleetutilization
+        description: Amazon GameLift Describe Fleet Utilization
+        call: amazon-gamelift.describefleetutilization
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describegameserver
+      name: x-amz-target-gamelift-describegameserver
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeGameServer.'
+      operations:
+      - method: POST
+        name: describegameserver
+        description: Amazon GameLift Describe Game Server
+        call: amazon-gamelift.describegameserver
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describegameservergroup
+      name: x-amz-target-gamelift-describegameservergroup
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeGameServerGroup.'
+      operations:
+      - method: POST
+        name: describegameservergroup
+        description: Amazon GameLift Describe Game Server Group
+        call: amazon-gamelift.describegameservergroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describegameserverinstances
+      name: x-amz-target-gamelift-describegameserverinstances
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeGameServerInstances.'
+      operations:
+      - method: POST
+        name: describegameserverinstances
+        description: Amazon GameLift Describe Game Server Instances
+        call: amazon-gamelift.describegameserverinstances
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describegamesessiondetails
+      name: x-amz-target-gamelift-describegamesessiondetails
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeGameSessionDetails.'
+      operations:
+      - method: POST
+        name: describegamesessiondetails
+        description: Amazon GameLift Describe Game Session Details
+        call: amazon-gamelift.describegamesessiondetails
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describegamesessionplacement
+      name: x-amz-target-gamelift-describegamesessionplacement
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeGameSessionPlacement.'
+      operations:
+      - method: POST
+        name: describegamesessionplacement
+        description: Amazon GameLift Describe Game Session Placement
+        call: amazon-gamelift.describegamesessionplacement
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describegamesessionqueues
+      name: x-amz-target-gamelift-describegamesessionqueues
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeGameSessionQueues.'
+      operations:
+      - method: POST
+        name: describegamesessionqueues
+        description: Amazon GameLift Describe Game Session Queues
+        call: amazon-gamelift.describegamesessionqueues
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describegamesessions
+      name: x-amz-target-gamelift-describegamesessions
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeGameSessions.'
+      operations:
+      - method: POST
+        name: describegamesessions
+        description: Amazon GameLift Describe Game Sessions
+        call: amazon-gamelift.describegamesessions
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describeinstances
+      name: x-amz-target-gamelift-describeinstances
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeInstances.'
+      operations:
+      - method: POST
+        name: describeinstances
+        description: Amazon GameLift Describe Instances
+        call: amazon-gamelift.describeinstances
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describematchmaking
+      name: x-amz-target-gamelift-describematchmaking
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeMatchmaking.'
+      operations:
+      - method: POST
+        name: describematchmaking
+        description: Amazon GameLift Describe Matchmaking
+        call: amazon-gamelift.describematchmaking
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describematchmakingconfigurations
+      name: x-amz-target-gamelift-describematchmakingconfigurations
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeMatchmakingConfigurations.'
+      operations:
+      - method: POST
+        name: describematchmakingconfigurations
+        description: Amazon GameLift Describe Matchmaking Configurations
+        call: amazon-gamelift.describematchmakingconfigurations
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describematchmakingrulesets
+      name: x-amz-target-gamelift-describematchmakingrulesets
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeMatchmakingRuleSets.'
+      operations:
+      - method: POST
+        name: describematchmakingrulesets
+        description: Amazon GameLift Describe Matchmaking Rule Sets
+        call: amazon-gamelift.describematchmakingrulesets
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describeplayersessions
+      name: x-amz-target-gamelift-describeplayersessions
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribePlayerSessions.'
+      operations:
+      - method: POST
+        name: describeplayersessions
+        description: Amazon GameLift Describe Player Sessions
+        call: amazon-gamelift.describeplayersessions
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describeruntimeconfiguration
+      name: x-amz-target-gamelift-describeruntimeconfiguration
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeRuntimeConfiguration.'
+      operations:
+      - method: POST
+        name: describeruntimeconfiguration
+        description: Amazon GameLift Describe Runtime Configuration
+        call: amazon-gamelift.describeruntimeconfiguration
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describescalingpolicies
+      name: x-amz-target-gamelift-describescalingpolicies
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeScalingPolicies.'
+      operations:
+      - method: POST
+        name: describescalingpolicies
+        description: Amazon GameLift Describe Scaling Policies
+        call: amazon-gamelift.describescalingpolicies
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describescript
+      name: x-amz-target-gamelift-describescript
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeScript.'
+      operations:
+      - method: POST
+        name: describescript
+        description: Amazon GameLift Describe Script
+        call: amazon-gamelift.describescript
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describevpcpeeringauthorizations
+      name: x-amz-target-gamelift-describevpcpeeringauthorizations
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeVpcPeeringAuthorizations.'
+      operations:
+      - method: POST
+        name: describevpcpeeringauthorizations
+        description: Amazon GameLift Describe Vpc Peering Authorizations
+        call: amazon-gamelift.describevpcpeeringauthorizations
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-describevpcpeeringconnections
+      name: x-amz-target-gamelift-describevpcpeeringconnections
+      description: 'REST surface for #X-Amz-Target=GameLift.DescribeVpcPeeringConnections.'
+      operations:
+      - method: POST
+        name: describevpcpeeringconnections
+        description: Amazon GameLift Describe Vpc Peering Connections
+        call: amazon-gamelift.describevpcpeeringconnections
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-getcomputeaccess
+      name: x-amz-target-gamelift-getcomputeaccess
+      description: 'REST surface for #X-Amz-Target=GameLift.GetComputeAccess.'
+      operations:
+      - method: POST
+        name: getcomputeaccess
+        description: Amazon GameLift Get Compute Access
+        call: amazon-gamelift.getcomputeaccess
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-getcomputeauthtoken
+      name: x-amz-target-gamelift-getcomputeauthtoken
+      description: 'REST surface for #X-Amz-Target=GameLift.GetComputeAuthToken.'
+      operations:
+      - method: POST
+        name: getcomputeauthtoken
+        description: Amazon GameLift Get Compute Auth Token
+        call: amazon-gamelift.getcomputeauthtoken
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-getgamesessionlogurl
+      name: x-amz-target-gamelift-getgamesessionlogurl
+      description: 'REST surface for #X-Amz-Target=GameLift.GetGameSessionLogUrl.'
+      operations:
+      - method: POST
+        name: getgamesessionlogurl
+        description: Amazon GameLift Get Game Session Log Url
+        call: amazon-gamelift.getgamesessionlogurl
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-getinstanceaccess
+      name: x-amz-target-gamelift-getinstanceaccess
+      description: 'REST surface for #X-Amz-Target=GameLift.GetInstanceAccess.'
+      operations:
+      - method: POST
+        name: getinstanceaccess
+        description: Amazon GameLift Get Instance Access
+        call: amazon-gamelift.getinstanceaccess
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-listaliases
+      name: x-amz-target-gamelift-listaliases
+      description: 'REST surface for #X-Amz-Target=GameLift.ListAliases.'
+      operations:
+      - method: POST
+        name: listaliases
+        description: Amazon GameLift List Aliases
+        call: amazon-gamelift.listaliases
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-listbuilds
+      name: x-amz-target-gamelift-listbuilds
+      description: 'REST surface for #X-Amz-Target=GameLift.ListBuilds.'
+      operations:
+      - method: POST
+        name: listbuilds
+        description: Amazon GameLift List Builds
+        call: amazon-gamelift.listbuilds
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-listcompute
+      name: x-amz-target-gamelift-listcompute
+      description: 'REST surface for #X-Amz-Target=GameLift.ListCompute.'
+      operations:
+      - method: POST
+        name: listcompute
+        description: Amazon GameLift List Compute
+        call: amazon-gamelift.listcompute
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-listfleets
+      name: x-amz-target-gamelift-listfleets
+      description: 'REST surface for #X-Amz-Target=GameLift.ListFleets.'
+      operations:
+      - method: POST
+        name: listfleets
+        description: Amazon GameLift List Fleets
+        call: amazon-gamelift.listfleets
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-listgameservergroups
+      name: x-amz-target-gamelift-listgameservergroups
+      description: 'REST surface for #X-Amz-Target=GameLift.ListGameServerGroups.'
+      operations:
+      - method: POST
+        name: listgameservergroups
+        description: Amazon GameLift List Game Server Groups
+        call: amazon-gamelift.listgameservergroups
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-listgameservers
+      name: x-amz-target-gamelift-listgameservers
+      description: 'REST surface for #X-Amz-Target=GameLift.ListGameServers.'
+      operations:
+      - method: POST
+        name: listgameservers
+        description: Amazon GameLift List Game Servers
+        call: amazon-gamelift.listgameservers
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-listlocations
+      name: x-amz-target-gamelift-listlocations
+      description: 'REST surface for #X-Amz-Target=GameLift.ListLocations.'
+      operations:
+      - method: POST
+        name: listlocations
+        description: Amazon GameLift List Locations
+        call: amazon-gamelift.listlocations
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-listscripts
+      name: x-amz-target-gamelift-listscripts
+      description: 'REST surface for #X-Amz-Target=GameLift.ListScripts.'
+      operations:
+      - method: POST
+        name: listscripts
+        description: Amazon GameLift List Scripts
+        call: amazon-gamelift.listscripts
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-listtagsforresource
+      name: x-amz-target-gamelift-listtagsforresource
+      description: 'REST surface for #X-Amz-Target=GameLift.ListTagsForResource.'
+      operations:
+      - method: POST
+        name: listtagsforresource
+        description: Amazon GameLift List Tags for Resource
+        call: amazon-gamelift.listtagsforresource
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-putscalingpolicy
+      name: x-amz-target-gamelift-putscalingpolicy
+      description: 'REST surface for #X-Amz-Target=GameLift.PutScalingPolicy.'
+      operations:
+      - method: POST
+        name: putscalingpolicy
+        description: Amazon GameLift Put Scaling Policy
+        call: amazon-gamelift.putscalingpolicy
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-registercompute
+      name: x-amz-target-gamelift-registercompute
+      description: 'REST surface for #X-Amz-Target=GameLift.RegisterCompute.'
+      operations:
+      - method: POST
+        name: registercompute
+        description: Amazon GameLift Register Compute
+        call: amazon-gamelift.registercompute
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-registergameserver
+      name: x-amz-target-gamelift-registergameserver
+      description: 'REST surface for #X-Amz-Target=GameLift.RegisterGameServer.'
+      operations:
+      - method: POST
+        name: registergameserver
+        description: Amazon GameLift Register Game Server
+        call: amazon-gamelift.registergameserver
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-requestuploadcredentials
+      name: x-amz-target-gamelift-requestuploadcredentials
+      description: 'REST surface for #X-Amz-Target=GameLift.RequestUploadCredentials.'
+      operations:
+      - method: POST
+        name: requestuploadcredentials
+        description: Amazon GameLift Request Upload Credentials
+        call: amazon-gamelift.requestuploadcredentials
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-resolvealias
+      name: x-amz-target-gamelift-resolvealias
+      description: 'REST surface for #X-Amz-Target=GameLift.ResolveAlias.'
+      operations:
+      - method: POST
+        name: resolvealias
+        description: Amazon GameLift Resolve Alias
+        call: amazon-gamelift.resolvealias
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-resumegameservergroup
+      name: x-amz-target-gamelift-resumegameservergroup
+      description: 'REST surface for #X-Amz-Target=GameLift.ResumeGameServerGroup.'
+      operations:
+      - method: POST
+        name: resumegameservergroup
+        description: Amazon GameLift Resume Game Server Group
+        call: amazon-gamelift.resumegameservergroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-searchgamesessions
+      name: x-amz-target-gamelift-searchgamesessions
+      description: 'REST surface for #X-Amz-Target=GameLift.SearchGameSessions.'
+      operations:
+      - method: POST
+        name: searchgamesessions
+        description: Amazon GameLift Search Game Sessions
+        call: amazon-gamelift.searchgamesessions
+        with:
+          Limit: rest.Limit
+          NextToken: rest.NextToken
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-startfleetactions
+      name: x-amz-target-gamelift-startfleetactions
+      description: 'REST surface for #X-Amz-Target=GameLift.StartFleetActions.'
+      operations:
+      - method: POST
+        name: startfleetactions
+        description: Amazon GameLift Start Fleet Actions
+        call: amazon-gamelift.startfleetactions
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-startgamesessionplacement
+      name: x-amz-target-gamelift-startgamesessionplacement
+      description: 'REST surface for #X-Amz-Target=GameLift.StartGameSessionPlacement.'
+      operations:
+      - method: POST
+        name: startgamesessionplacement
+        description: Amazon GameLift Start Game Session Placement
+        call: amazon-gamelift.startgamesessionplacement
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-startmatchbackfill
+      name: x-amz-target-gamelift-startmatchbackfill
+      description: 'REST surface for #X-Amz-Target=GameLift.StartMatchBackfill.'
+      operations:
+      - method: POST
+        name: startmatchbackfill
+        description: Amazon GameLift Start Match Backfill
+        call: amazon-gamelift.startmatchbackfill
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-startmatchmaking
+      name: x-amz-target-gamelift-startmatchmaking
+      description: 'REST surface for #X-Amz-Target=GameLift.StartMatchmaking.'
+      operations:
+      - method: POST
+        name: startmatchmaking
+        description: Amazon GameLift Start Matchmaking
+        call: amazon-gamelift.startmatchmaking
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-stopfleetactions
+      name: x-amz-target-gamelift-stopfleetactions
+      description: 'REST surface for #X-Amz-Target=GameLift.StopFleetActions.'
+      operations:
+      - method: POST
+        name: stopfleetactions
+        description: Amazon GameLift Stop Fleet Actions
+        call: amazon-gamelift.stopfleetactions
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-stopgamesessionplacement
+      name: x-amz-target-gamelift-stopgamesessionplacement
+      description: 'REST surface for #X-Amz-Target=GameLift.StopGameSessionPlacement.'
+      operations:
+      - method: POST
+        name: stopgamesessionplacement
+        description: Amazon GameLift Stop Game Session Placement
+        call: amazon-gamelift.stopgamesessionplacement
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-stopmatchmaking
+      name: x-amz-target-gamelift-stopmatchmaking
+      description: 'REST surface for #X-Amz-Target=GameLift.StopMatchmaking.'
+      operations:
+      - method: POST
+        name: stopmatchmaking
+        description: Amazon GameLift Stop Matchmaking
+        call: amazon-gamelift.stopmatchmaking
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-suspendgameservergroup
+      name: x-amz-target-gamelift-suspendgameservergroup
+      description: 'REST surface for #X-Amz-Target=GameLift.SuspendGameServerGroup.'
+      operations:
+      - method: POST
+        name: suspendgameservergroup
+        description: Amazon GameLift Suspend Game Server Group
+        call: amazon-gamelift.suspendgameservergroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-tagresource
+      name: x-amz-target-gamelift-tagresource
+      description: 'REST surface for #X-Amz-Target=GameLift.TagResource.'
+      operations:
+      - method: POST
+        name: tagresource
+        description: Amazon GameLift Tag Resource
+        call: amazon-gamelift.tagresource
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-untagresource
+      name: x-amz-target-gamelift-untagresource
+      description: 'REST surface for #X-Amz-Target=GameLift.UntagResource.'
+      operations:
+      - method: POST
+        name: untagresource
+        description: Amazon GameLift Untag Resource
+        call: amazon-gamelift.untagresource
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updatealias
+      name: x-amz-target-gamelift-updatealias
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateAlias.'
+      operations:
+      - method: POST
+        name: updatealias
+        description: Amazon GameLift Update Alias
+        call: amazon-gamelift.updatealias
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updatebuild
+      name: x-amz-target-gamelift-updatebuild
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateBuild.'
+      operations:
+      - method: POST
+        name: updatebuild
+        description: Amazon GameLift Update Build
+        call: amazon-gamelift.updatebuild
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updatefleetattributes
+      name: x-amz-target-gamelift-updatefleetattributes
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateFleetAttributes.'
+      operations:
+      - method: POST
+        name: updatefleetattributes
+        description: Amazon GameLift Update Fleet Attributes
+        call: amazon-gamelift.updatefleetattributes
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updatefleetcapacity
+      name: x-amz-target-gamelift-updatefleetcapacity
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateFleetCapacity.'
+      operations:
+      - method: POST
+        name: updatefleetcapacity
+        description: Amazon GameLift Update Fleet Capacity
+        call: amazon-gamelift.updatefleetcapacity
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updatefleetportsettings
+      name: x-amz-target-gamelift-updatefleetportsettings
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateFleetPortSettings.'
+      operations:
+      - method: POST
+        name: updatefleetportsettings
+        description: Amazon GameLift Update Fleet Port Settings
+        call: amazon-gamelift.updatefleetportsettings
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updategameserver
+      name: x-amz-target-gamelift-updategameserver
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateGameServer.'
+      operations:
+      - method: POST
+        name: updategameserver
+        description: Amazon GameLift Update Game Server
+        call: amazon-gamelift.updategameserver
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updategameservergroup
+      name: x-amz-target-gamelift-updategameservergroup
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateGameServerGroup.'
+      operations:
+      - method: POST
+        name: updategameservergroup
+        description: Amazon GameLift Update Game Server Group
+        call: amazon-gamelift.updategameservergroup
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updategamesession
+      name: x-amz-target-gamelift-updategamesession
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateGameSession.'
+      operations:
+      - method: POST
+        name: updategamesession
+        description: Amazon GameLift Update Game Session
+        call: amazon-gamelift.updategamesession
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updategamesessionqueue
+      name: x-amz-target-gamelift-updategamesessionqueue
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateGameSessionQueue.'
+      operations:
+      - method: POST
+        name: updategamesessionqueue
+        description: Amazon GameLift Update Game Session Queue
+        call: amazon-gamelift.updategamesessionqueue
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updatematchmakingconfiguration
+      name: x-amz-target-gamelift-updatematchmakingconfiguration
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateMatchmakingConfiguration.'
+      operations:
+      - method: POST
+        name: updatematchmakingconfiguration
+        description: Amazon GameLift Update Matchmaking Configuration
+        call: amazon-gamelift.updatematchmakingconfiguration
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updateruntimeconfiguration
+      name: x-amz-target-gamelift-updateruntimeconfiguration
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateRuntimeConfiguration.'
+      operations:
+      - method: POST
+        name: updateruntimeconfiguration
+        description: Amazon GameLift Update Runtime Configuration
+        call: amazon-gamelift.updateruntimeconfiguration
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-updatescript
+      name: x-amz-target-gamelift-updatescript
+      description: 'REST surface for #X-Amz-Target=GameLift.UpdateScript.'
+      operations:
+      - method: POST
+        name: updatescript
+        description: Amazon GameLift Update Script
+        call: amazon-gamelift.updatescript
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/x-amz-target-gamelift-validatematchmakingruleset
+      name: x-amz-target-gamelift-validatematchmakingruleset
+      description: 'REST surface for #X-Amz-Target=GameLift.ValidateMatchmakingRuleSet.'
+      operations:
+      - method: POST
+        name: validatematchmakingruleset
+        description: Amazon GameLift Validate Matchmaking Rule Set
+        call: amazon-gamelift.validatematchmakingruleset
+        with:
+          X-Amz-Target: rest.X-Amz-Target
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-gamelift-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon GameLift. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: amazon-gamelift-accept-match
+      description: Amazon GameLift Accept Match
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.acceptmatch
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-claim-game-server
+      description: Amazon GameLift Claim Game Server
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.claimgameserver
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-alias
+      description: Amazon GameLift Create Alias
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.createalias
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-build
+      description: Amazon GameLift Create Build
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.createbuild
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-fleet
+      description: Amazon GameLift Create Fleet
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.createfleet
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-fleet-locations
+      description: Amazon GameLift Create Fleet Locations
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.createfleetlocations
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-game-server
+      description: Amazon GameLift Create Game Server Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.creategameservergroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-game-session
+      description: Amazon GameLift Create Game Session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.creategamesession
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-game-session-2
+      description: Amazon GameLift Create Game Session Queue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.creategamesessionqueue
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-location
+      description: Amazon GameLift Create Location
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.createlocation
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-matchmaking-configuration
+      description: Amazon GameLift Create Matchmaking Configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.creatematchmakingconfiguration
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-matchmaking-rule
+      description: Amazon GameLift Create Matchmaking Rule Set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.creatematchmakingruleset
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-player-session
+      description: Amazon GameLift Create Player Session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.createplayersession
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-player-sessions
+      description: Amazon GameLift Create Player Sessions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.createplayersessions
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-script
+      description: Amazon GameLift Create Script
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.createscript
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-vpc-peering
+      description: Amazon GameLift Create Vpc Peering Authorization
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.createvpcpeeringauthorization
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-create-vpc-peering-2
+      description: Amazon GameLift Create Vpc Peering Connection
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.createvpcpeeringconnection
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-alias
+      description: Amazon GameLift Delete Alias
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletealias
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-build
+      description: Amazon GameLift Delete Build
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletebuild
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-fleet
+      description: Amazon GameLift Delete Fleet
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletefleet
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-fleet-locations
+      description: Amazon GameLift Delete Fleet Locations
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletefleetlocations
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-game-server
+      description: Amazon GameLift Delete Game Server Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletegameservergroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-game-session
+      description: Amazon GameLift Delete Game Session Queue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletegamesessionqueue
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-location
+      description: Amazon GameLift Delete Location
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletelocation
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-matchmaking-configuration
+      description: Amazon GameLift Delete Matchmaking Configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletematchmakingconfiguration
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-matchmaking-rule
+      description: Amazon GameLift Delete Matchmaking Rule Set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletematchmakingruleset
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-scaling-policy
+      description: Amazon GameLift Delete Scaling Policy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletescalingpolicy
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-script
+      description: Amazon GameLift Delete Script
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletescript
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-vpc-peering
+      description: Amazon GameLift Delete Vpc Peering Authorization
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletevpcpeeringauthorization
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-delete-vpc-peering-2
+      description: Amazon GameLift Delete Vpc Peering Connection
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deletevpcpeeringconnection
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-deregister-compute
+      description: Amazon GameLift Deregister Compute
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deregistercompute
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-deregister-game-server
+      description: Amazon GameLift Deregister Game Server
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.deregistergameserver
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-alias
+      description: Amazon GameLift Describe Alias
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describealias
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-build
+      description: Amazon GameLift Describe Build
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describebuild
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-compute
+      description: Amazon GameLift Describe Compute
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describecompute
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-e-c2
+      description: Amazon GameLift Describe E C2 Instance Limits
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describeec2instancelimits
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-fleet-attributes
+      description: Amazon GameLift Describe Fleet Attributes
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describefleetattributes
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-fleet-capacity
+      description: Amazon GameLift Describe Fleet Capacity
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describefleetcapacity
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-fleet-events
+      description: Amazon GameLift Describe Fleet Events
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describefleetevents
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-fleet-location
+      description: Amazon GameLift Describe Fleet Location Attributes
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describefleetlocationattributes
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-fleet-location-2
+      description: Amazon GameLift Describe Fleet Location Capacity
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describefleetlocationcapacity
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-fleet-location-3
+      description: Amazon GameLift Describe Fleet Location Utilization
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describefleetlocationutilization
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-fleet-port
+      description: Amazon GameLift Describe Fleet Port Settings
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describefleetportsettings
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-fleet-utilization
+      description: Amazon GameLift Describe Fleet Utilization
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describefleetutilization
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-game-server
+      description: Amazon GameLift Describe Game Server
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describegameserver
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-game-server-2
+      description: Amazon GameLift Describe Game Server Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describegameservergroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-game-server-3
+      description: Amazon GameLift Describe Game Server Instances
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describegameserverinstances
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-game-session
+      description: Amazon GameLift Describe Game Session Details
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describegamesessiondetails
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-game-session-2
+      description: Amazon GameLift Describe Game Session Placement
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describegamesessionplacement
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-game-session-3
+      description: Amazon GameLift Describe Game Session Queues
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describegamesessionqueues
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-game-sessions
+      description: Amazon GameLift Describe Game Sessions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describegamesessions
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-instances
+      description: Amazon GameLift Describe Instances
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describeinstances
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-matchmaking
+      description: Amazon GameLift Describe Matchmaking
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describematchmaking
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-matchmaking-configurations
+      description: Amazon GameLift Describe Matchmaking Configurations
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describematchmakingconfigurations
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-matchmaking-rule
+      description: Amazon GameLift Describe Matchmaking Rule Sets
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describematchmakingrulesets
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-player-sessions
+      description: Amazon GameLift Describe Player Sessions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describeplayersessions
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-runtime-configuration
+      description: Amazon GameLift Describe Runtime Configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describeruntimeconfiguration
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-scaling-policies
+      description: Amazon GameLift Describe Scaling Policies
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describescalingpolicies
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-script
+      description: Amazon GameLift Describe Script
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describescript
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-vpc-peering
+      description: Amazon GameLift Describe Vpc Peering Authorizations
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describevpcpeeringauthorizations
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-describe-vpc-peering-2
+      description: Amazon GameLift Describe Vpc Peering Connections
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.describevpcpeeringconnections
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-get-compute-access
+      description: Amazon GameLift Get Compute Access
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.getcomputeaccess
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-get-compute-auth
+      description: Amazon GameLift Get Compute Auth Token
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.getcomputeauthtoken
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-get-game-session
+      description: Amazon GameLift Get Game Session Log Url
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.getgamesessionlogurl
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-get-instance-access
+      description: Amazon GameLift Get Instance Access
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.getinstanceaccess
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-list-aliases
+      description: Amazon GameLift List Aliases
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.listaliases
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-list-builds
+      description: Amazon GameLift List Builds
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.listbuilds
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-list-compute
+      description: Amazon GameLift List Compute
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.listcompute
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-list-fleets
+      description: Amazon GameLift List Fleets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.listfleets
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-list-game-server
+      description: Amazon GameLift List Game Server Groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.listgameservergroups
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-list-game-servers
+      description: Amazon GameLift List Game Servers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.listgameservers
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-list-locations
+      description: Amazon GameLift List Locations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.listlocations
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-list-scripts
+      description: Amazon GameLift List Scripts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.listscripts
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-list-tags-resource
+      description: Amazon GameLift List Tags for Resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.listtagsforresource
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-put-scaling-policy
+      description: Amazon GameLift Put Scaling Policy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.putscalingpolicy
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-register-compute
+      description: Amazon GameLift Register Compute
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.registercompute
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-register-game-server
+      description: Amazon GameLift Register Game Server
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.registergameserver
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-request-upload-credentials
+      description: Amazon GameLift Request Upload Credentials
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.requestuploadcredentials
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-resolve-alias
+      description: Amazon GameLift Resolve Alias
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.resolvealias
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-resume-game-server
+      description: Amazon GameLift Resume Game Server Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.resumegameservergroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-search-game-sessions
+      description: Amazon GameLift Search Game Sessions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.searchgamesessions
+      with:
+        Limit: tools.Limit
+        NextToken: tools.NextToken
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-start-fleet-actions
+      description: Amazon GameLift Start Fleet Actions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.startfleetactions
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-start-game-session
+      description: Amazon GameLift Start Game Session Placement
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.startgamesessionplacement
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-start-match-backfill
+      description: Amazon GameLift Start Match Backfill
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.startmatchbackfill
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-start-matchmaking
+      description: Amazon GameLift Start Matchmaking
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.startmatchmaking
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-stop-fleet-actions
+      description: Amazon GameLift Stop Fleet Actions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.stopfleetactions
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-stop-game-session
+      description: Amazon GameLift Stop Game Session Placement
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.stopgamesessionplacement
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-stop-matchmaking
+      description: Amazon GameLift Stop Matchmaking
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.stopmatchmaking
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-suspend-game-server
+      description: Amazon GameLift Suspend Game Server Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.suspendgameservergroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-tag-resource
+      description: Amazon GameLift Tag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.tagresource
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-untag-resource
+      description: Amazon GameLift Untag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.untagresource
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-alias
+      description: Amazon GameLift Update Alias
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updatealias
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-build
+      description: Amazon GameLift Update Build
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updatebuild
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-fleet-attributes
+      description: Amazon GameLift Update Fleet Attributes
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updatefleetattributes
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-fleet-capacity
+      description: Amazon GameLift Update Fleet Capacity
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updatefleetcapacity
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-fleet-port
+      description: Amazon GameLift Update Fleet Port Settings
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updatefleetportsettings
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-game-server
+      description: Amazon GameLift Update Game Server
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updategameserver
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-game-server-2
+      description: Amazon GameLift Update Game Server Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updategameservergroup
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-game-session
+      description: Amazon GameLift Update Game Session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updategamesession
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-game-session-2
+      description: Amazon GameLift Update Game Session Queue
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updategamesessionqueue
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-matchmaking-configuration
+      description: Amazon GameLift Update Matchmaking Configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updatematchmakingconfiguration
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-runtime-configuration
+      description: Amazon GameLift Update Runtime Configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updateruntimeconfiguration
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-update-script
+      description: Amazon GameLift Update Script
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.updatescript
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-gamelift-validate-matchmaking-rule
+      description: Amazon GameLift Validate Matchmaking Rule Set
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-gamelift.validatematchmakingruleset
+      with:
+        X-Amz-Target: tools.X-Amz-Target
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
