@@ -1,0 +1,148 @@
+arazzo: 1.0.1
+info:
+  title: Amazon GameLift Matchmaking with Player Acceptance
+  summary: Start a matchmaking ticket, poll it, and accept the proposed match when acceptance is required.
+  description: >-
+    For matchmaking configurations that require player acceptance, FlexMatch
+    proposes a match and waits for players to accept before completing. This
+    workflow starts a matchmaking ticket on an existing configuration, polls the
+    ticket until it reaches REQUIRES_ACCEPTANCE, submits an acceptance response
+    for the matched players, and polls again until the match COMPLETED. Each
+    step spells out its AWS JSON protocol request inline, including the
+    X-Amz-Target header, so the flow can be read and executed without opening
+    the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: gameLiftApi
+  url: ../openapi/amazon-gamelift-openapi.yaml
+  type: openapi
+workflows:
+- workflowId: matchmaking-accept
+  summary: Start matchmaking, poll to REQUIRES_ACCEPTANCE, accept, then poll to COMPLETED.
+  description: >-
+    Starts a matchmaking ticket, polls until acceptance is required, submits an
+    ACCEPT response for the players, and polls again until the match completes.
+  inputs:
+    type: object
+    required:
+    - configurationName
+    - players
+    - playerIds
+    properties:
+      configurationName:
+        type: string
+        description: Name of an existing matchmaking configuration that requires acceptance.
+      players:
+        type: array
+        description: List of players to match, each with a player ID and optional attributes.
+        items:
+          type: object
+      playerIds:
+        type: array
+        description: List of player IDs delivering the acceptance response.
+        items:
+          type: string
+  steps:
+  - stepId: startMatchmaking
+    description: >-
+      Start a matchmaking ticket for the supplied players using the existing
+      configuration.
+    operationId: StartMatchmaking
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.StartMatchmaking
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        ConfigurationName: $inputs.configurationName
+        Players: $inputs.players
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      ticketId: $response.body#/MatchmakingTicket/TicketId
+  - stepId: pollForAcceptance
+    description: >-
+      Describe the ticket and check its status. Repeat while SEARCHING; proceed
+      to accept once the ticket reaches REQUIRES_ACCEPTANCE.
+    operationId: DescribeMatchmaking
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.DescribeMatchmaking
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        TicketIds:
+        - $steps.startMatchmaking.outputs.ticketId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      currentStatus: $response.body#/TicketList/0/Status
+    onSuccess:
+    - name: needsAcceptance
+      type: goto
+      stepId: acceptMatch
+      criteria:
+      - context: $response.body
+        condition: $.TicketList[0].Status == "REQUIRES_ACCEPTANCE"
+        type: jsonpath
+    - name: stillSearching
+      type: goto
+      stepId: pollForAcceptance
+      criteria:
+      - context: $response.body
+        condition: $.TicketList[0].Status == "SEARCHING"
+        type: jsonpath
+  - stepId: acceptMatch
+    description: >-
+      Submit an ACCEPT response for the matched players to confirm the proposed
+      match.
+    operationId: AcceptMatch
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.AcceptMatch
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        TicketId: $steps.startMatchmaking.outputs.ticketId
+        PlayerIds: $inputs.playerIds
+        AcceptanceType: ACCEPT
+    successCriteria:
+    - condition: $statusCode == 200
+  - stepId: pollForCompletion
+    description: >-
+      Describe the ticket again and check whether the match has COMPLETED.
+      Repeat while still in PLACING or REQUIRES_ACCEPTANCE.
+    operationId: DescribeMatchmaking
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.DescribeMatchmaking
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        TicketIds:
+        - $steps.startMatchmaking.outputs.ticketId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      finalStatus: $response.body#/TicketList/0/Status
+    onSuccess:
+    - name: matchCompleted
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.TicketList[0].Status == "COMPLETED"
+        type: jsonpath
+    - name: matchPlacing
+      type: goto
+      stepId: pollForCompletion
+      criteria:
+      - context: $response.body
+        condition: $.TicketList[0].Status == "PLACING"
+        type: jsonpath
+  outputs:
+    ticketId: $steps.startMatchmaking.outputs.ticketId
+    finalStatus: $steps.pollForCompletion.outputs.finalStatus

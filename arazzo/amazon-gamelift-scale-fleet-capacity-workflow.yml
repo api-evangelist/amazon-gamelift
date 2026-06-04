@@ -1,0 +1,109 @@
+arazzo: 1.0.1
+info:
+  title: Amazon GameLift Scale Fleet Capacity
+  summary: Confirm a fleet is ACTIVE, update its desired/min/max instance counts, then read back its capacity.
+  description: >-
+    A capacity-management flow for an existing fleet. The workflow first
+    describes the fleet to confirm it is ACTIVE (capacity can only be adjusted on
+    a ready fleet), updates the fleet's desired, minimum, and maximum instance
+    counts, and then reads back the fleet capacity to confirm the new settings.
+    Each step spells out its AWS JSON protocol request inline, including the
+    X-Amz-Target header, so the flow can be read and executed without opening the
+    underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: gameLiftApi
+  url: ../openapi/amazon-gamelift-openapi.yaml
+  type: openapi
+workflows:
+- workflowId: scale-fleet-capacity
+  summary: Verify a fleet is ACTIVE, update its capacity, and read back fleet capacity.
+  description: >-
+    Describes a fleet to confirm ACTIVE status, updates its desired/min/max
+    instance counts, and retrieves the fleet capacity to confirm the change.
+  inputs:
+    type: object
+    required:
+    - fleetId
+    - desiredInstances
+    properties:
+      fleetId:
+        type: string
+        description: The fleet ID or ARN to scale.
+      desiredInstances:
+        type: integer
+        description: The number of EC2 instances to maintain in the fleet location.
+      minSize:
+        type: integer
+        description: The minimum number of instances allowed in the fleet location.
+      maxSize:
+        type: integer
+        description: The maximum number of instances allowed in the fleet location.
+      location:
+        type: string
+        description: Optional remote location to scale, as an AWS Region code such as us-west-2.
+  steps:
+  - stepId: confirmFleetActive
+    description: >-
+      Describe the fleet's attributes and confirm it is in ACTIVE status before
+      adjusting capacity.
+    operationId: DescribeFleetAttributes
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.DescribeFleetAttributes
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        FleetIds:
+        - $inputs.fleetId
+    successCriteria:
+    - condition: $statusCode == 200
+    - context: $response.body
+      condition: $.FleetAttributes[0].Status == "ACTIVE"
+      type: jsonpath
+    outputs:
+      fleetId: $response.body#/FleetAttributes/0/FleetId
+      fleetStatus: $response.body#/FleetAttributes/0/Status
+  - stepId: updateCapacity
+    description: >-
+      Update the fleet's desired, minimum, and maximum instance counts for the
+      target location.
+    operationId: UpdateFleetCapacity
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.UpdateFleetCapacity
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        FleetId: $steps.confirmFleetActive.outputs.fleetId
+        DesiredInstances: $inputs.desiredInstances
+        MinSize: $inputs.minSize
+        MaxSize: $inputs.maxSize
+        Location: $inputs.location
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      updatedFleetId: $response.body#/FleetId
+  - stepId: readCapacity
+    description: >-
+      Retrieve the fleet's capacity settings to confirm the new desired,
+      minimum, and maximum instance counts took effect.
+    operationId: DescribeFleetCapacity
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.DescribeFleetCapacity
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        FleetIds:
+        - $steps.confirmFleetActive.outputs.fleetId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      instanceCounts: $response.body#/FleetCapacity/0/InstanceCounts
+  outputs:
+    fleetId: $steps.confirmFleetActive.outputs.fleetId
+    instanceCounts: $steps.readCapacity.outputs.instanceCounts

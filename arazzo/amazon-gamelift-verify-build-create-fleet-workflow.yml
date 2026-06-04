@@ -1,0 +1,105 @@
+arazzo: 1.0.1
+info:
+  title: Amazon GameLift Verify Build Readiness then Create a Fleet
+  summary: Poll a build until it is READY, then create a fleet that deploys it.
+  description: >-
+    Fleets can only be created from builds in READY status, which a build
+    reaches after its files finish uploading. This workflow polls an existing
+    build until it reports READY (branching to a terminal end if the build
+    FAILED), and then creates a fleet that deploys the build on EC2 instances.
+    Each step spells out its AWS JSON protocol request inline, including the
+    X-Amz-Target header, so the flow can be read and executed without opening
+    the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: gameLiftApi
+  url: ../openapi/amazon-gamelift-openapi.yaml
+  type: openapi
+workflows:
+- workflowId: verify-build-create-fleet
+  summary: Poll a build until READY, then create a fleet from it.
+  description: >-
+    Repeatedly describes a build until it is READY (or FAILED), then creates a
+    fleet that deploys the build.
+  inputs:
+    type: object
+    required:
+    - buildId
+    - fleetName
+    - ec2InstanceType
+    - runtimeConfiguration
+    properties:
+      buildId:
+        type: string
+        description: The build ID or ARN to verify and deploy.
+      fleetName:
+        type: string
+        description: A descriptive label for the new fleet.
+      ec2InstanceType:
+        type: string
+        description: The EC2 instance type to host game servers on (e.g. c5.large).
+      runtimeConfiguration:
+        type: object
+        description: Instructions for how to launch and maintain server processes on each instance.
+  steps:
+  - stepId: pollBuildReady
+    description: >-
+      Describe the build and check its status. Repeat while INITIALIZED;
+      proceed once the build is READY, or end if it FAILED.
+    operationId: DescribeBuild
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.DescribeBuild
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        BuildId: $inputs.buildId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      buildStatus: $response.body#/Build/Status
+    onSuccess:
+    - name: buildReady
+      type: goto
+      stepId: createFleet
+      criteria:
+      - context: $response.body
+        condition: $.Build.Status == "READY"
+        type: jsonpath
+    - name: buildFailed
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.Build.Status == "FAILED"
+        type: jsonpath
+    - name: buildInitializing
+      type: goto
+      stepId: pollBuildReady
+      criteria:
+      - context: $response.body
+        condition: $.Build.Status == "INITIALIZED"
+        type: jsonpath
+  - stepId: createFleet
+    description: >-
+      Create a fleet that deploys the READY build on EC2 instances.
+    operationId: CreateFleet
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreateFleet
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        Name: $inputs.fleetName
+        BuildId: $inputs.buildId
+        EC2InstanceType: $inputs.ec2InstanceType
+        RuntimeConfiguration: $inputs.runtimeConfiguration
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      fleetId: $response.body#/FleetAttributes/FleetId
+      fleetStatus: $response.body#/FleetAttributes/Status
+  outputs:
+    buildStatus: $steps.pollBuildReady.outputs.buildStatus
+    fleetId: $steps.createFleet.outputs.fleetId

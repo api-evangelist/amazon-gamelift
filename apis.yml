@@ -56,6 +56,45 @@ apis:
   - type: NaftikoCapability
     url: capabilities/amazon-gamelift.yaml
 common:
+- type: ArazzoWorkflows
+  url: arazzo/
+  workflows:
+  - url: arazzo/amazon-gamelift-build-fleet-alias-workflow.yml
+    name: Amazon GameLift Stand Up a Fleet Behind an Alias
+    summary: Create a fleet from a build, wait until it is ACTIVE, then front it with a SIMPLE alias.
+  - url: arazzo/amazon-gamelift-create-resolve-alias-workflow.yml
+    name: Amazon GameLift Create and Resolve a Fleet Alias
+    summary: Create a SIMPLE alias that points to a fleet, then resolve and describe it to confirm the routing.
+  - url: arazzo/amazon-gamelift-deploy-build-fleet-workflow.yml
+    name: Amazon GameLift Deploy Build to a Fleet
+    summary: Register a game build, create a fleet from it, and wait for the fleet to become ACTIVE.
+  - url: arazzo/amazon-gamelift-fill-game-session-workflow.yml
+    name: Amazon GameLift Fill a Game Session with Players
+    summary: Create a game session and reserve player sessions for a batch of players in one flow.
+  - url: arazzo/amazon-gamelift-host-game-session-workflow.yml
+    name: Amazon GameLift Host a Game Session and Add a Player
+    summary: Create a game session on a fleet, wait for it to become ACTIVE, then reserve a player session.
+  - url: arazzo/amazon-gamelift-matchmaking-accept-workflow.yml
+    name: Amazon GameLift Matchmaking with Player Acceptance
+    summary: Start a matchmaking ticket, poll it, and accept the proposed match when acceptance is required.
+  - url: arazzo/amazon-gamelift-open-ports-host-session-workflow.yml
+    name: Amazon GameLift Open Fleet Ports then Host a Session
+    summary: Add inbound port permissions to a fleet, confirm the settings, and launch a game session.
+  - url: arazzo/amazon-gamelift-queue-placement-workflow.yml
+    name: Amazon GameLift Queue-Based Game Session Placement
+    summary: Create a game session queue, start a placement on it, and poll until the placement is FULFILLED.
+  - url: arazzo/amazon-gamelift-scale-fleet-capacity-workflow.yml
+    name: Amazon GameLift Scale Fleet Capacity
+    summary: Confirm a fleet is ACTIVE, update its desired/min/max instance counts, then read back its capacity.
+  - url: arazzo/amazon-gamelift-search-and-join-workflow.yml
+    name: Amazon GameLift Search for a Game Session and Join It
+    summary: Search a fleet for an active game session with open slots, then reserve a player session on it.
+  - url: arazzo/amazon-gamelift-setup-matchmaking-workflow.yml
+    name: Amazon GameLift Set Up and Run FlexMatch Matchmaking
+    summary: Create a matchmaking rule set, build a configuration on it, then start a matchmaking ticket and poll it.
+  - url: arazzo/amazon-gamelift-verify-build-create-fleet-workflow.yml
+    name: Amazon GameLift Verify Build Readiness then Create a Fleet
+    summary: Poll a build until it is READY, then create a fleet that deploys it.
 - type: Portal
   url: https://aws.amazon.com/gamelift/
 - type: Documentation

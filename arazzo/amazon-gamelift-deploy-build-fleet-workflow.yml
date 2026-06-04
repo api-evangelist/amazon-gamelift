@@ -1,0 +1,130 @@
+arazzo: 1.0.1
+info:
+  title: Amazon GameLift Deploy Build to a Fleet
+  summary: Register a game build, create a fleet from it, and wait for the fleet to become ACTIVE.
+  description: >-
+    The core Amazon GameLift hosting setup flow. The workflow creates a new
+    build resource for your game server binaries, deploys that build onto a new
+    EC2 fleet, and then polls the fleet's attributes until it reaches ACTIVE
+    status and can accept game sessions. Each step spells out its AWS JSON
+    protocol request inline, including the X-Amz-Target header, so the flow can
+    be read and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: gameLiftApi
+  url: ../openapi/amazon-gamelift-openapi.yaml
+  type: openapi
+workflows:
+- workflowId: deploy-build-fleet
+  summary: Create a build, create a fleet from it, and poll until the fleet is ACTIVE.
+  description: >-
+    Creates a build resource, launches a fleet that deploys the build on EC2
+    instances, and repeatedly describes the fleet until Amazon GameLift reports
+    it in ACTIVE status.
+  inputs:
+    type: object
+    required:
+    - buildName
+    - operatingSystem
+    - fleetName
+    - ec2InstanceType
+    - runtimeConfiguration
+    properties:
+      buildName:
+        type: string
+        description: A descriptive label for the new build resource.
+      buildVersion:
+        type: string
+        description: Optional version string for the build.
+      operatingSystem:
+        type: string
+        description: Operating system the game server binaries run on (e.g. AMAZON_LINUX_2).
+      fleetName:
+        type: string
+        description: A descriptive label for the new fleet.
+      ec2InstanceType:
+        type: string
+        description: The EC2 instance type to host game servers on (e.g. c5.large).
+      runtimeConfiguration:
+        type: object
+        description: Instructions for how to launch and maintain server processes on each instance.
+  steps:
+  - stepId: createBuild
+    description: >-
+      Create a new build resource for the game server binaries. A new build is
+      placed in INITIALIZED status and must reach READY before a fleet can use
+      it.
+    operationId: CreateBuild
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreateBuild
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        Name: $inputs.buildName
+        Version: $inputs.buildVersion
+        OperatingSystem: $inputs.operatingSystem
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      buildId: $response.body#/Build/BuildId
+      buildStatus: $response.body#/Build/Status
+  - stepId: createFleet
+    description: >-
+      Create a fleet that deploys the new build on EC2 instances. The fleet is
+      placed in NEW status, prompting Amazon GameLift to begin the fleet
+      creation workflow.
+    operationId: CreateFleet
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreateFleet
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        Name: $inputs.fleetName
+        BuildId: $steps.createBuild.outputs.buildId
+        EC2InstanceType: $inputs.ec2InstanceType
+        RuntimeConfiguration: $inputs.runtimeConfiguration
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      fleetId: $response.body#/FleetAttributes/FleetId
+      fleetStatus: $response.body#/FleetAttributes/Status
+  - stepId: pollFleetActive
+    description: >-
+      Describe the fleet's attributes and check whether it has reached ACTIVE
+      status. Repeat this step until the fleet is ready to host game sessions.
+    operationId: DescribeFleetAttributes
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.DescribeFleetAttributes
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        FleetIds:
+        - $steps.createFleet.outputs.fleetId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      currentStatus: $response.body#/FleetAttributes/0/Status
+    onSuccess:
+    - name: fleetActive
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.FleetAttributes[0].Status == "ACTIVE"
+        type: jsonpath
+    - name: fleetNotReady
+      type: goto
+      stepId: pollFleetActive
+      criteria:
+      - context: $response.body
+        condition: $.FleetAttributes[0].Status != "ACTIVE"
+        type: jsonpath
+  outputs:
+    buildId: $steps.createBuild.outputs.buildId
+    fleetId: $steps.createFleet.outputs.fleetId
+    fleetStatus: $steps.pollFleetActive.outputs.currentStatus

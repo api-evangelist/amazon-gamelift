@@ -1,0 +1,126 @@
+arazzo: 1.0.1
+info:
+  title: Amazon GameLift Stand Up a Fleet Behind an Alias
+  summary: Create a fleet from a build, wait until it is ACTIVE, then front it with a SIMPLE alias.
+  description: >-
+    A production-style hosting bring-up flow. The workflow creates a fleet from
+    an existing READY build, polls the fleet until it reaches ACTIVE status, and
+    then creates a SIMPLE alias that routes to the new fleet so game clients can
+    connect through a stable alias rather than a raw fleet ID. Each step spells
+    out its AWS JSON protocol request inline, including the X-Amz-Target header,
+    so the flow can be read and executed without opening the underlying OpenAPI
+    description.
+  version: 1.0.0
+sourceDescriptions:
+- name: gameLiftApi
+  url: ../openapi/amazon-gamelift-openapi.yaml
+  type: openapi
+workflows:
+- workflowId: build-fleet-alias
+  summary: Create a fleet, poll until ACTIVE, then create a SIMPLE alias to it.
+  description: >-
+    Creates a fleet from a build, repeatedly describes it until ACTIVE, and then
+    creates a SIMPLE routing alias that points to the new fleet.
+  inputs:
+    type: object
+    required:
+    - fleetName
+    - buildId
+    - ec2InstanceType
+    - runtimeConfiguration
+    - aliasName
+    properties:
+      fleetName:
+        type: string
+        description: A descriptive label for the new fleet.
+      buildId:
+        type: string
+        description: The build ID or ARN to deploy on the fleet. The build must be READY.
+      ec2InstanceType:
+        type: string
+        description: The EC2 instance type to host game servers on (e.g. c5.large).
+      runtimeConfiguration:
+        type: object
+        description: Instructions for how to launch and maintain server processes on each instance.
+      aliasName:
+        type: string
+        description: A descriptive label for the alias that will front the fleet.
+  steps:
+  - stepId: createFleet
+    description: >-
+      Create a fleet that deploys the build on EC2 instances. The fleet starts
+      in NEW status.
+    operationId: CreateFleet
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreateFleet
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        Name: $inputs.fleetName
+        BuildId: $inputs.buildId
+        EC2InstanceType: $inputs.ec2InstanceType
+        RuntimeConfiguration: $inputs.runtimeConfiguration
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      fleetId: $response.body#/FleetAttributes/FleetId
+  - stepId: pollFleetActive
+    description: >-
+      Describe the fleet and check whether it has reached ACTIVE status. Repeat
+      this step until the fleet is ready, then proceed to create the alias.
+    operationId: DescribeFleetAttributes
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.DescribeFleetAttributes
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        FleetIds:
+        - $steps.createFleet.outputs.fleetId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      currentStatus: $response.body#/FleetAttributes/0/Status
+    onSuccess:
+    - name: fleetActive
+      type: goto
+      stepId: createAlias
+      criteria:
+      - context: $response.body
+        condition: $.FleetAttributes[0].Status == "ACTIVE"
+        type: jsonpath
+    - name: fleetNotReady
+      type: goto
+      stepId: pollFleetActive
+      criteria:
+      - context: $response.body
+        condition: $.FleetAttributes[0].Status != "ACTIVE"
+        type: jsonpath
+  - stepId: createAlias
+    description: >-
+      Create a SIMPLE alias that routes to the now-ACTIVE fleet so clients can
+      connect through a stable alias.
+    operationId: CreateAlias
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreateAlias
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        Name: $inputs.aliasName
+        RoutingStrategy:
+          Type: SIMPLE
+          FleetId: $steps.createFleet.outputs.fleetId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      aliasId: $response.body#/Alias/AliasId
+      aliasArn: $response.body#/Alias/AliasArn
+  outputs:
+    fleetId: $steps.createFleet.outputs.fleetId
+    aliasId: $steps.createAlias.outputs.aliasId
+    aliasArn: $steps.createAlias.outputs.aliasArn

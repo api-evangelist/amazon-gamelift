@@ -1,0 +1,133 @@
+arazzo: 1.0.1
+info:
+  title: Amazon GameLift Queue-Based Game Session Placement
+  summary: Create a game session queue, start a placement on it, and poll until the placement is FULFILLED.
+  description: >-
+    Game session queues let Amazon GameLift place new sessions across multiple
+    fleets and Regions for the best player experience. This workflow creates a
+    queue with a list of fleet/alias destinations, starts an asynchronous game
+    session placement request against the queue, and polls the placement until
+    it reaches FULFILLED status (or branches on a CANCELLED/TIMED_OUT/FAILED
+    outcome). Each step spells out its AWS JSON protocol request inline,
+    including the X-Amz-Target header, so the flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: gameLiftApi
+  url: ../openapi/amazon-gamelift-openapi.yaml
+  type: openapi
+workflows:
+- workflowId: queue-placement
+  summary: Create a queue, start a placement, and poll until FULFILLED.
+  description: >-
+    Creates a game session queue with destinations, starts a game session
+    placement against it, and repeatedly describes the placement until it is
+    FULFILLED or terminates in a non-pending state.
+  inputs:
+    type: object
+    required:
+    - queueName
+    - destinations
+    - placementId
+    - maximumPlayerSessionCount
+    properties:
+      queueName:
+        type: string
+        description: A descriptive label for the queue, unique within the Region.
+      timeoutInSeconds:
+        type: integer
+        description: Maximum time a placement request can remain in the queue before timing out.
+      destinations:
+        type: array
+        description: Ordered list of fleet/alias ARN destinations the queue can place sessions into.
+        items:
+          type: object
+      placementId:
+        type: string
+        description: A developer-defined unique identifier for the placement request.
+      maximumPlayerSessionCount:
+        type: integer
+        description: Maximum number of players that can connect to the placed game session.
+      gameSessionName:
+        type: string
+        description: Optional descriptive label for the placed game session.
+  steps:
+  - stepId: createQueue
+    description: >-
+      Create a game session queue with the supplied ordered list of fleet/alias
+      destinations.
+    operationId: CreateGameSessionQueue
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreateGameSessionQueue
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        Name: $inputs.queueName
+        TimeoutInSeconds: $inputs.timeoutInSeconds
+        Destinations: $inputs.destinations
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      queueName: $response.body#/GameSessionQueue/Name
+      queueArn: $response.body#/GameSessionQueue/GameSessionQueueArn
+  - stepId: startPlacement
+    description: >-
+      Start an asynchronous game session placement against the new queue. The
+      placement begins in PENDING status.
+    operationId: StartGameSessionPlacement
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.StartGameSessionPlacement
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        PlacementId: $inputs.placementId
+        GameSessionQueueName: $steps.createQueue.outputs.queueName
+        MaximumPlayerSessionCount: $inputs.maximumPlayerSessionCount
+        GameSessionName: $inputs.gameSessionName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      placementId: $response.body#/GameSessionPlacement/PlacementId
+      placementStatus: $response.body#/GameSessionPlacement/Status
+  - stepId: pollPlacement
+    description: >-
+      Describe the placement and check its status. Repeat while PENDING; finish
+      once the placement is FULFILLED, or branch to the terminal step on a
+      CANCELLED, TIMED_OUT, or FAILED outcome.
+    operationId: DescribeGameSessionPlacement
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.DescribeGameSessionPlacement
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        PlacementId: $steps.startPlacement.outputs.placementId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      currentStatus: $response.body#/GameSessionPlacement/Status
+      gameSessionArn: $response.body#/GameSessionPlacement/GameSessionArn
+    onSuccess:
+    - name: placementFulfilled
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.GameSessionPlacement.Status == "FULFILLED"
+        type: jsonpath
+    - name: placementPending
+      type: goto
+      stepId: pollPlacement
+      criteria:
+      - context: $response.body
+        condition: $.GameSessionPlacement.Status == "PENDING"
+        type: jsonpath
+  outputs:
+    queueArn: $steps.createQueue.outputs.queueArn
+    placementId: $steps.startPlacement.outputs.placementId
+    gameSessionArn: $steps.pollPlacement.outputs.gameSessionArn
+    placementStatus: $steps.pollPlacement.outputs.currentStatus

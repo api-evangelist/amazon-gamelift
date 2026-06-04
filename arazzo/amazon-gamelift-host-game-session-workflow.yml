@@ -1,0 +1,121 @@
+arazzo: 1.0.1
+info:
+  title: Amazon GameLift Host a Game Session and Add a Player
+  summary: Create a game session on a fleet, wait for it to become ACTIVE, then reserve a player session.
+  description: >-
+    A complete single-player join flow. The workflow creates a new game session
+    on an existing fleet, polls the game session until it reaches ACTIVE status
+    (game sessions must be ACTIVE before they can accept players), and then
+    reserves a player session for a player to connect with. Each step spells out
+    its AWS JSON protocol request inline, including the X-Amz-Target header, so
+    the flow can be read and executed without opening the underlying OpenAPI
+    description.
+  version: 1.0.0
+sourceDescriptions:
+- name: gameLiftApi
+  url: ../openapi/amazon-gamelift-openapi.yaml
+  type: openapi
+workflows:
+- workflowId: host-game-session
+  summary: Create a game session, poll until ACTIVE, then create a player session.
+  description: >-
+    Creates a game session on a fleet, repeatedly describes it until it is
+    ACTIVE, and reserves a player session for the supplied player.
+  inputs:
+    type: object
+    required:
+    - fleetId
+    - maximumPlayerSessionCount
+    - playerId
+    properties:
+      fleetId:
+        type: string
+        description: The fleet ID or ARN to create the game session on.
+      maximumPlayerSessionCount:
+        type: integer
+        description: Maximum number of players that can connect to the game session.
+      sessionName:
+        type: string
+        description: Optional descriptive label for the game session.
+      playerId:
+        type: string
+        description: Developer-defined unique identifier for the player to add.
+      playerData:
+        type: string
+        description: Optional developer-defined data for the player.
+  steps:
+  - stepId: createGameSession
+    description: >-
+      Create a new game session on the fleet. New game sessions start in
+      ACTIVATING status and must reach ACTIVE before players can join.
+    operationId: CreateGameSession
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreateGameSession
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        FleetId: $inputs.fleetId
+        MaximumPlayerSessionCount: $inputs.maximumPlayerSessionCount
+        Name: $inputs.sessionName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      gameSessionId: $response.body#/GameSession/GameSessionId
+      gameSessionStatus: $response.body#/GameSession/Status
+  - stepId: pollSessionActive
+    description: >-
+      Describe the game session and check whether it has reached ACTIVE status.
+      Repeat this step until the session can accept player sessions.
+    operationId: DescribeGameSessions
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.DescribeGameSessions
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        GameSessionId: $steps.createGameSession.outputs.gameSessionId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      currentStatus: $response.body#/GameSessions/0/Status
+    onSuccess:
+    - name: sessionActive
+      type: goto
+      stepId: createPlayerSession
+      criteria:
+      - context: $response.body
+        condition: $.GameSessions[0].Status == "ACTIVE"
+        type: jsonpath
+    - name: sessionNotReady
+      type: goto
+      stepId: pollSessionActive
+      criteria:
+      - context: $response.body
+        condition: $.GameSessions[0].Status != "ACTIVE"
+        type: jsonpath
+  - stepId: createPlayerSession
+    description: >-
+      Reserve a player session on the now-ACTIVE game session so the player can
+      connect to the game server.
+    operationId: CreatePlayerSession
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreatePlayerSession
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        GameSessionId: $steps.createGameSession.outputs.gameSessionId
+        PlayerId: $inputs.playerId
+        PlayerData: $inputs.playerData
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      playerSessionId: $response.body#/PlayerSession/PlayerSessionId
+      playerSessionStatus: $response.body#/PlayerSession/Status
+  outputs:
+    gameSessionId: $steps.createGameSession.outputs.gameSessionId
+    playerSessionId: $steps.createPlayerSession.outputs.playerSessionId

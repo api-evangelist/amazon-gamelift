@@ -1,0 +1,103 @@
+arazzo: 1.0.1
+info:
+  title: Amazon GameLift Open Fleet Ports then Host a Session
+  summary: Add inbound port permissions to a fleet, confirm the settings, and launch a game session.
+  description: >-
+    Before players can connect to game sessions on a custom-build fleet, the
+    fleet must allow inbound traffic on the game server ports. This workflow adds
+    inbound permission authorizations to an existing fleet, reads back the
+    fleet's port settings to confirm them, and then creates a game session on the
+    fleet that players can now reach. Each step spells out its AWS JSON protocol
+    request inline, including the X-Amz-Target header, so the flow can be read
+    and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: gameLiftApi
+  url: ../openapi/amazon-gamelift-openapi.yaml
+  type: openapi
+workflows:
+- workflowId: open-ports-host-session
+  summary: Authorize inbound ports on a fleet, confirm them, then create a game session.
+  description: >-
+    Adds inbound port permissions to a fleet, retrieves the fleet's port
+    settings to confirm, and creates a game session on the fleet.
+  inputs:
+    type: object
+    required:
+    - fleetId
+    - inboundPermissions
+    - maximumPlayerSessionCount
+    properties:
+      fleetId:
+        type: string
+        description: The fleet ID or ARN to update port settings on.
+      inboundPermissions:
+        type: array
+        description: Inbound IP/port permission ranges to authorize on the fleet.
+        items:
+          type: object
+      maximumPlayerSessionCount:
+        type: integer
+        description: Maximum number of players that can connect to the new game session.
+      sessionName:
+        type: string
+        description: Optional descriptive label for the game session.
+  steps:
+  - stepId: authorizePorts
+    description: >-
+      Add the supplied inbound permission ranges to the fleet so game clients
+      can reach game sessions.
+    operationId: UpdateFleetPortSettings
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.UpdateFleetPortSettings
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        FleetId: $inputs.fleetId
+        InboundPermissionAuthorizations: $inputs.inboundPermissions
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      updatedFleetId: $response.body#/FleetId
+  - stepId: confirmPorts
+    description: >-
+      Retrieve the fleet's port settings to confirm the inbound permissions were
+      applied.
+    operationId: DescribeFleetPortSettings
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.DescribeFleetPortSettings
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        FleetId: $steps.authorizePorts.outputs.updatedFleetId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      inboundPermissions: $response.body#/InboundPermissions
+  - stepId: createGameSession
+    description: >-
+      Create a game session on the now-reachable fleet for players to connect
+      to.
+    operationId: CreateGameSession
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreateGameSession
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        FleetId: $steps.authorizePorts.outputs.updatedFleetId
+        MaximumPlayerSessionCount: $inputs.maximumPlayerSessionCount
+        Name: $inputs.sessionName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      gameSessionId: $response.body#/GameSession/GameSessionId
+      gameSessionStatus: $response.body#/GameSession/Status
+  outputs:
+    fleetId: $steps.authorizePorts.outputs.updatedFleetId
+    gameSessionId: $steps.createGameSession.outputs.gameSessionId

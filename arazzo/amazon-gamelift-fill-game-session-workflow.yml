@@ -1,0 +1,90 @@
+arazzo: 1.0.1
+info:
+  title: Amazon GameLift Fill a Game Session with Players
+  summary: Create a game session and reserve player sessions for a batch of players in one flow.
+  description: >-
+    A team-join flow for multiplayer matches. The workflow creates a new game
+    session on an existing fleet and then reserves player sessions for a list of
+    players in a single batch call, returning the collection of player session
+    records. Each step spells out its AWS JSON protocol request inline,
+    including the X-Amz-Target header, so the flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: gameLiftApi
+  url: ../openapi/amazon-gamelift-openapi.yaml
+  type: openapi
+workflows:
+- workflowId: fill-game-session
+  summary: Create a game session and reserve a batch of player sessions on it.
+  description: >-
+    Creates a game session sized for a group of players and then reserves player
+    sessions for every supplied player ID in a single batch request.
+  inputs:
+    type: object
+    required:
+    - fleetId
+    - maximumPlayerSessionCount
+    - playerIds
+    properties:
+      fleetId:
+        type: string
+        description: The fleet ID or ARN to create the game session on.
+      maximumPlayerSessionCount:
+        type: integer
+        description: Maximum number of players that can connect to the game session.
+      sessionName:
+        type: string
+        description: Optional descriptive label for the game session.
+      playerIds:
+        type: array
+        description: List of developer-defined unique player identifiers to add.
+        items:
+          type: string
+      playerDataMap:
+        type: object
+        description: Optional map of player ID to developer-defined player data strings.
+  steps:
+  - stepId: createGameSession
+    description: >-
+      Create a new game session on the fleet, sized to hold the group of
+      players.
+    operationId: CreateGameSession
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreateGameSession
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        FleetId: $inputs.fleetId
+        MaximumPlayerSessionCount: $inputs.maximumPlayerSessionCount
+        Name: $inputs.sessionName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      gameSessionId: $response.body#/GameSession/GameSessionId
+      gameSessionStatus: $response.body#/GameSession/Status
+  - stepId: createPlayerSessions
+    description: >-
+      Reserve player sessions for every supplied player ID on the new game
+      session in a single batch request.
+    operationId: CreatePlayerSessions
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreatePlayerSessions
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        GameSessionId: $steps.createGameSession.outputs.gameSessionId
+        PlayerIds: $inputs.playerIds
+        PlayerDataMap: $inputs.playerDataMap
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      playerSessions: $response.body#/PlayerSessions
+      firstPlayerSessionId: $response.body#/PlayerSessions/0/PlayerSessionId
+  outputs:
+    gameSessionId: $steps.createGameSession.outputs.gameSessionId
+    playerSessions: $steps.createPlayerSessions.outputs.playerSessions

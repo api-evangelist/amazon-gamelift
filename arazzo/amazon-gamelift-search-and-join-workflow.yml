@@ -1,0 +1,103 @@
+arazzo: 1.0.1
+info:
+  title: Amazon GameLift Search for a Game Session and Join It
+  summary: Search a fleet for an active game session with open slots, then reserve a player session on it.
+  description: >-
+    A matchmaking-free join flow for players who want to drop into an existing
+    open game. The workflow searches a fleet for active game sessions that have
+    available player slots, and when a match is found, reserves a player session
+    for the player on the discovered session. When no open session is found the
+    flow ends without reserving a session. Each step spells out its AWS JSON
+    protocol request inline, including the X-Amz-Target header, so the flow can
+    be read and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: gameLiftApi
+  url: ../openapi/amazon-gamelift-openapi.yaml
+  type: openapi
+workflows:
+- workflowId: search-and-join
+  summary: Search a fleet for an open game session and reserve a player session on it.
+  description: >-
+    Searches a fleet for active game sessions with available player slots and,
+    when one is found, reserves a player session on it; otherwise ends without
+    joining.
+  inputs:
+    type: object
+    required:
+    - fleetId
+    - playerId
+    properties:
+      fleetId:
+        type: string
+        description: The fleet ID or ARN to search for active game sessions.
+      filterExpression:
+        type: string
+        description: Optional search filter, e.g. "hasAvailablePlayerSessions=true".
+      sortExpression:
+        type: string
+        description: Optional sort expression, e.g. "creationTimeMillis ASC".
+      playerId:
+        type: string
+        description: Developer-defined unique identifier for the player to add.
+      playerData:
+        type: string
+        description: Optional developer-defined data for the player.
+  steps:
+  - stepId: searchSessions
+    description: >-
+      Search the fleet for active game sessions matching the filter, returning
+      up to the first matching session.
+    operationId: SearchGameSessions
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.SearchGameSessions
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        FleetId: $inputs.fleetId
+        FilterExpression: $inputs.filterExpression
+        SortExpression: $inputs.sortExpression
+        Limit: 1
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      foundGameSessionId: $response.body#/GameSessions/0/GameSessionId
+    onSuccess:
+    - name: sessionFound
+      type: goto
+      stepId: joinSession
+      criteria:
+      - context: $response.body
+        condition: $.GameSessions.length > 0
+        type: jsonpath
+    - name: noSession
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.GameSessions.length == 0
+        type: jsonpath
+  - stepId: joinSession
+    description: >-
+      Reserve a player session on the discovered game session so the player can
+      connect.
+    operationId: CreatePlayerSession
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreatePlayerSession
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        GameSessionId: $steps.searchSessions.outputs.foundGameSessionId
+        PlayerId: $inputs.playerId
+        PlayerData: $inputs.playerData
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      playerSessionId: $response.body#/PlayerSession/PlayerSessionId
+      playerSessionStatus: $response.body#/PlayerSession/Status
+  outputs:
+    gameSessionId: $steps.searchSessions.outputs.foundGameSessionId
+    playerSessionId: $steps.joinSession.outputs.playerSessionId

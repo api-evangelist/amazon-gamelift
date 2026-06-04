@@ -1,0 +1,161 @@
+arazzo: 1.0.1
+info:
+  title: Amazon GameLift Set Up and Run FlexMatch Matchmaking
+  summary: Create a matchmaking rule set, build a configuration on it, then start a matchmaking ticket and poll it.
+  description: >-
+    The end-to-end FlexMatch bring-up flow. The workflow creates a matchmaking
+    rule set from a JSON rule body, creates a matchmaking configuration that
+    references that rule set, starts a matchmaking ticket for a set of players,
+    and polls the ticket until it completes (or branches when it requires player
+    acceptance or terminates). Each step spells out its AWS JSON protocol
+    request inline, including the X-Amz-Target header, so the flow can be read
+    and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: gameLiftApi
+  url: ../openapi/amazon-gamelift-openapi.yaml
+  type: openapi
+workflows:
+- workflowId: setup-matchmaking
+  summary: Create a rule set and configuration, start matchmaking, and poll the ticket.
+  description: >-
+    Creates a matchmaking rule set and a configuration that uses it, starts a
+    matchmaking ticket, and repeatedly describes the ticket until it COMPLETED,
+    REQUIRES_ACCEPTANCE, or terminated.
+  inputs:
+    type: object
+    required:
+    - ruleSetName
+    - ruleSetBody
+    - configurationName
+    - requestTimeoutSeconds
+    - acceptanceRequired
+    - players
+    properties:
+      ruleSetName:
+        type: string
+        description: A unique identifier for the matchmaking rule set.
+      ruleSetBody:
+        type: string
+        description: The matchmaking rules formatted as a JSON string.
+      configurationName:
+        type: string
+        description: A unique identifier for the matchmaking configuration.
+      requestTimeoutSeconds:
+        type: integer
+        description: Maximum seconds a matchmaking ticket can remain in process before timing out.
+      acceptanceRequired:
+        type: boolean
+        description: Whether matched players must accept the proposed match.
+      gameSessionQueueArns:
+        type: array
+        description: Optional list of game session queue ARNs to place matched sessions into.
+        items:
+          type: string
+      players:
+        type: array
+        description: List of players to match, each with a player ID and optional attributes/latency.
+        items:
+          type: object
+  steps:
+  - stepId: createRuleSet
+    description: >-
+      Create a matchmaking rule set from the supplied JSON rule body. The
+      configuration created next references this rule set by name.
+    operationId: CreateMatchmakingRuleSet
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreateMatchmakingRuleSet
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        Name: $inputs.ruleSetName
+        RuleSetBody: $inputs.ruleSetBody
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      ruleSetName: $response.body#/RuleSet/RuleSetName
+  - stepId: createConfiguration
+    description: >-
+      Create a matchmaking configuration that uses the new rule set. The
+      configuration governs how players are grouped and how matched sessions are
+      started.
+    operationId: CreateMatchmakingConfiguration
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.CreateMatchmakingConfiguration
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        Name: $inputs.configurationName
+        RequestTimeoutSeconds: $inputs.requestTimeoutSeconds
+        AcceptanceRequired: $inputs.acceptanceRequired
+        RuleSetName: $inputs.ruleSetName
+        GameSessionQueueArns: $inputs.gameSessionQueueArns
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      configurationName: $response.body#/Configuration/Name
+  - stepId: startMatchmaking
+    description: >-
+      Start a matchmaking ticket for the supplied players using the new
+      configuration. The ticket begins in QUEUED status.
+    operationId: StartMatchmaking
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.StartMatchmaking
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        ConfigurationName: $steps.createConfiguration.outputs.configurationName
+        Players: $inputs.players
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      ticketId: $response.body#/MatchmakingTicket/TicketId
+      ticketStatus: $response.body#/MatchmakingTicket/Status
+  - stepId: pollMatchmaking
+    description: >-
+      Describe the matchmaking ticket and check its status. Repeat while QUEUED
+      or SEARCHING; finish once the ticket is COMPLETED or REQUIRES_ACCEPTANCE.
+    operationId: DescribeMatchmaking
+    parameters:
+    - name: X-Amz-Target
+      in: header
+      value: GameLift.DescribeMatchmaking
+    requestBody:
+      contentType: application/x-amz-json-1.1
+      payload:
+        TicketIds:
+        - $steps.startMatchmaking.outputs.ticketId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      currentStatus: $response.body#/TicketList/0/Status
+    onSuccess:
+    - name: matchCompleted
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.TicketList[0].Status == "COMPLETED"
+        type: jsonpath
+    - name: matchRequiresAcceptance
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.TicketList[0].Status == "REQUIRES_ACCEPTANCE"
+        type: jsonpath
+    - name: matchInProgress
+      type: goto
+      stepId: pollMatchmaking
+      criteria:
+      - context: $response.body
+        condition: $.TicketList[0].Status == "SEARCHING"
+        type: jsonpath
+  outputs:
+    configurationName: $steps.createConfiguration.outputs.configurationName
+    ticketId: $steps.startMatchmaking.outputs.ticketId
+    ticketStatus: $steps.pollMatchmaking.outputs.currentStatus
