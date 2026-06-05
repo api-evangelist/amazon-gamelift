@@ -56,6 +56,8 @@ apis:
   - type: NaftikoCapability
     url: capabilities/amazon-gamelift.yaml
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-gamelift/overview
 - type: ArazzoWorkflows
   url: arazzo/
   workflows:
