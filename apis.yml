@@ -53,135 +53,132 @@ apis:
     url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/amazon-gamelift.yaml
 common:
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-gamelift/overview
-- type: ArazzoWorkflows
-  url: arazzo/
-  workflows:
-  - url: arazzo/amazon-gamelift-build-fleet-alias-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-build-fleet-alias-workflow.yml
     name: Amazon GameLift Stand Up a Fleet Behind an Alias
-    summary: Create a fleet from a build, wait until it is ACTIVE, then front it with a SIMPLE alias.
-  - url: arazzo/amazon-gamelift-create-resolve-alias-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-create-resolve-alias-workflow.yml
     name: Amazon GameLift Create and Resolve a Fleet Alias
-    summary: Create a SIMPLE alias that points to a fleet, then resolve and describe it to confirm the routing.
-  - url: arazzo/amazon-gamelift-deploy-build-fleet-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-deploy-build-fleet-workflow.yml
     name: Amazon GameLift Deploy Build to a Fleet
-    summary: Register a game build, create a fleet from it, and wait for the fleet to become ACTIVE.
-  - url: arazzo/amazon-gamelift-fill-game-session-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-fill-game-session-workflow.yml
     name: Amazon GameLift Fill a Game Session with Players
-    summary: Create a game session and reserve player sessions for a batch of players in one flow.
-  - url: arazzo/amazon-gamelift-host-game-session-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-host-game-session-workflow.yml
     name: Amazon GameLift Host a Game Session and Add a Player
-    summary: Create a game session on a fleet, wait for it to become ACTIVE, then reserve a player session.
-  - url: arazzo/amazon-gamelift-matchmaking-accept-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-matchmaking-accept-workflow.yml
     name: Amazon GameLift Matchmaking with Player Acceptance
-    summary: Start a matchmaking ticket, poll it, and accept the proposed match when acceptance is required.
-  - url: arazzo/amazon-gamelift-open-ports-host-session-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-open-ports-host-session-workflow.yml
     name: Amazon GameLift Open Fleet Ports then Host a Session
-    summary: Add inbound port permissions to a fleet, confirm the settings, and launch a game session.
-  - url: arazzo/amazon-gamelift-queue-placement-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-queue-placement-workflow.yml
     name: Amazon GameLift Queue-Based Game Session Placement
-    summary: Create a game session queue, start a placement on it, and poll until the placement is FULFILLED.
-  - url: arazzo/amazon-gamelift-scale-fleet-capacity-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-scale-fleet-capacity-workflow.yml
     name: Amazon GameLift Scale Fleet Capacity
-    summary: Confirm a fleet is ACTIVE, update its desired/min/max instance counts, then read back its capacity.
-  - url: arazzo/amazon-gamelift-search-and-join-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-search-and-join-workflow.yml
     name: Amazon GameLift Search for a Game Session and Join It
-    summary: Search a fleet for an active game session with open slots, then reserve a player session on it.
-  - url: arazzo/amazon-gamelift-setup-matchmaking-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-setup-matchmaking-workflow.yml
     name: Amazon GameLift Set Up and Run FlexMatch Matchmaking
-    summary: Create a matchmaking rule set, build a configuration on it, then start a matchmaking ticket and poll it.
-  - url: arazzo/amazon-gamelift-verify-build-create-fleet-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-gamelift-verify-build-create-fleet-workflow.yml
     name: Amazon GameLift Verify Build Readiness then Create a Fleet
-    summary: Poll a build until it is READY, then create a fleet that deploys it.
-- type: Portal
-  url: https://aws.amazon.com/gamelift/
-- type: Documentation
-  url: https://docs.aws.amazon.com/gamelift/
-- type: TermsOfService
-  url: https://aws.amazon.com/service-terms/
-- type: PrivacyPolicy
-  url: https://aws.amazon.com/privacy/
-- type: Support
-  url: https://aws.amazon.com/premiumsupport/
-- type: Blog
-  url: https://aws.amazon.com/blogs/gametech/tag/amazon-gamelift/
-- type: GitHubOrganization
-  url: https://github.com/aws
-- type: Console
-  url: https://console.aws.amazon.com/gamelift/
-- type: SignUp
-  url: https://portal.aws.amazon.com/billing/signup
-- type: StatusPage
-  url: https://health.aws.amazon.com/health/status
-- type: Contact
-  url: https://aws.amazon.com/contact-us/
-- type: SDK
-  url: https://aws.amazon.com/developer/tools/
-- type: CLI
-  url: https://awscli.amazonaws.com/v2/documentation/api/latest/reference/gamelift/index.html
-- type: Features
-  data:
-  - name: Managed Game Server Hosting
-    description: Fully managed service to deploy, operate, and scale dedicated game servers with automatic lifecycle management
-      for game and player sessions.
-  - name: FlexMatch Matchmaking
-    description: Customizable matchmaking service that connects up to 200 players into single game sessions based on configurable
-      matching rules.
-  - name: FleetIQ Optimization
-    description: Optimizes use of low-cost Spot Instances for game hosting, improving viability and reducing costs while maintaining
-      performance.
-  - name: Realtime Servers
-    description: Rapidly configurable game server framework with core Amazon GameLift infrastructure built in for quick deployment.
-  - name: Auto Scaling
-    description: Automatically scales fleet capacity up to 9,000 servers per minute to balance player demand and hosting costs.
-  - name: Multi-Region Deployment
-    description: Deploy game servers across multiple AWS regions with global queues for optimal player latency and resiliency.
-  - name: Game Session Queues
-    description: Multi-fleet, multi-region queues that use FleetIQ algorithms to prioritize game session placements based
-      on latency, cost, and availability.
-  - name: VPC Peering
-    description: Create and manage VPC peering connections between GameLift hosting resources and other AWS resources.
-  - name: Alias Management
-    description: Create fleet aliases to simplify game server transitions and updates without changing client configurations.
-- type: UseCases
-  data:
-  - name: Multiplayer Game Launches
-    description: Deploy and scale game servers for launch day without uncertainty about player demand using predictive autoscaling.
-  - name: Session-Based Multiplayer
-    description: Host dedicated game servers for real-time multiplayer games with low latency and high performance.
-  - name: Player Matchmaking
-    description: Use FlexMatch to create fair, customizable matchmaking for players based on skill level, region, and other
-      criteria.
-  - name: Cost-Optimized Hosting
-    description: Leverage FleetIQ with Spot Instances to reduce game hosting costs while maintaining reliability.
-  - name: Global Game Distribution
-    description: Deploy game servers across multiple AWS regions to minimize player latency worldwide.
-- type: SpectralRules
-  url: rules/amazon-gamelift-spectral-rules.yml
-- type: Vocabulary
-  url: vocabulary/amazon-gamelift-vocabulary.yaml
-- type: Integrations
-  data:
-  - name: AWS EC2
-    description: GameLift uses EC2 instances as the underlying compute for managed game server hosting.
-  - name: AWS Auto Scaling
-    description: Integrates with Auto Scaling groups for FleetIQ standalone deployment.
-  - name: Amazon CloudWatch
-    description: Monitor fleet metrics, game session activity, and performance data through CloudWatch.
-  - name: Amazon SNS
-    description: Receive notifications for matchmaking events and game session placement status.
-  - name: AWS IAM
-    description: Use IAM roles and policies to control access to GameLift resources and operations.
-  - name: Amazon S3
-    description: Store and retrieve game server build files using S3 buckets for fleet deployment.
-  - name: AWS CloudFormation
-    description: Provision and manage GameLift resources using infrastructure-as-code templates.
-- type: Integrations
-  url: https://aws.amazon.com/marketplace
+  - type: Portal
+    url: https://aws.amazon.com/gamelift/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/
+  - type: TermsOfService
+    url: https://aws.amazon.com/service-terms/
+  - type: PrivacyPolicy
+    url: https://aws.amazon.com/privacy/
+  - type: Support
+    url: https://aws.amazon.com/premiumsupport/
+  - type: Blog
+    url: https://aws.amazon.com/blogs/gametech/tag/amazon-gamelift/
+  - type: GitHubOrganization
+    url: https://github.com/aws
+  - type: Console
+    url: https://console.aws.amazon.com/gamelift/
+  - type: Signup
+    url: https://portal.aws.amazon.com/billing/signup
+  - type: StatusPage
+    url: https://health.aws.amazon.com/health/status
+  - type: Contact
+    url: https://aws.amazon.com/contact-us/
+  - type: SDKs
+    url: https://aws.amazon.com/developer/tools/
+  - type: CLI
+    url: https://awscli.amazonaws.com/v2/documentation/api/latest/reference/gamelift/index.html
+  - type: Features
+    data:
+    - name: Managed Game Server Hosting
+      description: Fully managed service to deploy, operate, and scale dedicated game servers with automatic lifecycle management
+        for game and player sessions.
+    - name: FlexMatch Matchmaking
+      description: Customizable matchmaking service that connects up to 200 players into single game sessions based on configurable
+        matching rules.
+    - name: FleetIQ Optimization
+      description: Optimizes use of low-cost Spot Instances for game hosting, improving viability and reducing costs while maintaining
+        performance.
+    - name: Realtime Servers
+      description: Rapidly configurable game server framework with core Amazon GameLift infrastructure built in for quick deployment.
+    - name: Auto Scaling
+      description: Automatically scales fleet capacity up to 9,000 servers per minute to balance player demand and hosting costs.
+    - name: Multi-Region Deployment
+      description: Deploy game servers across multiple AWS regions with global queues for optimal player latency and resiliency.
+    - name: Game Session Queues
+      description: Multi-fleet, multi-region queues that use FleetIQ algorithms to prioritize game session placements based
+        on latency, cost, and availability.
+    - name: VPC Peering
+      description: Create and manage VPC peering connections between GameLift hosting resources and other AWS resources.
+    - name: Alias Management
+      description: Create fleet aliases to simplify game server transitions and updates without changing client configurations.
+  - type: UseCases
+    data:
+    - name: Multiplayer Game Launches
+      description: Deploy and scale game servers for launch day without uncertainty about player demand using predictive autoscaling.
+    - name: Session-Based Multiplayer
+      description: Host dedicated game servers for real-time multiplayer games with low latency and high performance.
+    - name: Player Matchmaking
+      description: Use FlexMatch to create fair, customizable matchmaking for players based on skill level, region, and other
+        criteria.
+    - name: Cost-Optimized Hosting
+      description: Leverage FleetIQ with Spot Instances to reduce game hosting costs while maintaining reliability.
+    - name: Global Game Distribution
+      description: Deploy game servers across multiple AWS regions to minimize player latency worldwide.
+  - type: SpectralRules
+    url: rules/amazon-gamelift-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/amazon-gamelift-vocabulary.yaml
+  - type: Integrations
+    data:
+    - name: AWS EC2
+      description: GameLift uses EC2 instances as the underlying compute for managed game server hosting.
+    - name: AWS Auto Scaling
+      description: Integrates with Auto Scaling groups for FleetIQ standalone deployment.
+    - name: Amazon CloudWatch
+      description: Monitor fleet metrics, game session activity, and performance data through CloudWatch.
+    - name: Amazon SNS
+      description: Receive notifications for matchmaking events and game session placement status.
+    - name: AWS IAM
+      description: Use IAM roles and policies to control access to GameLift resources and operations.
+    - name: Amazon S3
+      description: Store and retrieve game server build files using S3 buckets for fleet deployment.
+    - name: AWS CloudFormation
+      description: Provision and manage GameLift resources using infrastructure-as-code templates.
+  - type: Integrations
+    url: https://aws.amazon.com/marketplace
 integrations:
 - name: Agent Mode
 - name: Sign in
