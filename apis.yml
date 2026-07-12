@@ -56,6 +56,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-gamelift.yaml
 common:
+  - type: TrustCenter
+    url: security/amazon-gamelift-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-gamelift-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-gamelift-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-gamelift-authentication.yml
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-gamelift/overview
   - type: Arazzo
