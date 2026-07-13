@@ -1,166 +1,185 @@
+# amazon-gamelift — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 50% of servers already https (warn)
+#   - query-params-casing: pascal @ 100% (n=46)
+#   - operationid-casing: pascal @ 100% (n=104)
+#   - schema-names-casing: pascal @ 100% (n=474)
+#   - schema-properties-casing: pascal @ 99% (n=837)
+#   - security: global (root) — NOT emitting operation-security-required
+#   - merge: kept 18 existing, added 4 measured, upgraded 0
+#   - added: query-params-casing, schema-names-casing, schema-properties-casing, security-schemes-defined
+extends:
+  - spectral:oas
 rules:
-
-  # INFO / METADATA
   info-title-format:
     description: API title must start with "Amazon GameLift"
     severity: warn
-    given: "$.info.title"
+    given: $.info.title
     then:
       function: pattern
       functionOptions:
-        match: "^Amazon GameLift"
-
+        match: ^Amazon GameLift
   info-description-required:
     description: API must have a description
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: description
       function: truthy
-
   info-version-required:
     description: API must have a version
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: version
       function: truthy
-
-  # OPENAPI VERSION
   openapi-version:
     description: Must use OpenAPI 3.0.x
     severity: warn
-    given: "$.openapi"
+    given: $.openapi
     then:
       function: pattern
       functionOptions:
-        match: "^3\\.0\\."
-
-  # SERVERS
+        match: ^3\.0\.
   servers-required:
     description: Servers must be defined
     severity: error
-    given: "$"
+    given: $
     then:
       field: servers
       function: truthy
-
   servers-https:
     description: Server URLs should use HTTPS
     severity: warn
-    given: "$.servers[*].url"
+    given: $.servers[*].url
     then:
       function: pattern
       functionOptions:
-        match: "^https://"
-
-  # OPERATIONS
+        match: ^https://
   operation-summary-required:
     description: Every operation must have a summary
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: summary
       function: truthy
-
   operation-summary-company-prefix:
     description: Operation summaries must start with Amazon GameLift
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete].summary"
+    given: $.paths[*][get,post,put,patch,delete].summary
     then:
       function: pattern
       functionOptions:
-        match: "^Amazon GameLift"
-
+        match: ^Amazon GameLift
   operation-description-required:
     description: Every operation must have a description
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: description
       function: truthy
-
   operation-id-required:
     description: Every operation must have an operationId
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: operationId
       function: truthy
-
   operation-id-camel-case:
     description: operationId must use camelCase
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete].operationId"
+    given: $.paths[*][get,post,put,patch,delete].operationId
     then:
       function: pattern
       functionOptions:
-        match: "^[a-z][a-zA-Z0-9]+$"
-
-  # RESPONSES
+        match: ^[a-z][a-zA-Z0-9]+$
   response-success-required:
     description: Operations must have at least one success (2xx) response
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete].responses"
+    given: $.paths[*][get,post,put,patch,delete].responses
     then:
       function: schema
       functionOptions:
         schema:
           type: object
           anyOf:
-            - required: ["200"]
-            - required: ["201"]
-            - required: ["204"]
-
+          - required:
+            - '200'
+          - required:
+            - '201'
+          - required:
+            - '204'
   response-description-required:
     description: Responses must have descriptions
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete].responses[*]"
+    given: $.paths[*][get,post,put,patch,delete].responses[*]
     then:
       field: description
       function: truthy
-
-  # REQUEST BODY
   request-body-description:
     description: Request bodies should have descriptions
     severity: info
-    given: "$.paths[*][post,put,patch].requestBody"
+    given: $.paths[*][post,put,patch].requestBody
     then:
       field: description
       function: truthy
-
-  # SECURITY
   security-schemes-defined:
-    description: Security schemes should be defined in components
+    description: Security schemes should be defined in components.
     severity: warn
-    given: "$"
+    given: $.components
     then:
-      field: components.securitySchemes
+      field: securitySchemes
       function: truthy
-
-  # SCHEMAS
   schema-properties-typed:
     description: Schema properties should have types defined
     severity: info
-    given: "$.components.schemas[*].properties[*]"
+    given: $.components.schemas[*].properties[*]
     then:
       field: type
       function: truthy
-
-  # GENERAL
   no-empty-descriptions:
     description: Descriptions must not be empty strings
     severity: error
-    given: "$..description"
+    given: $..description
     then:
       function: pattern
       functionOptions:
-        match: ".+"
-
+        match: .+
   microcks-operation-extension:
     description: Operations should have x-microcks-operation for mock support
     severity: info
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: x-microcks-operation
       function: truthy
+  query-params-casing:
+    description: Query parameters should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
+  schema-properties-casing:
+    description: Schema properties should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
