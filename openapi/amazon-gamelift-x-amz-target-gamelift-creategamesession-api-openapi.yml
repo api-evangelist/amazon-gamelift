@@ -1,0 +1,576 @@
+openapi: 3.0.0
+info:
+  version: 2015-10-01
+  x-release: v4
+  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateGameSession API'
+  description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: gamelift
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/gamelift-2015-10-01.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://gamelift.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon GameLift multi-region endpoint
+- url: https://gamelift.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon GameLift multi-region endpoint
+- url: http://gamelift.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon GameLift endpoint for China (Beijing) and China (Ningxia)
+- url: https://gamelift.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon GameLift endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=GameLift.CreateGameSession'
+paths:
+  /#X-Amz-Target=GameLift.CreateGameSession:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateGameSession
+      description: '<p>Creates a multiplayer game session for players in a specific fleet location. This operation prompts an available server process to start a game session and retrieves connection information for the new game session. As an alternative, consider using the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a> , which uses FleetIQ algorithms and queues to optimize the placement process.</p> <p>When creating a game session, you specify exactly where you want to place it and provide a set of game session configuration settings. The fleet must be in <code>ACTIVE</code> status before a game session can be created in it. </p> <p>This operation can be used in the following ways: </p> <ul> <li> <p>To create a game session on an instance in a fleet''s home Region, provide a fleet or alias ID along with your game session configuration. </p> </li> <li> <p>To create a game session on an instance in a fleet''s remote location, provide a fleet or alias ID and a location name, along with your game session configuration. </p> </li> </ul> <p>If successful, a workflow is initiated to start a new game session. A <code>GameSession</code> object is returned containing the game session configuration and status. When the status is <code>ACTIVE</code>, game session connection information is provided and player sessions can be created for the game session. By default, newly created game sessions are open to new players. You can restrict new player access by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> to change the game session''s player session creation policy.</p> <p>Game session logs are retained for all active game sessions for 14 days. To access the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a> to download the log files.</p> <p> <i>Available in Amazon GameLift Local.</i> </p> <p> <b>Learn more</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateGameSessionOutput'
+              examples:
+                CreateGameSession200Example:
+                  summary: Default CreateGameSession 200 response
+                  x-microcks-default: true
+                  value:
+                    GameSession: example-value
+        '480':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                CreateGameSession480Example:
+                  summary: Default CreateGameSession 480 response
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                CreateGameSession481Example:
+                  summary: Default CreateGameSession 481 response
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: UnauthorizedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedException'
+              examples:
+                CreateGameSession482Example:
+                  summary: Default CreateGameSession 482 response
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: InvalidFleetStatusException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidFleetStatusException'
+              examples:
+                CreateGameSession483Example:
+                  summary: Default CreateGameSession 483 response
+                  x-microcks-default: true
+                  value: example-value
+        '484':
+          description: TerminalRoutingStrategyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TerminalRoutingStrategyException'
+              examples:
+                CreateGameSession484Example:
+                  summary: Default CreateGameSession 484 response
+                  x-microcks-default: true
+                  value: example-value
+        '485':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+              examples:
+                CreateGameSession485Example:
+                  summary: Default CreateGameSession 485 response
+                  x-microcks-default: true
+                  value: example-value
+        '486':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                CreateGameSession486Example:
+                  summary: Default CreateGameSession 486 response
+                  x-microcks-default: true
+                  value: example-value
+        '487':
+          description: FleetCapacityExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FleetCapacityExceededException'
+              examples:
+                CreateGameSession487Example:
+                  summary: Default CreateGameSession 487 response
+                  x-microcks-default: true
+                  value: example-value
+        '488':
+          description: LimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LimitExceededException'
+              examples:
+                CreateGameSession488Example:
+                  summary: Default CreateGameSession 488 response
+                  x-microcks-default: true
+                  value: example-value
+        '489':
+          description: IdempotentParameterMismatchException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdempotentParameterMismatchException'
+              examples:
+                CreateGameSession489Example:
+                  summary: Default CreateGameSession 489 response
+                  x-microcks-default: true
+                  value: example-value
+        '490':
+          description: UnsupportedRegionException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnsupportedRegionException'
+              examples:
+                CreateGameSession490Example:
+                  summary: Default CreateGameSession 490 response
+                  x-microcks-default: true
+                  value: example-value
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGameSessionInput'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - GameLift.CreateGameSession
+      summary: Amazon GameLift Create Game Session
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=GameLift.CreateGameSession'
+components:
+  schemas:
+    CreateGameSessionInput:
+      type: object
+      required:
+      - MaximumPlayerSessionCount
+      title: CreateGameSessionInput
+      properties:
+        FleetId:
+          allOf:
+          - $ref: '#/components/schemas/FleetIdOrArn'
+          - description: A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
+        AliasId:
+          allOf:
+          - $ref: '#/components/schemas/AliasIdOrArn'
+          - description: A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
+        MaximumPlayerSessionCount:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: The maximum number of players that can be connected simultaneously to the game session.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A descriptive label that is associated with a game session. Session names do not need to be unique.
+        GameProperties:
+          allOf:
+          - $ref: '#/components/schemas/GamePropertyList'
+          - description: A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).
+        CreatorId:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: <p>A unique identifier for a player or entity creating the game session. </p> <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per <code>CreatorId</code> per second.</p> <p>To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.</p>
+        GameSessionId:
+          allOf:
+          - $ref: '#/components/schemas/IdStringModel'
+          - description: <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p> <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
+        IdempotencyToken:
+          allOf:
+          - $ref: '#/components/schemas/IdStringModel'
+          - description: 'Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session''s ID. A game session ARN has the following format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.'
+        GameSessionData:
+          allOf:
+          - $ref: '#/components/schemas/LargeGameSessionData'
+          - description: A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).
+        Location:
+          allOf:
+          - $ref: '#/components/schemas/LocationStringModel'
+          - description: 'A fleet''s remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet''s home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. '
+    ConflictException: {}
+    NonZeroAndMaxString:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    FleetId:
+      type: string
+      pattern: ^fleet-\S+
+    GameSessionStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - ACTIVATING
+      - TERMINATED
+      - TERMINATING
+      - ERROR
+    InternalServiceException: {}
+    WholeNumber:
+      type: integer
+      minimum: 0
+    IdStringModel:
+      type: string
+      pattern: '[a-zA-Z0-9-]+'
+      minLength: 1
+      maxLength: 48
+    GameSession:
+      type: object
+      properties:
+        GameSessionId:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: 'A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.'
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A descriptive label that is associated with a game session. Session names do not need to be unique.
+        FleetId:
+          allOf:
+          - $ref: '#/components/schemas/FleetId'
+          - description: A unique identifier for the fleet that the game session is running on.
+        FleetArn:
+          allOf:
+          - $ref: '#/components/schemas/FleetArn'
+          - description: ' The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that this game session is running on. '
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        TerminationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        CurrentPlayerSessionCount:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: Number of players currently in the game session.
+        MaximumPlayerSessionCount:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: The maximum number of players that can be connected simultaneously to the game session.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/GameSessionStatus'
+          - description: Current status of the game session. A game session must have an <code>ACTIVE</code> status to have player sessions.
+        StatusReason:
+          allOf:
+          - $ref: '#/components/schemas/GameSessionStatusReason'
+          - description: Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.
+        GameProperties:
+          allOf:
+          - $ref: '#/components/schemas/GamePropertyList'
+          - description: A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).
+        IpAddress:
+          allOf:
+          - $ref: '#/components/schemas/IpAddress'
+          - description: The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.
+        DnsName:
+          allOf:
+          - $ref: '#/components/schemas/DnsName'
+          - description: '<p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>'
+        Port:
+          allOf:
+          - $ref: '#/components/schemas/PortNumber'
+          - description: The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.
+        PlayerSessionCreationPolicy:
+          allOf:
+          - $ref: '#/components/schemas/PlayerSessionCreationPolicy'
+          - description: Indicates whether or not the game session is accepting new players.
+        CreatorId:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.
+        GameSessionData:
+          allOf:
+          - $ref: '#/components/schemas/LargeGameSessionData'
+          - description: A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).
+        MatchmakerData:
+          allOf:
+          - $ref: '#/components/schemas/MatchmakerData'
+          - description: 'Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). '
+        Location:
+          allOf:
+          - $ref: '#/components/schemas/LocationStringModel'
+          - description: 'The fleet location where the game session is running. This value might specify the fleet''s home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. '
+      description: <p>Properties describing a game session.</p> <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>. </p> <p>Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    FleetArn:
+      type: string
+      pattern: ^arn:.*:fleet\/fleet-\S+
+    FleetCapacityExceededException: {}
+    PlayerSessionCreationPolicy:
+      type: string
+      enum:
+      - ACCEPT_ALL
+      - DENY_ALL
+    IpAddress:
+      type: string
+      pattern: ^[0-9A-Fa-f\:\.]+
+      minLength: 1
+      maxLength: 128
+    GameProperty:
+      type: object
+      required:
+      - Key
+      - Value
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/GamePropertyKey'
+          - description: The game property identifier.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/GamePropertyValue'
+          - description: The game property value.
+      description: Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session. For example, a game property might specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session. For more information, see the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"> Amazon GameLift Developer Guide</a>.
+    TerminalRoutingStrategyException: {}
+    IdempotentParameterMismatchException: {}
+    GamePropertyKey:
+      type: string
+      maxLength: 32
+    FleetIdOrArn:
+      type: string
+      pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
+    GamePropertyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GameProperty'
+      maxItems: 16
+    InvalidRequestException: {}
+    DnsName:
+      type: string
+    AliasIdOrArn:
+      type: string
+      pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+
+    NotFoundException: {}
+    PortNumber:
+      type: integer
+      minimum: 1
+      maximum: 60000
+    MatchmakerData:
+      type: string
+      minLength: 1
+      maxLength: 390000
+    LimitExceededException: {}
+    UnauthorizedException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    LocationStringModel:
+      type: string
+      pattern: ^[A-Za-z0-9\-]+
+      minLength: 1
+      maxLength: 64
+    LargeGameSessionData:
+      type: string
+      minLength: 1
+      maxLength: 262144
+    InvalidFleetStatusException: {}
+    GameSessionStatusReason:
+      type: string
+      enum:
+      - INTERRUPTED
+    UnsupportedRegionException: {}
+    GamePropertyValue:
+      type: string
+      maxLength: 96
+    CreateGameSessionOutput:
+      type: object
+      properties:
+        GameSession:
+          allOf:
+          - $ref: '#/components/schemas/GameSession'
+          - description: Object that describes the newly created game session record.
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/gamelift/
+x-hasEquivalentPaths: true

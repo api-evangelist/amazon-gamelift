@@ -1,0 +1,676 @@
+openapi: 3.0.0
+info:
+  version: 2015-10-01
+  x-release: v4
+  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeFleetAttributes API'
+  description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: gamelift
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/gamelift-2015-10-01.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://gamelift.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon GameLift multi-region endpoint
+- url: https://gamelift.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon GameLift multi-region endpoint
+- url: http://gamelift.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon GameLift endpoint for China (Beijing) and China (Ningxia)
+- url: https://gamelift.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon GameLift endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=GameLift.DescribeFleetAttributes'
+paths:
+  /#X-Amz-Target=GameLift.DescribeFleetAttributes:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: DescribeFleetAttributes
+      description: '<p>Retrieves core fleet-wide properties, including the computing hardware and deployment configuration for all instances in the fleet.</p> <p>This operation can be used in the following ways: </p> <ul> <li> <p>To get attributes for one or more specific fleets, provide a list of fleet IDs or fleet ARNs. </p> </li> <li> <p>To get attributes for all fleets, do not provide a fleet identifier. </p> </li> </ul> <p>When requesting attributes for multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages. </p> <p>If successful, a <code>FleetAttributes</code> object is returned for each fleet requested, unless the fleet identifier is not found. </p> <note> <p>Some API operations limit the number of fleet IDs that allowed in one request. If a request exceeds this limit, the request fails and the error message contains the maximum allowed number.</p> </note> <p> <b>Learn more</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeFleetAttributesOutput'
+              examples:
+                DescribeFleetAttributes200Example:
+                  summary: Default DescribeFleetAttributes 200 response
+                  x-microcks-default: true
+                  value:
+                    FleetAttributes: example-value
+                    NextToken: example-value
+        '480':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                DescribeFleetAttributes480Example:
+                  summary: Default DescribeFleetAttributes 480 response
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                DescribeFleetAttributes481Example:
+                  summary: Default DescribeFleetAttributes 481 response
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: InvalidRequestException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestException'
+              examples:
+                DescribeFleetAttributes482Example:
+                  summary: Default DescribeFleetAttributes 482 response
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: UnauthorizedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedException'
+              examples:
+                DescribeFleetAttributes483Example:
+                  summary: Default DescribeFleetAttributes 483 response
+                  x-microcks-default: true
+                  value: example-value
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DescribeFleetAttributesInput'
+      parameters:
+      - name: Limit
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - GameLift.DescribeFleetAttributes
+      summary: Amazon GameLift Describe Fleet Attributes
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=GameLift.DescribeFleetAttributes'
+components:
+  schemas:
+    NonZeroAndMaxString:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    FleetId:
+      type: string
+      pattern: ^fleet-\S+
+    InternalServiceException: {}
+    WholeNumber:
+      type: integer
+      minimum: 0
+    DescribeFleetAttributesInput:
+      type: object
+      title: DescribeFleetAttributesInput
+      properties:
+        FleetIds:
+          allOf:
+          - $ref: '#/components/schemas/FleetIdOrArnList'
+          - description: 'A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. '
+        Limit:
+          allOf:
+          - $ref: '#/components/schemas/PositiveInteger'
+          - description: The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.
+    StringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NonZeroAndMaxString'
+    ProtectionPolicy:
+      type: string
+      enum:
+      - NoProtection
+      - FullProtection
+    FleetActionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FleetAction'
+      minItems: 1
+      maxItems: 1
+    FleetStatus:
+      type: string
+      enum:
+      - NEW
+      - DOWNLOADING
+      - VALIDATING
+      - BUILDING
+      - ACTIVATING
+      - ACTIVE
+      - DELETING
+      - ERROR
+      - TERMINATED
+      - NOT_FOUND
+    FleetArn:
+      type: string
+      pattern: ^arn:.*:fleet\/fleet-\S+
+    FleetAction:
+      type: string
+      enum:
+      - AUTO_SCALING
+    ComputeType:
+      type: string
+      enum:
+      - EC2
+      - ANYWHERE
+    ScriptArn:
+      type: string
+      pattern: ^arn:.*:script\/script-\S+
+    MetricGroup:
+      type: string
+      minLength: 1
+      maxLength: 255
+    FleetIdOrArnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FleetIdOrArn'
+      minItems: 1
+    FleetIdOrArn:
+      type: string
+      pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
+    LaunchPathStringModel:
+      type: string
+      pattern: '[A-Za-z0-9_:.+\/\\\- ]+'
+      minLength: 1
+      maxLength: 1024
+    ScriptId:
+      type: string
+      pattern: ^script-\S+
+    CertificateConfiguration:
+      type: object
+      required:
+      - CertificateType
+      properties:
+        CertificateType:
+          allOf:
+          - $ref: '#/components/schemas/CertificateType'
+          - description: '<p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p> <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>'
+      description: 'Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. '
+    FleetAttributes:
+      type: object
+      properties:
+        FleetId:
+          allOf:
+          - $ref: '#/components/schemas/FleetId'
+          - description: A unique identifier for the fleet.
+        FleetArn:
+          allOf:
+          - $ref: '#/components/schemas/FleetArn'
+          - description: The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
+        FleetType:
+          allOf:
+          - $ref: '#/components/schemas/FleetType'
+          - description: Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
+        InstanceType:
+          allOf:
+          - $ref: '#/components/schemas/EC2InstanceType'
+          - description: The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A human-readable description of the fleet.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        TerminationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/FleetStatus'
+          - description: <p>Current status of the fleet. Possible fleet statuses include the following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1. </p> </li> <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p> </li> <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li> <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li> </ul>
+        BuildId:
+          allOf:
+          - $ref: '#/components/schemas/BuildId'
+          - description: A unique identifier for the build resource that is deployed on instances in this fleet.
+        BuildArn:
+          allOf:
+          - $ref: '#/components/schemas/BuildArn'
+          - description: ' The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the resource ID matches the <code>BuildId</code> value.'
+        ScriptId:
+          allOf:
+          - $ref: '#/components/schemas/ScriptId'
+          - description: A unique identifier for the Realtime script resource that is deployed on instances in this fleet.
+        ScriptArn:
+          allOf:
+          - $ref: '#/components/schemas/ScriptArn'
+          - description: ' The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the resource ID matches the <code>ScriptId</code> value.'
+        ServerLaunchPath:
+          allOf:
+          - $ref: '#/components/schemas/LaunchPathStringModel'
+          - description: ' <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet''s <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.'
+        ServerLaunchParameters:
+          allOf:
+          - $ref: '#/components/schemas/LaunchParametersStringModel'
+          - description: ' <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet''s runtime configuration . Requests that use this parameter instead continue to be valid.'
+        LogPaths:
+          allOf:
+          - $ref: '#/components/schemas/StringList'
+          - description: ' <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. '
+        NewGameSessionProtectionPolicy:
+          allOf:
+          - $ref: '#/components/schemas/ProtectionPolicy'
+          - description: <p>The type of game session protection to set on all new instances that are started in the fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li> </ul>
+        OperatingSystem:
+          allOf:
+          - $ref: '#/components/schemas/OperatingSystem'
+          - description: The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet.
+        ResourceCreationLimitPolicy:
+          $ref: '#/components/schemas/ResourceCreationLimitPolicy'
+        MetricGroups:
+          allOf:
+          - $ref: '#/components/schemas/MetricGroupList'
+          - description: Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.
+        StoppedActions:
+          allOf:
+          - $ref: '#/components/schemas/FleetActionList'
+          - description: A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> . This includes fleet auto-scaling.
+        InstanceRoleArn:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.
+        CertificateConfiguration:
+          $ref: '#/components/schemas/CertificateConfiguration'
+        ComputeType:
+          allOf:
+          - $ref: '#/components/schemas/ComputeType'
+          - description: The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+        AnywhereConfiguration:
+          $ref: '#/components/schemas/AnywhereConfiguration'
+      description: <p>Describes a Amazon GameLift fleet of game hosting resources.</p> <p> <b>Related actions</b> </p>
+    ResourceCreationLimitPolicy:
+      type: object
+      properties:
+        NewGameSessionsPerCreator:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p> <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
+        PolicyPeriodInMinutes:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: 'The time span used in evaluating the resource creation limit policy. '
+      description: <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p> <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
+    FleetType:
+      type: string
+      enum:
+      - ON_DEMAND
+      - SPOT
+    InvalidRequestException: {}
+    NonNegativeLimitedLengthDouble:
+      type: string
+      pattern: ^\d{1,5}(?:\.\d{1,5})?$
+      minLength: 1
+      maxLength: 11
+    NotFoundException: {}
+    AnywhereConfiguration:
+      type: object
+      required:
+      - Cost
+      properties:
+        Cost:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeLimitedLengthDouble'
+          - description: The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.
+      description: Amazon GameLift Anywhere configuration options for your Anywhere fleets.
+    EC2InstanceType:
+      type: string
+      enum:
+      - t2.micro
+      - t2.small
+      - t2.medium
+      - t2.large
+      - c3.large
+      - c3.xlarge
+      - c3.2xlarge
+      - c3.4xlarge
+      - c3.8xlarge
+      - c4.large
+      - c4.xlarge
+      - c4.2xlarge
+      - c4.4xlarge
+      - c4.8xlarge
+      - c5.large
+      - c5.xlarge
+      - c5.2xlarge
+      - c5.4xlarge
+      - c5.9xlarge
+      - c5.12xlarge
+      - c5.18xlarge
+      - c5.24xlarge
+      - c5a.large
+      - c5a.xlarge
+      - c5a.2xlarge
+      - c5a.4xlarge
+      - c5a.8xlarge
+      - c5a.12xlarge
+      - c5a.16xlarge
+      - c5a.24xlarge
+      - r3.large
+      - r3.xlarge
+      - r3.2xlarge
+      - r3.4xlarge
+      - r3.8xlarge
+      - r4.large
+      - r4.xlarge
+      - r4.2xlarge
+      - r4.4xlarge
+      - r4.8xlarge
+      - r4.16xlarge
+      - r5.large
+      - r5.xlarge
+      - r5.2xlarge
+      - r5.4xlarge
+      - r5.8xlarge
+      - r5.12xlarge
+      - r5.16xlarge
+      - r5.24xlarge
+      - r5a.large
+      - r5a.xlarge
+      - r5a.2xlarge
+      - r5a.4xlarge
+      - r5a.8xlarge
+      - r5a.12xlarge
+      - r5a.16xlarge
+      - r5a.24xlarge
+      - m3.medium
+      - m3.large
+      - m3.xlarge
+      - m3.2xlarge
+      - m4.large
+      - m4.xlarge
+      - m4.2xlarge
+      - m4.4xlarge
+      - m4.10xlarge
+      - m5.large
+      - m5.xlarge
+      - m5.2xlarge
+      - m5.4xlarge
+      - m5.8xlarge
+      - m5.12xlarge
+      - m5.16xlarge
+      - m5.24xlarge
+      - m5a.large
+      - m5a.xlarge
+      - m5a.2xlarge
+      - m5a.4xlarge
+      - m5a.8xlarge
+      - m5a.12xlarge
+      - m5a.16xlarge
+      - m5a.24xlarge
+      - c5d.large
+      - c5d.xlarge
+      - c5d.2xlarge
+      - c5d.4xlarge
+      - c5d.9xlarge
+      - c5d.12xlarge
+      - c5d.18xlarge
+      - c5d.24xlarge
+      - c6a.large
+      - c6a.xlarge
+      - c6a.2xlarge
+      - c6a.4xlarge
+      - c6a.8xlarge
+      - c6a.12xlarge
+      - c6a.16xlarge
+      - c6a.24xlarge
+      - c6i.large
+      - c6i.xlarge
+      - c6i.2xlarge
+      - c6i.4xlarge
+      - c6i.8xlarge
+      - c6i.12xlarge
+      - c6i.16xlarge
+      - c6i.24xlarge
+      - r5d.large
+      - r5d.xlarge
+      - r5d.2xlarge
+      - r5d.4xlarge
+      - r5d.8xlarge
+      - r5d.12xlarge
+      - r5d.16xlarge
+      - r5d.24xlarge
+    FleetAttributesList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FleetAttributes'
+    UnauthorizedException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    OperatingSystem:
+      type: string
+      enum:
+      - WINDOWS_2012
+      - AMAZON_LINUX
+      - AMAZON_LINUX_2
+      - WINDOWS_2016
+    LaunchParametersStringModel:
+      type: string
+      pattern: '[A-Za-z0-9_:.+\/\\\- =@;{},?''\[\]"]+'
+      minLength: 1
+      maxLength: 1024
+    PositiveInteger:
+      type: integer
+      minimum: 1
+    BuildId:
+      type: string
+      pattern: ^build-\S+
+    DescribeFleetAttributesOutput:
+      type: object
+      properties:
+        FleetAttributes:
+          allOf:
+          - $ref: '#/components/schemas/FleetAttributesList'
+          - description: A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
+    CertificateType:
+      type: string
+      enum:
+      - DISABLED
+      - GENERATED
+    BuildArn:
+      type: string
+      pattern: ^arn:.*:build\/build-\S+
+    NonEmptyString:
+      type: string
+      minLength: 1
+    MetricGroupList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetricGroup'
+      maxItems: 1
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/gamelift/
+x-hasEquivalentPaths: true
