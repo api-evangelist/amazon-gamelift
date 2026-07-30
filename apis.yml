@@ -5,7 +5,20 @@ description: Amazon GameLift is a dedicated game server hosting solution that de
   you to focus on creating great gaming experiences. The service includes FlexMatch for matchmaking, FleetIQ for optimized
   Spot Instance usage, and Realtime Servers for rapid game server deployment.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-gamelift.png
 tags:
 - AWS
 - Cloud Computing
@@ -20,25 +33,3093 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-gamelift:amazon-gamelift-api
-  name: Amazon GameLift API
-  description: The Amazon GameLift API provides programmatic access to create and manage fleets, game sessions, player sessions,
-    matchmaking configurations, and game server groups for hosting multiplayer game servers. It includes operations for managed
-    hosting resources, FlexMatch matchmaking, FleetIQ optimization, and Realtime Servers configuration.
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-acceptmatch-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch API'
+  description: >-
+    The #X Amz Target=GameLift.AcceptMatch API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.acceptmatch.
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
-  - Game Servers
-  - Gaming
-  - Multiplayer
-  - Matchmaking
-  - Fleets
-  - Sessions
+  - '#X Amz Target=GameLift.AcceptMatch'
   properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-acceptmatch-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-claimgameserver-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ClaimGameServer API'
+  description: >-
+    The #X Amz Target=GameLift.ClaimGameServer API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.claimgameserver.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ClaimGameServer'
+  properties:
   - type: OpenAPI
-    url: openapi/amazon-gamelift-openapi.yaml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-claimgameserver-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createalias-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateAlias API'
+  description: >-
+    The #X Amz Target=GameLift.CreateAlias API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.createalias.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateAlias'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-createalias-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createbuild-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateBuild API'
+  description: >-
+    The #X Amz Target=GameLift.CreateBuild API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.createbuild.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateBuild'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-createbuild-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createfleet-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateFleet API'
+  description: >-
+    The #X Amz Target=GameLift.CreateFleet API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.createfleet.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateFleet'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-createfleet-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createfleetlocations-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateFleetLocations API'
+  description: >-
+    The #X Amz Target=GameLift.CreateFleetLocations API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.createfleetlocations.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateFleetLocations'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-createfleetlocations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creategameservergroup-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateGameServerGroup API'
+  description: >-
+    The #X Amz Target=GameLift.CreateGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.creategameservergroup.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateGameServerGroup'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-creategameservergroup-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creategamesession-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateGameSession API'
+  description: >-
+    The #X Amz Target=GameLift.CreateGameSession API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.creategamesession.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateGameSession'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-creategamesession-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creategamesessionqueue-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateGameSessionQueue API'
+  description: >-
+    The #X Amz Target=GameLift.CreateGameSessionQueue API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.creategamesessionqueue.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateGameSessionQueue'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-creategamesessionqueue-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createlocation-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateLocation API'
+  description: >-
+    The #X Amz Target=GameLift.CreateLocation API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.createlocation.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateLocation'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-createlocation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creatematchmakingconfiguration-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateMatchmakingConfiguration API'
+  description: >-
+    The #X Amz Target=GameLift.CreateMatchmakingConfiguration API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.creatematchmakingconfiguration.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateMatchmakingConfiguration'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-creatematchmakingconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creatematchmakingruleset-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateMatchmakingRuleSet API'
+  description: >-
+    The #X Amz Target=GameLift.CreateMatchmakingRuleSet API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.creatematchmakingruleset.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateMatchmakingRuleSet'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-creatematchmakingruleset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createplayersession-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreatePlayerSession API'
+  description: >-
+    The #X Amz Target=GameLift.CreatePlayerSession API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.createplayersession.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreatePlayerSession'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-createplayersession-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createplayersessions-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreatePlayerSessions API'
+  description: >-
+    The #X Amz Target=GameLift.CreatePlayerSessions API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.createplayersessions.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreatePlayerSessions'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-createplayersessions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createscript-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateScript API'
+  description: >-
+    The #X Amz Target=GameLift.CreateScript API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.createscript.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateScript'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-createscript-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createvpcpeeringauthorization-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateVpcPeeringAuthorization API'
+  description: >-
+    The #X Amz Target=GameLift.CreateVpcPeeringAuthorization API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.createvpcpeeringauthorization.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateVpcPeeringAuthorization'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-createvpcpeeringauthorization-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createvpcpeeringconnection-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.CreateVpcPeeringConnection API'
+  description: >-
+    The #X Amz Target=GameLift.CreateVpcPeeringConnection API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.createvpcpeeringconnection.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.CreateVpcPeeringConnection'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-createvpcpeeringconnection-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletealias-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteAlias API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteAlias API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.deletealias.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteAlias'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletealias-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletebuild-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteBuild API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteBuild API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.deletebuild.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteBuild'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletebuild-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletefleet-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteFleet API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteFleet API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.deletefleet.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteFleet'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletefleet-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletefleetlocations-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteFleetLocations API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteFleetLocations API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.deletefleetlocations.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteFleetLocations'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletefleetlocations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletegameservergroup-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteGameServerGroup API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.deletegameservergroup.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteGameServerGroup'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletegameservergroup-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletegamesessionqueue-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteGameSessionQueue API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteGameSessionQueue API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.deletegamesessionqueue.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteGameSessionQueue'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletegamesessionqueue-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletelocation-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteLocation API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteLocation API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.deletelocation.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteLocation'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletelocation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletematchmakingconfiguration-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteMatchmakingConfiguration API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteMatchmakingConfiguration API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.deletematchmakingconfiguration.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteMatchmakingConfiguration'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-deletematchmakingconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletematchmakingruleset-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteMatchmakingRuleSet API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteMatchmakingRuleSet API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.deletematchmakingruleset.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteMatchmakingRuleSet'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletematchmakingruleset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletescalingpolicy-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteScalingPolicy API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteScalingPolicy API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.deletescalingpolicy.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteScalingPolicy'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletescalingpolicy-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletescript-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteScript API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteScript API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.deletescript.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteScript'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletescript-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringauthorization-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteVpcPeeringAuthorization API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteVpcPeeringAuthorization API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.deletevpcpeeringauthorization.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteVpcPeeringAuthorization'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringauthorization-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringconnection-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeleteVpcPeeringConnection API'
+  description: >-
+    The #X Amz Target=GameLift.DeleteVpcPeeringConnection API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.deletevpcpeeringconnection.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeleteVpcPeeringConnection'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringconnection-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deregistercompute-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeregisterCompute API'
+  description: >-
+    The #X Amz Target=GameLift.DeregisterCompute API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.deregistercompute.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeregisterCompute'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deregistercompute-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deregistergameserver-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DeregisterGameServer API'
+  description: >-
+    The #X Amz Target=GameLift.DeregisterGameServer API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.deregistergameserver.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DeregisterGameServer'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deregistergameserver-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describealias-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeAlias API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeAlias API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.describealias.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeAlias'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describealias-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describebuild-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeBuild API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeBuild API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.describebuild.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeBuild'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describebuild-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describecompute-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeCompute API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeCompute API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.describecompute.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeCompute'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describecompute-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeec2instancelimits-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeEC2InstanceLimits API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeEC2InstanceLimits API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.describeec2instancelimits.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeEC2InstanceLimits'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describeec2instancelimits-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetattributes-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetAttributes API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeFleetAttributes API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.describefleetattributes.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeFleetAttributes'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describefleetattributes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetcapacity-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetCapacity API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeFleetCapacity API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.describefleetcapacity.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeFleetCapacity'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describefleetcapacity-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetevents-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetEvents API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeFleetEvents API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.describefleetevents.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeFleetEvents'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describefleetevents-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: >-
+    amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetlocationattributes-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetLocationAttributes API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeFleetLocationAttributes API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describefleetlocationattributes.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeFleetLocationAttributes'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationattributes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetlocationcapacity-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetLocationCapacity API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeFleetLocationCapacity API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describefleetlocationcapacity.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeFleetLocationCapacity'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationcapacity-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: >-
+    amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetlocationutilization-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetLocationUtilization API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeFleetLocationUtilization API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describefleetlocationutilization.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeFleetLocationUtilization'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationutilization-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetportsettings-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetPortSettings API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeFleetPortSettings API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.describefleetportsettings.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeFleetPortSettings'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describefleetportsettings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetutilization-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetUtilization API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeFleetUtilization API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.describefleetutilization.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeFleetUtilization'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describefleetutilization-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegameserver-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameServer API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeGameServer API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.describegameserver.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeGameServer'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describegameserver-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegameservergroup-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameServerGroup API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.describegameservergroup.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeGameServerGroup'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describegameservergroup-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegameserverinstances-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameServerInstances API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeGameServerInstances API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.describegameserverinstances.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeGameServerInstances'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-describegameserverinstances-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessiondetails-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessionDetails API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeGameSessionDetails API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.describegamesessiondetails.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeGameSessionDetails'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describegamesessiondetails-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessionplacement-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessionPlacement API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeGameSessionPlacement API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describegamesessionplacement.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeGameSessionPlacement'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-describegamesessionplacement-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessionqueues-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessionQueues API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeGameSessionQueues API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.describegamesessionqueues.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeGameSessionQueues'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describegamesessionqueues-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessions-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessions API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeGameSessions API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.describegamesessions.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeGameSessions'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describegamesessions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeinstances-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeInstances API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeInstances API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.describeinstances.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeInstances'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describeinstances-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describematchmaking-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeMatchmaking API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeMatchmaking API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.describematchmaking.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeMatchmaking'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describematchmaking-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: >-
+    amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describematchmakingconfigurations-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeMatchmakingConfigurations API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeMatchmakingConfigurations API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describematchmakingconfigurations.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeMatchmakingConfigurations'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-describematchmakingconfigurations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describematchmakingrulesets-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeMatchmakingRuleSets API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeMatchmakingRuleSets API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.describematchmakingrulesets.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeMatchmakingRuleSets'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-describematchmakingrulesets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeplayersessions-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribePlayerSessions API'
+  description: >-
+    The #X Amz Target=GameLift.DescribePlayerSessions API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.describeplayersessions.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribePlayerSessions'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describeplayersessions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeruntimeconfiguration-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeRuntimeConfiguration API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeRuntimeConfiguration API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describeruntimeconfiguration.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeRuntimeConfiguration'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-describeruntimeconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describescalingpolicies-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeScalingPolicies API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeScalingPolicies API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.describescalingpolicies.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeScalingPolicies'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describescalingpolicies-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describescript-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeScript API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeScript API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.describescript.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeScript'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describescript-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: >-
+    amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describevpcpeeringauthorizations-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeVpcPeeringAuthorizations API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeVpcPeeringAuthorizations API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describevpcpeeringauthorizations.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeVpcPeeringAuthorizations'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-describevpcpeeringauthorizations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describevpcpeeringconnections-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.DescribeVpcPeeringConnections API'
+  description: >-
+    The #X Amz Target=GameLift.DescribeVpcPeeringConnections API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describevpcpeeringconnections.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.DescribeVpcPeeringConnections'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-describevpcpeeringconnections-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getcomputeaccess-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.GetComputeAccess API'
+  description: >-
+    The #X Amz Target=GameLift.GetComputeAccess API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.getcomputeaccess.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.GetComputeAccess'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-getcomputeaccess-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getcomputeauthtoken-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.GetComputeAuthToken API'
+  description: >-
+    The #X Amz Target=GameLift.GetComputeAuthToken API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.getcomputeauthtoken.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.GetComputeAuthToken'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-getcomputeauthtoken-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getgamesessionlogurl-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.GetGameSessionLogUrl API'
+  description: >-
+    The #X Amz Target=GameLift.GetGameSessionLogUrl API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.getgamesessionlogurl.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.GetGameSessionLogUrl'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-getgamesessionlogurl-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getinstanceaccess-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.GetInstanceAccess API'
+  description: >-
+    The #X Amz Target=GameLift.GetInstanceAccess API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.getinstanceaccess.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.GetInstanceAccess'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-getinstanceaccess-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listaliases-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ListAliases API'
+  description: >-
+    The #X Amz Target=GameLift.ListAliases API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listaliases.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ListAliases'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-listaliases-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listbuilds-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ListBuilds API'
+  description: >-
+    The #X Amz Target=GameLift.ListBuilds API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listbuilds.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ListBuilds'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-listbuilds-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listcompute-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ListCompute API'
+  description: >-
+    The #X Amz Target=GameLift.ListCompute API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listcompute.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ListCompute'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-listcompute-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listfleets-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ListFleets API'
+  description: >-
+    The #X Amz Target=GameLift.ListFleets API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listfleets.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ListFleets'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-listfleets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listgameservergroups-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ListGameServerGroups API'
+  description: >-
+    The #X Amz Target=GameLift.ListGameServerGroups API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.listgameservergroups.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ListGameServerGroups'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-listgameservergroups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listgameservers-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ListGameServers API'
+  description: >-
+    The #X Amz Target=GameLift.ListGameServers API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listgameservers.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ListGameServers'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-listgameservers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listlocations-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ListLocations API'
+  description: >-
+    The #X Amz Target=GameLift.ListLocations API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listlocations.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ListLocations'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-listlocations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listscripts-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ListScripts API'
+  description: >-
+    The #X Amz Target=GameLift.ListScripts API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listscripts.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ListScripts'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-listscripts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listtagsforresource-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ListTagsForResource API'
+  description: >-
+    The #X Amz Target=GameLift.ListTagsForResource API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.listtagsforresource.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ListTagsForResource'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-listtagsforresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-putscalingpolicy-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.PutScalingPolicy API'
+  description: >-
+    The #X Amz Target=GameLift.PutScalingPolicy API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.putscalingpolicy.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.PutScalingPolicy'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-putscalingpolicy-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-registercompute-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.RegisterCompute API'
+  description: >-
+    The #X Amz Target=GameLift.RegisterCompute API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.registercompute.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.RegisterCompute'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-registercompute-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-registergameserver-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.RegisterGameServer API'
+  description: >-
+    The #X Amz Target=GameLift.RegisterGameServer API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.registergameserver.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.RegisterGameServer'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-registergameserver-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-requestuploadcredentials-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.RequestUploadCredentials API'
+  description: >-
+    The #X Amz Target=GameLift.RequestUploadCredentials API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.requestuploadcredentials.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.RequestUploadCredentials'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-requestuploadcredentials-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-resolvealias-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ResolveAlias API'
+  description: >-
+    The #X Amz Target=GameLift.ResolveAlias API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.resolvealias.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ResolveAlias'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-resolvealias-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-resumegameservergroup-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ResumeGameServerGroup API'
+  description: >-
+    The #X Amz Target=GameLift.ResumeGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.resumegameservergroup.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ResumeGameServerGroup'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-resumegameservergroup-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-searchgamesessions-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.SearchGameSessions API'
+  description: >-
+    The #X Amz Target=GameLift.SearchGameSessions API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.searchgamesessions.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.SearchGameSessions'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-searchgamesessions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startfleetactions-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.StartFleetActions API'
+  description: >-
+    The #X Amz Target=GameLift.StartFleetActions API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.startfleetactions.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.StartFleetActions'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-startfleetactions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startgamesessionplacement-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.StartGameSessionPlacement API'
+  description: >-
+    The #X Amz Target=GameLift.StartGameSessionPlacement API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.startgamesessionplacement.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.StartGameSessionPlacement'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-startgamesessionplacement-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startmatchbackfill-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.StartMatchBackfill API'
+  description: >-
+    The #X Amz Target=GameLift.StartMatchBackfill API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.startmatchbackfill.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.StartMatchBackfill'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-startmatchbackfill-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startmatchmaking-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.StartMatchmaking API'
+  description: >-
+    The #X Amz Target=GameLift.StartMatchmaking API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.startmatchmaking.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.StartMatchmaking'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-startmatchmaking-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-stopfleetactions-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.StopFleetActions API'
+  description: >-
+    The #X Amz Target=GameLift.StopFleetActions API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.stopfleetactions.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.StopFleetActions'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-stopfleetactions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-stopgamesessionplacement-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.StopGameSessionPlacement API'
+  description: >-
+    The #X Amz Target=GameLift.StopGameSessionPlacement API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.stopgamesessionplacement.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.StopGameSessionPlacement'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-stopgamesessionplacement-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-stopmatchmaking-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.StopMatchmaking API'
+  description: >-
+    The #X Amz Target=GameLift.StopMatchmaking API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.stopmatchmaking.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.StopMatchmaking'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-stopmatchmaking-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-suspendgameservergroup-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.SuspendGameServerGroup API'
+  description: >-
+    The #X Amz Target=GameLift.SuspendGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.suspendgameservergroup.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.SuspendGameServerGroup'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-suspendgameservergroup-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-tagresource-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.TagResource API'
+  description: >-
+    The #X Amz Target=GameLift.TagResource API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.tagresource.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.TagResource'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-tagresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-untagresource-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UntagResource API'
+  description: >-
+    The #X Amz Target=GameLift.UntagResource API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.untagresource.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UntagResource'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-untagresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatealias-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateAlias API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateAlias API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.updatealias.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateAlias'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updatealias-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatebuild-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateBuild API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateBuild API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.updatebuild.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateBuild'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updatebuild-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatefleetattributes-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateFleetAttributes API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateFleetAttributes API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.updatefleetattributes.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateFleetAttributes'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updatefleetattributes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatefleetcapacity-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateFleetCapacity API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateFleetCapacity API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.updatefleetcapacity.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateFleetCapacity'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updatefleetcapacity-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatefleetportsettings-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateFleetPortSettings API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateFleetPortSettings API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.updatefleetportsettings.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateFleetPortSettings'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updatefleetportsettings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategameserver-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameServer API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateGameServer API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.updategameserver.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateGameServer'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updategameserver-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategameservergroup-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameServerGroup API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.updategameservergroup.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateGameServerGroup'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updategameservergroup-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategamesession-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameSession API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateGameSession API from Amazon GameLift — 1 operation(s) for #x amz
+    target=gamelift.updategamesession.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateGameSession'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updategamesession-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategamesessionqueue-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameSessionQueue API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateGameSessionQueue API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.updategamesessionqueue.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateGameSessionQueue'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updategamesessionqueue-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatematchmakingconfiguration-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateMatchmakingConfiguration API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateMatchmakingConfiguration API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.updatematchmakingconfiguration.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateMatchmakingConfiguration'
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/amazon-gamelift-x-amz-target-gamelift-updatematchmakingconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updateruntimeconfiguration-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateRuntimeConfiguration API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateRuntimeConfiguration API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.updateruntimeconfiguration.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateRuntimeConfiguration'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updateruntimeconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatescript-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.UpdateScript API'
+  description: >-
+    The #X Amz Target=GameLift.UpdateScript API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.updatescript.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.UpdateScript'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updatescript-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/gamelift/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/gamelift/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/gamelift/faq/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
+  - type: JSONSchema
+    url: json-schema/gamelift-fleet-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-gamelift-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-gamelift.yaml
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-validatematchmakingruleset-api
+  name: 'Amazon GameLift #X Amz Target=GameLift.ValidateMatchmakingRuleSet API'
+  description: >-
+    The #X Amz Target=GameLift.ValidateMatchmakingRuleSet API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.validatematchmakingruleset.
+  humanURL: https://aws.amazon.com/gamelift/
+  baseURL: https://gamelift.amazonaws.com
+  tags:
+  - '#X Amz Target=GameLift.ValidateMatchmakingRuleSet'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-validatematchmakingruleset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
     url: https://aws.amazon.com/gamelift/getting-started/
   - type: Pricing
