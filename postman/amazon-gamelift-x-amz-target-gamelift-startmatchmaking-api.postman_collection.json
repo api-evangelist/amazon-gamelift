@@ -1,0 +1,574 @@
+{
+  "info": {
+    "_postman_id": "8014cad2-4fef-4687-a543-a0207fe1ad43",
+    "name": "Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.StartMatchmaking API",
+    "description": "<p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/\">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html\">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html\"> Amazon GameLift tools and resources</a> </p> </li> </ul>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:24:40.000Z",
+    "updatedAt": "2026-07-28T10:24:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8014cad2-4fef-4687-a543-a0207fe1ad43"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=GameLift.StartMatchmaking",
+      "item": [
+        {
+          "name": "Amazon GameLift Start Matchmaking",
+          "id": "0788fc4a-ace9-47de-9083-46d741da4a08",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "GameLift.StartMatchmaking"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ConfigurationName\": \"arn:XU[[M:matchmakingconfiguration/\",\n  \"Players\": [\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"mollit_29\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"sunt_7\": \"<double>\"\n          }\n        },\n        \"velit4\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"anim_60\": \"<double>\",\n            \"eu65c\": \"<double>\",\n            \"eiusmodfd\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"deserunt_0c_\": \"<integer>\",\n        \"exd\": \"<integer>\",\n        \"magna_40\": \"<integer>\"\n      }\n    },\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"exercitation485\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"pariatur_0a\": \"<double>\",\n            \"idb\": \"<double>\"\n          }\n        },\n        \"inc\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"estd\": \"<double>\"\n          }\n        },\n        \"tempor21e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"nostrud8\": \"<double>\",\n            \"eu_70\": \"<double>\",\n            \"labore34c\": \"<double>\",\n            \"nulla_c83\": \"<double>\"\n          }\n        },\n        \"deserunt_9e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"irured\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"Ut_112\": \"<integer>\",\n        \"velitdd5\": \"<integer>\"\n      }\n    }\n  ],\n  \"TicketId\": \"q8fh6\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.StartMatchmaking",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=GameLift.StartMatchmaking"
+            },
+            "description": "<p>Uses FlexMatch to create a game match for a group of players based on custom matchmaking rules. With games that use Amazon GameLift managed hosting, this operation also triggers Amazon GameLift to find hosting resources and start a new game session for the new match. Each matchmaking request includes information on one or more players and specifies the FlexMatch matchmaker to use. When a request is for multiple players, FlexMatch attempts to build a match that includes all players in the request, placing them in the same team and finding additional players as needed to fill the match. </p> <p>To start matchmaking, provide a unique ticket ID, specify a matchmaking configuration, and include the players to be matched. You must also include any player attributes that are required by the matchmaking configuration's rule set. If successful, a matchmaking ticket is returned with status set to <code>QUEUED</code>. </p> <p>Track matchmaking events to respond as needed and acquire game session connection information for successfully completed matches. Ticket status updates are tracked using event notification through Amazon Simple Notification Service, which is defined in the matchmaking configuration.</p> <p> <b>Learn more</b> </p> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html\"> Add FlexMatch to a game client</a> </p> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html\"> Set Up FlexMatch event notification</a> </p> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html\"> How Amazon GameLift FlexMatch works</a> </p>"
+          },
+          "response": [
+            {
+              "id": "dce54a6c-b722-442f-9534-d2d55574b818",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.StartMatchmaking"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ConfigurationName\": \"arn:XU[[M:matchmakingconfiguration/\",\n  \"Players\": [\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"mollit_29\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"sunt_7\": \"<double>\"\n          }\n        },\n        \"velit4\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"anim_60\": \"<double>\",\n            \"eu65c\": \"<double>\",\n            \"eiusmodfd\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"deserunt_0c_\": \"<integer>\",\n        \"exd\": \"<integer>\",\n        \"magna_40\": \"<integer>\"\n      }\n    },\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"exercitation485\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"pariatur_0a\": \"<double>\",\n            \"idb\": \"<double>\"\n          }\n        },\n        \"inc\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"estd\": \"<double>\"\n          }\n        },\n        \"tempor21e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"nostrud8\": \"<double>\",\n            \"eu_70\": \"<double>\",\n            \"labore34c\": \"<double>\",\n            \"nulla_c83\": \"<double>\"\n          }\n        },\n        \"deserunt_9e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"irured\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"Ut_112\": \"<integer>\",\n        \"velitdd5\": \"<integer>\"\n      }\n    }\n  ],\n  \"TicketId\": \"q8fh6\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.StartMatchmaking",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.StartMatchmaking"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"MatchmakingTicket\": {\n    \"TicketId\": \"BFvOKf\",\n    \"ConfigurationName\": \"a-Zex\",\n    \"ConfigurationArn\": \"arn:B_tM|8G?(B:matchmakingconfiguration/Gzh8uhOVv\",\n    \"Status\": \"REQUIRES_ACCEPTANCE\",\n    \"StatusReason\": \"<string>\",\n    \"StatusMessage\": \"<string>\",\n    \"StartTime\": \"<dateTime>\",\n    \"EndTime\": \"<dateTime>\",\n    \"Players\": [\n      {\n        \"PlayerId\": \"<string>\",\n        \"PlayerAttributes\": {\n          \"quiec5\": {\n            \"S\": \"<string>\",\n            \"N\": \"<double>\",\n            \"SL\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"SDM\": {\n              \"deserunt_19_\": \"<double>\"\n            }\n          },\n          \"nostrud_c\": {\n            \"S\": \"<string>\",\n            \"N\": \"<double>\",\n            \"SL\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"SDM\": {\n              \"ullamco_6\": \"<double>\",\n              \"dolore0\": \"<double>\",\n              \"ut_5\": \"<double>\"\n            }\n          }\n        },\n        \"Team\": \"<string>\",\n        \"LatencyInMs\": {\n          \"non_0a\": \"<integer>\"\n        }\n      },\n      {\n        \"PlayerId\": \"<string>\",\n        \"PlayerAttributes\": {\n          \"consequat52\": {\n            \"S\": \"<string>\",\n            \"N\": \"<double>\",\n            \"SL\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"SDM\": {\n              \"dolorec\": \"<double>\"\n            }\n          },\n          \"nullad8\": {\n            \"S\": \"<string>\",\n            \"N\": \"<double>\",\n            \"SL\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"SDM\": {\n              \"id_22_\": \"<double>\",\n              \"eu_6\": \"<double>\"\n            }\n          },\n          \"incididunt9\": {\n            \"S\": \"<string>\",\n            \"N\": \"<double>\",\n            \"SL\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"SDM\": {\n              \"occaecat_16e\": \"<double>\",\n              \"aute_b92\": \"<double>\",\n              \"veniambab\": \"<double>\",\n              \"exercitation__2\": \"<double>\"\n            }\n          }\n        },\n        \"Team\": \"<string>\",\n        \"LatencyInMs\": {\n          \"ex4_\": \"<integer>\",\n          \"aliquac1\": \"<integer>\"\n        }\n      }\n    ],\n    \"GameSessionConnectionInfo\": {\n      \"GameSessionArn\": \"2xFmAac2o\",\n      \"IpAddress\": \"f\",\n      \"DnsName\": \"<string>\",\n      \"Port\": \"<integer>\",\n      \"MatchedPlayerSessions\": [\n        {\n          \"PlayerId\": \"<string>\",\n          \"PlayerSessionId\": \"psess-MB9\\\\dPP\"\n        },\n        {\n          \"PlayerId\": \"<string>\",\n          \"PlayerSessionId\": \"psess-jDYj\"\n        }\n      ]\n    },\n    \"EstimatedWaitTime\": \"<integer>\"\n  }\n}",
+              "createdAt": "2026-07-28T10:24:40.000Z",
+              "updatedAt": "2026-07-28T10:24:40.000Z",
+              "uid": "35240-dce54a6c-b722-442f-9534-d2d55574b818"
+            },
+            {
+              "id": "58fcd19a-e9e8-4809-8439-6a8ef5754468",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.StartMatchmaking"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ConfigurationName\": \"arn:XU[[M:matchmakingconfiguration/\",\n  \"Players\": [\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"mollit_29\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"sunt_7\": \"<double>\"\n          }\n        },\n        \"velit4\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"anim_60\": \"<double>\",\n            \"eu65c\": \"<double>\",\n            \"eiusmodfd\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"deserunt_0c_\": \"<integer>\",\n        \"exd\": \"<integer>\",\n        \"magna_40\": \"<integer>\"\n      }\n    },\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"exercitation485\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"pariatur_0a\": \"<double>\",\n            \"idb\": \"<double>\"\n          }\n        },\n        \"inc\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"estd\": \"<double>\"\n          }\n        },\n        \"tempor21e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"nostrud8\": \"<double>\",\n            \"eu_70\": \"<double>\",\n            \"labore34c\": \"<double>\",\n            \"nulla_c83\": \"<double>\"\n          }\n        },\n        \"deserunt_9e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"irured\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"Ut_112\": \"<integer>\",\n        \"velitdd5\": \"<integer>\"\n      }\n    }\n  ],\n  \"TicketId\": \"q8fh6\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.StartMatchmaking",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.StartMatchmaking"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:24:40.000Z",
+              "updatedAt": "2026-07-28T10:24:40.000Z",
+              "uid": "35240-58fcd19a-e9e8-4809-8439-6a8ef5754468"
+            },
+            {
+              "id": "17a0076c-0986-43a5-876a-be6f890ad256",
+              "name": "NotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.StartMatchmaking"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ConfigurationName\": \"arn:XU[[M:matchmakingconfiguration/\",\n  \"Players\": [\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"mollit_29\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"sunt_7\": \"<double>\"\n          }\n        },\n        \"velit4\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"anim_60\": \"<double>\",\n            \"eu65c\": \"<double>\",\n            \"eiusmodfd\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"deserunt_0c_\": \"<integer>\",\n        \"exd\": \"<integer>\",\n        \"magna_40\": \"<integer>\"\n      }\n    },\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"exercitation485\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"pariatur_0a\": \"<double>\",\n            \"idb\": \"<double>\"\n          }\n        },\n        \"inc\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"estd\": \"<double>\"\n          }\n        },\n        \"tempor21e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"nostrud8\": \"<double>\",\n            \"eu_70\": \"<double>\",\n            \"labore34c\": \"<double>\",\n            \"nulla_c83\": \"<double>\"\n          }\n        },\n        \"deserunt_9e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"irured\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"Ut_112\": \"<integer>\",\n        \"velitdd5\": \"<integer>\"\n      }\n    }\n  ],\n  \"TicketId\": \"q8fh6\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.StartMatchmaking",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.StartMatchmaking"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:24:40.000Z",
+              "updatedAt": "2026-07-28T10:24:40.000Z",
+              "uid": "35240-17a0076c-0986-43a5-876a-be6f890ad256"
+            },
+            {
+              "id": "2cef3a48-541d-4579-8444-885194ee873d",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.StartMatchmaking"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ConfigurationName\": \"arn:XU[[M:matchmakingconfiguration/\",\n  \"Players\": [\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"mollit_29\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"sunt_7\": \"<double>\"\n          }\n        },\n        \"velit4\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"anim_60\": \"<double>\",\n            \"eu65c\": \"<double>\",\n            \"eiusmodfd\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"deserunt_0c_\": \"<integer>\",\n        \"exd\": \"<integer>\",\n        \"magna_40\": \"<integer>\"\n      }\n    },\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"exercitation485\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"pariatur_0a\": \"<double>\",\n            \"idb\": \"<double>\"\n          }\n        },\n        \"inc\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"estd\": \"<double>\"\n          }\n        },\n        \"tempor21e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"nostrud8\": \"<double>\",\n            \"eu_70\": \"<double>\",\n            \"labore34c\": \"<double>\",\n            \"nulla_c83\": \"<double>\"\n          }\n        },\n        \"deserunt_9e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"irured\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"Ut_112\": \"<integer>\",\n        \"velitdd5\": \"<integer>\"\n      }\n    }\n  ],\n  \"TicketId\": \"q8fh6\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.StartMatchmaking",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.StartMatchmaking"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:24:40.000Z",
+              "updatedAt": "2026-07-28T10:24:40.000Z",
+              "uid": "35240-2cef3a48-541d-4579-8444-885194ee873d"
+            },
+            {
+              "id": "14af2f1a-6cba-439c-9d9e-8222c36f75c4",
+              "name": "UnsupportedRegionException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.StartMatchmaking"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ConfigurationName\": \"arn:XU[[M:matchmakingconfiguration/\",\n  \"Players\": [\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"mollit_29\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"sunt_7\": \"<double>\"\n          }\n        },\n        \"velit4\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"anim_60\": \"<double>\",\n            \"eu65c\": \"<double>\",\n            \"eiusmodfd\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"deserunt_0c_\": \"<integer>\",\n        \"exd\": \"<integer>\",\n        \"magna_40\": \"<integer>\"\n      }\n    },\n    {\n      \"PlayerId\": \"<string>\",\n      \"PlayerAttributes\": {\n        \"exercitation485\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"pariatur_0a\": \"<double>\",\n            \"idb\": \"<double>\"\n          }\n        },\n        \"inc\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"estd\": \"<double>\"\n          }\n        },\n        \"tempor21e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"nostrud8\": \"<double>\",\n            \"eu_70\": \"<double>\",\n            \"labore34c\": \"<double>\",\n            \"nulla_c83\": \"<double>\"\n          }\n        },\n        \"deserunt_9e\": {\n          \"S\": \"<string>\",\n          \"N\": \"<double>\",\n          \"SL\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SDM\": {\n            \"irured\": \"<double>\"\n          }\n        }\n      },\n      \"Team\": \"<string>\",\n      \"LatencyInMs\": {\n        \"Ut_112\": \"<integer>\",\n        \"velitdd5\": \"<integer>\"\n      }\n    }\n  ],\n  \"TicketId\": \"q8fh6\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.StartMatchmaking",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.StartMatchmaking"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:24:40.000Z",
+              "updatedAt": "2026-07-28T10:24:40.000Z",
+              "uid": "35240-14af2f1a-6cba-439c-9d9e-8222c36f75c4"
+            }
+          ],
+          "createdAt": "2026-07-28T10:24:40.000Z",
+          "updatedAt": "2026-07-28T10:24:40.000Z",
+          "uid": "35240-0788fc4a-ace9-47de-9083-46d741da4a08"
+        }
+      ],
+      "id": "dd5b5a36-36ae-49e6-bc05-b20c71bb1831",
+      "createdAt": "2026-07-28T10:24:40.000Z",
+      "updatedAt": "2026-07-28T10:24:40.000Z",
+      "uid": "35240-dd5b5a36-36ae-49e6-bc05-b20c71bb1831"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://gamelift.{{region}}.amazonaws.com"
+    }
+  ]
+}

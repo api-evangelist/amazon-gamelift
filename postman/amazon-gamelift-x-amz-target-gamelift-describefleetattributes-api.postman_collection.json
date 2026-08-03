@@ -1,0 +1,646 @@
+{
+  "info": {
+    "_postman_id": "cd8a966b-ba59-400f-bd61-22f4e468932e",
+    "name": "Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeFleetAttributes API",
+    "description": "<p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/\">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html\">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html\"> Amazon GameLift tools and resources</a> </p> </li> </ul>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:21:54.000Z",
+    "updatedAt": "2026-07-28T10:21:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cd8a966b-ba59-400f-bd61-22f4e468932e"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=GameLift.DescribeFleetAttributes",
+      "item": [
+        {
+          "name": "Amazon GameLift Describe Fleet Attributes",
+          "id": "1f51efdc-31c8-483e-93aa-7ac76be05b06",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "GameLift.DescribeFleetAttributes"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"FleetIds\": [\n    \"arn:41LTDX5:fleet/fleet-SDwVS\\\"\"\n  ],\n  \"Limit\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Limit=<string>&NextToken=<string>#X-Amz-Target=GameLift.DescribeFleetAttributes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "Limit",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=GameLift.DescribeFleetAttributes"
+            },
+            "description": "<p>Retrieves core fleet-wide properties, including the computing hardware and deployment configuration for all instances in the fleet.</p> <p>This operation can be used in the following ways: </p> <ul> <li> <p>To get attributes for one or more specific fleets, provide a list of fleet IDs or fleet ARNs. </p> </li> <li> <p>To get attributes for all fleets, do not provide a fleet identifier. </p> </li> </ul> <p>When requesting attributes for multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages. </p> <p>If successful, a <code>FleetAttributes</code> object is returned for each fleet requested, unless the fleet identifier is not found. </p> <note> <p>Some API operations limit the number of fleet IDs that allowed in one request. If a request exceeds this limit, the request fails and the error message contains the maximum allowed number.</p> </note> <p> <b>Learn more</b> </p> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html\">Setting up Amazon GameLift fleets</a> </p>"
+          },
+          "response": [
+            {
+              "id": "e1eacd9d-1302-4233-9444-c50f410065ef",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.DescribeFleetAttributes"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetIds\": [\n    \"arn:41LTDX5:fleet/fleet-SDwVS\\\"\"\n  ],\n  \"Limit\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Limit=<string>&NextToken=<string>#X-Amz-Target=GameLift.DescribeFleetAttributes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "Limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=GameLift.DescribeFleetAttributes"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"FleetAttributes\": [\n    {\n      \"FleetId\": \"fleet-};-QIC8\",\n      \"FleetArn\": \"arn:Le)lt5zpFg:fleet/fleet-bH4\",\n      \"FleetType\": \"SPOT\",\n      \"InstanceType\": \"m5a.2xlarge\",\n      \"Description\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"CreationTime\": \"<dateTime>\",\n      \"TerminationTime\": \"<dateTime>\",\n      \"Status\": \"DELETING\",\n      \"BuildId\": \"build-u\\\\goHFGu\",\n      \"BuildArn\": \"arn:UFbovI:build/build-NUw\",\n      \"ScriptId\": \"script-#(<\",\n      \"ScriptArn\": \"arn:B4K6:script/script-a#?,\\\\Q9J\",\n      \"ServerLaunchPath\": \"DQGwiGn yvB\",\n      \"ServerLaunchParameters\": \"Cpz8RhG[0\",\n      \"LogPaths\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n      \"OperatingSystem\": \"WINDOWS_2012\",\n      \"ResourceCreationLimitPolicy\": {\n        \"NewGameSessionsPerCreator\": \"<integer>\",\n        \"PolicyPeriodInMinutes\": \"<integer>\"\n      },\n      \"MetricGroups\": [\n        \"<string>\"\n      ],\n      \"StoppedActions\": [\n        \"AUTO_SCALING\"\n      ],\n      \"InstanceRoleArn\": \"<string>\",\n      \"CertificateConfiguration\": {\n        \"CertificateType\": \"GENERATED\"\n      },\n      \"ComputeType\": \"EC2\",\n      \"AnywhereConfiguration\": {\n        \"Cost\": \"5\"\n      }\n    },\n    {\n      \"FleetId\": \"fleet-gM\\\"-%i\",\n      \"FleetArn\": \"arn:170j$8S!|:fleet/fleet-s\\\"|%tjmdr\",\n      \"FleetType\": \"SPOT\",\n      \"InstanceType\": \"c6a.2xlarge\",\n      \"Description\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"CreationTime\": \"<dateTime>\",\n      \"TerminationTime\": \"<dateTime>\",\n      \"Status\": \"VALIDATING\",\n      \"BuildId\": \"build-h/,O2'L;g>\",\n      \"BuildArn\": \"arn:t40X=:build/build-]P\",\n      \"ScriptId\": \"script-+mkgmo?>\",\n      \"ScriptArn\": \"arn:#9rb:script/script-fsrIL\\\\\",\n      \"ServerLaunchPath\": \"b\\\\j\",\n      \"ServerLaunchParameters\": \"V5:w}\",\n      \"LogPaths\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"NewGameSessionProtectionPolicy\": \"NoProtection\",\n      \"OperatingSystem\": \"WINDOWS_2012\",\n      \"ResourceCreationLimitPolicy\": {\n        \"NewGameSessionsPerCreator\": \"<integer>\",\n        \"PolicyPeriodInMinutes\": \"<integer>\"\n      },\n      \"MetricGroups\": [\n        \"<string>\"\n      ],\n      \"StoppedActions\": [\n        \"AUTO_SCALING\"\n      ],\n      \"InstanceRoleArn\": \"<string>\",\n      \"CertificateConfiguration\": {\n        \"CertificateType\": \"DISABLED\"\n      },\n      \"ComputeType\": \"ANYWHERE\",\n      \"AnywhereConfiguration\": {\n        \"Cost\": \"38.66\"\n      }\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:21:55.000Z",
+              "updatedAt": "2026-07-28T10:21:55.000Z",
+              "uid": "35240-e1eacd9d-1302-4233-9444-c50f410065ef"
+            },
+            {
+              "id": "3034a7ec-6cd5-4516-bc05-b5194fefb0d0",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.DescribeFleetAttributes"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetIds\": [\n    \"arn:41LTDX5:fleet/fleet-SDwVS\\\"\"\n  ],\n  \"Limit\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Limit=<string>&NextToken=<string>#X-Amz-Target=GameLift.DescribeFleetAttributes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "Limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=GameLift.DescribeFleetAttributes"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:55.000Z",
+              "updatedAt": "2026-07-28T10:21:55.000Z",
+              "uid": "35240-3034a7ec-6cd5-4516-bc05-b5194fefb0d0"
+            },
+            {
+              "id": "2b10b57f-2d8b-402b-b1d3-4203f405a0c7",
+              "name": "NotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.DescribeFleetAttributes"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetIds\": [\n    \"arn:41LTDX5:fleet/fleet-SDwVS\\\"\"\n  ],\n  \"Limit\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Limit=<string>&NextToken=<string>#X-Amz-Target=GameLift.DescribeFleetAttributes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "Limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=GameLift.DescribeFleetAttributes"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:55.000Z",
+              "updatedAt": "2026-07-28T10:21:55.000Z",
+              "uid": "35240-2b10b57f-2d8b-402b-b1d3-4203f405a0c7"
+            },
+            {
+              "id": "de9f34b9-ad13-4df1-a1fb-681ef1f1270c",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.DescribeFleetAttributes"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetIds\": [\n    \"arn:41LTDX5:fleet/fleet-SDwVS\\\"\"\n  ],\n  \"Limit\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Limit=<string>&NextToken=<string>#X-Amz-Target=GameLift.DescribeFleetAttributes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "Limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=GameLift.DescribeFleetAttributes"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:55.000Z",
+              "updatedAt": "2026-07-28T10:21:55.000Z",
+              "uid": "35240-de9f34b9-ad13-4df1-a1fb-681ef1f1270c"
+            },
+            {
+              "id": "43f1e56d-1c90-4664-8cad-47bfffe3d785",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.DescribeFleetAttributes"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetIds\": [\n    \"arn:41LTDX5:fleet/fleet-SDwVS\\\"\"\n  ],\n  \"Limit\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Limit=<string>&NextToken=<string>#X-Amz-Target=GameLift.DescribeFleetAttributes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "Limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=GameLift.DescribeFleetAttributes"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:21:55.000Z",
+              "updatedAt": "2026-07-28T10:21:55.000Z",
+              "uid": "35240-43f1e56d-1c90-4664-8cad-47bfffe3d785"
+            }
+          ],
+          "createdAt": "2026-07-28T10:21:55.000Z",
+          "updatedAt": "2026-07-28T10:21:55.000Z",
+          "uid": "35240-1f51efdc-31c8-483e-93aa-7ac76be05b06"
+        }
+      ],
+      "id": "8c89753e-e8c0-47e0-9c85-5f2c0fd018a6",
+      "createdAt": "2026-07-28T10:21:55.000Z",
+      "updatedAt": "2026-07-28T10:21:55.000Z",
+      "uid": "35240-8c89753e-e8c0-47e0-9c85-5f2c0fd018a6"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://gamelift.{{region}}.amazonaws.com"
+    }
+  ]
+}

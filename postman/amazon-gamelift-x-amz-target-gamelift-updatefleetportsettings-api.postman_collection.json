@@ -1,0 +1,838 @@
+{
+  "info": {
+    "_postman_id": "bed2bcc0-c50a-41d1-a9a3-7f1a4e30f861",
+    "name": "Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.UpdateFleetPortSettings API",
+    "description": "<p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/\">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html\">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html\"> Amazon GameLift tools and resources</a> </p> </li> </ul>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:25:02.000Z",
+    "updatedAt": "2026-07-28T10:25:02.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-bed2bcc0-c50a-41d1-a9a3-7f1a4e30f861"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=GameLift.UpdateFleetPortSettings",
+      "item": [
+        {
+          "name": "Amazon GameLift Update Fleet Port Settings",
+          "id": "46f200ba-32be-4607-807e-8d123a78781c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "GameLift.UpdateFleetPortSettings"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"FleetId\": \"arn:D8wzzk:fleet/fleet-,\",\n  \"InboundPermissionAuthorizations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"cPD\\\\$FD.@\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"L5axe\\\\?\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"InboundPermissionRevocations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"(%G`bo/5\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"e@UL53z=\",\n      \"Protocol\": \"TCP\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.UpdateFleetPortSettings",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=GameLift.UpdateFleetPortSettings"
+            },
+            "description": "<p>Updates permissions that allow inbound traffic to connect to game sessions that are being hosted on instances in the fleet. </p> <p>To update settings, specify the fleet ID to be updated and specify the changes to be made. List the permissions you want to add in <code>InboundPermissionAuthorizations</code>, and permissions you want to remove in <code>InboundPermissionRevocations</code>. Permissions to be removed must match existing fleet permissions. </p> <p>If successful, the fleet ID for the updated fleet is returned. For fleets with remote locations, port setting updates can take time to propagate across all locations. You can check the status of updates in each location by calling <code>DescribeFleetPortSettings</code> with a location name.</p> <p> <b>Learn more</b> </p> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html\">Setting up Amazon GameLift fleets</a> </p>"
+          },
+          "response": [
+            {
+              "id": "f15d43cd-d054-4d8e-8a31-1cc1690ca1e6",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.UpdateFleetPortSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetId\": \"arn:D8wzzk:fleet/fleet-,\",\n  \"InboundPermissionAuthorizations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"cPD\\\\$FD.@\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"L5axe\\\\?\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"InboundPermissionRevocations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"(%G`bo/5\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"e@UL53z=\",\n      \"Protocol\": \"TCP\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.UpdateFleetPortSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.UpdateFleetPortSettings"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"FleetId\": \"fleet-C\",\n  \"FleetArn\": \"arn:f}:fleet/fleet-U\"\n}",
+              "createdAt": "2026-07-28T10:25:02.000Z",
+              "updatedAt": "2026-07-28T10:25:02.000Z",
+              "uid": "35240-f15d43cd-d054-4d8e-8a31-1cc1690ca1e6"
+            },
+            {
+              "id": "391e36d0-6a0c-401a-9875-a45754283a27",
+              "name": "NotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.UpdateFleetPortSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetId\": \"arn:D8wzzk:fleet/fleet-,\",\n  \"InboundPermissionAuthorizations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"cPD\\\\$FD.@\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"L5axe\\\\?\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"InboundPermissionRevocations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"(%G`bo/5\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"e@UL53z=\",\n      \"Protocol\": \"TCP\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.UpdateFleetPortSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.UpdateFleetPortSettings"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:25:02.000Z",
+              "updatedAt": "2026-07-28T10:25:02.000Z",
+              "uid": "35240-391e36d0-6a0c-401a-9875-a45754283a27"
+            },
+            {
+              "id": "ea53e35f-2780-46d0-afcc-5a831fc475dc",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.UpdateFleetPortSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetId\": \"arn:D8wzzk:fleet/fleet-,\",\n  \"InboundPermissionAuthorizations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"cPD\\\\$FD.@\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"L5axe\\\\?\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"InboundPermissionRevocations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"(%G`bo/5\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"e@UL53z=\",\n      \"Protocol\": \"TCP\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.UpdateFleetPortSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.UpdateFleetPortSettings"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:25:02.000Z",
+              "updatedAt": "2026-07-28T10:25:02.000Z",
+              "uid": "35240-ea53e35f-2780-46d0-afcc-5a831fc475dc"
+            },
+            {
+              "id": "6ed8e44e-9b35-40b8-be55-9dc49eed1f91",
+              "name": "InvalidFleetStatusException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.UpdateFleetPortSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetId\": \"arn:D8wzzk:fleet/fleet-,\",\n  \"InboundPermissionAuthorizations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"cPD\\\\$FD.@\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"L5axe\\\\?\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"InboundPermissionRevocations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"(%G`bo/5\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"e@UL53z=\",\n      \"Protocol\": \"TCP\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.UpdateFleetPortSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.UpdateFleetPortSettings"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:25:02.000Z",
+              "updatedAt": "2026-07-28T10:25:02.000Z",
+              "uid": "35240-6ed8e44e-9b35-40b8-be55-9dc49eed1f91"
+            },
+            {
+              "id": "0022eba5-d228-4785-b2a5-d8f63a15acea",
+              "name": "LimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.UpdateFleetPortSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetId\": \"arn:D8wzzk:fleet/fleet-,\",\n  \"InboundPermissionAuthorizations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"cPD\\\\$FD.@\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"L5axe\\\\?\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"InboundPermissionRevocations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"(%G`bo/5\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"e@UL53z=\",\n      \"Protocol\": \"TCP\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.UpdateFleetPortSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.UpdateFleetPortSettings"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:25:02.000Z",
+              "updatedAt": "2026-07-28T10:25:02.000Z",
+              "uid": "35240-0022eba5-d228-4785-b2a5-d8f63a15acea"
+            },
+            {
+              "id": "a55f13a2-49f0-4eb4-a380-7408835c8d5b",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.UpdateFleetPortSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetId\": \"arn:D8wzzk:fleet/fleet-,\",\n  \"InboundPermissionAuthorizations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"cPD\\\\$FD.@\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"L5axe\\\\?\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"InboundPermissionRevocations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"(%G`bo/5\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"e@UL53z=\",\n      \"Protocol\": \"TCP\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.UpdateFleetPortSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.UpdateFleetPortSettings"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:25:02.000Z",
+              "updatedAt": "2026-07-28T10:25:02.000Z",
+              "uid": "35240-a55f13a2-49f0-4eb4-a380-7408835c8d5b"
+            },
+            {
+              "id": "28b63122-0d81-45e0-be12-1861a5e78a89",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.UpdateFleetPortSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetId\": \"arn:D8wzzk:fleet/fleet-,\",\n  \"InboundPermissionAuthorizations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"cPD\\\\$FD.@\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"L5axe\\\\?\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"InboundPermissionRevocations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"(%G`bo/5\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"e@UL53z=\",\n      \"Protocol\": \"TCP\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.UpdateFleetPortSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.UpdateFleetPortSettings"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:25:02.000Z",
+              "updatedAt": "2026-07-28T10:25:02.000Z",
+              "uid": "35240-28b63122-0d81-45e0-be12-1861a5e78a89"
+            },
+            {
+              "id": "c86de845-81bc-4164-aa02-16735780dab3",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.UpdateFleetPortSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"FleetId\": \"arn:D8wzzk:fleet/fleet-,\",\n  \"InboundPermissionAuthorizations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"cPD\\\\$FD.@\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"L5axe\\\\?\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"InboundPermissionRevocations\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"(%G`bo/5\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"e@UL53z=\",\n      \"Protocol\": \"TCP\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.UpdateFleetPortSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.UpdateFleetPortSettings"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:25:02.000Z",
+              "updatedAt": "2026-07-28T10:25:02.000Z",
+              "uid": "35240-c86de845-81bc-4164-aa02-16735780dab3"
+            }
+          ],
+          "createdAt": "2026-07-28T10:25:02.000Z",
+          "updatedAt": "2026-07-28T10:25:02.000Z",
+          "uid": "35240-46f200ba-32be-4607-807e-8d123a78781c"
+        }
+      ],
+      "id": "4a62481e-ded2-457f-8b05-3a37c8625139",
+      "createdAt": "2026-07-28T10:25:02.000Z",
+      "updatedAt": "2026-07-28T10:25:02.000Z",
+      "uid": "35240-4a62481e-ded2-457f-8b05-3a37c8625139"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://gamelift.{{region}}.amazonaws.com"
+    }
+  ]
+}

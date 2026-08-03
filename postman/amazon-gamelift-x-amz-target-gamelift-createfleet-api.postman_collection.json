@@ -1,0 +1,926 @@
+{
+  "info": {
+    "_postman_id": "9489062c-124f-4e21-88df-ba4513eead5a",
+    "name": "Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateFleet API",
+    "description": "<p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/\">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html\">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html\"> Amazon GameLift tools and resources</a> </p> </li> </ul>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:20:52.000Z",
+    "updatedAt": "2026-07-28T10:20:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9489062c-124f-4e21-88df-ba4513eead5a"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=GameLift.CreateFleet",
+      "item": [
+        {
+          "name": "Amazon GameLift Create Fleet",
+          "id": "74303a2f-5f6f-4e0b-9d08-65765f72d934",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "GameLift.CreateFleet"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"BuildId\": \"build-Zgp#!|0iwH\",\n  \"ScriptId\": \"script-;J}dA~CoJ\",\n  \"ServerLaunchPath\": \"4CxAq\",\n  \"ServerLaunchParameters\": \"mHbOQ:\",\n  \"LogPaths\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"EC2InstanceType\": \"r5d.16xlarge\",\n  \"EC2InboundPermissions\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"/l_e`,hy/\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"GZzW]\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n  \"RuntimeConfiguration\": {\n    \"ServerProcesses\": [\n      {\n        \"LaunchPath\": \"i\",\n        \"ConcurrentExecutions\": \"<integer>\",\n        \"Parameters\": \"hp\"\n      }\n    ],\n    \"MaxConcurrentGameSessionActivations\": \"<integer>\",\n    \"GameSessionActivationTimeoutSeconds\": \"<integer>\"\n  },\n  \"ResourceCreationLimitPolicy\": {\n    \"NewGameSessionsPerCreator\": \"<integer>\",\n    \"PolicyPeriodInMinutes\": \"<integer>\"\n  },\n  \"MetricGroups\": [\n    \"<string>\"\n  ],\n  \"PeerVpcAwsAccountId\": \"<string>\",\n  \"PeerVpcId\": \"<string>\",\n  \"FleetType\": \"SPOT\",\n  \"InstanceRoleArn\": \"<string>\",\n  \"CertificateConfiguration\": {\n    \"CertificateType\": \"DISABLED\"\n  },\n  \"Locations\": [\n    {\n      \"Location\": \"nG5vLX\"\n    }\n  ],\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"ComputeType\": \"EC2\",\n  \"AnywhereConfiguration\": {\n    \"Cost\": \"164\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.CreateFleet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=GameLift.CreateFleet"
+            },
+            "description": "<p>Creates a fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to host your custom game server or Realtime Servers. Use this operation to configure the computing resources for your fleet and provide instructions for running game servers on each instance.</p> <p>Most Amazon GameLift fleets can deploy instances to multiple locations, including the home Region (where the fleet is created) and an optional set of remote locations. Fleets that are created in the following Amazon Web Services Regions support multiple locations: us-east-1 (N. Virginia), us-west-2 (Oregon), eu-central-1 (Frankfurt), eu-west-1 (Ireland), ap-southeast-2 (Sydney), ap-northeast-1 (Tokyo), and ap-northeast-2 (Seoul). Fleets that are created in other Amazon GameLift Regions can deploy instances in the fleet's home Region only. All fleet instances use the same configuration regardless of location; however, you can adjust capacity settings and turn auto-scaling on/off for each location.</p> <p>To create a fleet, choose the hardware for your instances, specify a game server build or Realtime script to deploy, and provide a runtime configuration to direct Amazon GameLift how to start and run game servers on each instance in the fleet. Set permissions for inbound traffic to your game servers, and enable optional features as needed. When creating a multi-location fleet, provide a list of additional remote locations.</p> <p>If you need to debug your fleet, fetch logs, view performance metrics or other actions on the fleet, create the development fleet with port 22/3389 open. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. </p> <p>If successful, this operation creates a new Fleet resource and places it in <code>NEW</code> status, which prompts Amazon GameLift to initiate the <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow\">fleet creation workflow</a>.</p> <p> <b>Learn more</b> </p> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html\">Setting up fleets</a> </p> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation\">Debug fleet creation issues</a> </p> <p> <a href=\"https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html\">Multi-location fleets</a> </p>"
+          },
+          "response": [
+            {
+              "id": "74c65fae-d580-4351-b628-b3334e4632bf",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.CreateFleet"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"BuildId\": \"build-Zgp#!|0iwH\",\n  \"ScriptId\": \"script-;J}dA~CoJ\",\n  \"ServerLaunchPath\": \"4CxAq\",\n  \"ServerLaunchParameters\": \"mHbOQ:\",\n  \"LogPaths\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"EC2InstanceType\": \"r5d.16xlarge\",\n  \"EC2InboundPermissions\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"/l_e`,hy/\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"GZzW]\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n  \"RuntimeConfiguration\": {\n    \"ServerProcesses\": [\n      {\n        \"LaunchPath\": \"i\",\n        \"ConcurrentExecutions\": \"<integer>\",\n        \"Parameters\": \"hp\"\n      }\n    ],\n    \"MaxConcurrentGameSessionActivations\": \"<integer>\",\n    \"GameSessionActivationTimeoutSeconds\": \"<integer>\"\n  },\n  \"ResourceCreationLimitPolicy\": {\n    \"NewGameSessionsPerCreator\": \"<integer>\",\n    \"PolicyPeriodInMinutes\": \"<integer>\"\n  },\n  \"MetricGroups\": [\n    \"<string>\"\n  ],\n  \"PeerVpcAwsAccountId\": \"<string>\",\n  \"PeerVpcId\": \"<string>\",\n  \"FleetType\": \"SPOT\",\n  \"InstanceRoleArn\": \"<string>\",\n  \"CertificateConfiguration\": {\n    \"CertificateType\": \"DISABLED\"\n  },\n  \"Locations\": [\n    {\n      \"Location\": \"nG5vLX\"\n    }\n  ],\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"ComputeType\": \"EC2\",\n  \"AnywhereConfiguration\": {\n    \"Cost\": \"164\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.CreateFleet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.CreateFleet"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"FleetAttributes\": {\n    \"FleetId\": \"fleet->Y10V\",\n    \"FleetArn\": \"arn:0?cUa:fleet/fleet-LK+y]&yKQ%\",\n    \"FleetType\": \"ON_DEMAND\",\n    \"InstanceType\": \"r5a.xlarge\",\n    \"Description\": \"<string>\",\n    \"Name\": \"<string>\",\n    \"CreationTime\": \"<dateTime>\",\n    \"TerminationTime\": \"<dateTime>\",\n    \"Status\": \"NEW\",\n    \"BuildId\": \"build-b9_=z9\",\n    \"BuildArn\": \"arn:GU>LC^:build/build-xxaNP'qE.N$\",\n    \"ScriptId\": \"script-E.=%.S^qW\",\n    \"ScriptArn\": \"arn:J-tV::script/script-wh\",\n    \"ServerLaunchPath\": \"AZ1U\",\n    \"ServerLaunchParameters\": \"{\",\n    \"LogPaths\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n    \"OperatingSystem\": \"WINDOWS_2012\",\n    \"ResourceCreationLimitPolicy\": {\n      \"NewGameSessionsPerCreator\": \"<integer>\",\n      \"PolicyPeriodInMinutes\": \"<integer>\"\n    },\n    \"MetricGroups\": [\n      \"<string>\"\n    ],\n    \"StoppedActions\": [\n      \"AUTO_SCALING\"\n    ],\n    \"InstanceRoleArn\": \"<string>\",\n    \"CertificateConfiguration\": {\n      \"CertificateType\": \"GENERATED\"\n    },\n    \"ComputeType\": \"EC2\",\n    \"AnywhereConfiguration\": {\n      \"Cost\": \"0\"\n    }\n  },\n  \"LocationStates\": [\n    {\n      \"Location\": \"LRRNXGkQgEG\",\n      \"Status\": \"NOT_FOUND\"\n    },\n    {\n      \"Location\": \"Kpj2FWN\",\n      \"Status\": \"ERROR\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:20:53.000Z",
+              "updatedAt": "2026-07-28T10:20:53.000Z",
+              "uid": "35240-74c65fae-d580-4351-b628-b3334e4632bf"
+            },
+            {
+              "id": "0f92295e-9f25-4682-b462-1f9465d063e9",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.CreateFleet"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"BuildId\": \"build-Zgp#!|0iwH\",\n  \"ScriptId\": \"script-;J}dA~CoJ\",\n  \"ServerLaunchPath\": \"4CxAq\",\n  \"ServerLaunchParameters\": \"mHbOQ:\",\n  \"LogPaths\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"EC2InstanceType\": \"r5d.16xlarge\",\n  \"EC2InboundPermissions\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"/l_e`,hy/\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"GZzW]\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n  \"RuntimeConfiguration\": {\n    \"ServerProcesses\": [\n      {\n        \"LaunchPath\": \"i\",\n        \"ConcurrentExecutions\": \"<integer>\",\n        \"Parameters\": \"hp\"\n      }\n    ],\n    \"MaxConcurrentGameSessionActivations\": \"<integer>\",\n    \"GameSessionActivationTimeoutSeconds\": \"<integer>\"\n  },\n  \"ResourceCreationLimitPolicy\": {\n    \"NewGameSessionsPerCreator\": \"<integer>\",\n    \"PolicyPeriodInMinutes\": \"<integer>\"\n  },\n  \"MetricGroups\": [\n    \"<string>\"\n  ],\n  \"PeerVpcAwsAccountId\": \"<string>\",\n  \"PeerVpcId\": \"<string>\",\n  \"FleetType\": \"SPOT\",\n  \"InstanceRoleArn\": \"<string>\",\n  \"CertificateConfiguration\": {\n    \"CertificateType\": \"DISABLED\"\n  },\n  \"Locations\": [\n    {\n      \"Location\": \"nG5vLX\"\n    }\n  ],\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"ComputeType\": \"EC2\",\n  \"AnywhereConfiguration\": {\n    \"Cost\": \"164\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.CreateFleet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.CreateFleet"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:53.000Z",
+              "updatedAt": "2026-07-28T10:20:53.000Z",
+              "uid": "35240-0f92295e-9f25-4682-b462-1f9465d063e9"
+            },
+            {
+              "id": "a82b195d-076b-41d6-8cec-0fb3bf47dd77",
+              "name": "NotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.CreateFleet"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"BuildId\": \"build-Zgp#!|0iwH\",\n  \"ScriptId\": \"script-;J}dA~CoJ\",\n  \"ServerLaunchPath\": \"4CxAq\",\n  \"ServerLaunchParameters\": \"mHbOQ:\",\n  \"LogPaths\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"EC2InstanceType\": \"r5d.16xlarge\",\n  \"EC2InboundPermissions\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"/l_e`,hy/\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"GZzW]\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n  \"RuntimeConfiguration\": {\n    \"ServerProcesses\": [\n      {\n        \"LaunchPath\": \"i\",\n        \"ConcurrentExecutions\": \"<integer>\",\n        \"Parameters\": \"hp\"\n      }\n    ],\n    \"MaxConcurrentGameSessionActivations\": \"<integer>\",\n    \"GameSessionActivationTimeoutSeconds\": \"<integer>\"\n  },\n  \"ResourceCreationLimitPolicy\": {\n    \"NewGameSessionsPerCreator\": \"<integer>\",\n    \"PolicyPeriodInMinutes\": \"<integer>\"\n  },\n  \"MetricGroups\": [\n    \"<string>\"\n  ],\n  \"PeerVpcAwsAccountId\": \"<string>\",\n  \"PeerVpcId\": \"<string>\",\n  \"FleetType\": \"SPOT\",\n  \"InstanceRoleArn\": \"<string>\",\n  \"CertificateConfiguration\": {\n    \"CertificateType\": \"DISABLED\"\n  },\n  \"Locations\": [\n    {\n      \"Location\": \"nG5vLX\"\n    }\n  ],\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"ComputeType\": \"EC2\",\n  \"AnywhereConfiguration\": {\n    \"Cost\": \"164\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.CreateFleet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.CreateFleet"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:53.000Z",
+              "updatedAt": "2026-07-28T10:20:53.000Z",
+              "uid": "35240-a82b195d-076b-41d6-8cec-0fb3bf47dd77"
+            },
+            {
+              "id": "7c855460-4efb-43b4-bc9e-763ad7b592b6",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.CreateFleet"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"BuildId\": \"build-Zgp#!|0iwH\",\n  \"ScriptId\": \"script-;J}dA~CoJ\",\n  \"ServerLaunchPath\": \"4CxAq\",\n  \"ServerLaunchParameters\": \"mHbOQ:\",\n  \"LogPaths\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"EC2InstanceType\": \"r5d.16xlarge\",\n  \"EC2InboundPermissions\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"/l_e`,hy/\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"GZzW]\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n  \"RuntimeConfiguration\": {\n    \"ServerProcesses\": [\n      {\n        \"LaunchPath\": \"i\",\n        \"ConcurrentExecutions\": \"<integer>\",\n        \"Parameters\": \"hp\"\n      }\n    ],\n    \"MaxConcurrentGameSessionActivations\": \"<integer>\",\n    \"GameSessionActivationTimeoutSeconds\": \"<integer>\"\n  },\n  \"ResourceCreationLimitPolicy\": {\n    \"NewGameSessionsPerCreator\": \"<integer>\",\n    \"PolicyPeriodInMinutes\": \"<integer>\"\n  },\n  \"MetricGroups\": [\n    \"<string>\"\n  ],\n  \"PeerVpcAwsAccountId\": \"<string>\",\n  \"PeerVpcId\": \"<string>\",\n  \"FleetType\": \"SPOT\",\n  \"InstanceRoleArn\": \"<string>\",\n  \"CertificateConfiguration\": {\n    \"CertificateType\": \"DISABLED\"\n  },\n  \"Locations\": [\n    {\n      \"Location\": \"nG5vLX\"\n    }\n  ],\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"ComputeType\": \"EC2\",\n  \"AnywhereConfiguration\": {\n    \"Cost\": \"164\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.CreateFleet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.CreateFleet"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:53.000Z",
+              "updatedAt": "2026-07-28T10:20:53.000Z",
+              "uid": "35240-7c855460-4efb-43b4-bc9e-763ad7b592b6"
+            },
+            {
+              "id": "ad0d77c7-f02c-491c-bf03-6e5d7fee593e",
+              "name": "LimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.CreateFleet"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"BuildId\": \"build-Zgp#!|0iwH\",\n  \"ScriptId\": \"script-;J}dA~CoJ\",\n  \"ServerLaunchPath\": \"4CxAq\",\n  \"ServerLaunchParameters\": \"mHbOQ:\",\n  \"LogPaths\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"EC2InstanceType\": \"r5d.16xlarge\",\n  \"EC2InboundPermissions\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"/l_e`,hy/\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"GZzW]\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n  \"RuntimeConfiguration\": {\n    \"ServerProcesses\": [\n      {\n        \"LaunchPath\": \"i\",\n        \"ConcurrentExecutions\": \"<integer>\",\n        \"Parameters\": \"hp\"\n      }\n    ],\n    \"MaxConcurrentGameSessionActivations\": \"<integer>\",\n    \"GameSessionActivationTimeoutSeconds\": \"<integer>\"\n  },\n  \"ResourceCreationLimitPolicy\": {\n    \"NewGameSessionsPerCreator\": \"<integer>\",\n    \"PolicyPeriodInMinutes\": \"<integer>\"\n  },\n  \"MetricGroups\": [\n    \"<string>\"\n  ],\n  \"PeerVpcAwsAccountId\": \"<string>\",\n  \"PeerVpcId\": \"<string>\",\n  \"FleetType\": \"SPOT\",\n  \"InstanceRoleArn\": \"<string>\",\n  \"CertificateConfiguration\": {\n    \"CertificateType\": \"DISABLED\"\n  },\n  \"Locations\": [\n    {\n      \"Location\": \"nG5vLX\"\n    }\n  ],\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"ComputeType\": \"EC2\",\n  \"AnywhereConfiguration\": {\n    \"Cost\": \"164\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.CreateFleet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.CreateFleet"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:53.000Z",
+              "updatedAt": "2026-07-28T10:20:53.000Z",
+              "uid": "35240-ad0d77c7-f02c-491c-bf03-6e5d7fee593e"
+            },
+            {
+              "id": "0cfad5cd-d4e5-4c7c-8cde-b56892c10729",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.CreateFleet"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"BuildId\": \"build-Zgp#!|0iwH\",\n  \"ScriptId\": \"script-;J}dA~CoJ\",\n  \"ServerLaunchPath\": \"4CxAq\",\n  \"ServerLaunchParameters\": \"mHbOQ:\",\n  \"LogPaths\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"EC2InstanceType\": \"r5d.16xlarge\",\n  \"EC2InboundPermissions\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"/l_e`,hy/\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"GZzW]\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n  \"RuntimeConfiguration\": {\n    \"ServerProcesses\": [\n      {\n        \"LaunchPath\": \"i\",\n        \"ConcurrentExecutions\": \"<integer>\",\n        \"Parameters\": \"hp\"\n      }\n    ],\n    \"MaxConcurrentGameSessionActivations\": \"<integer>\",\n    \"GameSessionActivationTimeoutSeconds\": \"<integer>\"\n  },\n  \"ResourceCreationLimitPolicy\": {\n    \"NewGameSessionsPerCreator\": \"<integer>\",\n    \"PolicyPeriodInMinutes\": \"<integer>\"\n  },\n  \"MetricGroups\": [\n    \"<string>\"\n  ],\n  \"PeerVpcAwsAccountId\": \"<string>\",\n  \"PeerVpcId\": \"<string>\",\n  \"FleetType\": \"SPOT\",\n  \"InstanceRoleArn\": \"<string>\",\n  \"CertificateConfiguration\": {\n    \"CertificateType\": \"DISABLED\"\n  },\n  \"Locations\": [\n    {\n      \"Location\": \"nG5vLX\"\n    }\n  ],\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"ComputeType\": \"EC2\",\n  \"AnywhereConfiguration\": {\n    \"Cost\": \"164\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.CreateFleet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.CreateFleet"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:53.000Z",
+              "updatedAt": "2026-07-28T10:20:53.000Z",
+              "uid": "35240-0cfad5cd-d4e5-4c7c-8cde-b56892c10729"
+            },
+            {
+              "id": "13aafbf5-cf2f-4094-b862-ffe9550adb7d",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.CreateFleet"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"BuildId\": \"build-Zgp#!|0iwH\",\n  \"ScriptId\": \"script-;J}dA~CoJ\",\n  \"ServerLaunchPath\": \"4CxAq\",\n  \"ServerLaunchParameters\": \"mHbOQ:\",\n  \"LogPaths\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"EC2InstanceType\": \"r5d.16xlarge\",\n  \"EC2InboundPermissions\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"/l_e`,hy/\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"GZzW]\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n  \"RuntimeConfiguration\": {\n    \"ServerProcesses\": [\n      {\n        \"LaunchPath\": \"i\",\n        \"ConcurrentExecutions\": \"<integer>\",\n        \"Parameters\": \"hp\"\n      }\n    ],\n    \"MaxConcurrentGameSessionActivations\": \"<integer>\",\n    \"GameSessionActivationTimeoutSeconds\": \"<integer>\"\n  },\n  \"ResourceCreationLimitPolicy\": {\n    \"NewGameSessionsPerCreator\": \"<integer>\",\n    \"PolicyPeriodInMinutes\": \"<integer>\"\n  },\n  \"MetricGroups\": [\n    \"<string>\"\n  ],\n  \"PeerVpcAwsAccountId\": \"<string>\",\n  \"PeerVpcId\": \"<string>\",\n  \"FleetType\": \"SPOT\",\n  \"InstanceRoleArn\": \"<string>\",\n  \"CertificateConfiguration\": {\n    \"CertificateType\": \"DISABLED\"\n  },\n  \"Locations\": [\n    {\n      \"Location\": \"nG5vLX\"\n    }\n  ],\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"ComputeType\": \"EC2\",\n  \"AnywhereConfiguration\": {\n    \"Cost\": \"164\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.CreateFleet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.CreateFleet"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:53.000Z",
+              "updatedAt": "2026-07-28T10:20:53.000Z",
+              "uid": "35240-13aafbf5-cf2f-4094-b862-ffe9550adb7d"
+            },
+            {
+              "id": "7abd9a4b-d3ad-4291-a9ca-1ecc06381065",
+              "name": "TaggingFailedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.CreateFleet"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"BuildId\": \"build-Zgp#!|0iwH\",\n  \"ScriptId\": \"script-;J}dA~CoJ\",\n  \"ServerLaunchPath\": \"4CxAq\",\n  \"ServerLaunchParameters\": \"mHbOQ:\",\n  \"LogPaths\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"EC2InstanceType\": \"r5d.16xlarge\",\n  \"EC2InboundPermissions\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"/l_e`,hy/\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"GZzW]\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n  \"RuntimeConfiguration\": {\n    \"ServerProcesses\": [\n      {\n        \"LaunchPath\": \"i\",\n        \"ConcurrentExecutions\": \"<integer>\",\n        \"Parameters\": \"hp\"\n      }\n    ],\n    \"MaxConcurrentGameSessionActivations\": \"<integer>\",\n    \"GameSessionActivationTimeoutSeconds\": \"<integer>\"\n  },\n  \"ResourceCreationLimitPolicy\": {\n    \"NewGameSessionsPerCreator\": \"<integer>\",\n    \"PolicyPeriodInMinutes\": \"<integer>\"\n  },\n  \"MetricGroups\": [\n    \"<string>\"\n  ],\n  \"PeerVpcAwsAccountId\": \"<string>\",\n  \"PeerVpcId\": \"<string>\",\n  \"FleetType\": \"SPOT\",\n  \"InstanceRoleArn\": \"<string>\",\n  \"CertificateConfiguration\": {\n    \"CertificateType\": \"DISABLED\"\n  },\n  \"Locations\": [\n    {\n      \"Location\": \"nG5vLX\"\n    }\n  ],\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"ComputeType\": \"EC2\",\n  \"AnywhereConfiguration\": {\n    \"Cost\": \"164\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.CreateFleet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.CreateFleet"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:53.000Z",
+              "updatedAt": "2026-07-28T10:20:53.000Z",
+              "uid": "35240-7abd9a4b-d3ad-4291-a9ca-1ecc06381065"
+            },
+            {
+              "id": "c2297b14-6d6c-48d6-96db-afa40b9d36f9",
+              "name": "UnsupportedRegionException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "GameLift.CreateFleet"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"BuildId\": \"build-Zgp#!|0iwH\",\n  \"ScriptId\": \"script-;J}dA~CoJ\",\n  \"ServerLaunchPath\": \"4CxAq\",\n  \"ServerLaunchParameters\": \"mHbOQ:\",\n  \"LogPaths\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"EC2InstanceType\": \"r5d.16xlarge\",\n  \"EC2InboundPermissions\": [\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"/l_e`,hy/\",\n      \"Protocol\": \"UDP\"\n    },\n    {\n      \"FromPort\": \"<integer>\",\n      \"ToPort\": \"<integer>\",\n      \"IpRange\": \"GZzW]\",\n      \"Protocol\": \"TCP\"\n    }\n  ],\n  \"NewGameSessionProtectionPolicy\": \"FullProtection\",\n  \"RuntimeConfiguration\": {\n    \"ServerProcesses\": [\n      {\n        \"LaunchPath\": \"i\",\n        \"ConcurrentExecutions\": \"<integer>\",\n        \"Parameters\": \"hp\"\n      }\n    ],\n    \"MaxConcurrentGameSessionActivations\": \"<integer>\",\n    \"GameSessionActivationTimeoutSeconds\": \"<integer>\"\n  },\n  \"ResourceCreationLimitPolicy\": {\n    \"NewGameSessionsPerCreator\": \"<integer>\",\n    \"PolicyPeriodInMinutes\": \"<integer>\"\n  },\n  \"MetricGroups\": [\n    \"<string>\"\n  ],\n  \"PeerVpcAwsAccountId\": \"<string>\",\n  \"PeerVpcId\": \"<string>\",\n  \"FleetType\": \"SPOT\",\n  \"InstanceRoleArn\": \"<string>\",\n  \"CertificateConfiguration\": {\n    \"CertificateType\": \"DISABLED\"\n  },\n  \"Locations\": [\n    {\n      \"Location\": \"nG5vLX\"\n    }\n  ],\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"ComputeType\": \"EC2\",\n  \"AnywhereConfiguration\": {\n    \"Cost\": \"164\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=GameLift.CreateFleet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=GameLift.CreateFleet"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:20:53.000Z",
+              "updatedAt": "2026-07-28T10:20:53.000Z",
+              "uid": "35240-c2297b14-6d6c-48d6-96db-afa40b9d36f9"
+            }
+          ],
+          "createdAt": "2026-07-28T10:20:53.000Z",
+          "updatedAt": "2026-07-28T10:20:53.000Z",
+          "uid": "35240-74303a2f-5f6f-4e0b-9d08-65765f72d934"
+        }
+      ],
+      "id": "d61653ac-606e-4c63-ab0c-d2b569347414",
+      "createdAt": "2026-07-28T10:20:53.000Z",
+      "updatedAt": "2026-07-28T10:20:53.000Z",
+      "uid": "35240-d61653ac-606e-4c63-ab0c-d2b569347414"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://gamelift.{{region}}.amazonaws.com"
+    }
+  ]
+}
