@@ -56,12 +56,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-claimgameserver-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ClaimGameServer API'
   description: >-
@@ -85,12 +81,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createalias-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateAlias API'
   description: >-
@@ -114,12 +106,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createbuild-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateBuild API'
   description: >-
@@ -143,12 +131,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createfleet-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateFleet API'
   description: >-
@@ -172,12 +156,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createfleetlocations-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateFleetLocations API'
   description: >-
@@ -202,12 +182,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creategameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateGameServerGroup API'
   description: >-
@@ -232,12 +208,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creategamesession-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateGameSession API'
   description: >-
@@ -262,12 +234,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creategamesessionqueue-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateGameSessionQueue API'
   description: >-
@@ -292,12 +260,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createlocation-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateLocation API'
   description: >-
@@ -321,12 +285,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creatematchmakingconfiguration-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateMatchmakingConfiguration API'
   description: >-
@@ -352,12 +312,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creatematchmakingruleset-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateMatchmakingRuleSet API'
   description: >-
@@ -382,12 +338,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createplayersession-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreatePlayerSession API'
   description: >-
@@ -412,12 +364,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createplayersessions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreatePlayerSessions API'
   description: >-
@@ -442,12 +390,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createscript-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateScript API'
   description: >-
@@ -471,12 +415,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createvpcpeeringauthorization-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateVpcPeeringAuthorization API'
   description: >-
@@ -502,12 +442,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createvpcpeeringconnection-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateVpcPeeringConnection API'
   description: >-
@@ -532,12 +468,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletealias-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteAlias API'
   description: >-
@@ -561,12 +493,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletebuild-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteBuild API'
   description: >-
@@ -590,12 +518,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletefleet-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteFleet API'
   description: >-
@@ -619,12 +543,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletefleetlocations-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteFleetLocations API'
   description: >-
@@ -649,12 +569,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletegameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteGameServerGroup API'
   description: >-
@@ -679,12 +595,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletegamesessionqueue-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteGameSessionQueue API'
   description: >-
@@ -709,12 +621,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletelocation-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteLocation API'
   description: >-
@@ -738,12 +646,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletematchmakingconfiguration-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteMatchmakingConfiguration API'
   description: >-
@@ -769,12 +673,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletematchmakingruleset-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteMatchmakingRuleSet API'
   description: >-
@@ -799,12 +699,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletescalingpolicy-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteScalingPolicy API'
   description: >-
@@ -829,12 +725,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletescript-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteScript API'
   description: >-
@@ -858,12 +750,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringauthorization-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteVpcPeeringAuthorization API'
   description: >-
@@ -889,12 +777,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringconnection-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteVpcPeeringConnection API'
   description: >-
@@ -919,12 +803,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deregistercompute-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeregisterCompute API'
   description: >-
@@ -949,12 +829,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deregistergameserver-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeregisterGameServer API'
   description: >-
@@ -979,12 +855,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describealias-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeAlias API'
   description: >-
@@ -1008,12 +880,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describebuild-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeBuild API'
   description: >-
@@ -1037,12 +905,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describecompute-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeCompute API'
   description: >-
@@ -1066,12 +930,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeec2instancelimits-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeEC2InstanceLimits API'
   description: >-
@@ -1096,12 +956,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetattributes-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetAttributes API'
   description: >-
@@ -1126,12 +982,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetcapacity-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetCapacity API'
   description: >-
@@ -1156,12 +1008,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetevents-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetEvents API'
   description: >-
@@ -1186,12 +1034,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: >-
     amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetlocationattributes-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetLocationAttributes API'
@@ -1218,12 +1062,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetlocationcapacity-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetLocationCapacity API'
   description: >-
@@ -1249,12 +1089,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: >-
     amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetlocationutilization-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetLocationUtilization API'
@@ -1281,12 +1117,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetportsettings-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetPortSettings API'
   description: >-
@@ -1311,12 +1143,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetutilization-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetUtilization API'
   description: >-
@@ -1341,12 +1169,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegameserver-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameServer API'
   description: >-
@@ -1371,12 +1195,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameServerGroup API'
   description: >-
@@ -1401,12 +1221,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegameserverinstances-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameServerInstances API'
   description: >-
@@ -1432,12 +1248,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessiondetails-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessionDetails API'
   description: >-
@@ -1462,12 +1274,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessionplacement-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessionPlacement API'
   description: >-
@@ -1493,12 +1301,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessionqueues-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessionQueues API'
   description: >-
@@ -1523,12 +1327,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessions API'
   description: >-
@@ -1553,12 +1353,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeinstances-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeInstances API'
   description: >-
@@ -1583,12 +1379,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describematchmaking-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeMatchmaking API'
   description: >-
@@ -1613,12 +1405,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: >-
     amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describematchmakingconfigurations-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeMatchmakingConfigurations API'
@@ -1645,12 +1433,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describematchmakingrulesets-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeMatchmakingRuleSets API'
   description: >-
@@ -1676,12 +1460,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeplayersessions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribePlayerSessions API'
   description: >-
@@ -1706,12 +1486,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeruntimeconfiguration-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeRuntimeConfiguration API'
   description: >-
@@ -1737,12 +1513,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describescalingpolicies-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeScalingPolicies API'
   description: >-
@@ -1767,12 +1539,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describescript-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeScript API'
   description: >-
@@ -1796,12 +1564,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: >-
     amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describevpcpeeringauthorizations-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeVpcPeeringAuthorizations API'
@@ -1828,12 +1592,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describevpcpeeringconnections-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeVpcPeeringConnections API'
   description: >-
@@ -1859,12 +1619,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getcomputeaccess-api
   name: 'Amazon GameLift #X Amz Target=GameLift.GetComputeAccess API'
   description: >-
@@ -1888,12 +1644,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getcomputeauthtoken-api
   name: 'Amazon GameLift #X Amz Target=GameLift.GetComputeAuthToken API'
   description: >-
@@ -1918,12 +1670,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getgamesessionlogurl-api
   name: 'Amazon GameLift #X Amz Target=GameLift.GetGameSessionLogUrl API'
   description: >-
@@ -1948,12 +1696,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getinstanceaccess-api
   name: 'Amazon GameLift #X Amz Target=GameLift.GetInstanceAccess API'
   description: >-
@@ -1978,12 +1722,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listaliases-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListAliases API'
   description: >-
@@ -2007,12 +1747,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listbuilds-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListBuilds API'
   description: >-
@@ -2036,12 +1772,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listcompute-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListCompute API'
   description: >-
@@ -2065,12 +1797,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listfleets-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListFleets API'
   description: >-
@@ -2094,12 +1822,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listgameservergroups-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListGameServerGroups API'
   description: >-
@@ -2124,12 +1848,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listgameservers-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListGameServers API'
   description: >-
@@ -2153,12 +1873,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listlocations-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListLocations API'
   description: >-
@@ -2182,12 +1898,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listscripts-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListScripts API'
   description: >-
@@ -2211,12 +1923,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listtagsforresource-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListTagsForResource API'
   description: >-
@@ -2241,12 +1949,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-putscalingpolicy-api
   name: 'Amazon GameLift #X Amz Target=GameLift.PutScalingPolicy API'
   description: >-
@@ -2270,12 +1974,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-registercompute-api
   name: 'Amazon GameLift #X Amz Target=GameLift.RegisterCompute API'
   description: >-
@@ -2299,12 +1999,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-registergameserver-api
   name: 'Amazon GameLift #X Amz Target=GameLift.RegisterGameServer API'
   description: >-
@@ -2329,12 +2025,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-requestuploadcredentials-api
   name: 'Amazon GameLift #X Amz Target=GameLift.RequestUploadCredentials API'
   description: >-
@@ -2359,12 +2051,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-resolvealias-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ResolveAlias API'
   description: >-
@@ -2388,12 +2076,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-resumegameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ResumeGameServerGroup API'
   description: >-
@@ -2418,12 +2102,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-searchgamesessions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.SearchGameSessions API'
   description: >-
@@ -2448,12 +2128,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startfleetactions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StartFleetActions API'
   description: >-
@@ -2478,12 +2154,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startgamesessionplacement-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StartGameSessionPlacement API'
   description: >-
@@ -2508,12 +2180,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startmatchbackfill-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StartMatchBackfill API'
   description: >-
@@ -2538,12 +2206,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startmatchmaking-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StartMatchmaking API'
   description: >-
@@ -2567,12 +2231,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-stopfleetactions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StopFleetActions API'
   description: >-
@@ -2596,12 +2256,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-stopgamesessionplacement-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StopGameSessionPlacement API'
   description: >-
@@ -2626,12 +2282,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-stopmatchmaking-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StopMatchmaking API'
   description: >-
@@ -2655,12 +2307,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-suspendgameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.SuspendGameServerGroup API'
   description: >-
@@ -2685,12 +2333,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-tagresource-api
   name: 'Amazon GameLift #X Amz Target=GameLift.TagResource API'
   description: >-
@@ -2714,12 +2358,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-untagresource-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UntagResource API'
   description: >-
@@ -2743,12 +2383,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatealias-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateAlias API'
   description: >-
@@ -2772,12 +2408,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatebuild-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateBuild API'
   description: >-
@@ -2801,12 +2433,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatefleetattributes-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateFleetAttributes API'
   description: >-
@@ -2831,12 +2459,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatefleetcapacity-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateFleetCapacity API'
   description: >-
@@ -2861,12 +2485,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatefleetportsettings-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateFleetPortSettings API'
   description: >-
@@ -2891,12 +2511,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategameserver-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameServer API'
   description: >-
@@ -2920,12 +2536,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameServerGroup API'
   description: >-
@@ -2950,12 +2562,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategamesession-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameSession API'
   description: >-
@@ -2980,12 +2588,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategamesessionqueue-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameSessionQueue API'
   description: >-
@@ -3010,12 +2614,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatematchmakingconfiguration-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateMatchmakingConfiguration API'
   description: >-
@@ -3041,12 +2641,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updateruntimeconfiguration-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateRuntimeConfiguration API'
   description: >-
@@ -3071,12 +2667,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatescript-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateScript API'
   description: >-
@@ -3100,12 +2692,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-validatematchmakingruleset-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ValidateMatchmakingRuleSet API'
   description: >-
@@ -3130,12 +2718,8 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
-  - type: JSONSchema
-    url: json-schema/gamelift-fleet-schema.json
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-gamelift.yaml
 common:
   - type: AgenticAccess
     url: agentic-access/amazon-gamelift-agentic-access.yml
