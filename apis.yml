@@ -31,7 +31,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-acceptmatch-api
   name: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch API'
