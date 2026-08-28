@@ -13,8 +13,14 @@ info:
     without opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: gameLiftApi
-  url: ../openapi/amazon-gamelift-openapi.yaml
+- name: xAmzTargetGameliftCreategamesessionqueueApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-creategamesessionqueue-api-openapi.yml
+  type: openapi
+- name: xAmzTargetGameliftDescribegamesessionplacementApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-describegamesessionplacement-api-openapi.yml
+  type: openapi
+- name: xAmzTargetGameliftStartgamesessionplacementApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-startgamesessionplacement-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: queue-placement

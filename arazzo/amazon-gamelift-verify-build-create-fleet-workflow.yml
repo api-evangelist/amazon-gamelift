@@ -12,8 +12,11 @@ info:
     the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: gameLiftApi
-  url: ../openapi/amazon-gamelift-openapi.yaml
+- name: xAmzTargetGameliftCreatefleetApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-createfleet-api-openapi.yml
+  type: openapi
+- name: xAmzTargetGameliftDescribebuildApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-describebuild-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: verify-build-create-fleet

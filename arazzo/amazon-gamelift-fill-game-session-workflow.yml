@@ -11,8 +11,11 @@ info:
     without opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: gameLiftApi
-  url: ../openapi/amazon-gamelift-openapi.yaml
+- name: xAmzTargetGameliftCreategamesessionApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-creategamesession-api-openapi.yml
+  type: openapi
+- name: xAmzTargetGameliftCreateplayersessionsApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-createplayersessions-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: fill-game-session

@@ -12,8 +12,14 @@ info:
     description.
   version: 1.0.0
 sourceDescriptions:
-- name: gameLiftApi
-  url: ../openapi/amazon-gamelift-openapi.yaml
+- name: xAmzTargetGameliftCreatealiasApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-createalias-api-openapi.yml
+  type: openapi
+- name: xAmzTargetGameliftCreatefleetApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-createfleet-api-openapi.yml
+  type: openapi
+- name: xAmzTargetGameliftDescribefleetattributesApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-describefleetattributes-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: build-fleet-alias

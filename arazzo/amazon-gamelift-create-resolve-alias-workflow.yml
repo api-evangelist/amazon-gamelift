@@ -12,8 +12,14 @@ info:
     be read and executed without opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: gameLiftApi
-  url: ../openapi/amazon-gamelift-openapi.yaml
+- name: xAmzTargetGameliftCreatealiasApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-createalias-api-openapi.yml
+  type: openapi
+- name: xAmzTargetGameliftDescribealiasApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-describealias-api-openapi.yml
+  type: openapi
+- name: xAmzTargetGameliftResolvealiasApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-resolvealias-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: create-resolve-alias

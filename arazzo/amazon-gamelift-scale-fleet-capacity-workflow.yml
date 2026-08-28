@@ -12,8 +12,14 @@ info:
     underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: gameLiftApi
-  url: ../openapi/amazon-gamelift-openapi.yaml
+- name: xAmzTargetGameliftDescribefleetattributesApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-describefleetattributes-api-openapi.yml
+  type: openapi
+- name: xAmzTargetGameliftDescribefleetcapacityApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-describefleetcapacity-api-openapi.yml
+  type: openapi
+- name: xAmzTargetGameliftUpdatefleetcapacityApi
+  url: ../openapi/amazon-gamelift-x-amz-target-gamelift-updatefleetcapacity-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: scale-fleet-capacity
