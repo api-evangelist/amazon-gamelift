@@ -5,6 +5,18 @@ description: Amazon GameLift is a dedicated game server hosting solution that de
   you to focus on creating great gaming experiences. The service includes FlexMatch for matchmaking, FleetIQ for optimized
   Spot Instance usage, and Realtime Servers for rapid game server deployment.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
