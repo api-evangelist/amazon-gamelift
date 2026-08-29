@@ -3,7 +3,7 @@ provider: Amazon GameLift
 generated_by: planning/capability-mapping/scripts/classify_capabilities.py
 model: claude-opus-5
 frame:
-- Software & Technology
+- Media, Entertainment & Telecom Content
 min_confidence: 0.7
 capability_model:
   source: https://github.com/vincentmakes/turbo-ea-capabilities
@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 23
+edge_count: 19
 edges:
 - tag: '#X Amz Target=GameLift.DeleteFleet'
   spec_file: amazon-gamelift-x-amz-target-gamelift-deletefleet-api-openapi.yml
@@ -19,9 +19,19 @@ edges:
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
   confidence: 0.8
-  evidence: DeleteFleet  Amazon GameLift Delete Fleet ... InvalidFleetStatusException, FleetIdOrArn
-  reason: A fleet is a set of cloud compute instances hosting game servers; deleting it is decommissioning
-    cloud compute — IT Infrastructure Management.
+  evidence: DeleteFleet  Amazon GameLift Delete Fleet; schemas InvalidFleetStatusException, FleetIdOrArn
+  reason: Fleet is a set of cloud compute instances hosting game servers; deleting it is compute infrastructure
+    lifecycle management, matching IT Infrastructure Management.
+- tag: '#X Amz Target=GameLift.DeleteFleetLocations'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-deletefleetlocations-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: DeleteFleetLocations  Amazon GameLift Delete Fleet Locations; schemas FleetStatus, LocationStateList,
+    UnsupportedRegionException
+  reason: Removes regional hosting locations from a compute fleet — cloud compute/region footprint administration,
+    i.e. IT Infrastructure Management.
 - tag: '#X Amz Target=GameLift.DeleteVpcPeeringAuthorization'
   spec_file: amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringauthorization-api-openapi.yml
   capability_id: BC-600.50
@@ -29,196 +39,146 @@ edges:
   capability_name: IT Infrastructure Management
   confidence: 0.8
   evidence: DeleteVpcPeeringAuthorization  Amazon GameLift Delete Vpc Peering Authorization
-  reason: VPC peering authorisation is pure cloud network configuration between the hosting fleet VPC
-    and a customer VPC — IT infrastructure (network/cloud) management, not a business capability.
+  reason: VPC peering is cloud network configuration — squarely compute/storage/network/cloud infrastructure
+    management. No business-domain reading applies.
 - tag: '#X Amz Target=GameLift.DeleteVpcPeeringConnection'
   spec_file: amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringconnection-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
   confidence: 0.8
-  evidence: DeleteVpcPeeringConnection ... schemas DeleteVpcPeeringConnectionInput, FleetId
-  reason: Removes a network peering connection between a game server fleet VPC and another VPC — cloud
-    network/infrastructure management.
-- tag: '#X Amz Target=GameLift.DeregisterCompute'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-deregistercompute-api-openapi.yml
-  capability_id: BC-600.50
-  capability_id_l1: BC-600
-  capability_name: IT Infrastructure Management
-  confidence: 0.8
-  evidence: DeregisterCompute  Amazon GameLift Deregister Compute; schemas ComputeNameOrArn, FleetIdOrArn
-  reason: Registers/deregisters compute resources in a hosting fleet — management of compute infrastructure.
-- tag: '#X Amz Target=GameLift.DescribeCompute'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-describecompute-api-openapi.yml
-  capability_id: BC-600.50
-  capability_id_l1: BC-600
-  capability_name: IT Infrastructure Management
-  confidence: 0.8
-  evidence: DescribeCompute ... schemas Compute, ComputeStatus, EC2InstanceType, IpAddress, DnsName
-  reason: Reads compute instance details (instance type, IP, DNS, status) in a hosting fleet — cloud compute
-    infrastructure management.
+  evidence: 'DeleteVpcPeeringConnection ... schemas: DeleteVpcPeeringConnectionInput, FleetId'
+  reason: Deletion of a VPC peering connection between a hosting fleet and a customer VPC is pure cloud
+    network infrastructure operation.
 - tag: '#X Amz Target=GameLift.CreateVpcPeeringAuthorization'
   spec_file: amazon-gamelift-x-amz-target-gamelift-createvpcpeeringauthorization-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
   confidence: 0.75
-  evidence: 'POST ... CreateVpcPeeringAuthorization ... schemas: VpcPeeringAuthorization'
-  reason: Single operation authorises a VPC peering link between the customer's AWS VPC and the GameLift
-    hosting VPC — pure cloud network/infrastructure administration, mapping to IT Infrastructure Management
-    (compute, storage, network, cloud). No game-business capability is realised.
+  evidence: CreateVpcPeeringAuthorization  Amazon GameLift Create Vpc Peering Authorization; schema VpcPeeringAuthorization
+  reason: Authorises VPC network peering between the customer's AWS VPC and the hosting fleet VPC — pure
+    cloud network infrastructure configuration, mapping to IT Infrastructure Management (network/cloud).
 - tag: '#X Amz Target=GameLift.CreateVpcPeeringConnection'
   spec_file: amazon-gamelift-x-amz-target-gamelift-createvpcpeeringconnection-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
   confidence: 0.75
-  evidence: 'CreateVpcPeeringConnection  Amazon GameLift Create Vpc Peering Connection ... schemas: FleetId'
-  reason: Establishes a network peering connection between a customer VPC and a fleet's VPC — cloud network
-    provisioning, i.e. IT infrastructure management.
-- tag: '#X Amz Target=GameLift.DeleteFleetLocations'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-deletefleetlocations-api-openapi.yml
-  capability_id: BC-600.50
-  capability_id_l1: BC-600
-  capability_name: IT Infrastructure Management
-  confidence: 0.75
-  evidence: DeleteFleetLocations ... LocationStateList, FleetStatus, UnsupportedRegionException
-  reason: Removes regional locations from a compute fleet — management of where cloud compute capacity
-    is deployed, i.e. cloud infrastructure management.
+  evidence: CreateVpcPeeringConnection  Amazon GameLift Create Vpc Peering Connection; schemas FleetId,
+    CreateVpcPeeringConnectionInput
+  reason: Establishes a VPC peering connection for a hosting fleet — cloud network infrastructure provisioning,
+    i.e. IT Infrastructure Management. No media/entertainment business capability is realised.
 - tag: '#X Amz Target=GameLift.DeleteGameServerGroup'
   spec_file: amazon-gamelift-x-amz-target-gamelift-deletegameservergroup-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
   confidence: 0.75
-  evidence: DeleteGameServerGroup ... InstanceDefinitions, GameServerGroupInstanceType, BalancingStrategy
-  reason: Deletes a FleetIQ game server group backed by an EC2 Auto Scaling group with instance definitions
-    and Spot balancing strategy — cloud compute resource administration.
+  evidence: DeleteGameServerGroup  Amazon GameLift Delete Game Server Group; schemas InstanceDefinition,
+    GameServerGroupInstanceType, BalancingStrategy, IamRoleArn
+  reason: Manages an EC2 instance group with instance types and Spot balancing strategy — server capacity/infrastructure
+    administration, mapping to IT Infrastructure Management.
+- tag: '#X Amz Target=GameLift.DeregisterCompute'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-deregistercompute-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: DeregisterCompute ... ComputeNameOrArn, DeregisterComputeInput, FleetIdOrArn
+  reason: Registering/deregistering compute resources in a hosting fleet is management of compute infrastructure.
+- tag: '#X Amz Target=GameLift.DescribeCompute'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-describecompute-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: DescribeCompute ... ComputeStatus, EC2InstanceType, IpAddress, DnsName, FleetArn
+  reason: Returns compute instance details (instance type, IP, DNS, status) for a hosting fleet — compute
+    infrastructure inspection.
+- tag: '#X Amz Target=GameLift.DescribeEC2InstanceLimits'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-describeec2instancelimits-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: DescribeEC2InstanceLimits ... EC2InstanceLimit, EC2InstanceLimitList, EC2InstanceType, LocationStringModel
+  reason: Reports EC2 instance quota limits per region for hosting capacity — cloud compute infrastructure/capacity
+    information.
 - tag: '#X Amz Target=GameLift.DescribeFleetAttributes'
   spec_file: amazon-gamelift-x-amz-target-gamelift-describefleetattributes-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
   confidence: 0.75
-  evidence: DescribeFleetAttributes ... schemas FleetAttributes, FleetStatus, ResourceCreationLimitPolicy,
-    CertificateConfiguration
-  reason: Reads configuration and status of hosting fleets (server infrastructure) — cloud infrastructure
+  evidence: DescribeFleetAttributes ... FleetAttributes, FleetStatus, CertificateConfiguration, ResourceCreationLimitPolicy
+  reason: Fleet here means a fleet of cloud servers; describing its attributes and status is cloud infrastructure
     management.
-- tag: '#X Amz Target=GameLift.CreateFleet'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-createfleet-api-openapi.yml
-  capability_id: BC-600.50
-  capability_id_l1: BC-600
-  capability_name: IT Infrastructure Management
-  confidence: 0.7
-  evidence: 'CreateFleet  Amazon GameLift Create Fleet; schemas FleetAttributes, FleetStatus, ServerProcess,
-    IpPermissionsList, LocationStateList; vendor: "deploys, operates, and scales cloud servers"'
-  reason: Creating a fleet provisions and configures cloud compute instances (server processes, IP permissions,
-    locations) to host game servers. This is cloud/compute infrastructure provisioning — IT Infrastructure
-    Management — not a game-industry business capability. Confidence not higher because it could arguably
-    be framed as platform capacity operations.
-- tag: '#X Amz Target=GameLift.DeleteLocation'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-deletelocation-api-openapi.yml
-  capability_id: BC-600.50
-  capability_id_l1: BC-600
-  capability_name: IT Infrastructure Management
-  confidence: 0.7
-  evidence: DeleteLocation ... CustomLocationNameOrArnModel
-  reason: Deletes a custom hosting location used for placing fleet capacity — cloud infrastructure/region
-    administration, not a business-domain capability.
-- tag: '#X Amz Target=GameLift.DeregisterGameServer'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-deregistergameserver-api-openapi.yml
-  capability_id: BC-600.50
-  capability_id_l1: BC-600
-  capability_name: IT Infrastructure Management
-  confidence: 0.7
-  evidence: DeregisterGameServer ... schemas GameServerGroupNameOrArn, GameServerId
-  reason: Despite the 'GameServer' noun, the operation removes a hosted server instance from a game server
-    group — server/compute fleet infrastructure management, not a gaming business capability in the candidate
-    list.
-- tag: '#X Amz Target=GameLift.DescribeEC2InstanceLimits'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-describeec2instancelimits-api-openapi.yml
-  capability_id: BC-600.50
-  capability_id_l1: BC-600
-  capability_name: IT Infrastructure Management
-  confidence: 0.7
-  evidence: DescribeEC2InstanceLimits ... schemas EC2InstanceLimit, EC2InstanceLimitList, EC2InstanceType
-  reason: Reports available EC2 instance quotas per type and region for hosting fleets — cloud compute
-    infrastructure/capacity information, a technical infrastructure concern.
 - tag: '#X Amz Target=GameLift.DescribeFleetCapacity'
   spec_file: amazon-gamelift-x-amz-target-gamelift-describefleetcapacity-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
-  confidence: 0.7
-  evidence: DescribeFleetCapacity ... schemas FleetCapacity, EC2InstanceCounts, EC2InstanceType
-  reason: Reports instance counts/capacity of hosting fleets; this is cloud compute capacity of the infrastructure
-    estate rather than any business-domain capability.
-- tag: '#X Amz Target=GameLift.DescribeFleetLocationAttributes'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-describefleetlocationattributes-api-openapi.yml
+  confidence: 0.75
+  evidence: DescribeFleetCapacity ... EC2InstanceCounts, FleetCapacity, EC2InstanceType
+  reason: Reports instance counts and capacity of a server hosting fleet — cloud compute capacity/infrastructure
+    inspection, not a media or commercial capability.
+- tag: '#X Amz Target=GameLift.DescribeInstances'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-describeinstances-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: 'DescribeInstances ... schemas: InstanceList, EC2InstanceType, FleetArn, OperatingSystem'
+  reason: Enumerates compute instances in a hosting fleet — cloud compute infrastructure management.
+- tag: '#X Amz Target=GameLift.CreateFleet'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-createfleet-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.72
+  evidence: 'CreateFleet  Amazon GameLift Create Fleet ... schemas: ServerProcess, ResourceCreationLimitPolicy,
+    FleetAttributes, FleetStatus, IpPermissionsList'
+  reason: Provisions a fleet of cloud compute instances running game server processes, with network permissions
+    and capacity locations. This is compute/network infrastructure provisioning — Cross-Industry IT, not
+    a media-specific capability.
+- tag: '#X Amz Target=GameLift.CreateGameServerGroup'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-creategameservergroup-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.72
+  evidence: 'CreateGameServerGroup ... schemas: LaunchTemplateSpecification, GameServerGroupInstanceType,
+    InstanceDefinitions, WeightedCapacity, IamRoleArn'
+  reason: Creates an EC2 Auto Scaling-backed group of hosting instances with launch templates and instance-type
+    definitions — cloud compute capacity provisioning, i.e. IT infrastructure.
+- tag: '#X Amz Target=GameLift.DeleteScalingPolicy'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-deletescalingpolicy-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
   confidence: 0.7
-  evidence: DescribeFleetLocationAttributes — schemas LocationAttributes, FleetStatus, LocationState,
-    FleetArn
-  reason: Operation retrieves the deployment locations/regions and status of a hosting fleet of cloud
-    compute instances. This is cloud compute infrastructure administration, mapped to IT Infrastructure
-    Management; nothing here realises an industry business capability.
-- tag: '#X Amz Target=GameLift.DescribeFleetLocationCapacity'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-describefleetlocationcapacity-api-openapi.yml
-  capability_id: BC-600.50
-  capability_id_l1: BC-600
-  capability_name: IT Infrastructure Management
-  confidence: 0.7
-  evidence: DescribeFleetLocationCapacity — schemas EC2InstanceCounts, FleetCapacity, EC2InstanceType
-  reason: Returns EC2 instance counts and capacity for a fleet in a location — cloud compute capacity
-    administration, i.e. IT infrastructure management rather than any business-domain capability.
-- tag: '#X Amz Target=GameLift.DescribeFleetLocationUtilization'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-describefleetlocationutilization-api-openapi.yml
-  capability_id: BC-600.50
-  capability_id_l1: BC-600
-  capability_name: IT Infrastructure Management
-  confidence: 0.7
-  evidence: DescribeFleetLocationUtilization — schema FleetUtilization
-  reason: Reports utilisation of hosted compute fleets per location; this is cloud infrastructure monitoring/administration,
-    best fitted by IT Infrastructure Management.
-- tag: '#X Amz Target=GameLift.DescribeFleetUtilization'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-describefleetutilization-api-openapi.yml
-  capability_id: BC-600.50
-  capability_id_l1: BC-600
-  capability_name: IT Infrastructure Management
-  confidence: 0.7
-  evidence: DescribeFleetUtilization — schemas FleetUtilization, FleetUtilizationList
-  reason: Queries utilisation metrics of cloud server fleets used to host game servers; infrastructure
-    operations data, mapped to IT Infrastructure Management.
+  evidence: 'POST /#X-Amz-Target=GameLift.DeleteScalingPolicy  DeleteScalingPolicy ... schemas: DeleteScalingPolicyInput,
+    FleetIdOrArn'
+  reason: Auto-scaling policy on a hosting fleet of cloud servers — this is compute/cloud infrastructure
+    control, not any media or entertainment business capability. IT Infrastructure Management is the honest
+    fit; the game-industry framing of the vendor does not change what the operation does.
 - tag: '#X Amz Target=GameLift.DescribeVpcPeeringAuthorizations'
   spec_file: amazon-gamelift-x-amz-target-gamelift-describevpcpeeringauthorizations-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
   confidence: 0.7
-  evidence: 'DescribeVpcPeeringAuthorizations — schemas: VpcPeeringAuthorization, VpcPeeringAuthorizationList'
-  reason: VPC peering authorisation is cloud network configuration between virtual private clouds — squarely
-    IT Infrastructure Management (network, cloud infrastructure).
+  evidence: DescribeVpcPeeringAuthorizations ... VpcPeeringAuthorization, VpcPeeringAuthorizationList
+  reason: VPC peering authorisations are cloud network infrastructure management.
 - tag: '#X Amz Target=GameLift.DescribeVpcPeeringConnections'
   spec_file: amazon-gamelift-x-amz-target-gamelift-describevpcpeeringconnections-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
   confidence: 0.7
-  evidence: 'DescribeVpcPeeringConnections — schemas: VpcPeeringConnection, VpcPeeringConnectionStatus,
-    FleetId'
-  reason: Inspection of VPC peering connections between fleet VPCs and customer VPCs is cloud network
-    infrastructure management.
-- tag: '#X Amz Target=GameLift.ListCompute'
-  spec_file: amazon-gamelift-x-amz-target-gamelift-listcompute-api-openapi.yml
-  capability_id: BC-600.50
-  capability_id_l1: BC-600
-  capability_name: IT Infrastructure Management
-  confidence: 0.7
-  evidence: 'ListCompute ... schemas: Compute, ComputeStatus, EC2InstanceType, IpAddress, FleetArn'
-  reason: Enumerates compute resources (EC2 instance types, IPs, DNS) registered to a hosting fleet —
-    plainly cloud compute infrastructure management.
+  evidence: DescribeVpcPeeringConnections ... VpcPeeringConnection, VpcPeeringConnectionStatus
+  reason: Network peering connection inventory — cloud/network infrastructure management.
 - tag: '#X Amz Target=GameLift.ListFleets'
   spec_file: amazon-gamelift-x-amz-target-gamelift-listfleets-api-openapi.yml
   capability_id: BC-600.50
@@ -226,5 +186,5 @@ edges:
   capability_name: IT Infrastructure Management
   confidence: 0.7
   evidence: 'ListFleets ... schemas: FleetIdList, BuildIdOrArn, ScriptIdOrArn'
-  reason: '''Fleets'' are pools of cloud server instances hosting game servers; listing them is compute
-    infrastructure management, not vehicle/asset fleet management.'
+  reason: Fleets are pools of cloud servers hosting game sessions; the vendor description states GameLift
+    'deploys, operates, and scales cloud servers'. Listing fleets is compute/cloud infrastructure management.
