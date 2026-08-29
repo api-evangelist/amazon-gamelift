@@ -2733,6 +2733,9 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/amazon-gamelift-capability-edges.yml
+    name: Amazon GameLift Business Capability Map
   - type: AgenticAccess
     url: agentic-access/amazon-gamelift-agentic-access.yml
   - type: TrustCenter
