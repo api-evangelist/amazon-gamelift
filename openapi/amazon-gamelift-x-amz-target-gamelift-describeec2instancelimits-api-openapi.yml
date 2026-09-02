@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeEC2InstanceLimits API'
+  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeEC2InstanceLimits #X Amz Target=GameLift.DescribeEC2InstanceLimits #X Amz Target=GameLift.DescribeEC2InstanceLimits API'
   description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -204,6 +204,14 @@ paths:
       - '#X Amz Target=GameLift.DescribeEC2InstanceLimits'
 components:
   schemas:
+    DescribeEC2InstanceLimitsOutput:
+      type: object
+      properties:
+        EC2InstanceLimits:
+          allOf:
+          - $ref: '#/components/schemas/EC2InstanceLimitList'
+          - description: The maximum number of instances for the specified instance type.
+    InvalidRequestException: {}
     DescribeEC2InstanceLimitsInput:
       type: object
       title: DescribeEC2InstanceLimitsInput
@@ -216,11 +224,34 @@ components:
           allOf:
           - $ref: '#/components/schemas/LocationStringModel'
           - description: The name of a remote location to request instance limits for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.
-    InvalidRequestException: {}
+    EC2InstanceLimit:
+      type: object
+      properties:
+        EC2InstanceType:
+          allOf:
+          - $ref: '#/components/schemas/EC2InstanceType'
+          - description: 'The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. '
+        CurrentInstances:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: 'The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. '
+        InstanceLimit:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: The number of instances that is allowed for the specified instance type and location.
+        Location:
+          allOf:
+          - $ref: '#/components/schemas/LocationStringModel'
+          - description: 'An Amazon Web Services Region code, such as <code>us-west-2</code>. '
+      description: The Amazon GameLift service limits for an Amazon EC2 instance type and current utilization. Amazon GameLift allows Amazon Web Services accounts a maximum number of instances, per instance type, per Amazon Web Services Region or location, for use with Amazon GameLift. You can request an limit increase for your account by using the <b>Service limits</b> page in the Amazon GameLift console.
     EC2InstanceLimitList:
       type: array
       items:
         $ref: '#/components/schemas/EC2InstanceLimit'
+    WholeNumber:
+      type: integer
+      minimum: 0
+    UnsupportedRegionException: {}
     EC2InstanceType:
       type: string
       enum:
@@ -338,71 +369,22 @@ components:
       - r5d.12xlarge
       - r5d.16xlarge
       - r5d.24xlarge
-    DescribeEC2InstanceLimitsOutput:
-      type: object
-      properties:
-        EC2InstanceLimits:
-          allOf:
-          - $ref: '#/components/schemas/EC2InstanceLimitList'
-          - description: The maximum number of instances for the specified instance type.
-    InternalServiceException: {}
-    EC2InstanceLimit:
-      type: object
-      properties:
-        EC2InstanceType:
-          allOf:
-          - $ref: '#/components/schemas/EC2InstanceType'
-          - description: 'The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. '
-        CurrentInstances:
-          allOf:
-          - $ref: '#/components/schemas/WholeNumber'
-          - description: 'The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. '
-        InstanceLimit:
-          allOf:
-          - $ref: '#/components/schemas/WholeNumber'
-          - description: The number of instances that is allowed for the specified instance type and location.
-        Location:
-          allOf:
-          - $ref: '#/components/schemas/LocationStringModel'
-          - description: 'An Amazon Web Services Region code, such as <code>us-west-2</code>. '
-      description: The Amazon GameLift service limits for an Amazon EC2 instance type and current utilization. Amazon GameLift allows Amazon Web Services accounts a maximum number of instances, per instance type, per Amazon Web Services Region or location, for use with Amazon GameLift. You can request an limit increase for your account by using the <b>Service limits</b> page in the Amazon GameLift console.
-    WholeNumber:
-      type: integer
-      minimum: 0
-    UnsupportedRegionException: {}
-    UnauthorizedException: {}
     LocationStringModel:
       type: string
       pattern: ^[A-Za-z0-9\-]+
       minLength: 1
       maxLength: 64
+    UnauthorizedException: {}
+    InternalServiceException: {}
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -415,6 +397,24 @@ components:
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string

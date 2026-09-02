@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateFleet API'
+  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateFleet #X Amz Target=GameLift.CreateFleet #X Amz Target=GameLift.CreateFleet API'
   description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -248,8 +248,119 @@ paths:
       tags:
       - '#X Amz Target=GameLift.CreateFleet'
 components:
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ConflictException: {}
+    Tag:
+      type: object
+      required:
+      - Key
+      - Value
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/TagKey'
+          - description: 'The key for a developer-defined key value pair for tagging an Amazon Web Services resource. '
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/TagValue'
+          - description: 'The value for a developer-defined key value pair for tagging an Amazon Web Services resource. '
+      description: <p>A label that you can assign to a Amazon GameLift resource. </p> <p> <b>Learn more</b> </p> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i> </p> <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> Amazon Web Services Tagging Strategies</a> </p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    FleetId:
+      type: string
+      pattern: ^fleet-\S+
+    BuildIdOrArn:
+      type: string
+      pattern: ^build-\S+|^arn:.*:build\/build-\S+
+    TaggingFailedException: {}
+    NonEmptyString:
+      type: string
+      minLength: 1
+    ScriptIdOrArn:
+      type: string
+      pattern: ^script-\S+|^arn:.*:script\/script-\S+
+    ServerProcess:
+      type: object
+      required:
+      - LaunchPath
+      - ConcurrentExecutions
+      properties:
+        LaunchPath:
+          allOf:
+          - $ref: '#/components/schemas/LaunchPathStringModel'
+          - description: '<p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p> <ul> <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>'
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/LaunchParametersStringModel'
+          - description: An optional list of parameters to pass to the server executable or Realtime script on launch.
+        ConcurrentExecutions:
+          allOf:
+          - $ref: '#/components/schemas/PositiveInteger'
+          - description: The number of server processes using this configuration that run concurrently on each instance.
+      description: A set of instructions for launching server processes on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Server process configurations are part of a fleet's runtime configuration.
+    ResourceCreationLimitPolicy:
+      type: object
+      properties:
+        NewGameSessionsPerCreator:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p> <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
+        PolicyPeriodInMinutes:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: 'The time span used in evaluating the resource creation limit policy. '
+      description: <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p> <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
+    LimitExceededException: {}
+    ProtectionPolicy:
+      type: string
+      enum:
+      - NoProtection
+      - FullProtection
+    BuildArn:
+      type: string
+      pattern: ^arn:.*:build\/build-\S+
+    InvalidRequestException: {}
     CreateFleetInput:
       type: object
       required:
@@ -344,184 +455,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/AnywhereConfiguration'
           - description: Amazon GameLift Anywhere configuration options.
-    BuildIdOrArn:
-      type: string
-      pattern: ^build-\S+|^arn:.*:build\/build-\S+
-    NonZeroAndMaxString:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    Tag:
-      type: object
-      required:
-      - Key
-      - Value
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/TagKey'
-          - description: 'The key for a developer-defined key value pair for tagging an Amazon Web Services resource. '
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/TagValue'
-          - description: 'The value for a developer-defined key value pair for tagging an Amazon Web Services resource. '
-      description: <p>A label that you can assign to a Amazon GameLift resource. </p> <p> <b>Learn more</b> </p> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i> </p> <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> Amazon Web Services Tagging Strategies</a> </p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-    LocationStateList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LocationState'
-    FleetId:
-      type: string
-      pattern: ^fleet-\S+
-    InternalServiceException: {}
-    WholeNumber:
-      type: integer
-      minimum: 0
-    IpProtocol:
-      type: string
-      enum:
-      - TCP
-      - UDP
-    RuntimeConfiguration:
-      type: object
-      properties:
-        ServerProcesses:
-          allOf:
-          - $ref: '#/components/schemas/ServerProcessList'
-          - description: A collection of server process configurations that identify what server processes to run on each instance in a fleet.
-        MaxConcurrentGameSessionActivations:
-          allOf:
-          - $ref: '#/components/schemas/MaxConcurrentGameSessionActivations'
-          - description: The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.
-        GameSessionActivationTimeoutSeconds:
-          allOf:
-          - $ref: '#/components/schemas/GameSessionActivationTimeoutSeconds'
-          - description: The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.
-      description: <p>A collection of server process configurations that describe the set of processes to run on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Amazon GameLift launches the configured processes, manages their life cycle, and replaces them as needed. Each instance checks regularly for an updated runtime configuration. </p> <p>A Amazon GameLift instance is limited to 50 processes running concurrently. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each server process. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet</a>.</p>
-    StringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/NonZeroAndMaxString'
-    ServerProcessList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ServerProcess'
-      minItems: 1
-      maxItems: 50
-    CreateFleetOutput:
-      type: object
-      properties:
-        FleetAttributes:
-          allOf:
-          - $ref: '#/components/schemas/FleetAttributes'
-          - description: 'The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. '
-        LocationStates:
-          allOf:
-          - $ref: '#/components/schemas/LocationStateList'
-          - description: The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, Amazon GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.
-    ProtectionPolicy:
-      type: string
-      enum:
-      - NoProtection
-      - FullProtection
-    FleetActionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/FleetAction'
-      minItems: 1
-      maxItems: 1
-    FleetStatus:
-      type: string
-      enum:
-      - NEW
-      - DOWNLOADING
-      - VALIDATING
-      - BUILDING
-      - ACTIVATING
-      - ACTIVE
-      - DELETING
-      - ERROR
-      - TERMINATED
-      - NOT_FOUND
-    FleetArn:
-      type: string
-      pattern: ^arn:.*:fleet\/fleet-\S+
-    FleetAction:
-      type: string
-      enum:
-      - AUTO_SCALING
-    NonBlankString:
-      type: string
-      pattern: '[^\s]+'
-    ComputeType:
-      type: string
-      enum:
-      - EC2
-      - ANYWHERE
-    ScriptArn:
-      type: string
-      pattern: ^arn:.*:script\/script-\S+
-    LocationState:
-      type: object
-      properties:
-        Location:
-          allOf:
-          - $ref: '#/components/schemas/LocationStringModel'
-          - description: 'The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. '
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/FleetStatus'
-          - description: 'The life-cycle status of a fleet location. '
-      description: <p>A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet.</p> <ul> <li> <p> <b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1. </p> </li> <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p> </li> <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p> </li> <li> <p> <b>TERMINATED</b> -- The fleet location no longer exists.</p> </li> <li> <p> <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created. </p> </li> </ul>
-    MetricGroup:
-      type: string
-      minLength: 1
-      maxLength: 255
-    LaunchPathStringModel:
-      type: string
-      pattern: '[A-Za-z0-9_:.+\/\\\- ]+'
-      minLength: 1
-      maxLength: 1024
-    ScriptId:
-      type: string
-      pattern: ^script-\S+
-    ServerProcess:
-      type: object
-      required:
-      - LaunchPath
-      - ConcurrentExecutions
-      properties:
-        LaunchPath:
-          allOf:
-          - $ref: '#/components/schemas/LaunchPathStringModel'
-          - description: '<p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p> <ul> <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>'
-        Parameters:
-          allOf:
-          - $ref: '#/components/schemas/LaunchParametersStringModel'
-          - description: An optional list of parameters to pass to the server executable or Realtime script on launch.
-        ConcurrentExecutions:
-          allOf:
-          - $ref: '#/components/schemas/PositiveInteger'
-          - description: The number of server processes using this configuration that run concurrently on each instance.
-      description: A set of instructions for launching server processes on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Server process configurations are part of a fleet's runtime configuration.
-    IpPermissionsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/IpPermission'
-      maxItems: 50
-    CertificateConfiguration:
-      type: object
-      required:
-      - CertificateType
-      properties:
-        CertificateType:
-          allOf:
-          - $ref: '#/components/schemas/CertificateType'
-          - description: '<p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p> <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>'
-      description: 'Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. '
-    ScriptIdOrArn:
-      type: string
-      pattern: ^script-\S+|^arn:.*:script\/script-\S+
+    ConflictException: {}
     FleetAttributes:
       type: object
       properties:
@@ -620,40 +554,165 @@ components:
         AnywhereConfiguration:
           $ref: '#/components/schemas/AnywhereConfiguration'
       description: <p>Describes a Amazon GameLift fleet of game hosting resources.</p> <p> <b>Related actions</b> </p>
-    ResourceCreationLimitPolicy:
-      type: object
-      properties:
-        NewGameSessionsPerCreator:
-          allOf:
-          - $ref: '#/components/schemas/WholeNumber'
-          - description: <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p> <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
-        PolicyPeriodInMinutes:
-          allOf:
-          - $ref: '#/components/schemas/WholeNumber'
-          - description: 'The time span used in evaluating the resource creation limit policy. '
-      description: <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p> <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
-    FleetType:
+    FleetStatus:
       type: string
       enum:
-      - ON_DEMAND
-      - SPOT
-    InvalidRequestException: {}
-    NonNegativeLimitedLengthDouble:
+      - NEW
+      - DOWNLOADING
+      - VALIDATING
+      - BUILDING
+      - ACTIVATING
+      - ACTIVE
+      - DELETING
+      - ERROR
+      - TERMINATED
+      - NOT_FOUND
+    Timestamp:
       type: string
-      pattern: ^\d{1,5}(?:\.\d{1,5})?$
+      format: date-time
+    LocationStateList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LocationState'
+    IpPermissionsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/IpPermission'
+      maxItems: 50
+    TagKey:
+      type: string
       minLength: 1
-      maxLength: 11
-    NotFoundException: {}
-    AnywhereConfiguration:
+      maxLength: 128
+    CertificateConfiguration:
       type: object
       required:
-      - Cost
+      - CertificateType
       properties:
-        Cost:
+        CertificateType:
           allOf:
-          - $ref: '#/components/schemas/NonNegativeLimitedLengthDouble'
-          - description: The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.
-      description: Amazon GameLift Anywhere configuration options for your Anywhere fleets.
+          - $ref: '#/components/schemas/CertificateType'
+          - description: '<p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p> <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>'
+      description: 'Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. '
+    LocationConfigurationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LocationConfiguration'
+      minItems: 1
+      maxItems: 100
+    UnauthorizedException: {}
+    RuntimeConfiguration:
+      type: object
+      properties:
+        ServerProcesses:
+          allOf:
+          - $ref: '#/components/schemas/ServerProcessList'
+          - description: A collection of server process configurations that identify what server processes to run on each instance in a fleet.
+        MaxConcurrentGameSessionActivations:
+          allOf:
+          - $ref: '#/components/schemas/MaxConcurrentGameSessionActivations'
+          - description: The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.
+        GameSessionActivationTimeoutSeconds:
+          allOf:
+          - $ref: '#/components/schemas/GameSessionActivationTimeoutSeconds'
+          - description: The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.
+      description: <p>A collection of server process configurations that describe the set of processes to run on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Amazon GameLift launches the configured processes, manages their life cycle, and replaces them as needed. Each instance checks regularly for an updated runtime configuration. </p> <p>A Amazon GameLift instance is limited to 50 processes running concurrently. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each server process. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet</a>.</p>
+    LocationState:
+      type: object
+      properties:
+        Location:
+          allOf:
+          - $ref: '#/components/schemas/LocationStringModel'
+          - description: 'The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. '
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/FleetStatus'
+          - description: 'The life-cycle status of a fleet location. '
+      description: <p>A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet.</p> <ul> <li> <p> <b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1. </p> </li> <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p> </li> <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p> </li> <li> <p> <b>TERMINATED</b> -- The fleet location no longer exists.</p> </li> <li> <p> <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created. </p> </li> </ul>
+    PositiveInteger:
+      type: integer
+      minimum: 1
+    MaxConcurrentGameSessionActivations:
+      type: integer
+      minimum: 1
+      maximum: 2147483647
+    IpPermission:
+      type: object
+      required:
+      - FromPort
+      - ToPort
+      - IpRange
+      - Protocol
+      properties:
+        FromPort:
+          allOf:
+          - $ref: '#/components/schemas/PortNumber'
+          - description: <p>A starting value for a range of allowed port numbers.</p> <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p> <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
+        ToPort:
+          allOf:
+          - $ref: '#/components/schemas/PortNumber'
+          - description: <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be equal to or greater than <code>FromPort</code>.</p> <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p> <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
+        IpRange:
+          allOf:
+          - $ref: '#/components/schemas/NonBlankString'
+          - description: 'A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".'
+        Protocol:
+          allOf:
+          - $ref: '#/components/schemas/IpProtocol'
+          - description: The network communication protocol used by the fleet.
+      description: A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an instance in a fleet. New game sessions are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. Fleets with custom game builds must have permissions explicitly set. For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.
+    IpProtocol:
+      type: string
+      enum:
+      - TCP
+      - UDP
+    NotFoundException: {}
+    GameSessionActivationTimeoutSeconds:
+      type: integer
+      minimum: 1
+      maximum: 600
+    LocationConfiguration:
+      type: object
+      required:
+      - Location
+      properties:
+        Location:
+          allOf:
+          - $ref: '#/components/schemas/LocationStringModel'
+          - description: 'An Amazon Web Services Region code, such as <code>us-west-2</code>. '
+      description: 'A remote location where a multi-location fleet can deploy game servers for game hosting. '
+    NonZeroAndMaxString:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    MetricGroup:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ScriptArn:
+      type: string
+      pattern: ^arn:.*:script\/script-\S+
+    ScriptId:
+      type: string
+      pattern: ^script-\S+
+    MetricGroupList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetricGroup'
+      maxItems: 1
+    LaunchParametersStringModel:
+      type: string
+      pattern: '[A-Za-z0-9_:.+\/\\\- =@;{},?''\[\]"]+'
+      minLength: 1
+      maxLength: 1024
+    ComputeType:
+      type: string
+      enum:
+      - EC2
+      - ANYWHERE
+    FleetAction:
+      type: string
+      enum:
+      - AUTO_SCALING
     EC2InstanceType:
       type: string
       enum:
@@ -771,50 +830,66 @@ components:
       - r5d.12xlarge
       - r5d.16xlarge
       - r5d.24xlarge
-    TaggingFailedException: {}
-    IpPermission:
+    CertificateType:
+      type: string
+      enum:
+      - DISABLED
+      - GENERATED
+    CreateFleetOutput:
       type: object
-      required:
-      - FromPort
-      - ToPort
-      - IpRange
-      - Protocol
       properties:
-        FromPort:
+        FleetAttributes:
           allOf:
-          - $ref: '#/components/schemas/PortNumber'
-          - description: <p>A starting value for a range of allowed port numbers.</p> <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p> <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
-        ToPort:
+          - $ref: '#/components/schemas/FleetAttributes'
+          - description: 'The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. '
+        LocationStates:
           allOf:
-          - $ref: '#/components/schemas/PortNumber'
-          - description: <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be equal to or greater than <code>FromPort</code>.</p> <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p> <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
-        IpRange:
-          allOf:
-          - $ref: '#/components/schemas/NonBlankString'
-          - description: 'A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".'
-        Protocol:
-          allOf:
-          - $ref: '#/components/schemas/IpProtocol'
-          - description: The network communication protocol used by the fleet.
-      description: A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an instance in a fleet. New game sessions are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. Fleets with custom game builds must have permissions explicitly set. For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.
+          - $ref: '#/components/schemas/LocationStateList'
+          - description: The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, Amazon GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.
+    FleetActionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FleetAction'
+      minItems: 1
+      maxItems: 1
+    BuildId:
+      type: string
+      pattern: ^build-\S+
+    NonNegativeLimitedLengthDouble:
+      type: string
+      pattern: ^\d{1,5}(?:\.\d{1,5})?$
+      minLength: 1
+      maxLength: 11
+    InternalServiceException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    NonBlankString:
+      type: string
+      pattern: '[^\s]+'
+    LaunchPathStringModel:
+      type: string
+      pattern: '[A-Za-z0-9_:.+\/\\\- ]+'
+      minLength: 1
+      maxLength: 1024
     PortNumber:
       type: integer
       minimum: 1
       maximum: 60000
-    LimitExceededException: {}
-    UnauthorizedException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    LocationStringModel:
-      type: string
-      pattern: ^[A-Za-z0-9\-]+
-      minLength: 1
-      maxLength: 64
-    TagKey:
-      type: string
-      minLength: 1
-      maxLength: 128
+    AnywhereConfiguration:
+      type: object
+      required:
+      - Cost
+      properties:
+        Cost:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeLimitedLengthDouble'
+          - description: The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.
+      description: Amazon GameLift Anywhere configuration options for your Anywhere fleets.
+    WholeNumber:
+      type: integer
+      minimum: 0
     OperatingSystem:
       type: string
       enum:
@@ -822,111 +897,36 @@ components:
       - AMAZON_LINUX
       - AMAZON_LINUX_2
       - WINDOWS_2016
-    MaxConcurrentGameSessionActivations:
-      type: integer
-      minimum: 1
-      maximum: 2147483647
-    LaunchParametersStringModel:
+    FleetArn:
       type: string
-      pattern: '[A-Za-z0-9_:.+\/\\\- =@;{},?''\[\]"]+'
-      minLength: 1
-      maxLength: 1024
-    PositiveInteger:
-      type: integer
-      minimum: 1
-    BuildId:
-      type: string
-      pattern: ^build-\S+
-    GameSessionActivationTimeoutSeconds:
-      type: integer
-      minimum: 1
-      maximum: 600
-    LocationConfiguration:
-      type: object
-      required:
-      - Location
-      properties:
-        Location:
-          allOf:
-          - $ref: '#/components/schemas/LocationStringModel'
-          - description: 'An Amazon Web Services Region code, such as <code>us-west-2</code>. '
-      description: 'A remote location where a multi-location fleet can deploy game servers for game hosting. '
-    CertificateType:
-      type: string
-      enum:
-      - DISABLED
-      - GENERATED
-    LocationConfigurationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LocationConfiguration'
-      minItems: 1
-      maxItems: 100
-    BuildArn:
-      type: string
-      pattern: ^arn:.*:build\/build-\S+
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
+      pattern: ^arn:.*:fleet\/fleet-\S+
     UnsupportedRegionException: {}
-    NonEmptyString:
-      type: string
-      minLength: 1
-    MetricGroupList:
+    ServerProcessList:
       type: array
       items:
-        $ref: '#/components/schemas/MetricGroup'
-      maxItems: 1
+        $ref: '#/components/schemas/ServerProcess'
+      minItems: 1
+      maxItems: 50
     TagList:
       type: array
       items:
         $ref: '#/components/schemas/Tag'
       minItems: 0
       maxItems: 200
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
+    FleetType:
+      type: string
+      enum:
+      - ON_DEMAND
+      - SPOT
+    LocationStringModel:
+      type: string
+      pattern: ^[A-Za-z0-9\-]+
+      minLength: 1
+      maxLength: 64
+    StringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NonZeroAndMaxString'
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateGameServerGroup API'
+  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateGameServerGroup #X Amz Target=GameLift.CreateGameServerGroup #X Amz Target=GameLift.CreateGameServerGroup API'
   description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -214,99 +214,129 @@ paths:
       tags:
       - '#X Amz Target=GameLift.CreateGameServerGroup'
 components:
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
     IamRoleArn:
       type: string
       pattern: ^arn:.*:role\/[\w+=,.@-]+
       minLength: 1
       maxLength: 256
-    ConflictException: {}
-    TargetTrackingConfiguration:
-      type: object
-      required:
-      - TargetValue
-      properties:
-        TargetValue:
-          allOf:
-          - $ref: '#/components/schemas/NonNegativeDouble'
-          - description: 'Desired value to use with a game server group target-based scaling policy. '
-      description: <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>Settings for a target-based scaling policy as part of a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerGroupAutoScalingPolicy.html">GameServerGroupAutoScalingPolicy</a> . These settings are used to create a target-based policy that tracks the Amazon GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p>
-    LaunchTemplateSpecification:
-      type: object
-      properties:
-        LaunchTemplateId:
-          allOf:
-          - $ref: '#/components/schemas/LaunchTemplateId'
-          - description: A unique identifier for an existing Amazon EC2 launch template.
-        LaunchTemplateName:
-          allOf:
-          - $ref: '#/components/schemas/LaunchTemplateName'
-          - description: 'A readable identifier for an existing Amazon EC2 launch template. '
-        Version:
-          allOf:
-          - $ref: '#/components/schemas/LaunchTemplateVersion'
-          - description: The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.
-      description: <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>An Amazon Elastic Compute Cloud launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group. </p>
-    CreateGameServerGroupOutput:
-      type: object
-      properties:
-        GameServerGroup:
-          allOf:
-          - $ref: '#/components/schemas/GameServerGroup'
-          - description: 'The newly created game server group object, including the new ARN value for the Amazon GameLift FleetIQ game server group and the object''s status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. '
-    VpcSubnets:
-      type: array
-      items:
-        $ref: '#/components/schemas/VpcSubnet'
-      minItems: 1
-      maxItems: 20
-    NonNegativeDouble:
-      type: number
-      format: double
-      minimum: 0
-    NonZeroAndMaxString:
-      type: string
-      minLength: 1
-      maxLength: 1024
     LaunchTemplateName:
       type: string
       pattern: '[a-zA-Z0-9\(\)\.\-/_]+'
       minLength: 3
       maxLength: 128
-    GameServerGroupActions:
-      type: array
-      items:
-        $ref: '#/components/schemas/GameServerGroupAction'
-      minItems: 1
-      maxItems: 1
-    WeightedCapacity:
+    GameServerGroupStatus:
       type: string
-      pattern: ^[\u0031-\u0039][\u0030-\u0039]{0,2}$
-      minLength: 1
-      maxLength: 3
-    InternalServiceException: {}
-    WholeNumber:
-      type: integer
-      minimum: 0
-    GameServerGroup:
+      enum:
+      - NEW
+      - ACTIVATING
+      - ACTIVE
+      - DELETE_SCHEDULED
+      - DELETING
+      - DELETED
+      - ERROR
+    Tag:
       type: object
+      required:
+      - Key
+      - Value
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/TagKey'
+          - description: 'The key for a developer-defined key value pair for tagging an Amazon Web Services resource. '
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/TagValue'
+          - description: 'The value for a developer-defined key value pair for tagging an Amazon Web Services resource. '
+      description: <p>A label that you can assign to a Amazon GameLift resource. </p> <p> <b>Learn more</b> </p> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i> </p> <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> Amazon Web Services Tagging Strategies</a> </p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    GameServerGroupName:
+      type: string
+      pattern: '[a-zA-Z0-9-\.]+'
+      minLength: 1
+      maxLength: 128
+    CreateGameServerGroupInput:
+      type: object
+      required:
+      - GameServerGroupName
+      - RoleArn
+      - MinSize
+      - MaxSize
+      - LaunchTemplate
+      - InstanceDefinitions
+      title: CreateGameServerGroupInput
       properties:
         GameServerGroupName:
           allOf:
           - $ref: '#/components/schemas/GameServerGroupName'
-          - description: A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.
-        GameServerGroupArn:
-          allOf:
-          - $ref: '#/components/schemas/GameServerGroupArn'
-          - description: A generated unique ID for the game server group.
+          - description: An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.
         RoleArn:
           allOf:
           - $ref: '#/components/schemas/IamRoleArn'
           - description: The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.
+        MinSize:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: The minimum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, Amazon GameLift FleetIQ and Amazon EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.
+        MaxSize:
+          allOf:
+          - $ref: '#/components/schemas/PositiveInteger'
+          - description: The maximum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, Amazon GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.
+        LaunchTemplate:
+          allOf:
+          - $ref: '#/components/schemas/LaunchTemplateSpecification'
+          - description: <p>The Amazon EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p> <note> <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, Amazon GameLift FleetIQ uses your account's default VPC.</p> </note>
         InstanceDefinitions:
           allOf:
           - $ref: '#/components/schemas/InstanceDefinitions'
-          - description: 'The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. '
+          - description: The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
+        AutoScalingPolicy:
+          allOf:
+          - $ref: '#/components/schemas/GameServerGroupAutoScalingPolicy'
+          - description: Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.
         BalancingStrategy:
           allOf:
           - $ref: '#/components/schemas/BalancingStrategy'
@@ -314,48 +344,34 @@ components:
         GameServerProtectionPolicy:
           allOf:
           - $ref: '#/components/schemas/GameServerProtectionPolicy'
-          - description: 'A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. '
-        AutoScalingGroupArn:
+          - description: A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.
+        VpcSubnets:
           allOf:
-          - $ref: '#/components/schemas/AutoScalingGroupArn'
-          - description: A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.
-        Status:
+          - $ref: '#/components/schemas/VpcSubnets'
+          - description: A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all Amazon GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.
+        Tags:
           allOf:
-          - $ref: '#/components/schemas/GameServerGroupStatus'
-          - description: <p>The current status of the game server group. Possible statuses include:</p> <ul> <li> <p> <code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p> <code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received. </p> </li> <li> <p> <code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group. </p> </li> <li> <p> <code>DELETED</code> - The game server group has been successfully deleted. </p> </li> <li> <p> <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p> </li> </ul>
-        StatusReason:
-          allOf:
-          - $ref: '#/components/schemas/NonZeroAndMaxString'
-          - description: Additional information about the current game server group status. This information might provide additional insight on groups that are in <code>ERROR</code> status.
-        SuspendedActions:
-          allOf:
-          - $ref: '#/components/schemas/GameServerGroupActions'
-          - description: A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.
-        CreationTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
-        LastUpdatedTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp that indicates when this game server group was last updated.
-      description: <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>Properties that describe a game server group resource. A game server group manages certain properties related to a corresponding Amazon EC2 Auto Scaling group. </p> <p>A game server group is created by a successful call to <code>CreateGameServerGroup</code> and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively. </p>
-    InstanceDefinitions:
-      type: array
-      items:
-        $ref: '#/components/schemas/InstanceDefinition'
-      minItems: 2
-      maxItems: 20
-    GameServerGroupArn:
+          - $ref: '#/components/schemas/TagList'
+          - description: A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
+    LimitExceededException: {}
+    GameServerProtectionPolicy:
       type: string
-      pattern: ^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]*
-      minLength: 1
-      maxLength: 256
-    LaunchTemplateId:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]\+'
+      enum:
+      - NO_PROTECTION
+      - FULL_PROTECTION
+    NonNegativeDouble:
+      type: number
+      format: double
+      minimum: 0
+    CreateGameServerGroupOutput:
+      type: object
+      properties:
+        GameServerGroup:
+          allOf:
+          - $ref: '#/components/schemas/GameServerGroup'
+          - description: 'The newly created game server group object, including the new ARN value for the Amazon GameLift FleetIQ game server group and the object''s status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. '
+    InvalidRequestException: {}
+    ConflictException: {}
     GameServerGroupInstanceType:
       type: string
       enum:
@@ -447,16 +463,157 @@ components:
       - m6g.8xlarge
       - m6g.12xlarge
       - m6g.16xlarge
-    GameServerProtectionPolicy:
+    Timestamp:
       type: string
-      enum:
-      - NO_PROTECTION
-      - FULL_PROTECTION
-    GameServerGroupName:
+      format: date-time
+    InstanceDefinitions:
+      type: array
+      items:
+        $ref: '#/components/schemas/InstanceDefinition'
+      minItems: 2
+      maxItems: 20
+    LaunchTemplateSpecification:
+      type: object
+      properties:
+        LaunchTemplateId:
+          allOf:
+          - $ref: '#/components/schemas/LaunchTemplateId'
+          - description: A unique identifier for an existing Amazon EC2 launch template.
+        LaunchTemplateName:
+          allOf:
+          - $ref: '#/components/schemas/LaunchTemplateName'
+          - description: 'A readable identifier for an existing Amazon EC2 launch template. '
+        Version:
+          allOf:
+          - $ref: '#/components/schemas/LaunchTemplateVersion'
+          - description: The version of the Amazon EC2 launch template to use. If no version is specified, the default version will be used. With Amazon EC2, you can specify a default version for a launch template. If none is set, the default is the first version created.
+      description: <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>An Amazon Elastic Compute Cloud launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group. </p>
+    LaunchTemplateId:
       type: string
-      pattern: '[a-zA-Z0-9-\.]+'
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]\+'
+    GameServerGroupArn:
+      type: string
+      pattern: ^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]*
+      minLength: 1
+      maxLength: 256
+    WeightedCapacity:
+      type: string
+      pattern: ^[\u0031-\u0039][\u0030-\u0039]{0,2}$
+      minLength: 1
+      maxLength: 3
+    TagKey:
+      type: string
       minLength: 1
       maxLength: 128
+    PositiveInteger:
+      type: integer
+      minimum: 1
+    UnauthorizedException: {}
+    GameServerGroupActions:
+      type: array
+      items:
+        $ref: '#/components/schemas/GameServerGroupAction'
+      minItems: 1
+      maxItems: 1
+    GameServerGroupAction:
+      type: string
+      enum:
+      - REPLACE_INSTANCE_TYPES
+    TargetTrackingConfiguration:
+      type: object
+      required:
+      - TargetValue
+      properties:
+        TargetValue:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeDouble'
+          - description: 'Desired value to use with a game server group target-based scaling policy. '
+      description: <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>Settings for a target-based scaling policy as part of a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerGroupAutoScalingPolicy.html">GameServerGroupAutoScalingPolicy</a> . These settings are used to create a target-based policy that tracks the Amazon GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p>
+    NonZeroAndMaxString:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    BalancingStrategy:
+      type: string
+      enum:
+      - SPOT_ONLY
+      - SPOT_PREFERRED
+      - ON_DEMAND_ONLY
+    LaunchTemplateVersion:
+      type: string
+      minLength: 1
+      maxLength: 128
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]\+'
+    VpcSubnet:
+      type: string
+      pattern: ^subnet-[0-9a-z]+$
+      minLength: 15
+      maxLength: 24
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    VpcSubnets:
+      type: array
+      items:
+        $ref: '#/components/schemas/VpcSubnet'
+      minItems: 1
+      maxItems: 20
+    InternalServiceException: {}
+    GameServerGroup:
+      type: object
+      properties:
+        GameServerGroupName:
+          allOf:
+          - $ref: '#/components/schemas/GameServerGroupName'
+          - description: A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.
+        GameServerGroupArn:
+          allOf:
+          - $ref: '#/components/schemas/GameServerGroupArn'
+          - description: A generated unique ID for the game server group.
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/IamRoleArn'
+          - description: The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.
+        InstanceDefinitions:
+          allOf:
+          - $ref: '#/components/schemas/InstanceDefinitions'
+          - description: 'The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. '
+        BalancingStrategy:
+          allOf:
+          - $ref: '#/components/schemas/BalancingStrategy'
+          - description: <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li> <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li> <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li> </ul>
+        GameServerProtectionPolicy:
+          allOf:
+          - $ref: '#/components/schemas/GameServerProtectionPolicy'
+          - description: 'A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. '
+        AutoScalingGroupArn:
+          allOf:
+          - $ref: '#/components/schemas/AutoScalingGroupArn'
+          - description: A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/GameServerGroupStatus'
+          - description: <p>The current status of the game server group. Possible statuses include:</p> <ul> <li> <p> <code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request. </p> </li> <li> <p> <code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account. </p> </li> <li> <p> <code>ACTIVE</code> - The game server group has been successfully created. </p> </li> <li> <p> <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received. </p> </li> <li> <p> <code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group. </p> </li> <li> <p> <code>DELETED</code> - The game server group has been successfully deleted. </p> </li> <li> <p> <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p> </li> </ul>
+        StatusReason:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: Additional information about the current game server group status. This information might provide additional insight on groups that are in <code>ERROR</code> status.
+        SuspendedActions:
+          allOf:
+          - $ref: '#/components/schemas/GameServerGroupActions'
+          - description: A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        LastUpdatedTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp that indicates when this game server group was last updated.
+      description: <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>Properties that describe a game server group resource. A game server group manages certain properties related to a corresponding Amazon EC2 Auto Scaling group. </p> <p>A game server group is created by a successful call to <code>CreateGameServerGroup</code> and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively. </p>
     GameServerGroupAutoScalingPolicy:
       type: object
       required:
@@ -471,84 +628,20 @@ components:
           - $ref: '#/components/schemas/TargetTrackingConfiguration'
           - description: 'Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to create a target-based policy that tracks the Amazon GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. '
       description: <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an Auto Scaling policy when creating the corresponding Auto Scaling group. After the Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or removing other policies, is done directly on the Auto Scaling group. </p>
-    CreateGameServerGroupInput:
-      type: object
-      required:
-      - GameServerGroupName
-      - RoleArn
-      - MinSize
-      - MaxSize
-      - LaunchTemplate
-      - InstanceDefinitions
-      title: CreateGameServerGroupInput
-      properties:
-        GameServerGroupName:
-          allOf:
-          - $ref: '#/components/schemas/GameServerGroupName'
-          - description: An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.
-        RoleArn:
-          allOf:
-          - $ref: '#/components/schemas/IamRoleArn'
-          - description: The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.
-        MinSize:
-          allOf:
-          - $ref: '#/components/schemas/WholeNumber'
-          - description: The minimum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, Amazon GameLift FleetIQ and Amazon EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.
-        MaxSize:
-          allOf:
-          - $ref: '#/components/schemas/PositiveInteger'
-          - description: The maximum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, Amazon GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.
-        LaunchTemplate:
-          allOf:
-          - $ref: '#/components/schemas/LaunchTemplateSpecification'
-          - description: <p>The Amazon EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p> <note> <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, Amazon GameLift FleetIQ uses your account's default VPC.</p> </note>
-        InstanceDefinitions:
-          allOf:
-          - $ref: '#/components/schemas/InstanceDefinitions'
-          - description: The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
-        AutoScalingPolicy:
-          allOf:
-          - $ref: '#/components/schemas/GameServerGroupAutoScalingPolicy'
-          - description: Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.
-        BalancingStrategy:
-          allOf:
-          - $ref: '#/components/schemas/BalancingStrategy'
-          - description: <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li> <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li> <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li> </ul>
-        GameServerProtectionPolicy:
-          allOf:
-          - $ref: '#/components/schemas/GameServerProtectionPolicy'
-          - description: A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.
-        VpcSubnets:
-          allOf:
-          - $ref: '#/components/schemas/VpcSubnets'
-          - description: A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all Amazon GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagList'
-          - description: A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
-    InvalidRequestException: {}
-    VpcSubnet:
-      type: string
-      pattern: ^subnet-[0-9a-z]+$
-      minLength: 15
-      maxLength: 24
-    LimitExceededException: {}
-    UnauthorizedException: {}
-    TagKey:
-      type: string
-      minLength: 1
-      maxLength: 128
-    Timestamp:
-      type: string
-      format: date-time
-    PositiveInteger:
+    WholeNumber:
       type: integer
-      minimum: 1
+      minimum: 0
     AutoScalingGroupArn:
       type: string
       minLength: 0
       maxLength: 256
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+      minItems: 0
+      maxItems: 200
     InstanceDefinition:
       type: object
       required:
@@ -563,99 +656,6 @@ components:
           - $ref: '#/components/schemas/WeightedCapacity'
           - description: Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by Amazon GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. Default value is "1".
       description: <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>An allowed instance type for a game server group. All game server groups must have at least two instance types defined for it. Amazon GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.</p>
-    LaunchTemplateVersion:
-      type: string
-      minLength: 1
-      maxLength: 128
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]\+'
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    BalancingStrategy:
-      type: string
-      enum:
-      - SPOT_ONLY
-      - SPOT_PREFERRED
-      - ON_DEMAND_ONLY
-    GameServerGroupStatus:
-      type: string
-      enum:
-      - NEW
-      - ACTIVATING
-      - ACTIVE
-      - DELETE_SCHEDULED
-      - DELETING
-      - DELETED
-      - ERROR
-    GameServerGroupAction:
-      type: string
-      enum:
-      - REPLACE_INSTANCE_TYPES
-    Tag:
-      type: object
-      required:
-      - Key
-      - Value
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/TagKey'
-          - description: 'The key for a developer-defined key value pair for tagging an Amazon Web Services resource. '
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/TagValue'
-          - description: 'The value for a developer-defined key value pair for tagging an Amazon Web Services resource. '
-      description: <p>A label that you can assign to a Amazon GameLift resource. </p> <p> <b>Learn more</b> </p> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i> </p> <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> Amazon Web Services Tagging Strategies</a> </p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-    TagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Tag'
-      minItems: 0
-      maxItems: 200
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

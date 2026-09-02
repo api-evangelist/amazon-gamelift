@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeGameSessionQueues API'
+  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeGameSessionQueues #X Amz Target=GameLift.DescribeGameSessionQueues #X Amz Target=GameLift.DescribeGameSessionQueues API'
   description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -216,23 +216,157 @@ paths:
       tags:
       - '#X Amz Target=GameLift.DescribeGameSessionQueues'
 components:
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    QueueSnsArnStringModel:
+    QueueCustomEventData:
       type: string
-      pattern: '[a-zA-Z0-9:_-]*(\.fifo)?'
+      pattern: '[\s\S]*'
       minLength: 0
-      maxLength: 300
+      maxLength: 256
+    PlayerLatencyPolicyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PlayerLatencyPolicy'
+    PriorityType:
+      type: string
+      enum:
+      - LATENCY
+      - COST
+      - DESTINATION
+      - LOCATION
+    InvalidRequestException: {}
+    DescribeGameSessionQueuesOutput:
+      type: object
+      properties:
+        GameSessionQueues:
+          allOf:
+          - $ref: '#/components/schemas/GameSessionQueueList'
+          - description: A collection of objects that describe the requested game session queues.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
+    GameSessionQueueName:
+      type: string
+      pattern: '[a-zA-Z0-9-]+'
+      minLength: 1
+      maxLength: 128
+    PriorityConfiguration:
+      type: object
+      properties:
+        PriorityOrder:
+          allOf:
+          - $ref: '#/components/schemas/PriorityTypeList'
+          - description: <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p> <ul> <li> <p> <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest. </p> </li> <li> <p> <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p> </li> <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li> <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li> </ul>
+        LocationOrder:
+          allOf:
+          - $ref: '#/components/schemas/LocationList'
+          - description: 'The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. '
+      description: <p>Custom prioritization settings for use by a game session queue when placing new game sessions with available game servers. When defined, this configuration replaces the default FleetIQ prioritization process, which is as follows:</p> <ul> <li> <p>If player latency data is included in a game session request, destinations and locations are prioritized first based on lowest average latency (1), then on lowest hosting cost (2), then on destination list order (3), and finally on location (alphabetical) (4). This approach ensures that the queue's top priority is to place game sessions where average player latency is lowest, and--if latency is the same--where the hosting cost is less, etc.</p> </li> <li> <p>If player latency data is not included, destinations and locations are prioritized first on destination list order (1), and then on location (alphabetical) (2). This approach ensures that the queue's top priority is to place game sessions on the first destination fleet listed. If that fleet has multiple locations, the game session is placed on the first location (when listed alphabetically).</p> </li> </ul> <p>Changing the priority order will affect how game sessions are placed.</p>
+    GameSessionQueueArn:
+      type: string
+      pattern: ^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+
+      minLength: 1
+      maxLength: 256
+    FilterConfiguration:
+      type: object
+      properties:
+        AllowedLocations:
+          allOf:
+          - $ref: '#/components/schemas/LocationList'
+          - description: ' A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. '
+      description: A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations.
+    GameSessionQueueNameOrArnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GameSessionQueueNameOrArn'
+    UnauthorizedException: {}
+    PriorityTypeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PriorityType'
+      minItems: 1
+      maxItems: 4
+    PositiveInteger:
+      type: integer
+      minimum: 1
+    NotFoundException: {}
+    GameSessionQueueDestination:
+      type: object
+      properties:
+        DestinationArn:
+          allOf:
+          - $ref: '#/components/schemas/ArnStringModel'
+          - description: The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions.
+      description: 'A fleet or alias designated in a game session queue. Queues fulfill requests for new game sessions by placing a new game session on any of the queue''s destinations. '
     NonZeroAndMaxString:
       type: string
       minLength: 1
       maxLength: 1024
-    GameSessionQueueList:
+    LocationList:
       type: array
       items:
-        $ref: '#/components/schemas/GameSessionQueue'
-    GameSessionQueueArn:
+        $ref: '#/components/schemas/LocationStringModel'
+      minItems: 1
+      maxItems: 100
+    PlayerLatencyPolicy:
+      type: object
+      properties:
+        MaximumIndividualPlayerLatencyMilliseconds:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: The maximum latency value that is allowed for any player, in milliseconds. All policies must have a value set for this property.
+        PolicyDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/WholeNumber'
+          - description: The length of time, in seconds, that the policy is enforced while placing a new game session. A null value for this property means that the policy is enforced until the queue times out.
+      description: 'Sets a latency cap for individual players when placing a game session. With a latency policy in force, a game session cannot be placed in a fleet location where a player reports latency higher than the cap. Latency policies are used only with placement request that provide player latency information. Player latency policies can be stacked to gradually relax latency requirements over time. '
+    InternalServiceException: {}
+    GameSessionQueueNameOrArn:
       type: string
-      pattern: ^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+
+      pattern: '[a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+'
       minLength: 1
       maxLength: 256
     DescribeGameSessionQueuesInput:
@@ -251,85 +385,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/NonZeroAndMaxString'
           - description: A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.
-    InternalServiceException: {}
-    WholeNumber:
-      type: integer
-      minimum: 0
-    LocationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LocationStringModel'
-      minItems: 1
-      maxItems: 100
-    GameSessionQueueNameOrArn:
+    QueueSnsArnStringModel:
       type: string
-      pattern: '[a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+'
-      minLength: 1
-      maxLength: 256
-    PriorityConfiguration:
-      type: object
-      properties:
-        PriorityOrder:
-          allOf:
-          - $ref: '#/components/schemas/PriorityTypeList'
-          - description: <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p> <ul> <li> <p> <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest. </p> </li> <li> <p> <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p> </li> <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li> <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li> </ul>
-        LocationOrder:
-          allOf:
-          - $ref: '#/components/schemas/LocationList'
-          - description: 'The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. '
-      description: <p>Custom prioritization settings for use by a game session queue when placing new game sessions with available game servers. When defined, this configuration replaces the default FleetIQ prioritization process, which is as follows:</p> <ul> <li> <p>If player latency data is included in a game session request, destinations and locations are prioritized first based on lowest average latency (1), then on lowest hosting cost (2), then on destination list order (3), and finally on location (alphabetical) (4). This approach ensures that the queue's top priority is to place game sessions where average player latency is lowest, and--if latency is the same--where the hosting cost is less, etc.</p> </li> <li> <p>If player latency data is not included, destinations and locations are prioritized first on destination list order (1), and then on location (alphabetical) (2). This approach ensures that the queue's top priority is to place game sessions on the first destination fleet listed. If that fleet has multiple locations, the game session is placed on the first location (when listed alphabetically).</p> </li> </ul> <p>Changing the priority order will affect how game sessions are placed.</p>
-    QueueCustomEventData:
-      type: string
-      pattern: '[\s\S]*'
+      pattern: '[a-zA-Z0-9:_-]*(\.fifo)?'
       minLength: 0
-      maxLength: 256
-    FilterConfiguration:
-      type: object
-      properties:
-        AllowedLocations:
-          allOf:
-          - $ref: '#/components/schemas/LocationList'
-          - description: ' A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. '
-      description: A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations.
-    DescribeGameSessionQueuesOutput:
-      type: object
-      properties:
-        GameSessionQueues:
-          allOf:
-          - $ref: '#/components/schemas/GameSessionQueueList'
-          - description: A collection of objects that describe the requested game session queues.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NonZeroAndMaxString'
-          - description: A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
-    PlayerLatencyPolicy:
-      type: object
-      properties:
-        MaximumIndividualPlayerLatencyMilliseconds:
-          allOf:
-          - $ref: '#/components/schemas/WholeNumber'
-          - description: The maximum latency value that is allowed for any player, in milliseconds. All policies must have a value set for this property.
-        PolicyDurationSeconds:
-          allOf:
-          - $ref: '#/components/schemas/WholeNumber'
-          - description: The length of time, in seconds, that the policy is enforced while placing a new game session. A null value for this property means that the policy is enforced until the queue times out.
-      description: 'Sets a latency cap for individual players when placing a game session. With a latency policy in force, a game session cannot be placed in a fleet location where a player reports latency higher than the cap. Latency policies are used only with placement request that provide player latency information. Player latency policies can be stacked to gradually relax latency requirements over time. '
-    InvalidRequestException: {}
-    NotFoundException: {}
-    ArnStringModel:
-      type: string
-      pattern: '[a-zA-Z0-9:/-]+'
-      minLength: 1
-      maxLength: 256
-    PlayerLatencyPolicyList:
+      maxLength: 300
+    GameSessionQueueList:
       type: array
       items:
-        $ref: '#/components/schemas/PlayerLatencyPolicy'
-    UnauthorizedException: {}
-    GameSessionQueueDestinationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GameSessionQueueDestination'
+        $ref: '#/components/schemas/GameSessionQueue'
     GameSessionQueue:
       type: object
       properties:
@@ -370,87 +434,23 @@ components:
           - $ref: '#/components/schemas/QueueSnsArnStringModel'
           - description: An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.
       description: Configuration for a game session placement mechanism that processes requests for new game sessions. A queue can be used on its own or as part of a matchmaking solution.
+    WholeNumber:
+      type: integer
+      minimum: 0
+    ArnStringModel:
+      type: string
+      pattern: '[a-zA-Z0-9:/-]+'
+      minLength: 1
+      maxLength: 256
+    GameSessionQueueDestinationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GameSessionQueueDestination'
     LocationStringModel:
       type: string
       pattern: ^[A-Za-z0-9\-]+
       minLength: 1
       maxLength: 64
-    PositiveInteger:
-      type: integer
-      minimum: 1
-    PriorityTypeList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PriorityType'
-      minItems: 1
-      maxItems: 4
-    PriorityType:
-      type: string
-      enum:
-      - LATENCY
-      - COST
-      - DESTINATION
-      - LOCATION
-    GameSessionQueueNameOrArnList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GameSessionQueueNameOrArn'
-    GameSessionQueueName:
-      type: string
-      pattern: '[a-zA-Z0-9-]+'
-      minLength: 1
-      maxLength: 128
-    GameSessionQueueDestination:
-      type: object
-      properties:
-        DestinationArn:
-          allOf:
-          - $ref: '#/components/schemas/ArnStringModel'
-          - description: The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias. ARNs, which include a fleet ID or alias ID and a Region name, provide a unique identifier across all Regions.
-      description: 'A fleet or alias designated in a game session queue. Queues fulfill requests for new game sessions by placing a new game session on any of the queue''s destinations. '
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

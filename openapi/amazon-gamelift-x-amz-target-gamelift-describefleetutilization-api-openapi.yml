@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeFleetUtilization API'
+  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeFleetUtilization #X Amz Target=GameLift.DescribeFleetUtilization #X Amz Target=GameLift.DescribeFleetUtilization API'
   description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -216,60 +216,50 @@ paths:
       tags:
       - '#X Amz Target=GameLift.DescribeFleetUtilization'
 components:
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    NonZeroAndMaxString:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    FleetId:
-      type: string
-      pattern: ^fleet-\S+
-    InternalServiceException: {}
-    WholeNumber:
-      type: integer
-      minimum: 0
-    FleetArn:
-      type: string
-      pattern: ^arn:.*:fleet\/fleet-\S+
-    FleetUtilizationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/FleetUtilization'
-    DescribeFleetUtilizationOutput:
-      type: object
-      properties:
-        FleetUtilization:
-          allOf:
-          - $ref: '#/components/schemas/FleetUtilizationList'
-          - description: A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NonZeroAndMaxString'
-          - description: A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
-    FleetIdOrArnList:
-      type: array
-      items:
-        $ref: '#/components/schemas/FleetIdOrArn'
-      minItems: 1
-    FleetIdOrArn:
-      type: string
-      pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-    DescribeFleetUtilizationInput:
-      type: object
-      title: DescribeFleetUtilizationInput
-      properties:
-        FleetIds:
-          allOf:
-          - $ref: '#/components/schemas/FleetIdOrArnList'
-          - description: 'A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. '
-        Limit:
-          allOf:
-          - $ref: '#/components/schemas/PositiveInteger'
-          - description: The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NonZeroAndMaxString'
-          - description: A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.
     FleetUtilization:
       type: object
       properties:
@@ -302,60 +292,70 @@ components:
           - $ref: '#/components/schemas/LocationStringModel'
           - description: 'The fleet location for the fleet utilization information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. '
       description: <p>Current resource utilization statistics in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region.</p> <p> <b>Related actions</b> </p>
+    FleetId:
+      type: string
+      pattern: ^fleet-\S+
+    DescribeFleetUtilizationInput:
+      type: object
+      title: DescribeFleetUtilizationInput
+      properties:
+        FleetIds:
+          allOf:
+          - $ref: '#/components/schemas/FleetIdOrArnList'
+          - description: 'A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. '
+        Limit:
+          allOf:
+          - $ref: '#/components/schemas/PositiveInteger'
+          - description: The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.
+    FleetUtilizationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FleetUtilization'
     InvalidRequestException: {}
-    NotFoundException: {}
+    PositiveInteger:
+      type: integer
+      minimum: 1
     UnauthorizedException: {}
+    NotFoundException: {}
+    FleetIdOrArnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FleetIdOrArn'
+      minItems: 1
+    NonZeroAndMaxString:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    InternalServiceException: {}
+    DescribeFleetUtilizationOutput:
+      type: object
+      properties:
+        FleetUtilization:
+          allOf:
+          - $ref: '#/components/schemas/FleetUtilizationList'
+          - description: A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
+    WholeNumber:
+      type: integer
+      minimum: 0
+    FleetArn:
+      type: string
+      pattern: ^arn:.*:fleet\/fleet-\S+
+    FleetIdOrArn:
+      type: string
+      pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
     LocationStringModel:
       type: string
       pattern: ^[A-Za-z0-9\-]+
       minLength: 1
       maxLength: 64
-    PositiveInteger:
-      type: integer
-      minimum: 1
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

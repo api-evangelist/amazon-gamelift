@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeBuild API'
+  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeBuild #X Amz Target=GameLift.DescribeBuild #X Amz Target=GameLift.DescribeBuild API'
   description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -203,18 +203,87 @@ paths:
       tags:
       - '#X Amz Target=GameLift.DescribeBuild'
 components:
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
     BuildIdOrArn:
       type: string
       pattern: ^build-\S+|^arn:.*:build\/build-\S+
-    InternalServiceException: {}
-    FreeText:
+    BuildStatus:
       type: string
-    ServerSdkVersion:
+      enum:
+      - INITIALIZED
+      - READY
+      - FAILED
+    PositiveLong:
+      type: integer
+      minimum: 1
+    DescribeBuildInput:
+      type: object
+      required:
+      - BuildId
+      title: DescribeBuildInput
+      properties:
+        BuildId:
+          allOf:
+          - $ref: '#/components/schemas/BuildIdOrArn'
+          - description: 'A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. '
+    BuildArn:
       type: string
-      pattern: ^\d+\.\d+\.\d+$
-      description: Data type used for server SDK version.
-      maxLength: 128
+      pattern: ^arn:.*:build\/build-\S+
+    InvalidRequestException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    DescribeBuildOutput:
+      type: object
+      properties:
+        Build:
+          allOf:
+          - $ref: '#/components/schemas/Build'
+          - description: Set of properties describing the requested build.
+    UnauthorizedException: {}
     Build:
       type: object
       properties:
@@ -255,22 +324,18 @@ components:
           - $ref: '#/components/schemas/ServerSdkVersion'
           - description: The Amazon GameLift Server SDK version used to develop your game server.
       description: <p>Properties describing a custom game build.</p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-    InvalidRequestException: {}
     NotFoundException: {}
-    DescribeBuildInput:
-      type: object
-      required:
-      - BuildId
-      title: DescribeBuildInput
-      properties:
-        BuildId:
-          allOf:
-          - $ref: '#/components/schemas/BuildIdOrArn'
-          - description: 'A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. '
-    UnauthorizedException: {}
-    Timestamp:
+    ServerSdkVersion:
       type: string
-      format: date-time
+      pattern: ^\d+\.\d+\.\d+$
+      description: Data type used for server SDK version.
+      maxLength: 128
+    InternalServiceException: {}
+    BuildId:
+      type: string
+      pattern: ^build-\S+
+    FreeText:
+      type: string
     OperatingSystem:
       type: string
       enum:
@@ -278,71 +343,6 @@ components:
       - AMAZON_LINUX
       - AMAZON_LINUX_2
       - WINDOWS_2016
-    BuildId:
-      type: string
-      pattern: ^build-\S+
-    BuildStatus:
-      type: string
-      enum:
-      - INITIALIZED
-      - READY
-      - FAILED
-    PositiveLong:
-      type: integer
-      minimum: 1
-    BuildArn:
-      type: string
-      pattern: ^arn:.*:build\/build-\S+
-    DescribeBuildOutput:
-      type: object
-      properties:
-        Build:
-          allOf:
-          - $ref: '#/components/schemas/Build'
-          - description: Set of properties describing the requested build.
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

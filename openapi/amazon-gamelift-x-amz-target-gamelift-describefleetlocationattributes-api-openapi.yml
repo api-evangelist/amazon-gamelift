@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeFleetLocationAttributes API'
+  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeFleetLocationAttributes #X Amz Target=GameLift.DescribeFleetLocationAttributes #X Amz Target=GameLift.DescribeFleetLocationAttributes API'
   description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -229,100 +229,50 @@ paths:
       tags:
       - '#X Amz Target=GameLift.DescribeFleetLocationAttributes'
 components:
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    NonZeroAndMaxString:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    InternalServiceException: {}
-    LocationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LocationStringModel'
-      minItems: 1
-      maxItems: 100
-    FleetAction:
-      type: string
-      enum:
-      - AUTO_SCALING
-    FleetActionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/FleetAction'
-      minItems: 1
-      maxItems: 1
-    FleetStatus:
-      type: string
-      enum:
-      - NEW
-      - DOWNLOADING
-      - VALIDATING
-      - BUILDING
-      - ACTIVATING
-      - ACTIVE
-      - DELETING
-      - ERROR
-      - TERMINATED
-      - NOT_FOUND
-    FleetArn:
-      type: string
-      pattern: ^arn:.*:fleet\/fleet-\S+
-    LocationAttributes:
-      type: object
-      properties:
-        LocationState:
-          allOf:
-          - $ref: '#/components/schemas/LocationState'
-          - description: A fleet location and its current life-cycle state.
-        StoppedActions:
-          allOf:
-          - $ref: '#/components/schemas/FleetActionList'
-          - description: A list of fleet actions that have been suspended in the fleet location.
-        UpdateStatus:
-          allOf:
-          - $ref: '#/components/schemas/LocationUpdateStatus'
-          - description: The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet been completed for the location.
-      description: Details about a location in a multi-location fleet.
-    LocationState:
-      type: object
-      properties:
-        Location:
-          allOf:
-          - $ref: '#/components/schemas/LocationStringModel'
-          - description: 'The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. '
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/FleetStatus'
-          - description: 'The life-cycle status of a fleet location. '
-      description: <p>A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet.</p> <ul> <li> <p> <b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1. </p> </li> <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p> </li> <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p> </li> <li> <p> <b>TERMINATED</b> -- The fleet location no longer exists.</p> </li> <li> <p> <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created. </p> </li> </ul>
-    FleetIdOrArn:
-      type: string
-      pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-    DescribeFleetLocationAttributesOutput:
-      type: object
-      properties:
-        FleetId:
-          allOf:
-          - $ref: '#/components/schemas/FleetIdOrArn'
-          - description: A unique identifier for the fleet that location attributes were requested for.
-        FleetArn:
-          allOf:
-          - $ref: '#/components/schemas/FleetArn'
-          - description: The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-        LocationAttributes:
-          allOf:
-          - $ref: '#/components/schemas/LocationAttributesList'
-          - description: ' Location-specific information on the requested fleet''s remote locations.'
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NonZeroAndMaxString'
-          - description: A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
-    LocationAttributesList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LocationAttributes'
-    InvalidRequestException: {}
-    NotFoundException: {}
     DescribeFleetLocationAttributesInput:
       type: object
       required:
@@ -345,63 +295,113 @@ components:
           allOf:
           - $ref: '#/components/schemas/NonZeroAndMaxString'
           - description: A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.
+    LocationUpdateStatus:
+      type: string
+      enum:
+      - PENDING_UPDATE
+    InvalidRequestException: {}
+    FleetStatus:
+      type: string
+      enum:
+      - NEW
+      - DOWNLOADING
+      - VALIDATING
+      - BUILDING
+      - ACTIVATING
+      - ACTIVE
+      - DELETING
+      - ERROR
+      - TERMINATED
+      - NOT_FOUND
+    DescribeFleetLocationAttributesOutput:
+      type: object
+      properties:
+        FleetId:
+          allOf:
+          - $ref: '#/components/schemas/FleetIdOrArn'
+          - description: A unique identifier for the fleet that location attributes were requested for.
+        FleetArn:
+          allOf:
+          - $ref: '#/components/schemas/FleetArn'
+          - description: The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        LocationAttributes:
+          allOf:
+          - $ref: '#/components/schemas/LocationAttributesList'
+          - description: ' Location-specific information on the requested fleet''s remote locations.'
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
     UnauthorizedException: {}
+    PositiveInteger:
+      type: integer
+      minimum: 1
+    LocationState:
+      type: object
+      properties:
+        Location:
+          allOf:
+          - $ref: '#/components/schemas/LocationStringModel'
+          - description: 'The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. '
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/FleetStatus'
+          - description: 'The life-cycle status of a fleet location. '
+      description: <p>A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet.</p> <ul> <li> <p> <b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1. </p> </li> <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p> </li> <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p> </li> <li> <p> <b>TERMINATED</b> -- The fleet location no longer exists.</p> </li> <li> <p> <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created. </p> </li> </ul>
+    NotFoundException: {}
+    NonZeroAndMaxString:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    LocationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LocationStringModel'
+      minItems: 1
+      maxItems: 100
+    LocationAttributesList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LocationAttributes'
+    FleetAction:
+      type: string
+      enum:
+      - AUTO_SCALING
+    LocationAttributes:
+      type: object
+      properties:
+        LocationState:
+          allOf:
+          - $ref: '#/components/schemas/LocationState'
+          - description: A fleet location and its current life-cycle state.
+        StoppedActions:
+          allOf:
+          - $ref: '#/components/schemas/FleetActionList'
+          - description: A list of fleet actions that have been suspended in the fleet location.
+        UpdateStatus:
+          allOf:
+          - $ref: '#/components/schemas/LocationUpdateStatus'
+          - description: The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet been completed for the location.
+      description: Details about a location in a multi-location fleet.
+    FleetActionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FleetAction'
+      minItems: 1
+      maxItems: 1
+    InternalServiceException: {}
+    FleetArn:
+      type: string
+      pattern: ^arn:.*:fleet\/fleet-\S+
+    UnsupportedRegionException: {}
+    FleetIdOrArn:
+      type: string
+      pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
     LocationStringModel:
       type: string
       pattern: ^[A-Za-z0-9\-]+
       minLength: 1
       maxLength: 64
-    PositiveInteger:
-      type: integer
-      minimum: 1
-    LocationUpdateStatus:
-      type: string
-      enum:
-      - PENDING_UPDATE
-    UnsupportedRegionException: {}
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

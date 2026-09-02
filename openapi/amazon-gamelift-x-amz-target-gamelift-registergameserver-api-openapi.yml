@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.RegisterGameServer API'
+  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.RegisterGameServer #X Amz Target=GameLift.RegisterGameServer #X Amz Target=GameLift.RegisterGameServer API'
   description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -214,66 +214,95 @@ paths:
       tags:
       - '#X Amz Target=GameLift.RegisterGameServer'
 components:
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ConflictException: {}
+    RegisterGameServerOutput:
+      type: object
+      properties:
+        GameServer:
+          allOf:
+          - $ref: '#/components/schemas/GameServer'
+          - description: Object that describes the newly registered game server.
     GameServerGroupNameOrArn:
       type: string
       pattern: '[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+'
       minLength: 1
       maxLength: 256
-    InternalServiceException: {}
-    GameServerGroupArn:
-      type: string
-      pattern: ^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]*
-      minLength: 1
-      maxLength: 256
-    GameServerId:
-      type: string
-      pattern: '[a-zA-Z0-9-\.]+'
-      minLength: 3
-      maxLength: 128
     GameServerGroupName:
       type: string
       pattern: '[a-zA-Z0-9-\.]+'
       minLength: 1
       maxLength: 128
-    GameServerClaimStatus:
+    LimitExceededException: {}
+    InvalidRequestException: {}
+    ConflictException: {}
+    Timestamp:
       type: string
-      enum:
-      - CLAIMED
-    RegisterGameServerInput:
-      type: object
-      required:
-      - GameServerGroupName
-      - GameServerId
-      - InstanceId
-      title: RegisterGameServerInput
-      properties:
-        GameServerGroupName:
-          allOf:
-          - $ref: '#/components/schemas/GameServerGroupNameOrArn'
-          - description: A unique identifier for the game server group where the game server is running.
-        GameServerId:
-          allOf:
-          - $ref: '#/components/schemas/GameServerId'
-          - description: A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.
-        InstanceId:
-          allOf:
-          - $ref: '#/components/schemas/GameServerInstanceId'
-          - description: 'The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.'
-        ConnectionInfo:
-          allOf:
-          - $ref: '#/components/schemas/GameServerConnectionInfo'
-          - description: Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.
-        GameServerData:
-          allOf:
-          - $ref: '#/components/schemas/GameServerData'
-          - description: 'A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. '
+      format: date-time
+    GameServerGroupArn:
+      type: string
+      pattern: ^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]*
+      minLength: 1
+      maxLength: 256
     GameServerInstanceId:
       type: string
       pattern: ^i-[0-9a-zA-Z]{17}$
       minLength: 19
       maxLength: 19
+    UnauthorizedException: {}
+    GameServerData:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 1024
+    InternalServiceException: {}
+    GameServerConnectionInfo:
+      type: string
+      pattern: .*\S.*
+      minLength: 1
+      maxLength: 512
     GameServer:
       type: object
       properties:
@@ -322,77 +351,48 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: Timestamp that indicates the last time the game server was updated with health status. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.
       description: <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b> </p> <p>Properties describing a game server that is running on an instance in a game server group. </p> <p>A game server is created by a successful call to <code>RegisterGameServer</code> and deleted by calling <code>DeregisterGameServer</code>. A game server is claimed to host a game session by calling <code>ClaimGameServer</code>. </p>
-    InvalidRequestException: {}
-    GameServerData:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 1024
-    LimitExceededException: {}
-    UnauthorizedException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    RegisterGameServerOutput:
+    RegisterGameServerInput:
       type: object
+      required:
+      - GameServerGroupName
+      - GameServerId
+      - InstanceId
+      title: RegisterGameServerInput
       properties:
-        GameServer:
+        GameServerGroupName:
           allOf:
-          - $ref: '#/components/schemas/GameServer'
-          - description: Object that describes the newly registered game server.
+          - $ref: '#/components/schemas/GameServerGroupNameOrArn'
+          - description: A unique identifier for the game server group where the game server is running.
+        GameServerId:
+          allOf:
+          - $ref: '#/components/schemas/GameServerId'
+          - description: A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.
+        InstanceId:
+          allOf:
+          - $ref: '#/components/schemas/GameServerInstanceId'
+          - description: 'The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.'
+        ConnectionInfo:
+          allOf:
+          - $ref: '#/components/schemas/GameServerConnectionInfo'
+          - description: Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.
+        GameServerData:
+          allOf:
+          - $ref: '#/components/schemas/GameServerData'
+          - description: 'A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. '
+    GameServerId:
+      type: string
+      pattern: '[a-zA-Z0-9-\.]+'
+      minLength: 3
+      maxLength: 128
+    GameServerClaimStatus:
+      type: string
+      enum:
+      - CLAIMED
     GameServerUtilizationStatus:
       type: string
       enum:
       - AVAILABLE
       - UTILIZED
-    GameServerConnectionInfo:
-      type: string
-      pattern: .*\S.*
-      minLength: 1
-      maxLength: 512
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

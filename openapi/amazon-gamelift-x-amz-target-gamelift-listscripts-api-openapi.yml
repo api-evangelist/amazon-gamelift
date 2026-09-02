@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.ListScripts API'
+  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.ListScripts #X Amz Target=GameLift.ListScripts #X Amz Target=GameLift.ListScripts API'
   description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -205,11 +205,117 @@ paths:
       tags:
       - '#X Amz Target=GameLift.ListScripts'
 components:
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    S3Location:
+      type: object
+      properties:
+        Bucket:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note> <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p> </note>
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: 'The name of the zip file that contains the build files or script files. '
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.
+        ObjectVersion:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: 'The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. '
+      description: The location in Amazon S3 where build or script files are stored for access by Amazon GameLift.
+    NonEmptyString:
+      type: string
+      minLength: 1
+    PositiveLong:
+      type: integer
+      minimum: 1
+    InvalidRequestException: {}
+    ListScriptsOutput:
+      type: object
+      properties:
+        Scripts:
+          allOf:
+          - $ref: '#/components/schemas/ScriptList'
+          - description: A set of properties describing the requested script.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
+    Timestamp:
+      type: string
+      format: date-time
+    UnauthorizedException: {}
+    PositiveInteger:
+      type: integer
+      minimum: 1
     NonZeroAndMaxString:
       type: string
       minLength: 1
       maxLength: 1024
+    ScriptArn:
+      type: string
+      pattern: ^arn:.*:script\/script-\S+
+    ScriptId:
+      type: string
+      pattern: ^script-\S+
+    ListScriptsInput:
+      type: object
+      title: ListScriptsInput
+      properties:
+        Limit:
+          allOf:
+          - $ref: '#/components/schemas/PositiveInteger'
+          - description: The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, don't specify a value.
     InternalServiceException: {}
     ScriptList:
       type: array
@@ -247,112 +353,6 @@ components:
           - $ref: '#/components/schemas/S3Location'
           - description: 'The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. '
       description: <p>Properties describing a Realtime script.</p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-    ScriptArn:
-      type: string
-      pattern: ^arn:.*:script\/script-\S+
-    ScriptId:
-      type: string
-      pattern: ^script-\S+
-    InvalidRequestException: {}
-    S3Location:
-      type: object
-      properties:
-        Bucket:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note> <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p> </note>
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: 'The name of the zip file that contains the build files or script files. '
-        RoleArn:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.
-        ObjectVersion:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: 'The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. '
-      description: The location in Amazon S3 where build or script files are stored for access by Amazon GameLift.
-    ListScriptsInput:
-      type: object
-      title: ListScriptsInput
-      properties:
-        Limit:
-          allOf:
-          - $ref: '#/components/schemas/PositiveInteger'
-          - description: The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, don't specify a value.
-    UnauthorizedException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    ListScriptsOutput:
-      type: object
-      properties:
-        Scripts:
-          allOf:
-          - $ref: '#/components/schemas/ScriptList'
-          - description: A set of properties describing the requested script.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
-    PositiveInteger:
-      type: integer
-      minimum: 1
-    PositiveLong:
-      type: integer
-      minimum: 1
-    NonEmptyString:
-      type: string
-      minLength: 1
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey
