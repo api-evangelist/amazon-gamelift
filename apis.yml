@@ -1,9 +1,10 @@
 aid: amazon-gamelift
 name: Amazon GameLift
-description: Amazon GameLift is a dedicated game server hosting solution that deploys, operates, and scales cloud servers
-  for multiplayer games. It provides low-latency, low-cost server infrastructure, eliminates operational overhead, and allows
-  you to focus on creating great gaming experiences. The service includes FlexMatch for matchmaking, FleetIQ for optimized
-  Spot Instance usage, and Realtime Servers for rapid game server deployment.
+description: Amazon GameLift is a dedicated game server hosting solution that deploys, operates, and scales
+  cloud servers for multiplayer games. It provides low-latency, low-cost server infrastructure, eliminates
+  operational overhead, and allows you to focus on creating great gaming experiences. The service includes
+  FlexMatch for matchmaking, FleetIQ for optimized Spot Instance usage, and Realtime Servers for rapid
+  game server deployment.
 type: Index
 deliveryModel:
   model: saas
@@ -43,13 +44,13 @@ tags:
 - FleetIQ
 url: https://raw.githubusercontent.com/api-evangelist/amazon-gamelift/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-acceptmatch-api
   name: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch API'
-  description: >-
-    The #X Amz Target=GameLift.AcceptMatch API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.acceptmatch.
+  description: 'The #X Amz Target=GameLift.AcceptMatch API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.acceptmatch.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -73,8 +74,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-claimgameserver-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ClaimGameServer API'
-  description: >-
-    The #X Amz Target=GameLift.ClaimGameServer API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.claimgameserver.
+  description: 'The #X Amz Target=GameLift.ClaimGameServer API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.claimgameserver.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -98,8 +99,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createalias-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateAlias API'
-  description: >-
-    The #X Amz Target=GameLift.CreateAlias API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.createalias.
+  description: 'The #X Amz Target=GameLift.CreateAlias API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.createalias.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -123,8 +124,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createbuild-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateBuild API'
-  description: >-
-    The #X Amz Target=GameLift.CreateBuild API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.createbuild.
+  description: 'The #X Amz Target=GameLift.CreateBuild API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.createbuild.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -148,8 +149,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createfleet-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateFleet API'
-  description: >-
-    The #X Amz Target=GameLift.CreateFleet API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.createfleet.
+  description: 'The #X Amz Target=GameLift.CreateFleet API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.createfleet.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -173,9 +174,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createfleetlocations-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateFleetLocations API'
-  description: >-
-    The #X Amz Target=GameLift.CreateFleetLocations API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.createfleetlocations.
+  description: 'The #X Amz Target=GameLift.CreateFleetLocations API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.createfleetlocations.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -199,9 +199,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creategameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateGameServerGroup API'
-  description: >-
-    The #X Amz Target=GameLift.CreateGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.creategameservergroup.
+  description: 'The #X Amz Target=GameLift.CreateGameServerGroup API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.creategameservergroup.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -225,9 +224,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creategamesession-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateGameSession API'
-  description: >-
-    The #X Amz Target=GameLift.CreateGameSession API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.creategamesession.
+  description: 'The #X Amz Target=GameLift.CreateGameSession API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.creategamesession.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -251,9 +249,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creategamesessionqueue-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateGameSessionQueue API'
-  description: >-
-    The #X Amz Target=GameLift.CreateGameSessionQueue API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.creategamesessionqueue.
+  description: 'The #X Amz Target=GameLift.CreateGameSessionQueue API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.creategamesessionqueue.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -277,8 +274,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createlocation-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateLocation API'
-  description: >-
-    The #X Amz Target=GameLift.CreateLocation API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.createlocation.
+  description: 'The #X Amz Target=GameLift.CreateLocation API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.createlocation.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -302,17 +299,15 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creatematchmakingconfiguration-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateMatchmakingConfiguration API'
-  description: >-
-    The #X Amz Target=GameLift.CreateMatchmakingConfiguration API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.creatematchmakingconfiguration.
+  description: 'The #X Amz Target=GameLift.CreateMatchmakingConfiguration API from Amazon GameLift — 1
+    operation(s) for #x amz target=gamelift.creatematchmakingconfiguration.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.CreateMatchmakingConfiguration'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-creatematchmakingconfiguration-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-creatematchmakingconfiguration-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -329,9 +324,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-creatematchmakingruleset-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateMatchmakingRuleSet API'
-  description: >-
-    The #X Amz Target=GameLift.CreateMatchmakingRuleSet API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.creatematchmakingruleset.
+  description: 'The #X Amz Target=GameLift.CreateMatchmakingRuleSet API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.creatematchmakingruleset.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -355,9 +349,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createplayersession-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreatePlayerSession API'
-  description: >-
-    The #X Amz Target=GameLift.CreatePlayerSession API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.createplayersession.
+  description: 'The #X Amz Target=GameLift.CreatePlayerSession API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.createplayersession.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -381,9 +374,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createplayersessions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreatePlayerSessions API'
-  description: >-
-    The #X Amz Target=GameLift.CreatePlayerSessions API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.createplayersessions.
+  description: 'The #X Amz Target=GameLift.CreatePlayerSessions API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.createplayersessions.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -407,8 +399,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createscript-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateScript API'
-  description: >-
-    The #X Amz Target=GameLift.CreateScript API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.createscript.
+  description: 'The #X Amz Target=GameLift.CreateScript API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.createscript.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -432,17 +424,15 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createvpcpeeringauthorization-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateVpcPeeringAuthorization API'
-  description: >-
-    The #X Amz Target=GameLift.CreateVpcPeeringAuthorization API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.createvpcpeeringauthorization.
+  description: 'The #X Amz Target=GameLift.CreateVpcPeeringAuthorization API from Amazon GameLift — 1
+    operation(s) for #x amz target=gamelift.createvpcpeeringauthorization.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.CreateVpcPeeringAuthorization'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-createvpcpeeringauthorization-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-createvpcpeeringauthorization-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -459,9 +449,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-createvpcpeeringconnection-api
   name: 'Amazon GameLift #X Amz Target=GameLift.CreateVpcPeeringConnection API'
-  description: >-
-    The #X Amz Target=GameLift.CreateVpcPeeringConnection API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.createvpcpeeringconnection.
+  description: 'The #X Amz Target=GameLift.CreateVpcPeeringConnection API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.createvpcpeeringconnection.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -485,8 +474,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletealias-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteAlias API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteAlias API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.deletealias.
+  description: 'The #X Amz Target=GameLift.DeleteAlias API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.deletealias.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -510,8 +499,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletebuild-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteBuild API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteBuild API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.deletebuild.
+  description: 'The #X Amz Target=GameLift.DeleteBuild API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.deletebuild.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -535,8 +524,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletefleet-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteFleet API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteFleet API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.deletefleet.
+  description: 'The #X Amz Target=GameLift.DeleteFleet API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.deletefleet.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -560,9 +549,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletefleetlocations-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteFleetLocations API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteFleetLocations API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.deletefleetlocations.
+  description: 'The #X Amz Target=GameLift.DeleteFleetLocations API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.deletefleetlocations.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -586,9 +574,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletegameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteGameServerGroup API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.deletegameservergroup.
+  description: 'The #X Amz Target=GameLift.DeleteGameServerGroup API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.deletegameservergroup.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -612,9 +599,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletegamesessionqueue-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteGameSessionQueue API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteGameSessionQueue API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.deletegamesessionqueue.
+  description: 'The #X Amz Target=GameLift.DeleteGameSessionQueue API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.deletegamesessionqueue.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -638,8 +624,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletelocation-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteLocation API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteLocation API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.deletelocation.
+  description: 'The #X Amz Target=GameLift.DeleteLocation API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.deletelocation.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -663,17 +649,15 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletematchmakingconfiguration-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteMatchmakingConfiguration API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteMatchmakingConfiguration API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.deletematchmakingconfiguration.
+  description: 'The #X Amz Target=GameLift.DeleteMatchmakingConfiguration API from Amazon GameLift — 1
+    operation(s) for #x amz target=gamelift.deletematchmakingconfiguration.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DeleteMatchmakingConfiguration'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-deletematchmakingconfiguration-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletematchmakingconfiguration-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -690,9 +674,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletematchmakingruleset-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteMatchmakingRuleSet API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteMatchmakingRuleSet API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.deletematchmakingruleset.
+  description: 'The #X Amz Target=GameLift.DeleteMatchmakingRuleSet API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.deletematchmakingruleset.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -716,9 +699,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletescalingpolicy-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteScalingPolicy API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteScalingPolicy API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.deletescalingpolicy.
+  description: 'The #X Amz Target=GameLift.DeleteScalingPolicy API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.deletescalingpolicy.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -742,8 +724,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletescript-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteScript API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteScript API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.deletescript.
+  description: 'The #X Amz Target=GameLift.DeleteScript API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.deletescript.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -767,17 +749,15 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringauthorization-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteVpcPeeringAuthorization API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteVpcPeeringAuthorization API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.deletevpcpeeringauthorization.
+  description: 'The #X Amz Target=GameLift.DeleteVpcPeeringAuthorization API from Amazon GameLift — 1
+    operation(s) for #x amz target=gamelift.deletevpcpeeringauthorization.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DeleteVpcPeeringAuthorization'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringauthorization-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringauthorization-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -794,9 +774,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringconnection-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeleteVpcPeeringConnection API'
-  description: >-
-    The #X Amz Target=GameLift.DeleteVpcPeeringConnection API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.deletevpcpeeringconnection.
+  description: 'The #X Amz Target=GameLift.DeleteVpcPeeringConnection API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.deletevpcpeeringconnection.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -820,9 +799,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deregistercompute-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeregisterCompute API'
-  description: >-
-    The #X Amz Target=GameLift.DeregisterCompute API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.deregistercompute.
+  description: 'The #X Amz Target=GameLift.DeregisterCompute API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.deregistercompute.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -846,9 +824,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-deregistergameserver-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DeregisterGameServer API'
-  description: >-
-    The #X Amz Target=GameLift.DeregisterGameServer API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.deregistergameserver.
+  description: 'The #X Amz Target=GameLift.DeregisterGameServer API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.deregistergameserver.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -872,8 +849,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describealias-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeAlias API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeAlias API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.describealias.
+  description: 'The #X Amz Target=GameLift.DescribeAlias API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.describealias.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -897,8 +874,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describebuild-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeBuild API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeBuild API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.describebuild.
+  description: 'The #X Amz Target=GameLift.DescribeBuild API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.describebuild.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -922,8 +899,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describecompute-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeCompute API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeCompute API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.describecompute.
+  description: 'The #X Amz Target=GameLift.DescribeCompute API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.describecompute.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -947,9 +924,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeec2instancelimits-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeEC2InstanceLimits API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeEC2InstanceLimits API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.describeec2instancelimits.
+  description: 'The #X Amz Target=GameLift.DescribeEC2InstanceLimits API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describeec2instancelimits.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -973,9 +949,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetattributes-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetAttributes API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeFleetAttributes API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.describefleetattributes.
+  description: 'The #X Amz Target=GameLift.DescribeFleetAttributes API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describefleetattributes.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -999,9 +974,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetcapacity-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetCapacity API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeFleetCapacity API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.describefleetcapacity.
+  description: 'The #X Amz Target=GameLift.DescribeFleetCapacity API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describefleetcapacity.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1025,9 +999,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetevents-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetEvents API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeFleetEvents API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.describefleetevents.
+  description: 'The #X Amz Target=GameLift.DescribeFleetEvents API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describefleetevents.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1049,20 +1022,17 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-- aid: >-
-    amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetlocationattributes-api
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetlocationattributes-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetLocationAttributes API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeFleetLocationAttributes API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.describefleetlocationattributes.
+  description: 'The #X Amz Target=GameLift.DescribeFleetLocationAttributes API from Amazon GameLift —
+    1 operation(s) for #x amz target=gamelift.describefleetlocationattributes.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DescribeFleetLocationAttributes'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationattributes-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationattributes-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -1079,17 +1049,15 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetlocationcapacity-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetLocationCapacity API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeFleetLocationCapacity API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.describefleetlocationcapacity.
+  description: 'The #X Amz Target=GameLift.DescribeFleetLocationCapacity API from Amazon GameLift — 1
+    operation(s) for #x amz target=gamelift.describefleetlocationcapacity.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DescribeFleetLocationCapacity'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationcapacity-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationcapacity-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -1104,20 +1072,17 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-- aid: >-
-    amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetlocationutilization-api
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetlocationutilization-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetLocationUtilization API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeFleetLocationUtilization API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.describefleetlocationutilization.
+  description: 'The #X Amz Target=GameLift.DescribeFleetLocationUtilization API from Amazon GameLift —
+    1 operation(s) for #x amz target=gamelift.describefleetlocationutilization.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DescribeFleetLocationUtilization'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationutilization-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationutilization-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -1134,9 +1099,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetportsettings-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetPortSettings API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeFleetPortSettings API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.describefleetportsettings.
+  description: 'The #X Amz Target=GameLift.DescribeFleetPortSettings API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describefleetportsettings.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1160,9 +1124,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describefleetutilization-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeFleetUtilization API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeFleetUtilization API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.describefleetutilization.
+  description: 'The #X Amz Target=GameLift.DescribeFleetUtilization API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describefleetutilization.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1186,9 +1149,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegameserver-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameServer API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeGameServer API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.describegameserver.
+  description: 'The #X Amz Target=GameLift.DescribeGameServer API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describegameserver.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1212,9 +1174,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameServerGroup API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.describegameservergroup.
+  description: 'The #X Amz Target=GameLift.DescribeGameServerGroup API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describegameservergroup.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1238,17 +1199,15 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegameserverinstances-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameServerInstances API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeGameServerInstances API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.describegameserverinstances.
+  description: 'The #X Amz Target=GameLift.DescribeGameServerInstances API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describegameserverinstances.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DescribeGameServerInstances'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-describegameserverinstances-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describegameserverinstances-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -1265,9 +1224,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessiondetails-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessionDetails API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeGameSessionDetails API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.describegamesessiondetails.
+  description: 'The #X Amz Target=GameLift.DescribeGameSessionDetails API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describegamesessiondetails.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1291,17 +1249,15 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessionplacement-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessionPlacement API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeGameSessionPlacement API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.describegamesessionplacement.
+  description: 'The #X Amz Target=GameLift.DescribeGameSessionPlacement API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describegamesessionplacement.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DescribeGameSessionPlacement'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-describegamesessionplacement-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describegamesessionplacement-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -1318,9 +1274,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessionqueues-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessionQueues API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeGameSessionQueues API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.describegamesessionqueues.
+  description: 'The #X Amz Target=GameLift.DescribeGameSessionQueues API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describegamesessionqueues.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1344,9 +1299,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describegamesessions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessions API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeGameSessions API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.describegamesessions.
+  description: 'The #X Amz Target=GameLift.DescribeGameSessions API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describegamesessions.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1370,9 +1324,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeinstances-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeInstances API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeInstances API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.describeinstances.
+  description: 'The #X Amz Target=GameLift.DescribeInstances API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describeinstances.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1396,9 +1349,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describematchmaking-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeMatchmaking API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeMatchmaking API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.describematchmaking.
+  description: 'The #X Amz Target=GameLift.DescribeMatchmaking API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describematchmaking.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1420,20 +1372,17 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-- aid: >-
-    amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describematchmakingconfigurations-api
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describematchmakingconfigurations-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeMatchmakingConfigurations API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeMatchmakingConfigurations API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.describematchmakingconfigurations.
+  description: 'The #X Amz Target=GameLift.DescribeMatchmakingConfigurations API from Amazon GameLift
+    — 1 operation(s) for #x amz target=gamelift.describematchmakingconfigurations.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DescribeMatchmakingConfigurations'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-describematchmakingconfigurations-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describematchmakingconfigurations-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -1450,17 +1399,15 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describematchmakingrulesets-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeMatchmakingRuleSets API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeMatchmakingRuleSets API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.describematchmakingrulesets.
+  description: 'The #X Amz Target=GameLift.DescribeMatchmakingRuleSets API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describematchmakingrulesets.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DescribeMatchmakingRuleSets'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-describematchmakingrulesets-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describematchmakingrulesets-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -1477,9 +1424,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeplayersessions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribePlayerSessions API'
-  description: >-
-    The #X Amz Target=GameLift.DescribePlayerSessions API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.describeplayersessions.
+  description: 'The #X Amz Target=GameLift.DescribePlayerSessions API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describeplayersessions.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1503,17 +1449,15 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describeruntimeconfiguration-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeRuntimeConfiguration API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeRuntimeConfiguration API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.describeruntimeconfiguration.
+  description: 'The #X Amz Target=GameLift.DescribeRuntimeConfiguration API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describeruntimeconfiguration.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DescribeRuntimeConfiguration'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-describeruntimeconfiguration-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describeruntimeconfiguration-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -1530,9 +1474,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describescalingpolicies-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeScalingPolicies API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeScalingPolicies API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.describescalingpolicies.
+  description: 'The #X Amz Target=GameLift.DescribeScalingPolicies API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.describescalingpolicies.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1556,8 +1499,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describescript-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeScript API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeScript API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.describescript.
+  description: 'The #X Amz Target=GameLift.DescribeScript API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.describescript.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1579,20 +1522,17 @@ apis:
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
-- aid: >-
-    amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describevpcpeeringauthorizations-api
+- aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describevpcpeeringauthorizations-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeVpcPeeringAuthorizations API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeVpcPeeringAuthorizations API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.describevpcpeeringauthorizations.
+  description: 'The #X Amz Target=GameLift.DescribeVpcPeeringAuthorizations API from Amazon GameLift —
+    1 operation(s) for #x amz target=gamelift.describevpcpeeringauthorizations.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DescribeVpcPeeringAuthorizations'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-describevpcpeeringauthorizations-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describevpcpeeringauthorizations-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -1609,17 +1549,15 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-describevpcpeeringconnections-api
   name: 'Amazon GameLift #X Amz Target=GameLift.DescribeVpcPeeringConnections API'
-  description: >-
-    The #X Amz Target=GameLift.DescribeVpcPeeringConnections API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.describevpcpeeringconnections.
+  description: 'The #X Amz Target=GameLift.DescribeVpcPeeringConnections API from Amazon GameLift — 1
+    operation(s) for #x amz target=gamelift.describevpcpeeringconnections.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.DescribeVpcPeeringConnections'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-describevpcpeeringconnections-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-describevpcpeeringconnections-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -1636,8 +1574,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getcomputeaccess-api
   name: 'Amazon GameLift #X Amz Target=GameLift.GetComputeAccess API'
-  description: >-
-    The #X Amz Target=GameLift.GetComputeAccess API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.getcomputeaccess.
+  description: 'The #X Amz Target=GameLift.GetComputeAccess API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.getcomputeaccess.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1661,9 +1599,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getcomputeauthtoken-api
   name: 'Amazon GameLift #X Amz Target=GameLift.GetComputeAuthToken API'
-  description: >-
-    The #X Amz Target=GameLift.GetComputeAuthToken API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.getcomputeauthtoken.
+  description: 'The #X Amz Target=GameLift.GetComputeAuthToken API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.getcomputeauthtoken.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1687,9 +1624,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getgamesessionlogurl-api
   name: 'Amazon GameLift #X Amz Target=GameLift.GetGameSessionLogUrl API'
-  description: >-
-    The #X Amz Target=GameLift.GetGameSessionLogUrl API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.getgamesessionlogurl.
+  description: 'The #X Amz Target=GameLift.GetGameSessionLogUrl API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.getgamesessionlogurl.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1713,9 +1649,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-getinstanceaccess-api
   name: 'Amazon GameLift #X Amz Target=GameLift.GetInstanceAccess API'
-  description: >-
-    The #X Amz Target=GameLift.GetInstanceAccess API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.getinstanceaccess.
+  description: 'The #X Amz Target=GameLift.GetInstanceAccess API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.getinstanceaccess.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1739,8 +1674,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listaliases-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListAliases API'
-  description: >-
-    The #X Amz Target=GameLift.ListAliases API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listaliases.
+  description: 'The #X Amz Target=GameLift.ListAliases API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.listaliases.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1764,8 +1699,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listbuilds-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListBuilds API'
-  description: >-
-    The #X Amz Target=GameLift.ListBuilds API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listbuilds.
+  description: 'The #X Amz Target=GameLift.ListBuilds API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.listbuilds.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1789,8 +1724,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listcompute-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListCompute API'
-  description: >-
-    The #X Amz Target=GameLift.ListCompute API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listcompute.
+  description: 'The #X Amz Target=GameLift.ListCompute API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.listcompute.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1814,8 +1749,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listfleets-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListFleets API'
-  description: >-
-    The #X Amz Target=GameLift.ListFleets API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listfleets.
+  description: 'The #X Amz Target=GameLift.ListFleets API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.listfleets.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1839,9 +1774,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listgameservergroups-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListGameServerGroups API'
-  description: >-
-    The #X Amz Target=GameLift.ListGameServerGroups API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.listgameservergroups.
+  description: 'The #X Amz Target=GameLift.ListGameServerGroups API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.listgameservergroups.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1865,8 +1799,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listgameservers-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListGameServers API'
-  description: >-
-    The #X Amz Target=GameLift.ListGameServers API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listgameservers.
+  description: 'The #X Amz Target=GameLift.ListGameServers API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.listgameservers.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1890,8 +1824,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listlocations-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListLocations API'
-  description: >-
-    The #X Amz Target=GameLift.ListLocations API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listlocations.
+  description: 'The #X Amz Target=GameLift.ListLocations API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.listlocations.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1915,8 +1849,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listscripts-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListScripts API'
-  description: >-
-    The #X Amz Target=GameLift.ListScripts API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.listscripts.
+  description: 'The #X Amz Target=GameLift.ListScripts API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.listscripts.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1940,9 +1874,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-listtagsforresource-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ListTagsForResource API'
-  description: >-
-    The #X Amz Target=GameLift.ListTagsForResource API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.listtagsforresource.
+  description: 'The #X Amz Target=GameLift.ListTagsForResource API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.listtagsforresource.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1966,8 +1899,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-putscalingpolicy-api
   name: 'Amazon GameLift #X Amz Target=GameLift.PutScalingPolicy API'
-  description: >-
-    The #X Amz Target=GameLift.PutScalingPolicy API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.putscalingpolicy.
+  description: 'The #X Amz Target=GameLift.PutScalingPolicy API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.putscalingpolicy.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -1991,8 +1924,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-registercompute-api
   name: 'Amazon GameLift #X Amz Target=GameLift.RegisterCompute API'
-  description: >-
-    The #X Amz Target=GameLift.RegisterCompute API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.registercompute.
+  description: 'The #X Amz Target=GameLift.RegisterCompute API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.registercompute.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2016,9 +1949,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-registergameserver-api
   name: 'Amazon GameLift #X Amz Target=GameLift.RegisterGameServer API'
-  description: >-
-    The #X Amz Target=GameLift.RegisterGameServer API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.registergameserver.
+  description: 'The #X Amz Target=GameLift.RegisterGameServer API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.registergameserver.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2042,9 +1974,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-requestuploadcredentials-api
   name: 'Amazon GameLift #X Amz Target=GameLift.RequestUploadCredentials API'
-  description: >-
-    The #X Amz Target=GameLift.RequestUploadCredentials API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.requestuploadcredentials.
+  description: 'The #X Amz Target=GameLift.RequestUploadCredentials API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.requestuploadcredentials.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2068,8 +1999,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-resolvealias-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ResolveAlias API'
-  description: >-
-    The #X Amz Target=GameLift.ResolveAlias API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.resolvealias.
+  description: 'The #X Amz Target=GameLift.ResolveAlias API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.resolvealias.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2093,9 +2024,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-resumegameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ResumeGameServerGroup API'
-  description: >-
-    The #X Amz Target=GameLift.ResumeGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.resumegameservergroup.
+  description: 'The #X Amz Target=GameLift.ResumeGameServerGroup API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.resumegameservergroup.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2119,9 +2049,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-searchgamesessions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.SearchGameSessions API'
-  description: >-
-    The #X Amz Target=GameLift.SearchGameSessions API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.searchgamesessions.
+  description: 'The #X Amz Target=GameLift.SearchGameSessions API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.searchgamesessions.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2145,9 +2074,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startfleetactions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StartFleetActions API'
-  description: >-
-    The #X Amz Target=GameLift.StartFleetActions API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.startfleetactions.
+  description: 'The #X Amz Target=GameLift.StartFleetActions API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.startfleetactions.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2171,9 +2099,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startgamesessionplacement-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StartGameSessionPlacement API'
-  description: >-
-    The #X Amz Target=GameLift.StartGameSessionPlacement API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.startgamesessionplacement.
+  description: 'The #X Amz Target=GameLift.StartGameSessionPlacement API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.startgamesessionplacement.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2197,9 +2124,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startmatchbackfill-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StartMatchBackfill API'
-  description: >-
-    The #X Amz Target=GameLift.StartMatchBackfill API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.startmatchbackfill.
+  description: 'The #X Amz Target=GameLift.StartMatchBackfill API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.startmatchbackfill.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2223,8 +2149,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-startmatchmaking-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StartMatchmaking API'
-  description: >-
-    The #X Amz Target=GameLift.StartMatchmaking API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.startmatchmaking.
+  description: 'The #X Amz Target=GameLift.StartMatchmaking API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.startmatchmaking.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2248,8 +2174,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-stopfleetactions-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StopFleetActions API'
-  description: >-
-    The #X Amz Target=GameLift.StopFleetActions API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.stopfleetactions.
+  description: 'The #X Amz Target=GameLift.StopFleetActions API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.stopfleetactions.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2273,9 +2199,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-stopgamesessionplacement-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StopGameSessionPlacement API'
-  description: >-
-    The #X Amz Target=GameLift.StopGameSessionPlacement API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.stopgamesessionplacement.
+  description: 'The #X Amz Target=GameLift.StopGameSessionPlacement API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.stopgamesessionplacement.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2299,8 +2224,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-stopmatchmaking-api
   name: 'Amazon GameLift #X Amz Target=GameLift.StopMatchmaking API'
-  description: >-
-    The #X Amz Target=GameLift.StopMatchmaking API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.stopmatchmaking.
+  description: 'The #X Amz Target=GameLift.StopMatchmaking API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.stopmatchmaking.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2324,9 +2249,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-suspendgameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.SuspendGameServerGroup API'
-  description: >-
-    The #X Amz Target=GameLift.SuspendGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.suspendgameservergroup.
+  description: 'The #X Amz Target=GameLift.SuspendGameServerGroup API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.suspendgameservergroup.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2350,8 +2274,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-tagresource-api
   name: 'Amazon GameLift #X Amz Target=GameLift.TagResource API'
-  description: >-
-    The #X Amz Target=GameLift.TagResource API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.tagresource.
+  description: 'The #X Amz Target=GameLift.TagResource API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.tagresource.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2375,8 +2299,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-untagresource-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UntagResource API'
-  description: >-
-    The #X Amz Target=GameLift.UntagResource API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.untagresource.
+  description: 'The #X Amz Target=GameLift.UntagResource API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.untagresource.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2400,8 +2324,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatealias-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateAlias API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateAlias API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.updatealias.
+  description: 'The #X Amz Target=GameLift.UpdateAlias API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.updatealias.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2425,8 +2349,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatebuild-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateBuild API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateBuild API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.updatebuild.
+  description: 'The #X Amz Target=GameLift.UpdateBuild API from Amazon GameLift — 1 operation(s) for #x
+    amz target=gamelift.updatebuild.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2450,9 +2374,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatefleetattributes-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateFleetAttributes API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateFleetAttributes API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.updatefleetattributes.
+  description: 'The #X Amz Target=GameLift.UpdateFleetAttributes API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.updatefleetattributes.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2476,9 +2399,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatefleetcapacity-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateFleetCapacity API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateFleetCapacity API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.updatefleetcapacity.
+  description: 'The #X Amz Target=GameLift.UpdateFleetCapacity API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.updatefleetcapacity.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2502,9 +2424,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatefleetportsettings-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateFleetPortSettings API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateFleetPortSettings API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.updatefleetportsettings.
+  description: 'The #X Amz Target=GameLift.UpdateFleetPortSettings API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.updatefleetportsettings.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2528,8 +2449,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategameserver-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameServer API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateGameServer API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.updategameserver.
+  description: 'The #X Amz Target=GameLift.UpdateGameServer API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.updategameserver.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2553,9 +2474,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategameservergroup-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameServerGroup API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateGameServerGroup API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.updategameservergroup.
+  description: 'The #X Amz Target=GameLift.UpdateGameServerGroup API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.updategameservergroup.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2579,9 +2499,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategamesession-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameSession API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateGameSession API from Amazon GameLift — 1 operation(s) for #x amz
-    target=gamelift.updategamesession.
+  description: 'The #X Amz Target=GameLift.UpdateGameSession API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.updategamesession.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2605,9 +2524,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updategamesessionqueue-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateGameSessionQueue API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateGameSessionQueue API from Amazon GameLift — 1 operation(s) for #x
-    amz target=gamelift.updategamesessionqueue.
+  description: 'The #X Amz Target=GameLift.UpdateGameSessionQueue API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.updategamesessionqueue.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2631,17 +2549,15 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatematchmakingconfiguration-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateMatchmakingConfiguration API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateMatchmakingConfiguration API from Amazon GameLift — 1 operation(s)
-    for #x amz target=gamelift.updatematchmakingconfiguration.
+  description: 'The #X Amz Target=GameLift.UpdateMatchmakingConfiguration API from Amazon GameLift — 1
+    operation(s) for #x amz target=gamelift.updatematchmakingconfiguration.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
   - '#X Amz Target=GameLift.UpdateMatchmakingConfiguration'
   properties:
   - type: OpenAPI
-    url: >-
-      openapi/amazon-gamelift-x-amz-target-gamelift-updatematchmakingconfiguration-api-openapi.yml
+    url: openapi/amazon-gamelift-x-amz-target-gamelift-updatematchmakingconfiguration-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html
   - type: GettingStarted
@@ -2658,9 +2574,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updateruntimeconfiguration-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateRuntimeConfiguration API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateRuntimeConfiguration API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.updateruntimeconfiguration.
+  description: 'The #X Amz Target=GameLift.UpdateRuntimeConfiguration API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.updateruntimeconfiguration.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2684,8 +2599,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-updatescript-api
   name: 'Amazon GameLift #X Amz Target=GameLift.UpdateScript API'
-  description: >-
-    The #X Amz Target=GameLift.UpdateScript API from Amazon GameLift — 1 operation(s) for #x amz target=gamelift.updatescript.
+  description: 'The #X Amz Target=GameLift.UpdateScript API from Amazon GameLift — 1 operation(s) for
+    #x amz target=gamelift.updatescript.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2709,9 +2624,8 @@ apis:
     url: json-ld/amazon-gamelift-context.jsonld
 - aid: amazon-gamelift:amazon-gamelift-x-amz-target-gamelift-validatematchmakingruleset-api
   name: 'Amazon GameLift #X Amz Target=GameLift.ValidateMatchmakingRuleSet API'
-  description: >-
-    The #X Amz Target=GameLift.ValidateMatchmakingRuleSet API from Amazon GameLift — 1 operation(s) for
-    #x amz target=gamelift.validatematchmakingruleset.
+  description: 'The #X Amz Target=GameLift.ValidateMatchmakingRuleSet API from Amazon GameLift — 1 operation(s)
+    for #x amz target=gamelift.validatematchmakingruleset.'
   humanURL: https://aws.amazon.com/gamelift/
   baseURL: https://gamelift.amazonaws.com
   tags:
@@ -2734,142 +2648,151 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
 common:
-  - type: CapabilityMap
-    url: capabilities/amazon-gamelift-capability-edges.yml
-    name: Amazon GameLift Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/amazon-gamelift-agentic-access.yml
-  - type: TrustCenter
-    url: security/amazon-gamelift-trust-center.yml
-  - type: VulnerabilityDisclosure
-    url: security/amazon-gamelift-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/amazon-gamelift-domain-security.yml
-  - type: Authentication
-    url: authentication/amazon-gamelift-authentication.yml
-  - type: PostmanWorkspace
-    url: https://www.postman.com/kinlaneapi/amazon-gamelift/overview
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-build-fleet-alias-workflow.yml
-    name: Amazon GameLift Stand Up a Fleet Behind an Alias
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-create-resolve-alias-workflow.yml
-    name: Amazon GameLift Create and Resolve a Fleet Alias
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-deploy-build-fleet-workflow.yml
-    name: Amazon GameLift Deploy Build to a Fleet
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-fill-game-session-workflow.yml
-    name: Amazon GameLift Fill a Game Session with Players
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-host-game-session-workflow.yml
-    name: Amazon GameLift Host a Game Session and Add a Player
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-matchmaking-accept-workflow.yml
-    name: Amazon GameLift Matchmaking with Player Acceptance
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-open-ports-host-session-workflow.yml
-    name: Amazon GameLift Open Fleet Ports then Host a Session
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-queue-placement-workflow.yml
-    name: Amazon GameLift Queue-Based Game Session Placement
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-scale-fleet-capacity-workflow.yml
-    name: Amazon GameLift Scale Fleet Capacity
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-search-and-join-workflow.yml
-    name: Amazon GameLift Search for a Game Session and Join It
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-setup-matchmaking-workflow.yml
-    name: Amazon GameLift Set Up and Run FlexMatch Matchmaking
-  - type: Arazzo
-    url: arazzo/amazon-gamelift-verify-build-create-fleet-workflow.yml
-    name: Amazon GameLift Verify Build Readiness then Create a Fleet
-  - type: Portal
-    url: https://aws.amazon.com/gamelift/
-  - type: Documentation
-    url: https://docs.aws.amazon.com/gamelift/
-  - type: TermsOfService
-    url: https://aws.amazon.com/service-terms/
-  - type: PrivacyPolicy
-    url: https://aws.amazon.com/privacy/
-  - type: Support
-    url: https://aws.amazon.com/premiumsupport/
-  - type: Blog
-    url: https://aws.amazon.com/blogs/gametech/tag/amazon-gamelift/
-  - type: GitHubOrganization
-    url: https://github.com/aws
-  - type: Console
-    url: https://console.aws.amazon.com/gamelift/
-  - type: Signup
-    url: https://portal.aws.amazon.com/billing/signup
-  - type: StatusPage
-    url: https://health.aws.amazon.com/health/status
-  - type: Contact
-    url: https://aws.amazon.com/contact-us/
-  - type: SDKs
-    url: https://aws.amazon.com/developer/tools/
-  - type: CLI
-    url: https://awscli.amazonaws.com/v2/documentation/api/latest/reference/gamelift/index.html
-  - type: Features
-    data:
-    - name: Managed Game Server Hosting
-      description: Fully managed service to deploy, operate, and scale dedicated game servers with automatic lifecycle management
-        for game and player sessions.
-    - name: FlexMatch Matchmaking
-      description: Customizable matchmaking service that connects up to 200 players into single game sessions based on configurable
-        matching rules.
-    - name: FleetIQ Optimization
-      description: Optimizes use of low-cost Spot Instances for game hosting, improving viability and reducing costs while maintaining
-        performance.
-    - name: Realtime Servers
-      description: Rapidly configurable game server framework with core Amazon GameLift infrastructure built in for quick deployment.
-    - name: Auto Scaling
-      description: Automatically scales fleet capacity up to 9,000 servers per minute to balance player demand and hosting costs.
-    - name: Multi-Region Deployment
-      description: Deploy game servers across multiple AWS regions with global queues for optimal player latency and resiliency.
-    - name: Game Session Queues
-      description: Multi-fleet, multi-region queues that use FleetIQ algorithms to prioritize game session placements based
-        on latency, cost, and availability.
-    - name: VPC Peering
-      description: Create and manage VPC peering connections between GameLift hosting resources and other AWS resources.
-    - name: Alias Management
-      description: Create fleet aliases to simplify game server transitions and updates without changing client configurations.
-  - type: UseCases
-    data:
-    - name: Multiplayer Game Launches
-      description: Deploy and scale game servers for launch day without uncertainty about player demand using predictive autoscaling.
-    - name: Session-Based Multiplayer
-      description: Host dedicated game servers for real-time multiplayer games with low latency and high performance.
-    - name: Player Matchmaking
-      description: Use FlexMatch to create fair, customizable matchmaking for players based on skill level, region, and other
-        criteria.
-    - name: Cost-Optimized Hosting
-      description: Leverage FleetIQ with Spot Instances to reduce game hosting costs while maintaining reliability.
-    - name: Global Game Distribution
-      description: Deploy game servers across multiple AWS regions to minimize player latency worldwide.
-  - type: SpectralRules
-    url: rules/amazon-gamelift-spectral-rules.yml
-  - type: Vocabulary
-    url: vocabulary/amazon-gamelift-vocabulary.yaml
-  - type: Integrations
-    data:
-    - name: AWS EC2
-      description: GameLift uses EC2 instances as the underlying compute for managed game server hosting.
-    - name: AWS Auto Scaling
-      description: Integrates with Auto Scaling groups for FleetIQ standalone deployment.
-    - name: Amazon CloudWatch
-      description: Monitor fleet metrics, game session activity, and performance data through CloudWatch.
-    - name: Amazon SNS
-      description: Receive notifications for matchmaking events and game session placement status.
-    - name: AWS IAM
-      description: Use IAM roles and policies to control access to GameLift resources and operations.
-    - name: Amazon S3
-      description: Store and retrieve game server build files using S3 buckets for fleet deployment.
-    - name: AWS CloudFormation
-      description: Provision and manage GameLift resources using infrastructure-as-code templates.
-  - type: Integrations
-    url: https://aws.amazon.com/marketplace
+- type: Website
+  url: https://amazon.com
+- type: CapabilityMap
+  url: capabilities/amazon-gamelift-capability-edges.yml
+  name: Amazon GameLift Business Capability Map
+- type: AgenticAccess
+  url: agentic-access/amazon-gamelift-agentic-access.yml
+- type: TrustCenter
+  url: security/amazon-gamelift-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-gamelift-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-gamelift-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-gamelift-authentication.yml
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-gamelift/overview
+- type: Arazzo
+  url: arazzo/amazon-gamelift-build-fleet-alias-workflow.yml
+  name: Amazon GameLift Stand Up a Fleet Behind an Alias
+- type: Arazzo
+  url: arazzo/amazon-gamelift-create-resolve-alias-workflow.yml
+  name: Amazon GameLift Create and Resolve a Fleet Alias
+- type: Arazzo
+  url: arazzo/amazon-gamelift-deploy-build-fleet-workflow.yml
+  name: Amazon GameLift Deploy Build to a Fleet
+- type: Arazzo
+  url: arazzo/amazon-gamelift-fill-game-session-workflow.yml
+  name: Amazon GameLift Fill a Game Session with Players
+- type: Arazzo
+  url: arazzo/amazon-gamelift-host-game-session-workflow.yml
+  name: Amazon GameLift Host a Game Session and Add a Player
+- type: Arazzo
+  url: arazzo/amazon-gamelift-matchmaking-accept-workflow.yml
+  name: Amazon GameLift Matchmaking with Player Acceptance
+- type: Arazzo
+  url: arazzo/amazon-gamelift-open-ports-host-session-workflow.yml
+  name: Amazon GameLift Open Fleet Ports then Host a Session
+- type: Arazzo
+  url: arazzo/amazon-gamelift-queue-placement-workflow.yml
+  name: Amazon GameLift Queue-Based Game Session Placement
+- type: Arazzo
+  url: arazzo/amazon-gamelift-scale-fleet-capacity-workflow.yml
+  name: Amazon GameLift Scale Fleet Capacity
+- type: Arazzo
+  url: arazzo/amazon-gamelift-search-and-join-workflow.yml
+  name: Amazon GameLift Search for a Game Session and Join It
+- type: Arazzo
+  url: arazzo/amazon-gamelift-setup-matchmaking-workflow.yml
+  name: Amazon GameLift Set Up and Run FlexMatch Matchmaking
+- type: Arazzo
+  url: arazzo/amazon-gamelift-verify-build-create-fleet-workflow.yml
+  name: Amazon GameLift Verify Build Readiness then Create a Fleet
+- type: Portal
+  url: https://aws.amazon.com/gamelift/
+- type: Documentation
+  url: https://docs.aws.amazon.com/gamelift/
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: Support
+  url: https://aws.amazon.com/premiumsupport/
+- type: Blog
+  url: https://aws.amazon.com/blogs/gametech/tag/amazon-gamelift/
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: Console
+  url: https://console.aws.amazon.com/gamelift/
+- type: Signup
+  url: https://portal.aws.amazon.com/billing/signup
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: Contact
+  url: https://aws.amazon.com/contact-us/
+- type: SDKs
+  url: https://aws.amazon.com/developer/tools/
+- type: CLI
+  url: https://awscli.amazonaws.com/v2/documentation/api/latest/reference/gamelift/index.html
+- type: Features
+  data:
+  - name: Managed Game Server Hosting
+    description: Fully managed service to deploy, operate, and scale dedicated game servers with automatic
+      lifecycle management for game and player sessions.
+  - name: FlexMatch Matchmaking
+    description: Customizable matchmaking service that connects up to 200 players into single game sessions
+      based on configurable matching rules.
+  - name: FleetIQ Optimization
+    description: Optimizes use of low-cost Spot Instances for game hosting, improving viability and reducing
+      costs while maintaining performance.
+  - name: Realtime Servers
+    description: Rapidly configurable game server framework with core Amazon GameLift infrastructure built
+      in for quick deployment.
+  - name: Auto Scaling
+    description: Automatically scales fleet capacity up to 9,000 servers per minute to balance player
+      demand and hosting costs.
+  - name: Multi-Region Deployment
+    description: Deploy game servers across multiple AWS regions with global queues for optimal player
+      latency and resiliency.
+  - name: Game Session Queues
+    description: Multi-fleet, multi-region queues that use FleetIQ algorithms to prioritize game session
+      placements based on latency, cost, and availability.
+  - name: VPC Peering
+    description: Create and manage VPC peering connections between GameLift hosting resources and other
+      AWS resources.
+  - name: Alias Management
+    description: Create fleet aliases to simplify game server transitions and updates without changing
+      client configurations.
+- type: UseCases
+  data:
+  - name: Multiplayer Game Launches
+    description: Deploy and scale game servers for launch day without uncertainty about player demand
+      using predictive autoscaling.
+  - name: Session-Based Multiplayer
+    description: Host dedicated game servers for real-time multiplayer games with low latency and high
+      performance.
+  - name: Player Matchmaking
+    description: Use FlexMatch to create fair, customizable matchmaking for players based on skill level,
+      region, and other criteria.
+  - name: Cost-Optimized Hosting
+    description: Leverage FleetIQ with Spot Instances to reduce game hosting costs while maintaining reliability.
+  - name: Global Game Distribution
+    description: Deploy game servers across multiple AWS regions to minimize player latency worldwide.
+- type: SpectralRules
+  url: rules/amazon-gamelift-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-gamelift-vocabulary.yaml
+- type: Integrations
+  data:
+  - name: AWS EC2
+    description: GameLift uses EC2 instances as the underlying compute for managed game server hosting.
+  - name: AWS Auto Scaling
+    description: Integrates with Auto Scaling groups for FleetIQ standalone deployment.
+  - name: Amazon CloudWatch
+    description: Monitor fleet metrics, game session activity, and performance data through CloudWatch.
+  - name: Amazon SNS
+    description: Receive notifications for matchmaking events and game session placement status.
+  - name: AWS IAM
+    description: Use IAM roles and policies to control access to GameLift resources and operations.
+  - name: Amazon S3
+    description: Store and retrieve game server build files using S3 buckets for fleet deployment.
+  - name: AWS CloudFormation
+    description: Provision and manage GameLift resources using infrastructure-as-code templates.
+- type: Integrations
+  url: https://aws.amazon.com/marketplace
 integrations:
 - name: Agent Mode
 - name: Sign in
