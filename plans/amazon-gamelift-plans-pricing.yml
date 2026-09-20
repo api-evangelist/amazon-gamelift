@@ -11,6 +11,10 @@ provenance:
   grounding: every price_text was found verbatim in the fetched page text
 audience: developer-api
 pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-09-20'
 published: true
 note: Page prices GameLift Servers by EC2-style instance hours with examples; network bandwidth stated
   free for gen 6+ instances. Spot savings 50-85% claimed; discounts negotiated above $80K/month.
