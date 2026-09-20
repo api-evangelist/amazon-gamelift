@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 19
+edge_count: 26
 edges:
 - tag: '#X Amz Target=GameLift.DeleteFleet'
   spec_file: amazon-gamelift-x-amz-target-gamelift-deletefleet-api-openapi.yml
@@ -152,6 +152,16 @@ edges:
     InstanceDefinitions, WeightedCapacity, IamRoleArn'
   reason: Creates an EC2 Auto Scaling-backed group of hosting instances with launch templates and instance-type
     definitions — cloud compute capacity provisioning, i.e. IT infrastructure.
+- tag: '#X Amz Target=GameLift.DeleteLocation'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-deletelocation-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: DeleteLocation ... CustomLocationNameOrArnModel
+  reason: Deletes a custom hosting location used for placing fleet capacity — cloud infrastructure/region
+    administration, not a business-domain capability.
+  recovered_from: sweep-20260828T235257Z-edges.json
 - tag: '#X Amz Target=GameLift.DeleteScalingPolicy'
   spec_file: amazon-gamelift-x-amz-target-gamelift-deletescalingpolicy-api-openapi.yml
   capability_id: BC-600.50
@@ -163,6 +173,59 @@ edges:
   reason: Auto-scaling policy on a hosting fleet of cloud servers — this is compute/cloud infrastructure
     control, not any media or entertainment business capability. IT Infrastructure Management is the honest
     fit; the game-industry framing of the vendor does not change what the operation does.
+- tag: '#X Amz Target=GameLift.DeregisterGameServer'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-deregistergameserver-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: DeregisterGameServer ... schemas GameServerGroupNameOrArn, GameServerId
+  reason: Despite the 'GameServer' noun, the operation removes a hosted server instance from a game server
+    group — server/compute fleet infrastructure management, not a gaming business capability in the candidate
+    list.
+  recovered_from: sweep-20260828T235257Z-edges.json
+- tag: '#X Amz Target=GameLift.DescribeFleetLocationAttributes'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-describefleetlocationattributes-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: DescribeFleetLocationAttributes — schemas LocationAttributes, FleetStatus, LocationState,
+    FleetArn
+  reason: Operation retrieves the deployment locations/regions and status of a hosting fleet of cloud
+    compute instances. This is cloud compute infrastructure administration, mapped to IT Infrastructure
+    Management; nothing here realises an industry business capability.
+  recovered_from: sweep-20260828T235257Z-edges.json
+- tag: '#X Amz Target=GameLift.DescribeFleetLocationCapacity'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-describefleetlocationcapacity-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: DescribeFleetLocationCapacity — schemas EC2InstanceCounts, FleetCapacity, EC2InstanceType
+  reason: Returns EC2 instance counts and capacity for a fleet in a location — cloud compute capacity
+    administration, i.e. IT infrastructure management rather than any business-domain capability.
+  recovered_from: sweep-20260828T235257Z-edges.json
+- tag: '#X Amz Target=GameLift.DescribeFleetLocationUtilization'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-describefleetlocationutilization-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: DescribeFleetLocationUtilization — schema FleetUtilization
+  reason: Reports utilisation of hosted compute fleets per location; this is cloud infrastructure monitoring/administration,
+    best fitted by IT Infrastructure Management.
+  recovered_from: sweep-20260828T235257Z-edges.json
+- tag: '#X Amz Target=GameLift.DescribeFleetUtilization'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-describefleetutilization-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: DescribeFleetUtilization — schemas FleetUtilization, FleetUtilizationList
+  reason: Queries utilisation metrics of cloud server fleets used to host game servers; infrastructure
+    operations data, mapped to IT Infrastructure Management.
+  recovered_from: sweep-20260828T235257Z-edges.json
 - tag: '#X Amz Target=GameLift.DescribeVpcPeeringAuthorizations'
   spec_file: amazon-gamelift-x-amz-target-gamelift-describevpcpeeringauthorizations-api-openapi.yml
   capability_id: BC-600.50
@@ -179,6 +242,16 @@ edges:
   confidence: 0.7
   evidence: DescribeVpcPeeringConnections ... VpcPeeringConnection, VpcPeeringConnectionStatus
   reason: Network peering connection inventory — cloud/network infrastructure management.
+- tag: '#X Amz Target=GameLift.ListCompute'
+  spec_file: amazon-gamelift-x-amz-target-gamelift-listcompute-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: 'ListCompute ... schemas: Compute, ComputeStatus, EC2InstanceType, IpAddress, FleetArn'
+  reason: Enumerates compute resources (EC2 instance types, IPs, DNS) registered to a hosting fleet —
+    plainly cloud compute infrastructure management.
+  recovered_from: sweep-20260828T235257Z-edges.json
 - tag: '#X Amz Target=GameLift.ListFleets'
   spec_file: amazon-gamelift-x-amz-target-gamelift-listfleets-api-openapi.yml
   capability_id: BC-600.50
