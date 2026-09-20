@@ -2648,6 +2648,8 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
 common:
+- type: Plans
+  url: plans/amazon-gamelift-plans-pricing.yml
 - type: Website
   url: https://amazon.com
 - type: CapabilityMap
