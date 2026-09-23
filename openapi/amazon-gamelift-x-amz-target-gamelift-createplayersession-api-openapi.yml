@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2015-10-01
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreatePlayerSession #X Amz Target=GameLift.CreatePlayerSession #X Amz Target=GameLift.CreatePlayerSession API'
-  description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
+  title: 'Amazon GameLift #X Amz Target=GameLift.CreatePlayerSession…'
+  description: Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/gamelift-2015-10-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +125,22 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreatePlayerSession
-      description: <p>Reserves an open player slot in a game session for a player. New player sessions can be created in any game session with an open slot that is in <code>ACTIVE</code> status and has a player creation policy of <code>ACCEPT_ALL</code>. You can add a group of players to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a> . </p> <p>To create a player session, specify a game session ID, player ID, and optionally a set of player data. </p> <p>If successful, a slot is reserved in the game session for the player and a new <code>PlayerSessions</code> object is returned with a player session ID. The player references the player session ID when sending a connection request to the game session, and the game server can use it to validate the player reservation with the Amazon GameLift service. Player sessions cannot be updated. </p> <p>The maximum number of players per game session is 200. It is not adjustable. </p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+      description: 'Reserves an open player slot in a game session for a player. New player sessions can be created in any game session with an open slot that is in ACTIVE status and has a player creation policy of ACCEPT_ALL. You can add a group of players to a game session with CreatePlayerSessions .
+
+
+        To create a player session, specify a game session ID, player ID, and optionally a set of player data.
+
+
+        If successful, a slot is reserved in the game session for the player and a new PlayerSessions object is returned with a player session ID. The player references the player session ID when sending a connection request to the game session, and the game server can use it to validate the player reservation with the Amazon GameLift service. Player sessions cannot be updated.
+
+
+        The maximum number of players per game session is 200. It is not adjustable.
+
+
+        Related actions
+
+
+        All APIs by task'
       responses:
         '200':
           description: Success
@@ -236,99 +252,19 @@ paths:
       tags:
       - '#X Amz Target=GameLift.CreatePlayerSession'
 components:
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    FleetId:
+    GameSessionFullException: {}
+    PlayerData:
       type: string
-      pattern: ^fleet-\S+
-    CreatePlayerSessionInput:
-      type: object
-      required:
-      - GameSessionId
-      - PlayerId
-      title: CreatePlayerSessionInput
-      properties:
-        GameSessionId:
-          allOf:
-          - $ref: '#/components/schemas/ArnStringModel'
-          - description: A unique identifier for the game session to add a player to.
-        PlayerId:
-          allOf:
-          - $ref: '#/components/schemas/NonZeroAndMaxString'
-          - description: A unique identifier for a player. Player IDs are developer-defined.
-        PlayerData:
-          allOf:
-          - $ref: '#/components/schemas/PlayerData'
-          - description: Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.
+      minLength: 1
+      maxLength: 2048
     InvalidRequestException: {}
-    TerminalRoutingStrategyException: {}
     Timestamp:
       type: string
       format: date-time
-    InvalidGameSessionStatusException: {}
-    PlayerSessionId:
+    FleetId:
       type: string
-      pattern: ^psess-\S+
-    IpAddress:
-      type: string
-      pattern: ^[0-9A-Fa-f\:\.]+
-      minLength: 1
-      maxLength: 128
-    UnauthorizedException: {}
-    NotFoundException: {}
-    CreatePlayerSessionOutput:
-      type: object
-      properties:
-        PlayerSession:
-          allOf:
-          - $ref: '#/components/schemas/PlayerSession'
-          - description: Object that describes the newly created player session record.
-    NonZeroAndMaxString:
-      type: string
-      minLength: 1
-      maxLength: 1024
+      pattern: ^fleet-\S+
     PlayerSession:
       type: object
       properties:
@@ -381,6 +317,36 @@ components:
           - $ref: '#/components/schemas/PlayerData'
           - description: 'Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. '
       description: <p>Represents a player session. Player sessions are created either for a specific game session, or as part of a game session placement or matchmaking request. A player session can represents a reserved player slot in a game session (when status is <code>RESERVED</code>) or actual player activity in a game session (when status is <code>ACTIVE</code>). A player session object, including player data, is automatically passed to a game session when the player connects to the game session and is validated. After the game session ends, player sessions information is retained for 30 days and then removed.</p> <p> <b>Related actions</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    NotFoundException: {}
+    TerminalRoutingStrategyException: {}
+    CreatePlayerSessionOutput:
+      type: object
+      properties:
+        PlayerSession:
+          allOf:
+          - $ref: '#/components/schemas/PlayerSession'
+          - description: Object that describes the newly created player session record.
+    PlayerSessionId:
+      type: string
+      pattern: ^psess-\S+
+    NonZeroAndMaxString:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    InternalServiceException: {}
+    ArnStringModel:
+      type: string
+      pattern: '[a-zA-Z0-9:/-]+'
+      minLength: 1
+      maxLength: 256
+    IpAddress:
+      type: string
+      pattern: ^[0-9A-Fa-f\:\.]+
+      minLength: 1
+      maxLength: 128
+    FleetArn:
+      type: string
+      pattern: ^arn:.*:fleet\/fleet-\S+
     PlayerSessionStatus:
       type: string
       enum:
@@ -388,26 +354,76 @@ components:
       - ACTIVE
       - COMPLETED
       - TIMEDOUT
-    DnsName:
-      type: string
-    InternalServiceException: {}
-    PlayerData:
-      type: string
-      minLength: 1
-      maxLength: 2048
-    GameSessionFullException: {}
     PortNumber:
       type: integer
       minimum: 1
       maximum: 60000
-    ArnStringModel:
+    InvalidGameSessionStatusException: {}
+    DnsName:
       type: string
-      pattern: '[a-zA-Z0-9:/-]+'
-      minLength: 1
-      maxLength: 256
-    FleetArn:
-      type: string
-      pattern: ^arn:.*:fleet\/fleet-\S+
+    UnauthorizedException: {}
+    CreatePlayerSessionInput:
+      type: object
+      required:
+      - GameSessionId
+      - PlayerId
+      title: CreatePlayerSessionInput
+      properties:
+        GameSessionId:
+          allOf:
+          - $ref: '#/components/schemas/ArnStringModel'
+          - description: A unique identifier for the game session to add a player to.
+        PlayerId:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A unique identifier for a player. Player IDs are developer-defined.
+        PlayerData:
+          allOf:
+          - $ref: '#/components/schemas/PlayerData'
+          - description: Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

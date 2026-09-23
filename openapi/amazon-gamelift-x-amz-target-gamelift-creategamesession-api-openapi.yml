@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2015-10-01
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateGameSession #X Amz Target=GameLift.CreateGameSession #X Amz Target=GameLift.CreateGameSession API'
-  description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
+  title: 'Amazon GameLift #X Amz Target=GameLift.CreateGameSession API'
+  description: Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/gamelift-2015-10-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +125,37 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateGameSession
-      description: '<p>Creates a multiplayer game session for players in a specific fleet location. This operation prompts an available server process to start a game session and retrieves connection information for the new game session. As an alternative, consider using the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a> , which uses FleetIQ algorithms and queues to optimize the placement process.</p> <p>When creating a game session, you specify exactly where you want to place it and provide a set of game session configuration settings. The fleet must be in <code>ACTIVE</code> status before a game session can be created in it. </p> <p>This operation can be used in the following ways: </p> <ul> <li> <p>To create a game session on an instance in a fleet''s home Region, provide a fleet or alias ID along with your game session configuration. </p> </li> <li> <p>To create a game session on an instance in a fleet''s remote location, provide a fleet or alias ID and a location name, along with your game session configuration. </p> </li> </ul> <p>If successful, a workflow is initiated to start a new game session. A <code>GameSession</code> object is returned containing the game session configuration and status. When the status is <code>ACTIVE</code>, game session connection information is provided and player sessions can be created for the game session. By default, newly created game sessions are open to new players. You can restrict new player access by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> to change the game session''s player session creation policy.</p> <p>Game session logs are retained for all active game sessions for 14 days. To access the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a> to download the log files.</p> <p> <i>Available in Amazon GameLift Local.</i> </p> <p> <b>Learn more</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>'
+      description: 'Creates a multiplayer game session for players in a specific fleet location. This operation prompts an available server process to start a game session and retrieves connection information for the new game session. As an alternative, consider using the Amazon GameLift game session placement feature with StartGameSessionPlacement , which uses FleetIQ algorithms and queues to optimize the placement process.
+
+
+        When creating a game session, you specify exactly where you want to place it and provide a set of game session configuration settings. The fleet must be in ACTIVE status before a game session can be created in it.
+
+
+        This operation can be used in the following ways:
+
+
+        To create a game session on an instance in a fleet''s home Region, provide a fleet or alias ID along with your game session configuration.
+
+
+        To create a game session on an instance in a fleet''s remote location, provide a fleet or alias ID and a location name, along with your game session configuration.
+
+
+        If successful, a workflow is initiated to start a new game session. A GameSession object is returned containing the game session configuration and status. When the status is ACTIVE, game session connection information is provided and player sessions can be created for the game session. By default, newly created game sessions are open to new players. You can restrict new player access by using UpdateGameSession to change the game session''s player session creation policy.
+
+
+        Game session logs are retained for all active game sessions for 14 days. To access the logs, call GetGameSessionLogUrl to download the log files.
+
+
+        Available in Amazon GameLift Local.
+
+
+        Learn more
+
+
+        Start a game session
+
+
+        All APIs by task'
       responses:
         '200':
           description: Success
@@ -280,78 +311,47 @@ paths:
       tags:
       - '#X Amz Target=GameLift.CreateGameSession'
 components:
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    IdempotentParameterMismatchException: {}
-    FleetId:
+    LocationStringModel:
       type: string
-      pattern: ^fleet-\S+
-    LargeGameSessionData:
-      type: string
+      pattern: ^[A-Za-z0-9\-]+
       minLength: 1
-      maxLength: 262144
+      maxLength: 64
     LimitExceededException: {}
-    FleetIdOrArn:
-      type: string
-      pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-    FleetCapacityExceededException: {}
+    InvalidFleetStatusException: {}
     InvalidRequestException: {}
     ConflictException: {}
-    TerminalRoutingStrategyException: {}
     Timestamp:
       type: string
       format: date-time
-    IpAddress:
+    FleetId:
       type: string
-      pattern: ^[0-9A-Fa-f\:\.]+
+      pattern: ^fleet-\S+
+    UnsupportedRegionException: {}
+    GamePropertyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GameProperty'
+      maxItems: 16
+    IdStringModel:
+      type: string
+      pattern: '[a-zA-Z0-9-]+'
       minLength: 1
-      maxLength: 128
+      maxLength: 48
+    PlayerSessionCreationPolicy:
+      type: string
+      enum:
+      - ACCEPT_ALL
+      - DENY_ALL
+    NotFoundException: {}
+    TerminalRoutingStrategyException: {}
     GamePropertyKey:
       type: string
       maxLength: 32
-    UnauthorizedException: {}
+    NonZeroAndMaxString:
+      type: string
+      minLength: 1
+      maxLength: 1024
     CreateGameSessionInput:
       type: object
       required:
@@ -398,33 +398,14 @@ components:
           allOf:
           - $ref: '#/components/schemas/LocationStringModel'
           - description: 'A fleet''s remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet''s home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. '
-    NotFoundException: {}
-    AliasIdOrArn:
+    FleetIdOrArn:
       type: string
-      pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+
-    NonZeroAndMaxString:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    GamePropertyValue:
-      type: string
-      maxLength: 96
-    CreateGameSessionOutput:
-      type: object
-      properties:
-        GameSession:
-          allOf:
-          - $ref: '#/components/schemas/GameSession'
-          - description: Object that describes the newly created game session record.
-    DnsName:
-      type: string
-    IdStringModel:
-      type: string
-      pattern: '[a-zA-Z0-9-]+'
-      minLength: 1
-      maxLength: 48
+      pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
+    FleetCapacityExceededException: {}
+    WholeNumber:
+      type: integer
+      minimum: 0
     InternalServiceException: {}
-    InvalidFleetStatusException: {}
     GameSession:
       type: object
       properties:
@@ -505,18 +486,23 @@ components:
           - $ref: '#/components/schemas/LocationStringModel'
           - description: 'The fleet location where the game session is running. This value might specify the fleet''s home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. '
       description: <p>Properties describing a game session.</p> <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>. </p> <p>Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-    MatchmakerData:
+    LargeGameSessionData:
       type: string
       minLength: 1
-      maxLength: 390000
-    GameSessionStatus:
+      maxLength: 262144
+    IpAddress:
       type: string
-      enum:
-      - ACTIVE
-      - ACTIVATING
-      - TERMINATED
-      - TERMINATING
-      - ERROR
+      pattern: ^[0-9A-Fa-f\:\.]+
+      minLength: 1
+      maxLength: 128
+    IdempotentParameterMismatchException: {}
+    CreateGameSessionOutput:
+      type: object
+      properties:
+        GameSession:
+          allOf:
+          - $ref: '#/components/schemas/GameSession'
+          - description: Object that describes the newly created game session record.
     GameProperty:
       type: object
       required:
@@ -532,36 +518,81 @@ components:
           - $ref: '#/components/schemas/GamePropertyValue'
           - description: The game property value.
       description: Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session. For example, a game property might specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session. For more information, see the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"> Amazon GameLift Developer Guide</a>.
+    FleetArn:
+      type: string
+      pattern: ^arn:.*:fleet\/fleet-\S+
+    MatchmakerData:
+      type: string
+      minLength: 1
+      maxLength: 390000
+    GamePropertyValue:
+      type: string
+      maxLength: 96
+    GameSessionStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - ACTIVATING
+      - TERMINATED
+      - TERMINATING
+      - ERROR
     PortNumber:
       type: integer
       minimum: 1
       maximum: 60000
-    WholeNumber:
-      type: integer
-      minimum: 0
+    AliasIdOrArn:
+      type: string
+      pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+
     GameSessionStatusReason:
       type: string
       enum:
       - INTERRUPTED
-    UnsupportedRegionException: {}
-    FleetArn:
+    DnsName:
       type: string
-      pattern: ^arn:.*:fleet\/fleet-\S+
-    PlayerSessionCreationPolicy:
-      type: string
-      enum:
-      - ACCEPT_ALL
-      - DENY_ALL
-    LocationStringModel:
-      type: string
-      pattern: ^[A-Za-z0-9\-]+
-      minLength: 1
-      maxLength: 64
-    GamePropertyList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GameProperty'
-      maxItems: 16
+    UnauthorizedException: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

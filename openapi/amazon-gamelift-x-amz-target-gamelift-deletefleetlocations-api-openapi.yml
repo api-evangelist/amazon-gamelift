@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2015-10-01
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DeleteFleetLocations #X Amz Target=GameLift.DeleteFleetLocations #X Amz Target=GameLift.DeleteFleetLocations API'
-  description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
+  title: 'Amazon GameLift #X Amz Target=GameLift.DeleteFleetLocations…'
+  description: Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/gamelift-2015-10-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +125,19 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DeleteFleetLocations
-      description: <p>Removes locations from a multi-location fleet. When deleting a location, all game server process and all instances that are still active in the location are shut down. </p> <p>To delete fleet locations, identify the fleet ID and provide a list of the locations to be deleted. </p> <p>If successful, GameLift sets the location status to <code>DELETING</code>, and begins to shut down existing server processes and terminate instances in each location being deleted. When completed, the location status changes to <code>TERMINATED</code>.</p> <p> <b>Learn more</b> </p> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
+      description: 'Removes locations from a multi-location fleet. When deleting a location, all game server process and all instances that are still active in the location are shut down.
+
+
+        To delete fleet locations, identify the fleet ID and provide a list of the locations to be deleted.
+
+
+        If successful, GameLift sets the location status to DELETING, and begins to shut down existing server processes and terminate instances in each location being deleted. When completed, the location status changes to TERMINATED.
+
+
+        Learn more
+
+
+        Setting up Amazon GameLift fleets'
       responses:
         '200':
           description: Success
@@ -216,27 +229,91 @@ paths:
       tags:
       - '#X Amz Target=GameLift.DeleteFleetLocations'
 components:
+  schemas:
+    LocationStringModel:
+      type: string
+      pattern: ^[A-Za-z0-9\-]+
+      minLength: 1
+      maxLength: 64
+    LocationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LocationStringModel'
+      minItems: 1
+      maxItems: 100
+    LocationStateList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LocationState'
+    InvalidRequestException: {}
+    UnsupportedRegionException: {}
+    NotFoundException: {}
+    FleetIdOrArn:
+      type: string
+      pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
+    InternalServiceException: {}
+    FleetArn:
+      type: string
+      pattern: ^arn:.*:fleet\/fleet-\S+
+    DeleteFleetLocationsOutput:
+      type: object
+      properties:
+        FleetId:
+          allOf:
+          - $ref: '#/components/schemas/FleetIdOrArn'
+          - description: A unique identifier for the fleet that location attributes are being deleted for.
+        FleetArn:
+          allOf:
+          - $ref: '#/components/schemas/FleetArn'
+          - description: The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        LocationStates:
+          allOf:
+          - $ref: '#/components/schemas/LocationStateList'
+          - description: The remote locations that are being deleted, with each location status set to <code>DELETING</code>.
+    FleetStatus:
+      type: string
+      enum:
+      - NEW
+      - DOWNLOADING
+      - VALIDATING
+      - BUILDING
+      - ACTIVATING
+      - ACTIVE
+      - DELETING
+      - ERROR
+      - TERMINATED
+      - NOT_FOUND
+    LocationState:
+      type: object
+      properties:
+        Location:
+          allOf:
+          - $ref: '#/components/schemas/LocationStringModel'
+          - description: 'The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. '
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/FleetStatus'
+          - description: 'The life-cycle status of a fleet location. '
+      description: <p>A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet.</p> <ul> <li> <p> <b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1. </p> </li> <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p> </li> <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p> </li> <li> <p> <b>TERMINATED</b> -- The fleet location no longer exists.</p> </li> <li> <p> <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created. </p> </li> </ul>
+    DeleteFleetLocationsInput:
+      type: object
+      required:
+      - FleetId
+      - Locations
+      title: DeleteFleetLocationsInput
+      properties:
+        FleetId:
+          allOf:
+          - $ref: '#/components/schemas/FleetIdOrArn'
+          - description: A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.
+        Locations:
+          allOf:
+          - $ref: '#/components/schemas/LocationList'
+          - description: The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.
+    UnauthorizedException: {}
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -253,94 +330,30 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-  schemas:
-    DeleteFleetLocationsOutput:
-      type: object
-      properties:
-        FleetId:
-          allOf:
-          - $ref: '#/components/schemas/FleetIdOrArn'
-          - description: A unique identifier for the fleet that location attributes are being deleted for.
-        FleetArn:
-          allOf:
-          - $ref: '#/components/schemas/FleetArn'
-          - description: The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-        LocationStates:
-          allOf:
-          - $ref: '#/components/schemas/LocationStateList'
-          - description: The remote locations that are being deleted, with each location status set to <code>DELETING</code>.
-    InvalidRequestException: {}
-    FleetStatus:
-      type: string
-      enum:
-      - NEW
-      - DOWNLOADING
-      - VALIDATING
-      - BUILDING
-      - ACTIVATING
-      - ACTIVE
-      - DELETING
-      - ERROR
-      - TERMINATED
-      - NOT_FOUND
-    LocationStateList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LocationState'
-    UnauthorizedException: {}
-    NotFoundException: {}
-    LocationState:
-      type: object
-      properties:
-        Location:
-          allOf:
-          - $ref: '#/components/schemas/LocationStringModel'
-          - description: 'The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. '
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/FleetStatus'
-          - description: 'The life-cycle status of a fleet location. '
-      description: <p>A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet.</p> <ul> <li> <p> <b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1. </p> </li> <li> <p> <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p> </li> <li> <p> <b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p> </li> <li> <p> <b>TERMINATED</b> -- The fleet location no longer exists.</p> </li> <li> <p> <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created. </p> </li> </ul>
-    LocationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LocationStringModel'
-      minItems: 1
-      maxItems: 100
-    InternalServiceException: {}
-    DeleteFleetLocationsInput:
-      type: object
-      required:
-      - FleetId
-      - Locations
-      title: DeleteFleetLocationsInput
-      properties:
-        FleetId:
-          allOf:
-          - $ref: '#/components/schemas/FleetIdOrArn'
-          - description: A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.
-        Locations:
-          allOf:
-          - $ref: '#/components/schemas/LocationList'
-          - description: The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.
-    UnsupportedRegionException: {}
-    FleetArn:
-      type: string
-      pattern: ^arn:.*:fleet\/fleet-\S+
-    FleetIdOrArn:
-      type: string
-      pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-    LocationStringModel:
-      type: string
-      pattern: ^[A-Za-z0-9\-]+
-      minLength: 1
-      maxLength: 64
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

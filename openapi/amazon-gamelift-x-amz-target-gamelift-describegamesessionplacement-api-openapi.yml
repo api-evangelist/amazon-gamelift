@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2015-10-01
   x-release: v4
-  title: 'Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DescribeGameSessionPlacement #X Amz Target=GameLift.DescribeGameSessionPlacement #X Amz Target=GameLift.DescribeGameSessionPlacement API'
-  description: <p>Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to meet player demand. </p> <p> <b>About Amazon GameLift solutions</b> </p> <p>Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.</p> <ul> <li> <p>Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service to set up and maintain computing machines for hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking. You can use automatic scaling tools to balance player demand and hosting costs, configure your game session management to minimize player latency, and add FlexMatch for matchmaking.</p> </li> <li> <p>Managed hosting with Realtime Servers -- With Amazon GameLift Realtime Servers, you can quickly configure and set up ready-to-go game servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure already built in. Then use the full range of Amazon GameLift managed hosting features, including FlexMatch, for your game.</p> </li> <li> <p>Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of low-cost Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and FlexMatch standalone services.</p> </li> <li> <p>Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service into your own hosting solution.</p> </li> </ul> <p> <b>About this API Reference</b> </p> <p>This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon GameLift API operations listed by tasks</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift tools and resources</a> </p> </li> </ul>
+  title: 'Amazon GameLift #X Amz Target=GameLift.DescribeGameSessionPl…'
+  description: Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for deploying, operating, and scaling game servers.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/gamelift-2015-10-01.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +125,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DescribeGameSessionPlacement
-      description: <p>Retrieves information, including current status, about a game session placement request. </p> <p>To get game session placement details, specify the placement ID.</p> <p>This operation is not designed to be continually called to track game session status. This practice can cause you to exceed your API limit, which results in errors. Instead, you must configure configure an Amazon Simple Notification Service (SNS) topic to receive notifications from FlexMatch or queues. Continuously polling with <code>DescribeGameSessionPlacement</code> should only be used for games in development with low game session usage. </p>
+      description: 'Retrieves information, including current status, about a game session placement request.
+
+
+        To get game session placement details, specify the placement ID.
+
+
+        This operation is not designed to be continually called to track game session status. This practice can cause you to exceed your API limit, which results in errors. Instead, you must configure configure an Amazon Simple Notification Service (SNS) topic to receive notifications from FlexMatch or queues. Continuously polling with DescribeGameSessionPlacement should only be used for games in development with low game session usage.'
       responses:
         '200':
           description: Success
@@ -203,78 +210,143 @@ paths:
       tags:
       - '#X Amz Target=GameLift.DescribeGameSessionPlacement'
 components:
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    LargeGameSessionData:
+    Float:
+      type: number
+      format: float
+    InvalidRequestException: {}
+    GameSessionPlacementState:
+      type: string
+      enum:
+      - PENDING
+      - FULFILLED
+      - CANCELLED
+      - TIMED_OUT
+      - FAILED
+    Timestamp:
+      type: string
+      format: date-time
+    PlayerLatency:
+      type: object
+      properties:
+        PlayerId:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A unique identifier for a player associated with the latency data.
+        RegionIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: Name of the Region that is associated with the latency value.
+        LatencyInMilliseconds:
+          allOf:
+          - $ref: '#/components/schemas/Float'
+          - description: Amount of time that represents the time lag experienced by the player when connected to the specified Region.
+      description: 'Regional latency information for a player, used when requesting a new game session. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player''s latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player. '
+    GamePropertyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GameProperty'
+      maxItems: 16
+    IdStringModel:
+      type: string
+      pattern: '[a-zA-Z0-9-]+'
+      minLength: 1
+      maxLength: 48
+    PlayerLatencyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PlayerLatency'
+    NotFoundException: {}
+    PlayerSessionId:
+      type: string
+      pattern: ^psess-\S+
+    NonZeroAndMaxString:
       type: string
       minLength: 1
-      maxLength: 262144
-    InvalidRequestException: {}
+      maxLength: 1024
+    DescribeGameSessionPlacementInput:
+      type: object
+      required:
+      - PlacementId
+      title: DescribeGameSessionPlacementInput
+      properties:
+        PlacementId:
+          allOf:
+          - $ref: '#/components/schemas/IdStringModel'
+          - description: A unique identifier for a game session placement to retrieve.
+    GamePropertyKey:
+      type: string
+      maxLength: 32
+    WholeNumber:
+      type: integer
+      minimum: 0
+    InternalServiceException: {}
     GameSessionQueueName:
       type: string
       pattern: '[a-zA-Z0-9-]+'
       minLength: 1
       maxLength: 128
-    PlayerSessionId:
+    LargeGameSessionData:
       type: string
-      pattern: ^psess-\S+
-    Timestamp:
-      type: string
-      format: date-time
-    PlacedPlayerSessionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PlacedPlayerSession'
+      minLength: 1
+      maxLength: 262144
     IpAddress:
       type: string
       pattern: ^[0-9A-Fa-f\:\.]+
       minLength: 1
       maxLength: 128
-    GamePropertyKey:
+    PlacedPlayerSessionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PlacedPlayerSession'
+    GameProperty:
+      type: object
+      required:
+      - Key
+      - Value
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/GamePropertyKey'
+          - description: The game property identifier.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/GamePropertyValue'
+          - description: The game property value.
+      description: Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session. For example, a game property might specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session. For more information, see the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"> Amazon GameLift Developer Guide</a>.
+    MatchmakerData:
       type: string
-      maxLength: 32
+      minLength: 1
+      maxLength: 390000
+    GamePropertyValue:
+      type: string
+      maxLength: 96
+    PortNumber:
+      type: integer
+      minimum: 1
+      maximum: 60000
+    PlacedPlayerSession:
+      type: object
+      properties:
+        PlayerId:
+          allOf:
+          - $ref: '#/components/schemas/NonZeroAndMaxString'
+          - description: A unique identifier for a player that is associated with this player session.
+        PlayerSessionId:
+          allOf:
+          - $ref: '#/components/schemas/PlayerSessionId'
+          - description: A unique identifier for a player session.
+      description: Information about a player session. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html">DescribePlayerSessions</a> with the player session ID.
+    DescribeGameSessionPlacementOutput:
+      type: object
+      properties:
+        GameSessionPlacement:
+          allOf:
+          - $ref: '#/components/schemas/GameSessionPlacement'
+          - description: Object that describes the requested game session placement.
+    DnsName:
+      type: string
+    UnauthorizedException: {}
     GameSessionPlacement:
       type: object
       properties:
@@ -351,114 +423,49 @@ components:
           - $ref: '#/components/schemas/MatchmakerData'
           - description: Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It identifies the matchmaking configuration used to create the match, and contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>.
       description: This object includes the full details of the original request plus the current status and start/end time stamps.
-    PlayerLatencyList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PlayerLatency'
-    UnauthorizedException: {}
-    NotFoundException: {}
-    DescribeGameSessionPlacementOutput:
-      type: object
-      properties:
-        GameSessionPlacement:
-          allOf:
-          - $ref: '#/components/schemas/GameSessionPlacement'
-          - description: Object that describes the requested game session placement.
-    GameSessionPlacementState:
-      type: string
-      enum:
-      - PENDING
-      - FULFILLED
-      - CANCELLED
-      - TIMED_OUT
-      - FAILED
-    NonZeroAndMaxString:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    GamePropertyValue:
-      type: string
-      maxLength: 96
-    IdStringModel:
-      type: string
-      pattern: '[a-zA-Z0-9-]+'
-      minLength: 1
-      maxLength: 48
-    DnsName:
-      type: string
-    InternalServiceException: {}
-    DescribeGameSessionPlacementInput:
-      type: object
-      required:
-      - PlacementId
-      title: DescribeGameSessionPlacementInput
-      properties:
-        PlacementId:
-          allOf:
-          - $ref: '#/components/schemas/IdStringModel'
-          - description: A unique identifier for a game session placement to retrieve.
-    MatchmakerData:
-      type: string
-      minLength: 1
-      maxLength: 390000
-    GameProperty:
-      type: object
-      required:
-      - Key
-      - Value
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/GamePropertyKey'
-          - description: The game property identifier.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/GamePropertyValue'
-          - description: The game property value.
-      description: Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session. For example, a game property might specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session. For more information, see the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"> Amazon GameLift Developer Guide</a>.
-    PlacedPlayerSession:
-      type: object
-      properties:
-        PlayerId:
-          allOf:
-          - $ref: '#/components/schemas/NonZeroAndMaxString'
-          - description: A unique identifier for a player that is associated with this player session.
-        PlayerSessionId:
-          allOf:
-          - $ref: '#/components/schemas/PlayerSessionId'
-          - description: A unique identifier for a player session.
-      description: Information about a player session. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html">DescribePlayerSessions</a> with the player session ID.
-    PortNumber:
-      type: integer
-      minimum: 1
-      maximum: 60000
-    WholeNumber:
-      type: integer
-      minimum: 0
-    PlayerLatency:
-      type: object
-      properties:
-        PlayerId:
-          allOf:
-          - $ref: '#/components/schemas/NonZeroAndMaxString'
-          - description: A unique identifier for a player associated with the latency data.
-        RegionIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/NonZeroAndMaxString'
-          - description: Name of the Region that is associated with the latency value.
-        LatencyInMilliseconds:
-          allOf:
-          - $ref: '#/components/schemas/Float'
-          - description: Amount of time that represents the time lag experienced by the player when connected to the specified Region.
-      description: 'Regional latency information for a player, used when requesting a new game session. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player''s latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player. '
-    Float:
-      type: number
-      format: float
-    GamePropertyList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GameProperty'
-      maxItems: 16
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
