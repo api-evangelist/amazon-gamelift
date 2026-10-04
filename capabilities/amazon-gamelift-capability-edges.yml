@@ -4,6 +4,7 @@ generated_by: planning/capability-mapping/scripts/classify_capabilities.py
 model: claude-opus-5
 frame:
 - Media, Entertainment & Telecom Content
+- Software & Technology
 min_confidence: 0.7
 capability_model:
   source: https://github.com/vincentmakes/turbo-ea-capabilities
@@ -11,7 +12,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 26
+edge_count: 27
 edges:
 - tag: '#X Amz Target=GameLift.DeleteFleet'
   spec_file: amazon-gamelift-x-amz-target-gamelift-deletefleet-api-openapi.yml
@@ -261,3 +262,15 @@ edges:
   evidence: 'ListFleets ... schemas: FleetIdList, BuildIdOrArn, ScriptIdOrArn'
   reason: Fleets are pools of cloud servers hosting game sessions; the vendor description states GameLift
     'deploys, operates, and scales cloud servers'. Listing fleets is compute/cloud infrastructure management.
+- tag: Amazon GameLift
+  spec_file: amazon-gamelift-amazon-gamelift-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: '"CreateFleet", "CreateFleetLocations", "CreateGameServerGroup" — "hosting session-based multiplayer
+    game servers in the cloud, including tools for deploying, operating, and scaling game servers"'
+  reason: The operations provision and scale cloud server fleets and instances, i.e. managed compute infrastructure.
+    This is an IT infrastructure capability (compute/cloud), not a game-business capability on the candidate
+    list. Matchmaking/game-session operations are application-domain specifics with no candidate equivalent,
+    so the infrastructure reading is the honest mapping.
