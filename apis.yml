@@ -72,6 +72,10 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-gamelift-context.jsonld
 common:
+- type: RateLimits
+  url: rate-limits/amazon-gamelift-rate-limits.yml
+- type: FinOps
+  url: finops/amazon-gamelift-finops.yml
 - type: Pricing
   url: https://aws.amazon.com/gamelift/servers/pricing/
 - type: Plans
