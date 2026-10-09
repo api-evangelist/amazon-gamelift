@@ -55,3 +55,59 @@ plans:
     costs are over $80K per month'
   currency: USD
   period: month
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  units:
+  - compute
+  plans:
+  - name: c6a.4xlarge On-Demand (Linux, Us-east Ohio)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: c6a.large On-Demand / Spot
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: c6i.4xlarge On-Demand
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: c6g.4xlarge Graviton
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Graviton Spot
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Large scale discount
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - month

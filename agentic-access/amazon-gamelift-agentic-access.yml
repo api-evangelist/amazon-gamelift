@@ -1,15 +1,75 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/amazon-gamelift-openapi.yaml
+source: openapi/amazon-gamelift-x-amz-target-gamelift-acceptmatch-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-claimgameserver-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-createalias-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-createbuild-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-createfleet-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-createfleetlocations-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-creategameservergroup-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-creategamesession-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-creategamesessionqueue-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-createlocation-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-creatematchmakingconfiguration-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-creatematchmakingruleset-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-createplayersession-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-createplayersessions-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-createscript-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-createvpcpeeringauthorization-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-createvpcpeeringconnection-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-deletealias-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-deletebuild-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-deletefleet-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-deletefleetlocations-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-deletegameservergroup-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-deletegamesessionqueue-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-deletelocation-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-deletematchmakingconfiguration-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-deletematchmakingruleset-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-deletescalingpolicy-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-deletescript-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringauthorization-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-deletevpcpeeringconnection-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-deregistercompute-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-deregistergameserver-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describealias-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-describebuild-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describecompute-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-describeec2instancelimits-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describefleetattributes-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-describefleetcapacity-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describefleetevents-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationattributes-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationcapacity-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describefleetlocationutilization-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describefleetportsettings-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-describefleetutilization-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describegameserver-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-describegameservergroup-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describegameserverinstances-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describegamesessiondetails-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describegamesessionplacement-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describegamesessionqueues-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-describegamesessions-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describeinstances-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-describematchmaking-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describematchmakingconfigurations-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describematchmakingrulesets-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describeplayersessions-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-describeruntimeconfiguration-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describescalingpolicies-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-describescript-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describevpcpeeringauthorizations-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-describevpcpeeringconnections-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-getcomputeaccess-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-getcomputeauthtoken-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-getgamesessionlogurl-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-getinstanceaccess-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-listaliases-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-listbuilds-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-listcompute-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-listfleets-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-listgameservergroups-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-listgameservers-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-listlocations-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-listscripts-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-listtagsforresource-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-putscalingpolicy-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-registercompute-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-registergameserver-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-requestuploadcredentials-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-resolvealias-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-resumegameservergroup-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-searchgamesessions-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-startfleetactions-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-startgamesessionplacement-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-startmatchbackfill-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-startmatchmaking-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-stopfleetactions-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-stopgamesessionplacement-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-stopmatchmaking-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-suspendgameservergroup-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-tagresource-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-untagresource-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-updatealias-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-updatebuild-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-updatefleetattributes-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-updatefleetcapacity-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-updatefleetportsettings-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-updategameserver-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-updategameservergroup-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-updategamesession-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-updategamesessionqueue-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-updatematchmakingconfiguration-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-updateruntimeconfiguration-api-openapi.yml,
+  openapi/amazon-gamelift-x-amz-target-gamelift-updatescript-api-openapi.yml, openapi/amazon-gamelift-x-amz-target-gamelift-validatematchmakingruleset-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 104
   by_action_class:
-    acting: 104
+    acting: 93
+    connected: 11
   by_consequence:
-    write: 101
+    write: 90
+    read: 11
     safety-critical: 3
   human_in_the_loop_required: 3
 operations:
@@ -993,18 +1053,12 @@ operations:
   method: post
   operationId: GetComputeAccess
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=GameLift.GetComputeAuthToken
   method: post
   operationId: GetComputeAuthToken
@@ -1041,162 +1095,102 @@ operations:
   method: post
   operationId: GetInstanceAccess
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=GameLift.ListAliases
   method: post
   operationId: ListAliases
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=GameLift.ListBuilds
   method: post
   operationId: ListBuilds
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=GameLift.ListCompute
   method: post
   operationId: ListCompute
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=GameLift.ListFleets
   method: post
   operationId: ListFleets
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=GameLift.ListGameServerGroups
   method: post
   operationId: ListGameServerGroups
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=GameLift.ListGameServers
   method: post
   operationId: ListGameServers
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=GameLift.ListLocations
   method: post
   operationId: ListLocations
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=GameLift.ListScripts
   method: post
   operationId: ListScripts
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=GameLift.ListTagsForResource
   method: post
   operationId: ListTagsForResource
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /#X-Amz-Target=GameLift.PutScalingPolicy
   method: post
   operationId: PutScalingPolicy
