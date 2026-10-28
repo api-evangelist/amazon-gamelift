@@ -1,4 +1,4 @@
-# Amazon GameLift (amazon-gamelift)
+# Amazon GameLift
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,142 +66,282 @@
 
 Amazon GameLift is a dedicated game server hosting solution that deploys, operates, and scales cloud servers for multiplayer games. It provides low-latency, low-cost server infrastructure, eliminates operational overhead, and allows you to focus on creating great gaming experiences. The service includes FlexMatch for matchmaking, FleetIQ for optimized Spot Instance usage, and Realtime Servers for rapid game server deployment.
 
-**URL:** [https://aws.amazon.com/gamelift/](https://aws.amazon.com/gamelift/)
+**Areas:** AWS · Cloud Computing · Game Servers · Gaming · Multiplayer · Matchmaking · FlexMatch · FleetIQ
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon GameLift on APIs.io
 
-## Tags:
+Everything profiled for Amazon GameLift is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-gamelift/](https://apis.io/providers/amazon-gamelift/)** — or go straight to one of the APIs or properties below.
 
- - AWS, Cloud Computing, Game Servers, Gaming, Multiplayer, Matchmaking, FlexMatch, FleetIQ
+### APIs (4)
 
-## Timestamps
+- [Amazon GameLift Amazon GameLift API](https://apis.io/apis/amazon-gamelift/amazon-gamelift-amazon-gamelift-api/) — The Amazon GameLift API from Amazon GameLift — 104 operation(s) for amazon gamelift.
+- [Amazon GameLift Gamelift Container Fleet API](https://apis.io/apis/amazon-gamelift/amazon-gamelift-container-fleet-api/) — The Gamelift Container Fleet API from Amazon GameLift — 5 operation(s) for gamelift container fleet.
+- [Amazon GameLift Gamelift Container Group Definition API](https://apis.io/apis/amazon-gamelift/amazon-gamelift-container-group-definition-api/) — The Gamelift Container Group Definition API from Amazon GameLift — 5 operation(s) for gamelift container group definition.
+- [Amazon GameLift Gamelift Operations API](https://apis.io/apis/amazon-gamelift/amazon-gamelift-operations-api/) — The Gamelift Operations API from Amazon GameLift — 6 operation(s) for gamelift operations.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Amazon GameLift API
-The Amazon GameLift API provides programmatic access to create and manage fleets, game sessions, player sessions, matchmaking configurations, and game server groups for hosting multiplayer game servers. It includes operations for managed hosting resources, FlexMatch matchmaking, FleetIQ optimization, and Realtime Servers configuration.
+#### Arazzo workflows (12)
 
-**Human URL:** [https://aws.amazon.com/gamelift/](https://aws.amazon.com/gamelift/)
+Multi-step workflows that chain operations into a business task.
 
-#### Tags:
+- [Amazon GameLift Stand Up a Fleet Behind an Alias](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-build-fleet-alias-workflow/)
+- [Amazon GameLift Create and Resolve a Fleet Alias](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-create-resolve-alias-workflow/)
+- [Amazon GameLift Deploy Build to a Fleet](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-deploy-build-fleet-workflow/)
+- [Amazon GameLift Fill a Game Session with Players](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-fill-game-session-workflow/)
+- [Amazon GameLift Host a Game Session and Add a Player](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-host-game-session-workflow/)
+- [Amazon GameLift Matchmaking with Player Acceptance](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-matchmaking-accept-workflow/)
+- [Amazon GameLift Open Fleet Ports then Host a Session](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-open-ports-host-session-workflow/)
+- [Amazon GameLift Queue-Based Game Session Placement](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-queue-placement-workflow/)
+- [Amazon GameLift Scale Fleet Capacity](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-scale-fleet-capacity-workflow/)
+- [Amazon GameLift Search for a Game Session and Join It](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-search-and-join-workflow/)
+- [Amazon GameLift Set Up and Run FlexMatch Matchmaking](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-setup-matchmaking-workflow/)
+- [Amazon GameLift Verify Build Readiness then Create a Fleet](https://apis.io/arazzos/amazon-gamelift/amazon-gamelift-verify-build-create-fleet-workflow/)
 
- - Game Servers, Gaming, Multiplayer, Matchmaking, Fleets, Sessions
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html)
-- [OpenAPI](openapi/amazon-gamelift-openapi.yaml)
-- [GettingStarted](https://aws.amazon.com/gamelift/getting-started/)
-- [Pricing](https://aws.amazon.com/gamelift/pricing/)
-- [FAQ](https://aws.amazon.com/gamelift/faq/)
-- [APIReference](https://docs.aws.amazon.com/gamelift/latest/apireference/Welcome.html)
-- [Authentication](https://docs.aws.amazon.com/gamelift/latest/apireference/CommonParameters.html)
-- [JSONSchema](json-schema/gamelift-fleet-schema.json)
-- [JSONLD](json-ld/amazon-gamelift-context.jsonld)
+- [Amazon Gamelift Agentic Access](https://apis.io/agentic-access/amazon-gamelift/amazon-gamelift-agentic-access/)
 
-## Common Properties
+#### JSON Schema (472)
 
-- [Portal](https://aws.amazon.com/gamelift/)
+The data models the API reads and writes.
+
+- [AcceptMatchInput](https://apis.io/schemas/amazon-gamelift/gamelift-accept-match-input/)
+- [AcceptMatchOutput](https://apis.io/schemas/amazon-gamelift/gamelift-accept-match-output/)
+- [AcceptanceType](https://apis.io/schemas/amazon-gamelift/gamelift-acceptance-type/)
+- [Alias](https://apis.io/schemas/amazon-gamelift/gamelift-alias/)
+- [AliasArn](https://apis.io/schemas/amazon-gamelift/gamelift-alias-arn/)
+- [AliasId](https://apis.io/schemas/amazon-gamelift/gamelift-alias-id/)
+- [AliasIdOrArn](https://apis.io/schemas/amazon-gamelift/gamelift-alias-id-or-arn/)
+- [AliasList](https://apis.io/schemas/amazon-gamelift/gamelift-alias-list/)
+- [AmazonResourceName](https://apis.io/schemas/amazon-gamelift/gamelift-amazon-resource-name/)
+- [AnywhereConfiguration](https://apis.io/schemas/amazon-gamelift/gamelift-anywhere-configuration/)
+- [ArnStringModel](https://apis.io/schemas/amazon-gamelift/gamelift-arn-string-model/)
+- [AutoScalingGroupArn](https://apis.io/schemas/amazon-gamelift/gamelift-auto-scaling-group-arn/)
+- [AwsCredentials](https://apis.io/schemas/amazon-gamelift/gamelift-aws-credentials/)
+- [BackfillMode](https://apis.io/schemas/amazon-gamelift/gamelift-backfill-mode/)
+- [BalancingStrategy](https://apis.io/schemas/amazon-gamelift/gamelift-balancing-strategy/)
+- [BooleanModel](https://apis.io/schemas/amazon-gamelift/gamelift-boolean-model/)
+- [Build](https://apis.io/schemas/amazon-gamelift/gamelift-build/)
+- [BuildArn](https://apis.io/schemas/amazon-gamelift/gamelift-build-arn/)
+- [BuildId](https://apis.io/schemas/amazon-gamelift/gamelift-build-id/)
+- [BuildIdOrArn](https://apis.io/schemas/amazon-gamelift/gamelift-build-id-or-arn/)
+- [BuildList](https://apis.io/schemas/amazon-gamelift/gamelift-build-list/)
+- [BuildStatus](https://apis.io/schemas/amazon-gamelift/gamelift-build-status/)
+- [CertificateConfiguration](https://apis.io/schemas/amazon-gamelift/gamelift-certificate-configuration/)
+- [CertificateType](https://apis.io/schemas/amazon-gamelift/gamelift-certificate-type/)
+- [ClaimGameServerInput](https://apis.io/schemas/amazon-gamelift/gamelift-claim-game-server-input/)
+- …and 447 more published on APIs.io
+
+#### JSON Structure (472)
+
+Data models expressed in JSON Structure.
+
+- [Gamelift Accept Match Input Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-accept-match-input-structure/)
+- [Gamelift Accept Match Output Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-accept-match-output-structure/)
+- [Gamelift Acceptance Type Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-acceptance-type-structure/)
+- [Gamelift Alias Arn Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-alias-arn-structure/)
+- [Gamelift Alias Id Or Arn Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-alias-id-or-arn-structure/)
+- [Gamelift Alias Id Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-alias-id-structure/)
+- [Gamelift Alias List Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-alias-list-structure/)
+- [Gamelift Alias Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-alias-structure/)
+- [Gamelift Amazon Resource Name Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-amazon-resource-name-structure/)
+- [Gamelift Anywhere Configuration Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-anywhere-configuration-structure/)
+- [Gamelift Arn String Model Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-arn-string-model-structure/)
+- [Gamelift Auto Scaling Group Arn Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-auto-scaling-group-arn-structure/)
+- [Gamelift Aws Credentials Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-aws-credentials-structure/)
+- [Gamelift Backfill Mode Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-backfill-mode-structure/)
+- [Gamelift Balancing Strategy Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-balancing-strategy-structure/)
+- [Gamelift Boolean Model Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-boolean-model-structure/)
+- [Gamelift Build Arn Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-build-arn-structure/)
+- [Gamelift Build Id Or Arn Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-build-id-or-arn-structure/)
+- [Gamelift Build Id Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-build-id-structure/)
+- [Gamelift Build List Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-build-list-structure/)
+- [Gamelift Build Status Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-build-status-structure/)
+- [Gamelift Build Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-build-structure/)
+- [Gamelift Certificate Configuration Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-certificate-configuration-structure/)
+- [Gamelift Certificate Type Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-certificate-type-structure/)
+- [Gamelift Claim Game Server Input Structure](https://apis.io/json-structure/amazon-gamelift/gamelift-claim-game-server-input-structure/)
+- …and 447 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Gamelift Context](https://apis.io/jsonld/amazon-gamelift/amazon-gamelift-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Gamelift Vocabulary](https://apis.io/vocabularies/amazon-gamelift/amazon-gamelift-vocabulary/)
+
+#### Examples (263)
+
+Example requests and responses.
+
+- [Gamelift Accept Match Input Example](https://apis.io/examples/amazon-gamelift/gamelift-accept-match-input-example/)
+- [Gamelift Accept Match Output Example](https://apis.io/examples/amazon-gamelift/gamelift-accept-match-output-example/)
+- [Gamelift Alias Example](https://apis.io/examples/amazon-gamelift/gamelift-alias-example/)
+- [Gamelift Anywhere Configuration Example](https://apis.io/examples/amazon-gamelift/gamelift-anywhere-configuration-example/)
+- [Gamelift Aws Credentials Example](https://apis.io/examples/amazon-gamelift/gamelift-aws-credentials-example/)
+- [Gamelift Build Example](https://apis.io/examples/amazon-gamelift/gamelift-build-example/)
+- [Gamelift Certificate Configuration Example](https://apis.io/examples/amazon-gamelift/gamelift-certificate-configuration-example/)
+- [Gamelift Claim Game Server Input Example](https://apis.io/examples/amazon-gamelift/gamelift-claim-game-server-input-example/)
+- [Gamelift Claim Game Server Output Example](https://apis.io/examples/amazon-gamelift/gamelift-claim-game-server-output-example/)
+- [Gamelift Compute Example](https://apis.io/examples/amazon-gamelift/gamelift-compute-example/)
+- [Gamelift Create Alias Input Example](https://apis.io/examples/amazon-gamelift/gamelift-create-alias-input-example/)
+- [Gamelift Create Alias Output Example](https://apis.io/examples/amazon-gamelift/gamelift-create-alias-output-example/)
+- [Gamelift Create Build Input Example](https://apis.io/examples/amazon-gamelift/gamelift-create-build-input-example/)
+- [Gamelift Create Build Output Example](https://apis.io/examples/amazon-gamelift/gamelift-create-build-output-example/)
+- [Gamelift Create Fleet Input Example](https://apis.io/examples/amazon-gamelift/gamelift-create-fleet-input-example/)
+- [Gamelift Create Fleet Locations Input Example](https://apis.io/examples/amazon-gamelift/gamelift-create-fleet-locations-input-example/)
+- [Gamelift Create Fleet Locations Output Example](https://apis.io/examples/amazon-gamelift/gamelift-create-fleet-locations-output-example/)
+- [Gamelift Create Fleet Output Example](https://apis.io/examples/amazon-gamelift/gamelift-create-fleet-output-example/)
+- [Gamelift Create Game Server Group Input Example](https://apis.io/examples/amazon-gamelift/gamelift-create-game-server-group-input-example/)
+- [Gamelift Create Game Server Group Output Example](https://apis.io/examples/amazon-gamelift/gamelift-create-game-server-group-output-example/)
+- [Gamelift Create Game Session Input Example](https://apis.io/examples/amazon-gamelift/gamelift-create-game-session-input-example/)
+- [Gamelift Create Game Session Output Example](https://apis.io/examples/amazon-gamelift/gamelift-create-game-session-output-example/)
+- [Gamelift Create Game Session Queue Input Example](https://apis.io/examples/amazon-gamelift/gamelift-create-game-session-queue-input-example/)
+- [Gamelift Create Game Session Queue Output Example](https://apis.io/examples/amazon-gamelift/gamelift-create-game-session-queue-output-example/)
+- [Gamelift Create Location Input Example](https://apis.io/examples/amazon-gamelift/gamelift-create-location-input-example/)
+- …and 238 more published on APIs.io
+
+#### Collections (209)
+
+Postman and Open Collection request collections.
+
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-acceptmatch-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.ClaimGameServer API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-claimgameserver-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateAlias API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-createalias-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateBuild API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-createbuild-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateFleet API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-createfleet-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateFleetLocations API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-createfleetlocations-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateGameServerGroup API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-creategameservergroup-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateGameSession API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-creategamesession-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateGameSessionQueue API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-creategamesessionqueue-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateLocation API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-createlocation-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateMatchmakingConfiguration API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-creatematchmakingconfiguration-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateMatchmakingRuleSet API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-creatematchmakingruleset-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreatePlayerSession API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-createplayersession-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreatePlayerSessions API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-createplayersessions-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateScript API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-createscript-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateVpcPeeringAuthorization API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-createvpcpeeringauthorization-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.CreateVpcPeeringConnection API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-createvpcpeeringconnection-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DeleteAlias API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-deletealias-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DeleteBuild API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-deletebuild-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DeleteFleet API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-deletefleet-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DeleteFleetLocations API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-deletefleetlocations-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DeleteGameServerGroup API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-deletegameservergroup-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DeleteGameSessionQueue API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-deletegamesessionqueue-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DeleteLocation API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-deletelocation-api/)
+- [Amazon GameLift #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.AcceptMatch #X Amz Target=GameLift.DeleteMatchmakingConfiguration API](https://apis.io/collections/amazon-gamelift/open-amazon-gamelift-x-amz-target-gamelift-deletematchmakingconfiguration-api/)
+- …and 184 more published on APIs.io
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon GameLift — jsonschema rules](https://apis.io/rules/amazon-gamelift/amazon-gamelift-jsonschema-spectral-rules/)
+- [Amazon GameLift API Rules](https://apis.io/rules/amazon-gamelift/amazon-gamelift-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Gamelift Authentication](https://apis.io/security/amazon-gamelift/amazon-gamelift-authentication/)
+- [Amazon Gamelift Domain Security](https://apis.io/security/amazon-gamelift/amazon-gamelift-domain-security/)
+- [Amazon Gamelift Trust Center](https://apis.io/security/amazon-gamelift/amazon-gamelift-trust-center/)
+- [Amazon Gamelift Vulnerability Disclosure](https://apis.io/security/amazon-gamelift/amazon-gamelift-vulnerability-disclosure/)
+
+#### Plans and pricing (2)
+
+Published plans, tiers and prices.
+
+- [Amazon Gamelift Plans Pricing](https://apis.io/plans/amazon-gamelift/amazon-gamelift-plans-pricing/)
+- [Amazon Gamelift Price Estimates](https://apis.io/plans/amazon-gamelift/amazon-gamelift-price-estimates/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Gamelift Rate Limits](https://apis.io/rate-limits/amazon-gamelift/amazon-gamelift-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Gamelift Finops](https://apis.io/finops/amazon-gamelift/amazon-gamelift-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/gamelift/)
 - [Documentation](https://docs.aws.amazon.com/gamelift/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
+- [Pricing](https://aws.amazon.com/gamelift/servers/pricing/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/gametech/tag/amazon-gamelift/)
-- [GitHubOrganization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/gamelift/)
-- [SignUp](https://portal.aws.amazon.com/billing/signup)
-- [StatusPage](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
-- [SDK](https://aws.amazon.com/developer/tools/)
-- [CLI](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/gamelift/index.html)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Managed Game Server Hosting | Fully managed service to deploy, operate, and scale dedicated game servers with automatic lifecycle management for game and player sessions. |
-| FlexMatch Matchmaking | Customizable matchmaking service that connects up to 200 players into single game sessions based on configurable matching rules. |
-| FleetIQ Optimization | Optimizes use of low-cost Spot Instances for game hosting, improving viability and reducing costs while maintaining performance. |
-| Realtime Servers | Rapidly configurable game server framework with core Amazon GameLift infrastructure built in for quick deployment. |
-| Auto Scaling | Automatically scales fleet capacity up to 9,000 servers per minute to balance player demand and hosting costs. |
-| Multi-Region Deployment | Deploy game servers across multiple AWS regions with global queues for optimal player latency and resiliency. |
-| Game Session Queues | Multi-fleet, multi-region queues that use FleetIQ algorithms to prioritize game session placements based on latency, cost, and availability. |
-| VPC Peering | Create and manage VPC peering connections between GameLift hosting resources and other AWS resources. |
-| Alias Management | Create fleet aliases to simplify game server transitions and updates without changing client configurations. |
+**Kin Score 65.9** — strong · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 62.0 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 82.9 |
+| Access clarity | 84.2 |
 
-| Name | Description |
-|------|-------------|
-| Multiplayer Game Launches | Deploy and scale game servers for launch day without uncertainty about player demand using predictive autoscaling. |
-| Session-Based Multiplayer | Host dedicated game servers for real-time multiplayer games with low latency and high performance. |
-| Player Matchmaking | Use FlexMatch to create fair, customizable matchmaking for players based on skill level, region, and other criteria. |
-| Cost-Optimized Hosting | Leverage FleetIQ with Spot Instances to reduce game hosting costs while maintaining reliability. |
-| Global Game Distribution | Deploy game servers across multiple AWS regions to minimize player latency worldwide. |
+**Agent readiness 36.5** — agent-ready
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | verified |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| AWS EC2 | GameLift uses EC2 instances as the underlying compute for managed game server hosting. |
-| AWS Auto Scaling | Integrates with Auto Scaling groups for FleetIQ standalone deployment. |
-| Amazon CloudWatch | Monitor fleet metrics, game session activity, and performance data through CloudWatch. |
-| Amazon SNS | Receive notifications for matchmaking events and game session placement status. |
-| AWS IAM | Use IAM roles and policies to control access to GameLift resources and operations. |
-| Amazon S3 | Store and retrieve game server build files using S3 buckets for fleet deployment. |
-| AWS CloudFormation | Provision and manage GameLift resources using infrastructure-as-code templates. |
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-gamelift/](https://apis.io/providers/amazon-gamelift/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Amazon GameLift OpenAPI](openapi/amazon-gamelift-openapi.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon GameLift: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-472 schema files in [json-schema/](json-schema/)
-
-### JSON Structure
-
-472 structure files in [json-structure/](json-structure/)
-
-### JSON-LD
-
-- [Amazon GameLift Context](json-ld/amazon-gamelift-context.jsonld)
-
-### Examples
-
-472 example files in [examples/](examples/)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [Amazon GameLift](capabilities/shared/amazon-gamelift.yaml) — 104 operations for game server hosting and management
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Amazon GameLift Game Operations](capabilities/amazon-gamelift-game-operations.yaml) | Amazon GameLift | 20 | Game Developer, DevOps Engineer, Game Operations Team |
-
-## Vocabulary
-
-- [Amazon GameLift Vocabulary](vocabulary/amazon-gamelift-vocabulary.yaml) — Unified taxonomy mapping 10 resources, 9 actions, 1 workflow, and 3 personas across operational (OpenAPI) and capability (Naftiko) dimensions
-
-## Rules
-
-- [Amazon GameLift Spectral Rules](rules/amazon-gamelift-spectral-rules.yml) — 18 rules across 8 categories enforcing Amazon GameLift API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-gamelift/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
